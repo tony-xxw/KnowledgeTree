@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KnowledgeTree</string>
+    <string name="train">train</string>
+    <string name="guide">guide</string>
 </resources>

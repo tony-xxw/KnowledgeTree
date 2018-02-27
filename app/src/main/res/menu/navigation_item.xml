@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/train"
+        android:icon="@drawable/icon_train"
+        android:title="@string/train"
+        />
+
+    <item
+        android:id="@+id/guide"
+        android:icon="@drawable/icon_guide"
+        android:title="@string/guide"
+        />
+</menu>
