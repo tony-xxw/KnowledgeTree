@@ -4,28 +4,21 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.wynne.knowledge.tree.custom.CustomFragment;
 import com.wynne.knowledge.tree.guide.GuideFragment;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author XXW
  */
 public class MainActivity extends FragmentActivity implements InitContent {
     private BottomNavigationView mBngMenu;
-    private FragmentManager mManager;
-    private FragmentTransaction mTranscation;
+    private CustomFragment mCustomFragment;
+    private GuideFragment mCuideFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,31 +35,33 @@ public class MainActivity extends FragmentActivity implements InitContent {
         mBngMenu.setOnNavigationItemSelectedListener(listener);
 
 
-        mTranscation.add(R.id.fl_content, GuideFragment.getInstance(), "guide");
-        mTranscation.addToBackStack("guide");
-        mTranscation.commit();
     }
 
     @Override
     public void initDate() {
-        mManager = getSupportFragmentManager();
-        mTranscation = mManager.beginTransaction();
+
     }
 
 
+    /**
+     * popBackStack()
+     */
     BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.guide:
-                    Log.d("XXW", "guide");
-                    return true;
                 case R.id.custom:
-                    Log.d("XXW", "custom");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fl_content, CustomFragment.getInstance(), "custom")
+                            .addToBackStack("custom")
+                            .commit();
                     return true;
-                case R.id.train:
-                    Log.d("XXW", "train");
+                case R.id.guide:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fl_content, GuideFragment.getInstance(), "guide")
+                            .addToBackStack("guide")
+                            .commit();
                     return true;
                 default:
                     break;
