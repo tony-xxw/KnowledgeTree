@@ -5,7 +5,7 @@ package com.wynne.knowledge.tree;
  * @date 2018/2/27
  */
 
-public interface InitContent {
+interface InitContent {
 
     /**
      * 初始化View

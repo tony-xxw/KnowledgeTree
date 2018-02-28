@@ -4,12 +4,15 @@
     <item
         android:id="@+id/train"
         android:icon="@drawable/icon_train"
-        android:title="@string/train"
-        />
+        android:title="@string/train" />
 
     <item
         android:id="@+id/guide"
         android:icon="@drawable/icon_guide"
-        android:title="@string/guide"
-        />
+        android:title="@string/guide" />
+
+    <item
+        android:id="@+id/custom"
+        android:icon="@drawable/icon_custom"
+        android:title="@string/custom" />
 </menu>
