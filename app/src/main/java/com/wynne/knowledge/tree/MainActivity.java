@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity implements InitContent {
 
     @Override
     public void initDate() {
-
+    
     }
 
 
