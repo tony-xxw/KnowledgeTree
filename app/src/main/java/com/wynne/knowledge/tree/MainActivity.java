@@ -39,7 +39,10 @@ public class MainActivity extends FragmentActivity implements InitContent {
 
     @Override
     public void initDate() {
-    
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fl_content, GuideFragment.getInstance(), "guide")
+                .addToBackStack("guide")
+                .commit();
     }
 
 
