@@ -24,6 +24,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.guide_fragment, container, false);
         mContentView.findViewById(R.id.btn_implicit).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_cl).setOnClickListener(this);
         return mContentView;
     }
 
@@ -38,6 +39,9 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.btn_implicit:
                 startActivity(new Intent(getActivity(), ImplicitActivity.class));
+                break;
+            case R.id.btn_cl:
+                startActivity(new Intent(getActivity(), ConstraintActivity.class));
                 break;
             default:
                 break;

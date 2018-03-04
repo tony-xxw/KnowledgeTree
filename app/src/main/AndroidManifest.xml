@@ -21,6 +21,9 @@
         <activity
             android:name=".guide.ImplicitActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".guide.ConstraintActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

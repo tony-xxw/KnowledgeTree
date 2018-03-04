@@ -7,4 +7,5 @@
     <string name="implicit_check">Intent隐式需要检查是否存在跳转应用</string>
     <string name="implicit_share">分享到不同应用</string>
     <string name="share_tilte">选贼</string>
+    <string name="constrain_layout">ConstrainLayout的使用</string>
 </resources>
