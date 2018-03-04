@@ -3,4 +3,8 @@
     <string name="train">train</string>
     <string name="guide">guide</string>
     <string name="custom">custom</string>
+    <string name="implicit_intent">Intent隐式跳转注意事项</string>
+    <string name="implicit_check">Intent隐式需要检查是否存在跳转应用</string>
+    <string name="implicit_share">分享到不同应用</string>
+    <string name="share_tilte">选贼</string>
 </resources>

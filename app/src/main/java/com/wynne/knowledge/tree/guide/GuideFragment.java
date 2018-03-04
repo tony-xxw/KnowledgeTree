@@ -1,25 +1,29 @@
 package com.wynne.knowledge.tree.guide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.wynne.knowledge.tree.R;
 
 /**
- * Created by Wynne on 2018/2/28.
+ * @author Wynne
+ * @date 2018/2/28
  */
 
-public class GuideFragment extends Fragment {
+public class GuideFragment extends Fragment implements View.OnClickListener {
     private View mContentView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_guide, container, false);
+        mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.guide_fragment, container, false);
+        mContentView.findViewById(R.id.btn_implicit).setOnClickListener(this);
         return mContentView;
     }
 
@@ -28,4 +32,16 @@ public class GuideFragment extends Fragment {
 
         return fragment;
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_implicit:
+                startActivity(new Intent(getActivity(), ImplicitActivity.class));
+                break;
+            default:
+                break;
+        }
+    }
+
 }
