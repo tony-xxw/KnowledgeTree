@@ -24,6 +24,19 @@
         <activity
             android:name=".guide.ConstraintActivity"
             android:launchMode="singleTop" />
+
+        <activity android:name=".guide.FilterActivity">
+            <intent-filter>
+                <action android:name="com.wynne.knowledge.tree.Test" />
+                <action android:name="com.wynne.knowledge.tree.Filter" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.APP_EMAIL" />
+
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

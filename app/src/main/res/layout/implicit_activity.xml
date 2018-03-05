@@ -13,4 +13,9 @@
         android:id="@+id/btn_implicit_share"
         style="@style/BtnCommon"
         android:text="@string/implicit_share" />
+
+    <Button
+        android:id="@+id/btn_implicit_filter"
+        style="@style/BtnCommon"
+        android:text="@string/implicit_filter" />
 </LinearLayout>

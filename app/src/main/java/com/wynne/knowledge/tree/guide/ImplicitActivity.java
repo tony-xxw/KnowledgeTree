@@ -27,6 +27,7 @@ public class ImplicitActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.implicit_activity);
         findViewById(R.id.btn_implicit_check).setOnClickListener(this);
         findViewById(R.id.btn_implicit_share).setOnClickListener(this);
+        findViewById(R.id.btn_implicit_filter).setOnClickListener(this);
 
     }
 
@@ -52,11 +53,31 @@ public class ImplicitActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_implicit_share:
                 Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                String title = getString(R.string.share_tilte);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Share");
+                sendIntent.setType("text/plan");
+                String title = getString(R.string.share_title);
+                //强制分享多个应用,如果想分享给默认应用则不需要通过createChoose来获取Intent
                 Intent shareIntent = Intent.createChooser(sendIntent, title);
                 //至少存在一个处理项
                 if (sendIntent.resolveActivity(getPackageManager()) != null) {
+//                    startActivity(sendIntent);
                     startActivity(shareIntent);
+                }
+                break;
+            case R.id.btn_implicit_filter:
+                /**
+                 *  过滤条件可以重复多个,
+                 *  但是必须存在一个匹配,
+                 *  如果不存在一个匹配则无法跳转
+                 */
+                Intent intent = new Intent();
+                intent.setAction("com.wynne.knowledge.tree.Filter");
+                intent.setType("video/*");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    Log.d("XXW", "OK");
+                    startActivity(intent);
                 }
                 break;
             default:
