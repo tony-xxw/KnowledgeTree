@@ -9,6 +9,7 @@
     <string name="implicit_filter">过滤到不同应用</string>
     <string name="share_title">选择</string>
     <string name="constrain_layout">ConstrainLayout的使用</string>
+    <string name="classloader">类加载</string>
 
 
     <string-array name="spinner_item">
