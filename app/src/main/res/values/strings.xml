@@ -9,4 +9,13 @@
     <string name="implicit_filter">过滤到不同应用</string>
     <string name="share_title">选择</string>
     <string name="constrain_layout">ConstrainLayout的使用</string>
+
+
+    <string-array name="spinner_item">
+        <item>官方文档</item>
+        <item>玉刚说学习周</item>
+        <item>艺术探索</item>
+        <item>LeetCoder</item>
+        <item>Think in java</item>
+    </string-array>
 </resources>
