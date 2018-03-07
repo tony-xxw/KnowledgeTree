@@ -13,4 +13,9 @@
         android:id="@+id/btn_cl"
         style="@style/BtnCommon"
         android:text="@string/constrain_layout" />
+
+    <Button
+        android:id="@+id/btn_notification"
+        style="@style/BtnCommon"
+        android:text="@string/use_notification" />
 </LinearLayout>

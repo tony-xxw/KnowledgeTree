@@ -10,6 +10,10 @@
     <string name="share_title">选择</string>
     <string name="constrain_layout">ConstrainLayout的使用</string>
     <string name="classloader">类加载</string>
+    <string name="use_notification">Notification的使用</string>
+    <string name="start_notification">启动通知</string>
+    <string name="update_notification">更新通知</string>
+    <string name="delete_notification">删除</string>
 
 
     <string-array name="spinner_item">

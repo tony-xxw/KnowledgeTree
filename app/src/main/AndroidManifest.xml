@@ -38,6 +38,9 @@
         <activity
             android:name=".custom.ClassLoaderActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".guide.NotificationActivity"
+            android:launchMode="singleTop"
+            />
     </application>
 
 </manifest>

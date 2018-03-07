@@ -22,9 +22,15 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.guide_fragment, container, false);
+        initClickListener();
+        return mContentView;
+    }
+
+
+    public void initClickListener() {
         mContentView.findViewById(R.id.btn_implicit).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_cl).setOnClickListener(this);
-        return mContentView;
+        mContentView.findViewById(R.id.btn_notification).setOnClickListener(this);
     }
 
     public static GuideFragment getInstance() {
@@ -41,6 +47,9 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_cl:
                 startActivity(new Intent(getActivity(), ConstraintActivity.class));
+                break;
+            case R.id.btn_notification:
+                startActivity(new Intent(getActivity(), NotificationActivity.class));
                 break;
             default:
                 break;
