@@ -38,9 +38,12 @@
         <activity
             android:name=".custom.ClassLoaderActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".guide.NotificationActivity"
-            android:launchMode="singleTop"
-            />
+        <activity
+            android:name=".guide.NotificationActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".guide.NotificationPendActivity" />
+
+        <receiver android:name=".guide.NotificationActivity$MyBroadCast" />
     </application>
 
 </manifest>
