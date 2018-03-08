@@ -65,6 +65,8 @@ public class NotificationActivity extends AppCompatActivity {
 //        pendingIntent = PendingIntent.getBroadcast(this)
 
 
+        Log.d("XXW", "");
+
     }
 
     public void onClick(View view) {
