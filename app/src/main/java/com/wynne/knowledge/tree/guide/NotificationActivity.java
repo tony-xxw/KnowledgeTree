@@ -7,6 +7,9 @@ import android.app.RemoteInput;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.opengl.Visibility;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,6 +23,8 @@ import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
 
+import static android.app.Notification.VISIBILITY_PRIVATE;
+
 /**
  * @author Wynne
  * @date 2018/3/7
@@ -27,13 +32,16 @@ import com.wynne.knowledge.tree.R;
 
 public class NotificationActivity extends AppCompatActivity {
     private NotificationManagerCompat manager;
+    private NotificationCompat.Builder builder;
     public static final int START_NOTIFICATION = 0;
+    public static final int PROGRESS_NOTIFICATION = 0;
     public static final String BROADCAST_NOTIFICATION = "BroadCast";
 
     private PendingIntent pendingIntent;
+    private PendingIntent replyPending;
     private Intent intent;
-
-
+    private Bitmap bitmap;
+    private Bitmap largeBitmap;
     private static final String KEY_TEXT_REPLY = "key_text_reply";
     RemoteInput mRemoteInput;
 
@@ -62,11 +70,10 @@ public class NotificationActivity extends AppCompatActivity {
                 .build();
 
 
-//        pendingIntent = PendingIntent.getBroadcast(this)
-
-
         Log.d("XXW", "");
 
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_custom);
+        largeBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_large);
     }
 
     public void onClick(View view) {
@@ -80,9 +87,69 @@ public class NotificationActivity extends AppCompatActivity {
             case R.id.btn_delete:
                 deleteNotification();
                 break;
+            case R.id.btn_progress:
+                progressNotification();
+                break;
+            case R.id.btn_expandable:
+                expandableNotification();
+                break;
             default:
                 break;
         }
+    }
+
+    private void expandableNotification() {
+        Notification notification = new NotificationCompat.Builder(this)
+                .setContentTitle("expandable title")
+                .setContentText("expandable content")
+                .setSmallIcon(R.drawable.icon_guide)
+                .setLargeIcon(largeBitmap)
+//                .setStyle(new NotificationCompat.BigPictureStyle()
+//                        .bigPicture(largeBitmap)
+    //                        .bigLargeIcon(null))
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("To make the image appear as a" +
+                                " thumbnail only while the notification" +
+                                " is collapsed (as shown in figure 1)" +
+                                "To make the image appear as a thumbnail " +
+                                "only while the notification is collapsed" +
+                                " (as shown in figure 1)" + "To make the image appear as a" +
+                                " thumbnail only while the notification" +
+                                " is collapsed (as shown in figure 1)" +
+                                "To make the image appear as a thumbnail " +
+                                "only while the notification is collapsed" +
+                                " (as shown in figure 1)")
+                )
+                .build();
+        manager = NotificationManagerCompat.from(this);
+        manager.notify(PROGRESS_NOTIFICATION, notification);
+
+    }
+
+    private void progressNotification() {
+        manager = NotificationManagerCompat.from(this);
+        builder = new NotificationCompat.Builder(this)
+                .setContentText(getString(R.string.progress_notification))
+                .setContentTitle(getString(R.string.progress_title_notification))
+                .setSmallIcon(R.drawable.icon_train)
+                .setVisibility(VISIBILITY_PRIVATE)
+                .setPriority(NotificationCompat.PRIORITY_LOW);
+        int PROGRESS_MAX = 100;
+        int PROGRESS_CURRENT = 1;
+
+
+        while (PROGRESS_CURRENT != PROGRESS_MAX) {
+            PROGRESS_CURRENT++;
+            builder.setProgress(PROGRESS_CURRENT, PROGRESS_MAX, false);
+            manager.notify(PROGRESS_NOTIFICATION, builder.build());
+        }
+
+        if (PROGRESS_CURRENT == PROGRESS_MAX) {
+            builder.setContentText("Download Complete");
+            builder.setProgress(0, 0, false);
+            manager.notify(PROGRESS_NOTIFICATION, builder.build());
+        }
+
     }
 
     private void deleteNotification() {
@@ -111,6 +178,8 @@ public class NotificationActivity extends AppCompatActivity {
                 //点击则删除
                 .setAutoCancel(true);
 
+
+        //添加Button Action
         NotificationCompat.Builder broadcast = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.icon_custom)
                 .setContentTitle(getResources().getString(R.string.guide))
@@ -123,20 +192,6 @@ public class NotificationActivity extends AppCompatActivity {
 
 
         //8.0以上发布通知之前,需要向系统注册应用渠道,通过NotificationChannel 向CreateNotificationChannel提交实例
-
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // Create the NotificationChannel, but only on API 26+ because
-            // the NotificationChannel class is new and not in the support library
-            CharSequence name = getString(R.string.start_notification);
-            String description = getString(R.string.guide);
-            int importance = NotificationManagerCompat.IMPORTANCE_DEFAULT;
-            channel = new NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-            // Register the channel with the system
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-            notificationManager.createNotificationChannel(channel);
-        }*/
-
 
         manager = NotificationManagerCompat.from(this);
 

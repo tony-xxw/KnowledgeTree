@@ -15,6 +15,10 @@
     <string name="update_notification">更新通知</string>
     <string name="delete_notification">删除</string>
     <string name="reply">回复信息</string>
+    <string name="progress_notification">progress通知</string>
+    <string name="progress_title_notification">progress标题</string>
+    <string name="expandable_notification">扩展Notification</string>
+    <string name="text_notification">大文本</string>
 
 
     <string-array name="spinner_item">
