@@ -21,6 +21,10 @@
     <string name="text_notification">大文本</string>
     <string name="group_notification">群组通知</string>
     <string name="use_appbar">appbar</string>
+    <string name="action_favorite">偏好</string>
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="share">分享</string>
 
 
     <string-array name="spinner_item">
