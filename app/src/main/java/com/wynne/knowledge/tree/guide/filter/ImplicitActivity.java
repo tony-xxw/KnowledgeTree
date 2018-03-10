@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.guide;
+package com.wynne.knowledge.tree.guide.filter;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;

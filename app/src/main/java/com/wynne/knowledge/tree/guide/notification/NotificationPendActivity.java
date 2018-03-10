@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.guide;
+package com.wynne.knowledge.tree.guide.notification;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,14 +8,14 @@ import com.wynne.knowledge.tree.R;
 
 /**
  * @author XXW
- * @date 2018/3/4
+ * @date 2018/3/7
  */
 
-public class ConstraintActivity extends AppCompatActivity{
+public class NotificationPendActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.constrain_layout);
+        setContentView(R.layout.notification_pend_layout);
     }
 }

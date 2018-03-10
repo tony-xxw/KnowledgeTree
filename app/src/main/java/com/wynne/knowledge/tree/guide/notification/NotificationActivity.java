@@ -1,7 +1,6 @@
-package com.wynne.knowledge.tree.guide;
+package com.wynne.knowledge.tree.guide.notification;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.RemoteInput;
 import android.content.BroadcastReceiver;
@@ -9,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.opengl.Visibility;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationManagerCompat;
@@ -19,7 +16,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.support.v4.app.NotificationCompat;
-import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
 
@@ -44,6 +40,8 @@ public class NotificationActivity extends AppCompatActivity {
     private Bitmap largeBitmap;
     private static final String KEY_TEXT_REPLY = "key_text_reply";
     RemoteInput mRemoteInput;
+
+    public String CHANNEL = "1";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,20 +91,66 @@ public class NotificationActivity extends AppCompatActivity {
             case R.id.btn_expandable:
                 expandableNotification();
                 break;
+            case R.id.btn_group:
+                groupNotification();
+                break;
             default:
                 break;
         }
     }
 
+    private void groupNotification() {
+        int SUMMARY_ID = 1;
+        int notifications = 2;
+        int notifications1 = 3;
+        String GROUP_KEY_WORK_EMAIL = "com.android.example.WORK_EMAIL";
+
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL)
+                .setContentTitle("群组Demo1")
+                .setContentText("群组Notification测试")
+                .setSmallIcon(R.drawable.icon_guide)
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .build();
+
+        Notification notification1 = new NotificationCompat.Builder(this, CHANNEL)
+                .setContentTitle("群组Demo2")
+                .setContentText("群组Notification测试 第二版")
+                .setSmallIcon(R.drawable.icon_guide)
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .build();
+        Notification notification2 = new NotificationCompat.Builder(this, CHANNEL)
+                .setContentTitle("群组Demo3")
+                .setContentText("群组Notification测试  第三版")
+                .setSmallIcon(R.drawable.icon_guide)
+                .setGroup(GROUP_KEY_WORK_EMAIL)
+                .setStyle(new NotificationCompat.InboxStyle()
+                        .addLine("Alex Faarborg  Check this out")
+                        .addLine("Jeff Chang    Launch Party")
+                        .setBigContentTitle("2 new messages")
+                        //概要信息
+                        .setSummaryText("janedoe@example.com")
+                )
+                //是否设置概要
+                .setGroupSummary(true)
+                .build();
+
+        NotificationManagerCompat compat = NotificationManagerCompat.from(this);
+
+        compat.notify(notifications, notification);
+        compat.notify(notifications1, notification1);
+        compat.notify(SUMMARY_ID, notification2);
+
+    }
+
     private void expandableNotification() {
-        Notification notification = new NotificationCompat.Builder(this)
+        Notification notification = new NotificationCompat.Builder(this, KEY_TEXT_REPLY)
                 .setContentTitle("expandable title")
                 .setContentText("expandable content")
                 .setSmallIcon(R.drawable.icon_guide)
                 .setLargeIcon(largeBitmap)
 //                .setStyle(new NotificationCompat.BigPictureStyle()
 //                        .bigPicture(largeBitmap)
-    //                        .bigLargeIcon(null))
+                //                        .bigLargeIcon(null))
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("To make the image appear as a" +
                                 " thumbnail only while the notification" +

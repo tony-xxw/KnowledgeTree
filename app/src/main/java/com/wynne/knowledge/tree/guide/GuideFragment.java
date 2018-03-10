@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.guide.appbar.AppbarActivity;
+import com.wynne.knowledge.tree.guide.constrain.ConstraintActivity;
+import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
+import com.wynne.knowledge.tree.guide.notification.NotificationActivity;
 
 /**
  * @author Wynne
@@ -31,6 +35,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_implicit).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_cl).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_notification).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_actionbar).setOnClickListener(this);
     }
 
     public static GuideFragment getInstance() {
@@ -50,6 +55,9 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_notification:
                 startActivity(new Intent(getActivity(), NotificationActivity.class));
+                break;
+            case R.id.btn_actionbar:
+                startActivity(new Intent(getActivity(), AppbarActivity.class));
                 break;
             default:
                 break;
