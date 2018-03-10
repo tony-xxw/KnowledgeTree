@@ -15,9 +15,9 @@
     <string name="update_notification">更新通知</string>
     <string name="delete_notification">删除</string>
     <string name="reply">回复信息</string>
-<<<<<<< HEAD
+
     <string name="bookmark">bookmark</string>
-=======
+
     <string name="progress_notification">progress通知</string>
     <string name="progress_title_notification">progress标题</string>
     <string name="expandable_notification">扩展Notification</string>
@@ -28,7 +28,7 @@
     <string name="action_settings">设置</string>
     <string name="action_search">搜索</string>
     <string name="share">分享</string>
->>>>>>> bb6608613f2790eb73216f1703fd224e95104478
+    <string name="task">任务栈</string>
 
 
     <string-array name="spinner_item">

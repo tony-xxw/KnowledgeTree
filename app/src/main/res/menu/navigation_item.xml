@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-
     <item
         android:id="@+id/guide"
         android:icon="@drawable/icon_guide"
@@ -14,7 +13,7 @@
         android:title="@string/custom" />
 
     <item
+        android:id="@+id/bookmark"
         android:icon="@drawable/icon_bookmark"
-        android:title="@string/bookmark"
-        />
+        android:title="@string/bookmark" />
 </menu>

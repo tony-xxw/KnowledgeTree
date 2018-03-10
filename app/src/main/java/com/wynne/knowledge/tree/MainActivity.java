@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wynne.knowledge.tree.bookmark.BookMarkFragment;
 import com.wynne.knowledge.tree.custom.CustomFragment;
 import com.wynne.knowledge.tree.guide.GuideFragment;
 
@@ -64,6 +65,12 @@ public class MainActivity extends FragmentActivity implements InitContent {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fl_content, GuideFragment.getInstance(), "guide")
                             .addToBackStack("guide")
+                            .commit();
+                    return true;
+                case R.id.bookmark:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fl_content, BookMarkFragment.getInstance(), "bookmark")
+                            .addToBackStack("bookmark")
                             .commit();
                     return true;
                 default:
