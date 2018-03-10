@@ -18,4 +18,9 @@
         android:id="@+id/btn_notification"
         style="@style/BtnCommon"
         android:text="@string/use_notification" />
+
+    <Button
+        android:id="@+id/btn_actionbar"
+        style="@style/BtnCommon"
+        android:text="@string/use_appbar" />
 </LinearLayout>

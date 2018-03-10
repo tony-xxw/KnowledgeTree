@@ -19,13 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".guide.ImplicitActivity"
+            android:name=".guide.filter.ImplicitActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".guide.ConstraintActivity"
+            android:name=".guide.constrain.ConstraintActivity"
             android:launchMode="singleTop" />
 
-        <activity android:name=".guide.FilterActivity">
+        <activity android:name=".guide.filter.FilterActivity">
             <intent-filter>
                 <action android:name="com.wynne.knowledge.tree.Filter" />
 
@@ -39,11 +39,23 @@
             android:name=".custom.ClassLoaderActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".guide.NotificationActivity"
+            android:name=".guide.notification.NotificationActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".guide.NotificationPendActivity" />
+        <activity android:name=".guide.notification.NotificationPendActivity" />
 
-        <receiver android:name=".guide.NotificationActivity$MyBroadCast" />
+        <receiver android:name=".guide.notification.NotificationActivity$MyBroadCast" />
+
+        <activity
+            android:name=".guide.appbar.AppbarActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
     </application>
 
 </manifest>

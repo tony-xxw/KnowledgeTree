@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.guide;
+package com.wynne.knowledge.tree.guide.filter;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
