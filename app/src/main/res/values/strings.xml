@@ -29,6 +29,7 @@
     <string name="action_search">搜索</string>
     <string name="share">分享</string>
     <string name="task">任务栈</string>
+    <string name="task_activity">任务栈</string>
 
 
     <string-array name="spinner_item">

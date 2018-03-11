@@ -60,6 +60,10 @@
         <activity
             android:name=".bookmark.activity.SampleActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".bookmark.activity.TaskActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
