@@ -13,6 +13,7 @@ import com.wynne.knowledge.tree.guide.appbar.AppbarActivity;
 import com.wynne.knowledge.tree.guide.constrain.ConstraintActivity;
 import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
 import com.wynne.knowledge.tree.guide.notification.NotificationActivity;
+import com.wynne.knowledge.tree.guide.systembar.StatusBarActivity;
 
 /**
  * @author Wynne
@@ -36,6 +37,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_cl).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_notification).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_actionbar).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_status).setOnClickListener(this);
     }
 
     public static GuideFragment getInstance() {
@@ -58,6 +60,9 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_actionbar:
                 startActivity(new Intent(getActivity(), AppbarActivity.class));
+                break;
+            case R.id.btn_status:
+                startActivity(new Intent(getActivity(), StatusBarActivity.class));
                 break;
             default:
                 break;

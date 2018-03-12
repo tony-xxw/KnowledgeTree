@@ -23,4 +23,9 @@
         android:id="@+id/btn_actionbar"
         style="@style/BtnCommon"
         android:text="@string/use_appbar" />
+
+    <Button
+        android:id="@+id/btn_status"
+        style="@style/BtnCommon"
+        android:text="@string/status_about" />
 </LinearLayout>
