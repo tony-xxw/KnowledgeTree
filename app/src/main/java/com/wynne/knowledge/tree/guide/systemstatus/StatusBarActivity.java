@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.guide.systembar;
+package com.wynne.knowledge.tree.guide.systemstatus;
 
 import android.app.ActionBar;
 import android.os.Build;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 
 import com.wynne.knowledge.tree.R;

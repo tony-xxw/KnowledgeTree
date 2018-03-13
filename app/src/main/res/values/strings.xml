@@ -31,6 +31,7 @@
     <string name="task">任务栈</string>
     <string name="task_activity">任务栈</string>
     <string name="status_about">系统拦 相关</string>
+    <string name="service_about">服务相关</string>
 
 
     <string-array name="spinner_item">

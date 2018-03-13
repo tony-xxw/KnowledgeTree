@@ -65,10 +65,19 @@
             android:name=".bookmark.activity.TaskActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".guide.systembar.StatusBarActivity"
+            android:name=".guide.systemstatus.StatusBarActivity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
+
+        <activity
+            android:name=".guide.service.ServiceActivity"
+            android:launchMode="singleTop" />
+
+
+        <service android:name=".guide.service.StandardService"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
