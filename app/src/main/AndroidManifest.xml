@@ -75,9 +75,9 @@
             android:launchMode="singleTop" />
 
 
-        <service android:name=".guide.service.StandardService"
-            android:exported="false"
-            />
+        <service
+            android:name=".guide.service.StandardService"
+            android:exported="false" />
     </application>
 
 </manifest>
