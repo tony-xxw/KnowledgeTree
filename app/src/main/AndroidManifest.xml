@@ -78,6 +78,21 @@
         <service
             android:name=".guide.service.StandardService"
             android:exported="false" />
+
+        <activity
+            android:name=".bookmark.activity.FlagsActivity"
+            android:launchMode="singleTop">
+
+            <intent-filter>
+                <action android:name="com.wynne.activity.taskactivity" />
+                <action android:name="com.wynne.activity.baskactivity" />
+
+                <category android:name="com.wynne.activity.category.a" />
+                <category android:name="com.wynne.activity.category.b" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

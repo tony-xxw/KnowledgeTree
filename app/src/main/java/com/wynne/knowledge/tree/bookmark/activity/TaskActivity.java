@@ -14,7 +14,6 @@ import com.wynne.knowledge.tree.R;
  * 2.onSaveInstanceState(在异常终止情况下保存信息,如EditText 和View的状态等 在onPause之后调用
  * 3.onRestoreInstanceState (在异常终止情况下获取保存信息,在onStar之后调用
  *
- *
  * @author XXW
  * @date 2018/3/11
  */
@@ -38,6 +37,12 @@ public class TaskActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, TaskActivity.class);
                 intent.putExtra("time", System.currentTimeMillis());
                 startActivity(intent);
+                break;
+            case R.id.btn_filter:
+                Intent filter = new Intent();
+                filter.setAction("com.wynne.activity.baskactivity");
+                filter.addCategory("com.wynne.activity.category.a");
+                startActivity(filter);
                 break;
             default:
                 break;
