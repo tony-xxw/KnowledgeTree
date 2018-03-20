@@ -79,6 +79,8 @@
             android:name=".guide.service.StandardService"
             android:exported="false" />
 
+        <service android:name=".guide.service.BindService" />
+
         <activity
             android:name=".bookmark.activity.FlagsActivity"
             android:launchMode="singleTop">
