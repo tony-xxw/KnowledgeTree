@@ -15,6 +15,7 @@ import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
 import com.wynne.knowledge.tree.guide.notification.NotificationActivity;
 import com.wynne.knowledge.tree.guide.service.ServiceActivity;
 import com.wynne.knowledge.tree.guide.systemstatus.StatusBarActivity;
+import com.wynne.knowledge.tree.guide.webview.WebViewActivity;
 
 /**
  * @author Wynne
@@ -40,6 +41,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_actionbar).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_status).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_service).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_webview).setOnClickListener(this);
     }
 
     public static GuideFragment getInstance() {
@@ -68,6 +70,9 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_service:
                 startActivity(new Intent(getActivity(), ServiceActivity.class));
+                break;
+            case R.id.btn_webview:
+                startActivity(new Intent(getActivity(), WebViewActivity.class));
                 break;
             default:
                 break;

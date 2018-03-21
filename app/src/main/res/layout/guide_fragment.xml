@@ -33,4 +33,9 @@
         android:id="@+id/btn_service"
         style="@style/BtnCommon"
         android:text="@string/service_about" />
+
+    <Button
+        android:id="@+id/btn_webview"
+        style="@style/BtnCommon"
+        android:text="@string/webview_about" />
 </LinearLayout>
