@@ -38,7 +38,7 @@
         </activity>
 
         <activity
-            android:name=".custom.ClassLoaderActivity"
+            android:name=".custom.loader.ClassLoaderActivity"
             android:launchMode="singleTop" />
         <activity
             android:name=".guide.notification.NotificationActivity"
@@ -88,6 +88,10 @@
             android:launchMode="singleTop" />
 
         <activity
+            android:name=".custom.ipc.IpcActivity"
+            android:launchMode="singleTop" />
+
+        <activity
             android:name=".bookmark.activity.FlagsActivity"
             android:launchMode="singleTop">
 
@@ -107,6 +111,10 @@
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
+
+        <service
+            android:name=".custom.ipc.BookManagerService"
+            android:process=":remote" />
     </application>
 
 </manifest>

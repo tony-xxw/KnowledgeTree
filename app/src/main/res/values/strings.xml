@@ -34,6 +34,7 @@
     <string name="service_about">服务相关</string>
     <string name="filter">过滤规则</string>
     <string name="webview_about">WebView</string>
+    <string name="ipc">IPC机制</string>
 
 
     <string-array name="spinner_item">

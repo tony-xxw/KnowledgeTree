@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
+import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
 
 /**
  * @author XXW
@@ -30,6 +32,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = inflater.inflate(R.layout.custom_fragment, null);
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
         return mContentView;
     }
 
@@ -38,6 +41,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.btn_classloader:
                 startActivity(new Intent(getActivity(), ClassLoaderActivity.class));
+                break;
+            case R.id.btn_ipc:
+                startActivity(new Intent(getActivity(), IpcActivity.class));
                 break;
             default:
                 break;
