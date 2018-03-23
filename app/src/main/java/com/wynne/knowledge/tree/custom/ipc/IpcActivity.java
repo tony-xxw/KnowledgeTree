@@ -4,7 +4,9 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import android.util.Log;
 
 import com.aidl.sample.Book;
 import com.aidl.sample.IBookManager;
+import com.aidl.sample.IOnNewBookArrivedListener;
 import com.wynne.knowledge.tree.R;
 
 import java.util.List;
@@ -35,14 +38,36 @@ public class IpcActivity extends AppCompatActivity {
         bindService(intent, connection, BIND_AUTO_CREATE);
     }
 
+
+    private Handler mHandle = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1:
+                    Log.d("XXW", "newBook " + msg.obj);
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    };
+
+    private IBookManager iBookManager;
+
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             IBookManager manager = IBookManager.Stub.asInterface(service);
             try {
+                iBookManager = manager;
                 List<Book> list = manager.getBookList();
                 Log.d("XXW", "query book list,list type " + list.getClass().getCanonicalName());
                 Log.d("XXW", "query book list:" + list.toString());
+                Book newBook = new Book(3, "Android艺术探索");
+                iBookManager.addBook(newBook);
+                List<Book> newList = manager.getBookList();
+                Log.d("XXW", "query book list:" + newList.toString());
+                manager.registerListener(listener);
 
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -51,14 +76,32 @@ public class IpcActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+            iBookManager = null;
+        }
+    };
 
+
+    IOnNewBookArrivedListener listener = new IOnNewBookArrivedListener.Stub() {
+
+        @Override
+        public void onNewBookArrived(Book newBook) throws RemoteException {
+            mHandle.obtainMessage(1, newBook).sendToTarget();
         }
     };
 
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+
+        if (iBookManager != null && iBookManager.asBinder().isBinderAlive()) {
+            try {
+                iBookManager.unregisterListener(listener);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
         unbindService(connection);
+        super.onDestroy();
     }
+
 }
