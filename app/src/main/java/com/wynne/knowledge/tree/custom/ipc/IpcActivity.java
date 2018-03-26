@@ -11,6 +11,7 @@ import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.aidl.sample.Book;
 import com.aidl.sample.IBookManager;
@@ -102,6 +103,16 @@ public class IpcActivity extends AppCompatActivity {
         }
         unbindService(connection);
         super.onDestroy();
+    }
+
+    public void onClick(View view) throws RemoteException {
+        switch (view.getId()) {
+            case R.id.test_remote:
+                iBookManager.getBookList();
+                break;
+            default:
+                break;
+        }
     }
 
 }

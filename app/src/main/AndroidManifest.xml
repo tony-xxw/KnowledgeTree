@@ -3,6 +3,9 @@
     package="com.wynne.knowledge.tree">
 
 
+    <permission
+        android:name="com.wynne.knowledge.tree.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"

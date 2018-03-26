@@ -4,4 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <Button
+        android:id="@+id/test_remote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="@string/test_data" />
 </LinearLayout>
