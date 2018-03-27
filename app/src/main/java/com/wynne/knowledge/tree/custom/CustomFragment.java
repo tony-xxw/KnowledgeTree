@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
+import com.wynne.knowledge.tree.custom.ipc.ProviderActivity;
 import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
 
 /**
@@ -33,6 +34,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView = inflater.inflate(R.layout.custom_fragment, null);
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_ipc_provider).setOnClickListener(this);
         return mContentView;
     }
 
@@ -44,6 +46,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_ipc:
                 startActivity(new Intent(getActivity(), IpcActivity.class));
+                break;
+            case R.id.btn_ipc_provider:
+                startActivity(new Intent(getActivity(), ProviderActivity.class));
                 break;
             default:
                 break;

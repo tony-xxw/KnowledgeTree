@@ -109,6 +109,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".custom.ipc.ProviderActivity"
+            android:launchMode="singleTop" />
+
 
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
@@ -118,6 +122,15 @@
         <service
             android:name=".custom.ipc.BookManagerService"
             android:process=":remote" />
+
+
+        <!--authorities 必须保证唯一性 -->
+        <!--permission  增加权限 外界需要声明权限才能访问 -->
+        <provider
+            android:name=".custom.ipc.BookProvider"
+            android:authorities="com.wynne.knowledge.tree.custom.ipc.provider"
+            android:permission="com.wynne.PROVIDER"
+            android:process=":provider" />
     </application>
 
 </manifest>
