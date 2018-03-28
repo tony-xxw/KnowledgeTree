@@ -2,55 +2,95 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#cccccc"
     android:orientation="vertical">
 
     <com.wynne.knowledge.tree.custom.tray.TrayViewBottom
-        android:id="@+id/tvb_bottom"
+        android:id="@+id/tv_bottom"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
 
 
     <com.wynne.knowledge.tree.custom.tray.TrayViewGroup
+        android:id="@+id/tv_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center"
-        android:layout_marginTop="10dp">
+        android:layout_gravity="top|center">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/google_plus"
-            app:civ_border_color="#FF000000" />
+        <LinearLayout style="@style/menu_ll">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/google_plus"
-            app:civ_border_color="#FF000000" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/google_plus"
-            app:civ_border_color="#FF000000" />
+            <TextView
+                style="@style/menu_describe"
+                android:text="考场" />
+        </LinearLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="40dp"
-            android:src="@drawable/google_plus"
-            app:civ_border_color="#000000" />
+        <LinearLayout style="@style/menu_ll">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="40dp"
-            android:src="@drawable/google_plus"
-            app:civ_border_color="#000000" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
 
+            <TextView
+                style="@style/menu_describe"
+                android:text="综合" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/menu_ll">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
+
+            <TextView
+                style="@style/menu_describe"
+                android:text="班级动态" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/menu_ll">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
+
+            <TextView
+                style="@style/menu_describe"
+                android:text="设置" />
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/menu_ll">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
+
+            <TextView
+                style="@style/menu_describe"
+                android:text="学生刷卡" />
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/menu_ll">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                style="@style/menu_circle"
+                android:src="@drawable/google_plus"
+                app:civ_border_color="#FF000000" />
+
+            <TextView
+                style="@style/menu_describe"
+                android:text="教师刷卡" />
+        </LinearLayout>
 
     </com.wynne.knowledge.tree.custom.tray.TrayViewGroup>
 

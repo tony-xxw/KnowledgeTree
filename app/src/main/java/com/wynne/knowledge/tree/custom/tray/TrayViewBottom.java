@@ -22,8 +22,10 @@ public class TrayViewBottom extends View {
     private Paint mPaint;
     private Path mPath;
     PathEffect effect;
-    private int defulatHeight = 100;
+    private int DEFULATHEIGHT = 90;
 
+
+    private TrayViewGroup mTrayViewGroup;
 
     public TrayViewBottom(Context context) {
         super(context);
@@ -40,14 +42,25 @@ public class TrayViewBottom extends View {
         mPaint.setPathEffect(effect);
     }
 
+    public void setmTrayViewGroup(TrayViewGroup mTrayViewGroup) {
+        this.mTrayViewGroup = mTrayViewGroup;
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        mPath.moveTo(200, 100);
-        mPath.lineTo(900, 100);
-        mPath.lineTo(1000, 200);
-        mPath.lineTo(100, 200);
+        int tvGroupLeft = 0;
+        int tvGroupRight = 0;
+        if (mTrayViewGroup != null) {
+            tvGroupLeft = mTrayViewGroup.getLeft();
+            tvGroupRight = mTrayViewGroup.getRight();
+
+
+        }
+        mPath.moveTo(tvGroupLeft - 50, DEFULATHEIGHT);
+        mPath.lineTo(tvGroupRight + 50, DEFULATHEIGHT);
+        mPath.lineTo(tvGroupRight + 150, DEFULATHEIGHT * 2);
+        mPath.lineTo(tvGroupLeft - 150, DEFULATHEIGHT * 2);
         mPath.close();
         canvas.drawPath(mPath, mPaint);
     }

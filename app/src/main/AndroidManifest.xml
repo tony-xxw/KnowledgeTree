@@ -42,7 +42,8 @@
 
         <activity
             android:name=".custom.loader.ClassLoaderActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".guide.notification.NotificationActivity"
             android:launchMode="singleTop" />
