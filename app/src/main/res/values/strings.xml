@@ -37,6 +37,7 @@
     <string name="ipc">IPC机制</string>
     <string name="test_data">测试客户端调用远程服务的时候，不能执行好使操作</string>
     <string name="ipc_provider">ContentResolver的IPC方式</string>
+    <string name="ipc_socket">Socket跨进程方式</string>
 
 
     <string-array name="spinner_item">

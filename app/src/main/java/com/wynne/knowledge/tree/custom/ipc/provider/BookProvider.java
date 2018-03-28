@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.custom.ipc;
+package com.wynne.knowledge.tree.custom.ipc.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

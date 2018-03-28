@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.knowledge.tree">
 
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <permission
         android:name="com.wynne.knowledge.tree.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
-    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -111,10 +115,12 @@
         </activity>
 
         <activity
-            android:name=".custom.ipc.ProviderActivity"
+            android:name=".custom.ipc.provider.ProviderActivity"
             android:launchMode="singleTop" />
 
-
+        <activity
+            android:name=".custom.ipc.socket.SocketActivity"
+            android:launchMode="singleTop" />
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
@@ -124,11 +130,15 @@
             android:name=".custom.ipc.BookManagerService"
             android:process=":remote" />
 
+        <service
+            android:name=".custom.ipc.socket.TCPService"
+            tools:remove=":remote" />
+
 
         <!--authorities 必须保证唯一性 -->
         <!--permission  增加权限 外界需要声明权限才能访问 -->
         <provider
-            android:name=".custom.ipc.BookProvider"
+            android:name=".custom.ipc.provider.BookProvider"
             android:authorities="com.wynne.knowledge.tree.custom.ipc.provider"
             android:permission="com.wynne.PROVIDER"
             android:process=":provider" />

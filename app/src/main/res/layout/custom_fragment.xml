@@ -25,4 +25,11 @@
         android:layout_height="wrap_content"
         android:text="@string/ipc_provider" />
 
+    <Button
+        android:id="@+id/btn_socket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ipc_socket" />
+
+
 </LinearLayout>
