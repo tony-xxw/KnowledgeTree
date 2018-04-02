@@ -121,6 +121,10 @@
         <activity
             android:name=".custom.ipc.socket.SocketActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".custom.ipc.binder.BinderPoolActivity"
+            android:launchMode="singleTop" />
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
@@ -132,6 +136,10 @@
 
         <service
             android:name=".custom.ipc.socket.TCPService"
+            tools:remove=":remote" />
+
+        <service
+            android:name=".custom.ipc.binder.BinderPoolService"
             tools:remove=":remote" />
 
 

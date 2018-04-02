@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
+import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.tree.custom.ipc.provider.ProviderActivity;
 import com.wynne.knowledge.tree.custom.ipc.socket.SocketActivity;
 import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
@@ -37,6 +38,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc_provider).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_socket).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_binder_poll).setOnClickListener(this);
         return mContentView;
     }
 
@@ -54,6 +56,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_socket:
                 startActivity(new Intent(getActivity(), SocketActivity.class));
+                break;
+            case R.id.btn_binder_poll:
+                startActivity(new Intent(getActivity(), BinderPoolActivity.class));
                 break;
             default:
                 break;
