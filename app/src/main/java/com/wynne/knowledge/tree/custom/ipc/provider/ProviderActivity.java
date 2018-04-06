@@ -3,7 +3,6 @@ package com.wynne.knowledge.tree.custom.ipc.provider;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,12 @@ import android.util.Log;
 import com.aidl.sample.Book;
 import com.aidl.sample.User;
 import com.wynne.knowledge.tree.R;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * @author Wynne
@@ -63,5 +68,25 @@ public class ProviderActivity extends AppCompatActivity {
         userCursor.close();
 
 
+        serializeImpl();
+    }
+
+    private void serializeImpl() {
+        User user = new User(1, "Wynne", true);
+        Log.d("XXW", "user :" + user.toString());
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("cache.txt"));
+            out.writeObject(user);
+            out.close();
+
+
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("cache.txt"));
+            user = (User) input.readObject();
+            Log.d("XXW", "user :" + user.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
