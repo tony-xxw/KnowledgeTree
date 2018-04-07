@@ -69,7 +69,7 @@ public class ProviderActivity extends AppCompatActivity {
 
 
         serializeImpl();
-    }
+    } 
 
     private void serializeImpl() {
         User user = new User(1, "Wynne", true);
