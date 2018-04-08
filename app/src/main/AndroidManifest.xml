@@ -5,7 +5,10 @@
 
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <permission
         android:name="com.wynne.knowledge.tree.permission.ACCESS_BOOK_SERVICE"
@@ -124,6 +127,15 @@
 
         <activity
             android:name=".custom.ipc.binder.BinderPoolActivity"
+            android:launchMode="singleTop" />
+
+
+        <activity
+            android:name=".custom.audio.MediaActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".custom.audio.AudioActivity"
             android:launchMode="singleTop" />
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
