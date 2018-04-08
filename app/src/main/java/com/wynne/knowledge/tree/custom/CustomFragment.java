@@ -1,7 +1,11 @@
 package com.wynne.knowledge.tree.custom;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.custom.audio.AudioActivity;
+import com.wynne.knowledge.tree.custom.audio.MediaActivity;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
 import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.tree.custom.ipc.provider.ProviderActivity;
@@ -39,6 +45,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_ipc_provider).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_socket).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_binder_poll).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_audio).setOnClickListener(this);
         return mContentView;
     }
 
@@ -60,8 +67,40 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_binder_poll:
                 startActivity(new Intent(getActivity(), BinderPoolActivity.class));
                 break;
+            case R.id.btn_audio:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    int checkPermission = getActivity().checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+
+                    if (checkPermission != PackageManager.PERMISSION_GRANTED) {
+                        requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                        return;
+                    } else {
+                        startActivity(new Intent(getActivity(), AudioActivity.class));
+                    }
+                } else {
+                    startActivity(new Intent(getActivity(), AudioActivity.class));
+                }
+                break;
             default:
                 break;
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {//禁止
+
+                }
+
+                break;
+
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

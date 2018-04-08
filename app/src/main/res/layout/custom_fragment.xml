@@ -38,4 +38,10 @@
         android:layout_height="wrap_content"
         android:text="@string/ipc_binder_poll" />
 
+
+    <Button
+        android:id="@+id/btn_audio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/audio" />
 </LinearLayout>

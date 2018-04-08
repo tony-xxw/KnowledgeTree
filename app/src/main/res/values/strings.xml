@@ -39,6 +39,7 @@
     <string name="ipc_provider">ContentResolver的IPC方式</string>
     <string name="ipc_socket">Socket跨进程方式</string>
     <string name="ipc_binder_poll">binder池</string>
+    <string name="audio">录音</string>
 
 
     <string-array name="spinner_item">
