@@ -53,12 +53,14 @@ public class BookManagerService extends Service {
         @Override
         public List<Book> getBookList() throws RemoteException {
             SystemClock.sleep(5000);
+            Log.d("XXW", "addBook ==" + Thread.currentThread().getName());
             return mBookList;
         }
 
         @Override
         public void addBook(Book book) throws RemoteException {
             mBookList.add(book);
+
         }
 
         @Override
@@ -108,6 +110,7 @@ public class BookManagerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d("XXW", "onCreate  Service");
         mBookList.add(new Book(1, "Android"));
         mBookList.add(new Book(2, "IOS"));
         new Thread(new ServiceWorker()).start();

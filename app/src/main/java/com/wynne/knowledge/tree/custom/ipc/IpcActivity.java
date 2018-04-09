@@ -29,12 +29,13 @@ import java.util.List;
  * @date 2018/3/22
  */
 
-public class IpcActivity extends AppCompatActivity {
+public class IpcActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ipc_activity);
+        findViewById(R.id.test_remote).setOnClickListener(this);
         Intent intent = new Intent(this, BookManagerService.class);
         bindService(intent, connection, BIND_AUTO_CREATE);
     }
@@ -105,10 +106,15 @@ public class IpcActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void onClick(View view) throws RemoteException {
+    @Override
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.test_remote:
-                iBookManager.getBookList();
+                try {
+                    iBookManager.getBookList();
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
                 break;
             default:
                 break;
