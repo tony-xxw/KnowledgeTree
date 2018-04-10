@@ -140,6 +140,7 @@
 
         <activity
             android:name=".custom.view.ViewActivity"
+            android:label="@string/view"
             android:launchMode="singleTop" />
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
