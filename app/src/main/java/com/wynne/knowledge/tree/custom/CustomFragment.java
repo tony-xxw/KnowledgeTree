@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.custom.audio.AudioActivity;
-import com.wynne.knowledge.tree.custom.audio.MediaActivity;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
 import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.tree.custom.ipc.provider.ProviderActivity;
 import com.wynne.knowledge.tree.custom.ipc.socket.SocketActivity;
 import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
+import com.wynne.knowledge.tree.custom.view.ViewActivity;
 
 /**
  * @author XXW
@@ -46,6 +46,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_socket).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_binder_poll).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_audio).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_view).setOnClickListener(this);
         return mContentView;
     }
 
@@ -66,6 +67,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_binder_poll:
                 startActivity(new Intent(getActivity(), BinderPoolActivity.class));
+                break;
+            case R.id.btn_view:
+                startActivity(new Intent(getActivity(), ViewActivity.class));
                 break;
             case R.id.btn_audio:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
