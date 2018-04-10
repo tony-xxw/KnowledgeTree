@@ -14,29 +14,12 @@
             style="@style/BtnCommon"
             android:text="位置参数" />
 
-        <Button
-            android:id="@+id/btn_view_motionEvent"
-            style="@style/BtnCommon"
-            android:text="MotionEvent" />
-
-        <Button
-            android:id="@+id/btn_view_touchSlop"
-            style="@style/BtnCommon"
-            android:text="TouchSlop" />
-
-        <Button
-            android:id="@+id/btn_view_vt"
-            style="@style/BtnCommon"
-            android:text="VelocityTracker" />
-
-        <Button
-            android:id="@+id/btn_view_gd"
-            style="@style/BtnCommon"
-            android:text="GestureDetecotor" />
 
         <Button
             android:id="@+id/btn_view_scroller"
-            style="@style/BtnCommon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Scroller" />
     </LinearLayout>
 </ScrollView>
