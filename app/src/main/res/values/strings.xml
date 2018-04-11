@@ -40,6 +40,7 @@
     <string name="ipc_socket">Socket跨进程方式</string>
     <string name="ipc_binder_poll">binder池</string>
     <string name="audio">录音</string>
+    <string name="view">自定义View</string>
 
 
     <string-array name="spinner_item">

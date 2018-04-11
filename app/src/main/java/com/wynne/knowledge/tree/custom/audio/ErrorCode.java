@@ -3,7 +3,8 @@ package com.wynne.knowledge.tree.custom.audio;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.qsedu.electronic.bp.R;
+import com.wynne.knowledge.tree.R;
+
 
 /**
  * Created by Wynne on 2018/4/10.
@@ -21,12 +22,13 @@ public class ErrorCode {
             case SUCCESS:
                 return "success";
             case E_NOSDCARD:
-                return vContext.getResources().getString(R.string.error_no_sdcard);
+//                return vContext.getResources().getString(R.string.error_no_sdcard);
             case E_STATE_RECODING:
-                return vContext.getResources().getString(R.string.error_state_record);
+//                return vContext.getResources().getString(R.string.error_state_record);
             case E_UNKOWN:
             default:
-                return vContext.getResources().getString(R.string.error_unknown);
+                return "";
+//                return vContext.getResources().getString(R.string.error_unknown);
 
         }
     }
