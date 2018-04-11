@@ -17,21 +17,18 @@ import com.wynne.knowledge.tree.R;
  * @date 2018/4/10
  */
 
-public class ViewActivity extends AppCompatActivity {
+public class ViewActivity extends AppCompatActivity implements View.OnTouchListener {
     private Button buttonScroll;
+    private ScrollerView mScroller;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_activity);
         buttonScroll = (Button) findViewById(R.id.btn_view_scroller);
-        buttonScroll.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-//                scrollSample((int) event.getX(), (int) event.getY());
-                return false;
-            }
-        });
+        mScroller = (ScrollerView) findViewById(R.id.sv_sample);
+        mScroller.smoothScrollTo(200, 0);
+        buttonScroll.setOnTouchListener(this);
         buttonScroll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +73,7 @@ public class ViewActivity extends AppCompatActivity {
      * @param y
      */
     private void scrollSample(int x, int y) {
-        buttonScroll.scrollBy(x, y);
+        buttonScroll.scrollTo(x, y);
         Log.d("XXW", "scroll Y :" + buttonScroll.getScrollY());
         Log.d("XXW", " Y :" + y);
     }
@@ -91,4 +88,11 @@ public class ViewActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
+    }
+
+
 }

@@ -21,5 +21,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Scroller" />
+
+        <com.wynne.knowledge.tree.custom.view.ScrollerView
+            android:id="@+id/sv_sample"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent" />
     </LinearLayout>
 </ScrollView>
