@@ -43,7 +43,8 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.webview_activity);
         findViewById(R.id.btn_call).setOnClickListener(this);
         mWebView = (WebView) findViewById(R.id.wv_sample);
-        mWebView.loadUrl(webLocal);
+//        mWebView.loadUrl(webLocal);
+        mWebView.loadUrl("https://www.zhidianbao.cn:8005/qs_yefang/screen/mytest.html?corpId=ding6f34e443f18c3ecc");
         //webInfo = mWebView.getCurrentWebViewPackage();  7.0开始可以 选择不同版本的Webview
         mWebSetting = mWebView.getSettings();
         //启动JavaScript
@@ -78,7 +79,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_call:
-                mWebView.evaluateJavascript("javascript:callJS()", new ValueCallback<String>() {
+                mWebView.evaluateJavascript("mytest:showjin()", new ValueCallback<String>() {
                     @Override
                     public void onReceiveValue(String value) {
                         //此处为 js 返回的结果
