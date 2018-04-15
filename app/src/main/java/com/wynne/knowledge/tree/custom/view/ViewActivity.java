@@ -51,18 +51,19 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
                 Log.d("XXW", "RawY :" + event.getRawY());
                 //view相对本身左上角的值
                 Log.d("XXW", "Y :" + event.getY());
+                Log.d("XXW", "Y :" + event.getY());
 
 
                 velocityTracker.clear();
                 velocityTracker.recycle();
                 return false;
+
             }
         });
 
 
         Log.d("XXW", "滑动最小距离 :" + ViewConfiguration.get(getBaseContext()).getScaledTouchSlop());
         Log.d("XXW", "DPI  :" + getResources().getDisplayMetrics().density);
-
 
     }
 
