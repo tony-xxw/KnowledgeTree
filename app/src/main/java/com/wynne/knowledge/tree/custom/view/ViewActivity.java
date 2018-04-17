@@ -48,7 +48,7 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
                 Log.d("XXW", "xVelocity :" + xVelocity);
                 Log.d("XXW", "yVelocity :" + yVelocity);
                 //View相对屏幕的x,y值
-                Log.d("XXW", "RawY :" + event.getRawY());   
+                Log.d("XXW", "RawY :" + event.getRawY());
                 //view相对本身左上角的值
                 Log.d("XXW", "Y :" + event.getY());
                 Log.d("XXW", "Y :" + event.getY());
@@ -92,6 +92,16 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+            default:
+                break;
+        }
         return false;
     }
 
