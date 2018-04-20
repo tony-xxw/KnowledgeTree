@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class MainActivity extends FragmentActivity implements InitContent {
         setContentView(R.layout.main_activity);
         initDate();
         initView();
+        Log.d("XXW", "empty");
     }
 
     @Override
