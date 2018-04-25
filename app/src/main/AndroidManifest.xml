@@ -79,8 +79,7 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".guide.systemstatus.StatusBarActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop" />
 
 
         <activity
