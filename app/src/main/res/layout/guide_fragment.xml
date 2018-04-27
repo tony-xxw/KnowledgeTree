@@ -38,4 +38,9 @@
         android:id="@+id/btn_webview"
         style="@style/BtnCommon"
         android:text="@string/webview_about" />
+
+    <Button
+        android:id="@+id/btn_material"
+        style="@style/BtnCommon"
+        android:text="@string/material" />
 </LinearLayout>

@@ -141,6 +141,11 @@
             android:name=".custom.view.ViewActivity"
             android:label="@string/view"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".guide.material.MaterialActivity"
+            android:launchMode="singleTop" />
+
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"

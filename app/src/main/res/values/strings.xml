@@ -41,6 +41,9 @@
     <string name="ipc_binder_poll">binder池</string>
     <string name="audio">录音</string>
     <string name="view">自定义View</string>
+    <string name="material">Material</string>
+    <string name="my_tickets">我的电影票</string>
+    <string name="please_login">请登录</string>
 
 
     <string-array name="spinner_item">
