@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KnowledgeTree.iml" filepath="$PROJECT_DIR$/KnowledgeTree.iml" />
+      <module fileurl="file://D:\MyGithub\KnowledgeTree-master\KnowledgeTree.iml" filepath="D:\MyGithub\KnowledgeTree-master\KnowledgeTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KnowledgeTree-master.iml" filepath="$PROJECT_DIR$/KnowledgeTree-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
