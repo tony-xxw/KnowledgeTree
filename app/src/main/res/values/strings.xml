@@ -44,7 +44,7 @@
     <string name="material">Material</string>
     <string name="my_tickets">我的电影票</string>
     <string name="please_login">请登录</string>
-
+    <string name="thread_poll">线程池</string>
 
     <string-array name="spinner_item">
         <item>官方文档</item>

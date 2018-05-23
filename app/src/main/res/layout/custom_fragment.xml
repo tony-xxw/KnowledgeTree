@@ -50,4 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/view" />
+
+    <Button
+        android:id="@+id/btn_thread_poll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/thread_poll" />
 </LinearLayout>

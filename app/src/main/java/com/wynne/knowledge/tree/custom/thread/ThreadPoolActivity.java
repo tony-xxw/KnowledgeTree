@@ -2,14 +2,15 @@ package com.wynne.knowledge.tree.custom.thread;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.wynne.knowledge.tree.R;
 
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -31,29 +32,51 @@ public class ThreadPoolActivity extends AppCompatActivity {
 
 
         initThreadPool();
+        initNewSingerThreadPool();
+        initNewFixedThreadPool();
+    }
+
+    private void initNewFixedThreadPool() {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                5,
+                10,
+                200,
+                TimeUnit.MILLISECONDS,
+                new ArrayBlockingQueue<Runnable>(5));
+
+        for (int i = 0; i < 15; i++) {
+            MyTask myTask = new MyTask(i);
+            executor.execute(myTask);
+            Log.d("XXW", "线程池中线程数目：" + executor.getPoolSize() + "，队列中等待执行的任务数目：" +
+                    executor.getQueue().size() + "，已执行玩别的任务数目：" + executor.getCompletedTaskCount());
+        }
+    }
+
+    private void initNewSingerThreadPool() {
+        ExecutorService executors = Executors.newFixedThreadPool(10);
     }
 
     private void initThreadPool() {
-        executor = new ThreadPoolExecutor(
-                2,
-                2,
-                30,
-                TimeUnit.SECONDS,
-                new SynchronousQueue<Runnable>(),
-                new ThreadFactory() {
-                    @Override
-                    public Thread newThread(@NonNull Runnable r) {
-                        return null;
-                    }
-                }
-        );
+
+    }
 
 
-        /**executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                Log.d("XXW", "runnable");
+    class MyTask implements Runnable {
+        private int taskNum;
+
+        public MyTask(int num) {
+            this.taskNum = num;
+        }
+
+        @Override
+        public void run() {
+            Log.d("XXW", "正在执行task " + taskNum);
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });*/
+            Log.d("XXW", "task " + taskNum + "执行完毕");
+        }
     }
 }
