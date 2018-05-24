@@ -2,6 +2,7 @@ package com.wynne.knowledge.tree.custom.thread;
 
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,6 +12,8 @@ import com.wynne.knowledge.tree.R;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -32,8 +35,8 @@ public class ThreadPoolActivity extends AppCompatActivity {
 
 
         initThreadPool();
-        initNewSingerThreadPool();
-        initNewFixedThreadPool();
+//        initNewSingerThreadPool();
+//        initNewFixedThreadPool();}
     }
 
     private void initNewFixedThreadPool() {
@@ -53,10 +56,45 @@ public class ThreadPoolActivity extends AppCompatActivity {
     }
 
     private void initNewSingerThreadPool() {
-        ExecutorService executors = Executors.newFixedThreadPool(10);
+
+
+        ThreadPoolExecutor newFixed = new ThreadPoolExecutor(
+                5,
+                5,
+                0L,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(),
+                Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+
+        for (int i = 0; i < 15; i++) {
+            MyTask myTask = new MyTask(i);
+            newFixed.execute(myTask);
+            Log.d("XXW", "线程池中线程数目：" + executor.getPoolSize() + "，队列中等待执行的任务数目：" +
+                    executor.getQueue().size() + "，已执行玩别的任务数目：" + executor.getCompletedTaskCount());
+        }
     }
 
     private void initThreadPool() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(2000);
+            }
+        };
+
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(4);
+        fixedThreadPool.execute(runnable);
+
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        cachedThreadPool.execute(runnable);
+
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(4);
+        scheduledExecutorService.schedule(runnable, 2000, TimeUnit.MILLISECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(runnable, 10, 1000, TimeUnit.MILLISECONDS);
+
+        ExecutorService singleThreadPool = Executors.newSingleThreadExecutor();
+        singleThreadPool.execute(runnable);
+
 
     }
 
