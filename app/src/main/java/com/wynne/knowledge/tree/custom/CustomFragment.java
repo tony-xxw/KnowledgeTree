@@ -19,6 +19,7 @@ import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.tree.custom.ipc.provider.ProviderActivity;
 import com.wynne.knowledge.tree.custom.ipc.socket.SocketActivity;
 import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
+import com.wynne.knowledge.tree.custom.rx.RxJavaActivity;
 import com.wynne.knowledge.tree.custom.thread.ThreadPoolActivity;
 import com.wynne.knowledge.tree.custom.view.ViewActivity;
 
@@ -49,6 +50,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_audio).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_view).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_thread_poll).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_rx).setOnClickListener(this);
         return mContentView;
     }
 
@@ -89,6 +91,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_thread_poll:
                 startActivity(new Intent(getActivity(), ThreadPoolActivity.class));
+                break;
+            case R.id.btn_rx:
+                startActivity(new Intent(getActivity(), RxJavaActivity.class));
                 break;
             default:
                 break;

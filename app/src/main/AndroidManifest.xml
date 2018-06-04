@@ -150,6 +150,10 @@
             android:name=".custom.thread.ThreadPoolActivity"
             android:launchMode="singleTop" />
 
+        <activity
+            android:name=".custom.rx.RxJavaActivity"
+            android:launchMode="singleTop" />
+
         <!--WebView 添加Google浏览器 安全认证-->
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
