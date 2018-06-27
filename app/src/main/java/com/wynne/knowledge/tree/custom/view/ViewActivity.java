@@ -11,6 +11,7 @@ import android.view.ViewConfiguration;
 import android.widget.Button;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.widget.StarView;
 
 /**
  * @author Wynne
@@ -20,6 +21,7 @@ import com.wynne.knowledge.tree.R;
 public class ViewActivity extends AppCompatActivity implements View.OnTouchListener {
     private Button buttonScroll;
     private ScrollerView mScroller;
+    private StarView starView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,10 +29,13 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
         setContentView(R.layout.view_activity);
         buttonScroll = (Button) findViewById(R.id.btn_view_scroller);
         mScroller = (ScrollerView) findViewById(R.id.sv_sample);
+        starView = (StarView) findViewById(R.id.sv_star);
+        starView.setStartMark(7);
+
         mScroller.smoothScrollTo(200, 0);
         buttonScroll.setOnTouchListener(this);
         buttonScroll.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 scrollSample(200);
             }

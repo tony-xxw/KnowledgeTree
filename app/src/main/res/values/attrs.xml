@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StarView">
+        <!--星星个数-->
+        <attr name="starCount" format="integer" />
+        <!--星星间距-->
+        <attr name="starSpace" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--选中的星星图片-->
+        <attr name="starFill" format="reference" />
+        <!--默认显示的星星图片-->
+        <attr name="starDefault" format="reference" />
+    </declare-styleable>
+
+</resources>
