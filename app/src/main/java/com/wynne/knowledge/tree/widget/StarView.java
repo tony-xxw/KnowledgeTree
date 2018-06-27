@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -80,10 +81,10 @@ public class StarView extends View {
             starDark.draw(canvas);
         }
 
-        if (startMark > 1) {
+        if (startMark >= 1) {
             canvas.drawRect(0, 0, starSize, starSize, mPaint);
             if (startMark - (int) (startMark) == 0) {
-                for (int i = 1; i < startMark / 2; i++) {
+                for (int i = 0; i < startMark - 1; i++) {
                     canvas.translate(starSpace + starSize, 0);
                     canvas.drawRect(0, 0, starSize, starSize, mPaint);
                 }
@@ -103,6 +104,8 @@ public class StarView extends View {
             startMark = Math.round(mark * 10) * 1.0f / 10;
         }
 
+        startMark = (float) Math.rint((startMark * starCount) / 10);
+
         invalidate();
     }
 
@@ -115,5 +118,34 @@ public class StarView extends View {
         drawable.setBounds(0, 0, starSize, starSize);
         drawable.draw(canvas);
         return bitmap;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        if (x < 0) {
+            x = 0;
+        }
+
+        /** if (event.getAction() == MotionEvent.ACTION_MOVE) {
+         setStartMark(x / (getMeasuredWidth() / starCount));
+         } else if (event.getAction() == MotionEvent.ACTION_DOWN) {
+         setStartMark(x / (getMeasuredWidth() / starCount));
+         }*/
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                startMark = (float) Math.rint((x / (double) (starSpace + starSize)));
+                invalidate();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                setStartMark(x / (getMeasuredWidth() / starCount));
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+            default:
+                break;
+        }
+        return super.onTouchEvent(event);
     }
 }
