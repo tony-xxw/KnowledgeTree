@@ -34,6 +34,8 @@ public class StatusBarActivity extends AppCompatActivity {
         hideActionBar();
     }
 
+
+    //
     private void saveStatusTextWithImage() {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();

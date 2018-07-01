@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +27,7 @@ public class ImplicitActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.btn_implicit_check).setOnClickListener(this);
         findViewById(R.id.btn_implicit_share).setOnClickListener(this);
         findViewById(R.id.btn_implicit_filter).setOnClickListener(this);
-
+        
     }
 
 

@@ -40,4 +40,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="transparent" parent="@android:style/Theme.Translucent">
+
+    </style>
 </resources>

@@ -32,7 +32,8 @@
         </activity>
         <activity
             android:name=".guide.filter.ImplicitActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"
+            android:theme="@style/transparent" />
         <activity
             android:name=".guide.constrain.ConstraintActivity"
             android:launchMode="singleTop" />

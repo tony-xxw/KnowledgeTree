@@ -41,6 +41,12 @@ public class MainActivity extends FragmentActivity implements InitContent {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("XXW","如果是透明主题 则不会回调onPause");
+    }
+
+    @Override
     public void initDate() {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fl_content, GuideFragment.getInstance(), "guide")
