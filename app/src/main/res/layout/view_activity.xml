@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:StarView="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -27,5 +28,15 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/colorAccent" />
+
+        <com.wynne.knowledge.tree.widget.StarView
+            android:id="@+id/sv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            StarView:starCount="5"
+            StarView:starDefault="@drawable/star_dark"
+            StarView:starFill="@drawable/star_light"
+            StarView:starSize="15dp"
+            StarView:starSpace="5dp" />
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StarView">
+        <!--星星个数-->
+        <attr name="starCount" format="integer" />
+        <!--星星间距-->
+        <attr name="starSpace" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--选中的星星图片-->
+        <attr name="starFill" format="reference" />
+        <!--默认显示的星星图片-->
+        <attr name="starDefault" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ThumbUpView">
+        <attr name="tuv_count" format="integer" />
+        <attr name="tuv_text_color" format="color" />
+        <attr name="tuv_text_size" format="dimension" />
+        <attr name="tuv_drawable_padding" format="dimension" />
+        <attr name="tuv_isThumbUp" format="boolean" />
+    </declare-styleable>
+</resources>
