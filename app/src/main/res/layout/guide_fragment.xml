@@ -4,43 +4,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_implicit"
-        style="@style/BtnCommon"
-        android:text="@string/implicit_intent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
 
-    <Button
-        android:id="@+id/btn_cl"
-        style="@style/BtnCommon"
-        android:text="@string/constrain_layout" />
 
-    <Button
-        android:id="@+id/btn_notification"
-        style="@style/BtnCommon"
-        android:text="@string/use_notification" />
+        <Button
+            android:id="@+id/btn_implicit"
+            style="@style/BtnCommon"
+            android:text="@string/implicit_intent" />
 
-    <Button
-        android:id="@+id/btn_actionbar"
-        style="@style/BtnCommon"
-        android:text="@string/use_appbar" />
+        <Button
+            android:id="@+id/btn_cl"
+            style="@style/BtnCommon"
+            android:text="@string/constrain_layout" />
 
-    <Button
-        android:id="@+id/btn_status"
-        style="@style/BtnCommon"
-        android:text="@string/status_about" />
+        <Button
+            android:id="@+id/btn_notification"
+            style="@style/BtnCommon"
+            android:text="@string/use_notification" />
 
-    <Button
-        android:id="@+id/btn_service"
-        style="@style/BtnCommon"
-        android:text="@string/service_about" />
+        <Button
+            android:id="@+id/btn_actionbar"
+            style="@style/BtnCommon"
+            android:text="@string/use_appbar" />
 
-    <Button
-        android:id="@+id/btn_webview"
-        style="@style/BtnCommon"
-        android:text="@string/webview_about" />
+        <Button
+            android:id="@+id/btn_status"
+            style="@style/BtnCommon"
+            android:text="@string/status_about" />
 
-    <Button
-        android:id="@+id/btn_material"
-        style="@style/BtnCommon"
-        android:text="@string/material" />
+        <Button
+            android:id="@+id/btn_service"
+            style="@style/BtnCommon"
+            android:text="@string/service_about" />
+
+        <Button
+            android:id="@+id/btn_webview"
+            style="@style/BtnCommon"
+            android:text="@string/webview_about" />
+
+        <Button
+            android:id="@+id/btn_material"
+            style="@style/BtnCommon"
+            android:text="@string/material" />
+
+    </LinearLayout>
+
+    <com.wynne.knowledge.tree.widget.thumb.ThumbView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
