@@ -34,6 +34,11 @@ public class ThumbView extends View {
     private float mRadiusMax;
     private int mRadiusMin;
     private Path mClipPath;
+    private boolean mIsThumbpUp;
+
+    private int mClickCount;
+    private int mEndCount;
+    private ThumbUpClickListener mThumbUpClickListener;
 
     public ThumbView(Context context) {
         super(context);
@@ -130,7 +135,29 @@ public class ThumbView extends View {
             canvas.restore();
             canvas.drawCircle(mCirclePoint.x, mCirclePoint.y, mRadiusMax, mCirclePaint);
         }
-
         canvas.drawBitmap(mThumbUp, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
+    }
+
+    public TuvPoint getCirclePoint() {
+        return mCirclePoint;
+    }
+
+    public void setIsThumbUp(boolean isThumbUp) {
+        mIsThumbpUp = isThumbUp;
+        mClickCount = mIsThumbpUp ? 1 : 0;
+        mEndCount = mClickCount;
+        postInvalidate();
+    }
+
+    public void setThumbUpClickListener(ThumbUpClickListener thumbUpClickListener) {
+        this.mThumbUpClickListener = thumbUpClickListener;
+    }
+
+    public interface ThumbUpClickListener {
+        //点赞回调
+        void thumbUpFinish();
+
+        //取消回调
+        void thumbDownFinish();
     }
 }

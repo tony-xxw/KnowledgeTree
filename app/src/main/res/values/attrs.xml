@@ -13,4 +13,12 @@
         <attr name="starDefault" format="reference" />
     </declare-styleable>
 
+
+    <declare-styleable name="ThumbUpView">
+        <attr name="tuv_count" format="integer" />
+        <attr name="tuv_text_color" format="color" />
+        <attr name="tuv_text_size" format="dimension" />
+        <attr name="tuv_drawable_padding" format="dimension" />
+        <attr name="tuv_isThumbUp" format="boolean" />
+    </declare-styleable>
 </resources>
