@@ -130,12 +130,12 @@ public class ThumbView extends View {
         super.onDraw(canvas);
         if (mClipPath != null) {
             canvas.save();
-            canvas.clipPath(mClipPath);
+//            canvas.clipPath(mClipPath);
             canvas.drawBitmap(mShining, mShiningPoint.x, mShiningPoint.y, mBitmapPaint);
             canvas.restore();
             canvas.drawCircle(mCirclePoint.x, mCirclePoint.y, mRadiusMax, mCirclePaint);
         }
-        canvas.drawBitmap(mThumbUp, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
+//        canvas.drawBitmap(mThumbUp, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
     }
 
     public TuvPoint getCirclePoint() {
