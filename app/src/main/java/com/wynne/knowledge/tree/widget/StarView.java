@@ -81,7 +81,7 @@ public class StarView extends View {
             starDark.draw(canvas);
         }
 
-        if (startMark >= 1) {
+        /**if (startMark >= 1) {
             canvas.drawRect(0, 0, starSize, starSize, mPaint);
             if (startMark - (int) (startMark) == 0) {
                 for (int i = 0; i < startMark - 1; i++) {
@@ -92,7 +92,7 @@ public class StarView extends View {
                 canvas.drawRect(0, 0, starSize * startMark, starSize, mPaint);
             }
 
-        }
+        }**/
 
     }
 
