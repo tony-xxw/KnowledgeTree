@@ -21,4 +21,10 @@
         <attr name="tuv_drawable_padding" format="dimension" />
         <attr name="tuv_isThumbUp" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="CountView">
+        <attr name="count" format="integer" />
+        <attr name="count_color" format="color" />
+        <attr name="count_size" format="dimension" />
+    </declare-styleable>
 </resources>

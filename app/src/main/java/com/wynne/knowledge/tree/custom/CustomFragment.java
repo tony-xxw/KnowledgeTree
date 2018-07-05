@@ -21,7 +21,7 @@ import com.wynne.knowledge.tree.custom.ipc.socket.SocketActivity;
 import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
 import com.wynne.knowledge.tree.custom.rx.RxJavaActivity;
 import com.wynne.knowledge.tree.custom.thread.ThreadPoolActivity;
-import com.wynne.knowledge.tree.custom.view.ViewActivity;
+import com.wynne.knowledge.tree.custom.view.ThumbActivity;
 
 /**
  * @author XXW
@@ -73,7 +73,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), BinderPoolActivity.class));
                 break;
             case R.id.btn_view:
-                startActivity(new Intent(getActivity(), ViewActivity.class));
+                startActivity(new Intent(getActivity(), ThumbActivity.class));
                 break;
             case R.id.btn_audio:
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

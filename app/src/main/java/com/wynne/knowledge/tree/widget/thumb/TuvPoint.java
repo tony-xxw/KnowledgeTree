@@ -11,7 +11,8 @@ public class TuvPoint {
     float x;
     float y;
 
-    TuvPoint() {
+    public TuvPoint() {
+
     }
 
     public TuvPoint(float x, float y) {

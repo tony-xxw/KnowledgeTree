@@ -49,12 +49,12 @@ public class CircleView extends View {
         path.addCircle(100, 100, 100, Path.Direction.CW);
 
 
-        canvas.save();
-        canvas.clipPath(path);
-        canvas.drawBitmap(bitmap, 0, 0
-                , paintR);
-        canvas.restore();
+        /**canvas.save();
+         canvas.clipPath(path);
+         canvas.drawBitmap(bitmap, 0, 0, paintR);
+         canvas.restore();**/
 
+        canvas.drawPath(path, paintR);
 
     }
 

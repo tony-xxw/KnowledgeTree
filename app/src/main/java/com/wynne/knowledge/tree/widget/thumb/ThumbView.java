@@ -39,14 +39,14 @@ public class ThumbView extends View {
     private int mClickCount;
     private int mEndCount;
     private ThumbUpClickListener mThumbUpClickListener;
+    private boolean isThumbUp;
 
     public ThumbView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public ThumbView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public ThumbView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -68,7 +68,7 @@ public class ThumbView extends View {
         mCirclePoint.y = mThumbPoint.y + mThumbHeight / 2;
 
         mRadiusMax = Math.max(mCirclePoint.x - getPaddingLeft(), mCirclePoint.y - getPaddingTop());
-        mRadiusMin = Utils.dip2px(getContext(), 8);
+        mRadiusMin = Utils.dip2px(getContext(), 8);//这个值是根据点击效果调整得到的
         mClipPath = new Path();
         mClipPath.addCircle(mCirclePoint.x, mCirclePoint.y, mRadiusMax, Path.Direction.CW);
     }
@@ -118,6 +118,7 @@ public class ThumbView extends View {
         return (int) (maxBottom - minTop);
     }
 
+
     private int getContentWidth() {
         float minLeft = Math.min(mShiningPoint.x, mThumbPoint.x);
         float maxRight = Math.max(mShiningPoint.x + mShiningWidth, mThumbPoint.x + mThumbWidth);
@@ -128,14 +129,17 @@ public class ThumbView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (mClipPath != null) {
-            canvas.save();
-//            canvas.clipPath(mClipPath);
-            canvas.drawBitmap(mShining, mShiningPoint.x, mShiningPoint.y, mBitmapPaint);
-            canvas.restore();
-            canvas.drawCircle(mCirclePoint.x, mCirclePoint.y, mRadiusMax, mCirclePaint);
+        if (isThumbUp) {
+            if (mClipPath != null) {
+                canvas.save();
+                canvas.clipPath(mClipPath);
+                canvas.drawBitmap(mShining, mShiningPoint.x, mShiningPoint.y, mBitmapPaint);
+                canvas.restore();
+            }
+            canvas.drawBitmap(mThumbNormal, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
+        } else {
+            canvas.drawBitmap(mThumbNormal, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
         }
-//        canvas.drawBitmap(mThumbUp, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
     }
 
     public TuvPoint getCirclePoint() {
