@@ -42,12 +42,11 @@ public class ThumbView extends View {
     private boolean isThumbUp;
 
     public ThumbView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public ThumbView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public ThumbView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
