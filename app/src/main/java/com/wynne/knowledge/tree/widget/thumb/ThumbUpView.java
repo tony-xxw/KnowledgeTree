@@ -151,8 +151,7 @@ public class ThumbUpView extends LinearLayout implements View.OnClickListener {
         } else {
             mCountView.calculateChangeNum(-1);
         }
-//        mThumbView.startAnim();
-    }
+        mThumbView.startAnim();    }
 
     public LayoutParams getCountParams() {
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

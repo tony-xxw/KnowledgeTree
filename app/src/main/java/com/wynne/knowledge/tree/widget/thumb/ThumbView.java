@@ -157,6 +157,11 @@ public class ThumbView extends View {
         this.mThumbUpClickListener = thumbUpClickListener;
     }
 
+    public void startAnim() {
+        mClickCount++;
+        boolean isFastAnim= false;
+    }
+
     public interface ThumbUpClickListener {
         //点赞回调
         void thumbUpFinish();
