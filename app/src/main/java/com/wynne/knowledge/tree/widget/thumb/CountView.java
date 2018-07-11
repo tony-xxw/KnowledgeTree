@@ -25,9 +25,18 @@ public class CountView extends View {
     private int mTextColor;
     private int mEndTextColor;
     private float mTextSize;
+    /**
+     * 初始文字
+     */
     private int mCount;
     private Paint mTextPaint;
+    /**
+     * 每一个角标对应的文字
+     */
     private String[] mTexts;
+    /**
+     * 每一个文字对应的角标
+     */
     private TuvPoint[] mTextPoints;
 
     private float mMaxOffsetY;
@@ -53,6 +62,7 @@ public class CountView extends View {
         mCount = attrsArray.getInteger(R.styleable.CountView_count, 0);
         mTextColor = attrsArray.getColor(R.styleable.CountView_count_color, Color.parseColor(DEFAULT_TEXT_COLOR));
         mTextSize = attrsArray.getDimension(R.styleable.CountView_count_size, Utils.dip2px(context, 15f));
+        attrsArray.recycle();
         init();
     }
 
@@ -98,6 +108,7 @@ public class CountView extends View {
         requestLayout();
     }
 
+    //计算文字变化
     public void calculateChangeNum(int change) {
         if (change == 0) {
             mTexts[0] = String.valueOf(mCount);
@@ -134,6 +145,24 @@ public class CountView extends View {
         textOffsetY.start();
     }
 
+
+    public void setTextOffsetY(float offsetY) {
+        mOldOffsetY = offsetY;
+        if (mCountToBigger) {
+            mNewOffsetY = offsetY - mMaxOffsetY;
+        } else {
+            mNewOffsetY = mMaxOffsetY + offsetY;
+        }
+
+        mFraction = (mMaxOffsetY - Math.abs(mOldOffsetY) / (mMaxOffsetY - mMinOffsetY));
+        calculateLocation();
+        postInvalidate();
+    }
+
+    public float getTextOffsetY() {
+        return mMinOffsetY;
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -146,6 +175,25 @@ public class CountView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+        calculateLocation();
+    }
+
+    private void calculateLocation() {
+        String text = String.valueOf(mCount);
+        float singleTextWidth = mTextPaint.measureText(text) / text.length();
+        float unChangeWidth = singleTextWidth * mTexts[0].length();
+
+        Paint.FontMetricsInt metricsInt = mTextPaint.getFontMetricsInt();
+        float y = getPaddingTop() + (getContentHeight() - metricsInt.bottom - metricsInt.top) / 2;
+
+        mTextPoints[0].x = getPaddingLeft();
+        mTextPoints[1].x = getPaddingLeft() + unChangeWidth;
+        mTextPoints[2].x = getPaddingLeft() + unChangeWidth;
+
+        mTextPoints[0].y = y;
+        mTextPoints[1].y = y - mOldOffsetY;
+        mTextPoints[2].y = y - mNewOffsetY;
+
     }
 
     @Override
@@ -166,6 +214,7 @@ public class CountView extends View {
     }
 
     private int getContentWidth() {
+        //取整
         return (int) Math.ceil(mTextPaint.measureText(String.valueOf(mCount)));
     }
 

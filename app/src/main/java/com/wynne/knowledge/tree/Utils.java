@@ -31,6 +31,9 @@ public class Utils {
                 result = specSize;
                 result = Math.max(result, defaultSize);
                 break;
+            default:
+                break;
+
         }
         return result;
     }

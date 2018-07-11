@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -81,6 +82,11 @@ public class ThumbView extends View {
 
         mThumbWidth = mThumbUp.getWidth();
         mThumbHeight = mThumbUp.getHeight();
+
+
+        Log.d("XXW", "dpi :" + getResources().getDisplayMetrics().density);
+        Log.d("XXW", "width :" + mThumbWidth);
+        Log.d("XXW", "height :" + mThumbHeight);
 
         mShiningWidth = mShining.getWidth();
         mShiningHeight = mShining.getHeight();
@@ -159,7 +165,7 @@ public class ThumbView extends View {
 
     public void startAnim() {
         mClickCount++;
-        boolean isFastAnim= false;
+        boolean isFastAnim = false;
     }
 
     public interface ThumbUpClickListener {
