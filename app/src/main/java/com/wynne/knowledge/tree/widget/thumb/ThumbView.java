@@ -43,7 +43,7 @@ public class ThumbView extends View {
     private int mRadiusMin;
     private float mRadius;
     private Path mClipPath;
-    private boolean mIsThumbpUp;
+    private boolean mIsThumbUp;
 
     private int mClickCount;
     private int mEndCount;
@@ -158,14 +158,14 @@ public class ThumbView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (isThumbUp) {
+        if (mIsThumbUp) {
             if (mClipPath != null) {
                 canvas.save();
                 canvas.clipPath(mClipPath);
                 canvas.drawBitmap(mShining, mShiningPoint.x, mShiningPoint.y, mBitmapPaint);
                 canvas.restore();
             }
-            canvas.drawBitmap(mThumbNormal, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
+            canvas.drawBitmap(mThumbUp, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
         } else {
             canvas.drawBitmap(mThumbNormal, mThumbPoint.x, mThumbPoint.y, mBitmapPaint);
         }
@@ -176,10 +176,14 @@ public class ThumbView extends View {
     }
 
     public void setIsThumbUp(boolean isThumbUp) {
-        mIsThumbpUp = isThumbUp;
-        mClickCount = mIsThumbpUp ? 1 : 0;
+        mIsThumbUp = isThumbUp;
+        mClickCount = mIsThumbUp ? 1 : 0;
         mEndCount = mClickCount;
         postInvalidate();
+    }
+
+    public boolean isThumbUp() {
+        return mIsThumbUp;
     }
 
     public void setThumbUpClickListener(ThumbUpClickListener thumbUpClickListener) {
@@ -193,10 +197,9 @@ public class ThumbView extends View {
         if (currentTimeMillis - mLastStartTime < 300) {
             isFastAnim = true;
         }
-
         mLastStartTime = currentTimeMillis;
 
-        if (mIsThumbpUp) {
+        if (mIsThumbUp) {
             if (isFastAnim) {
                 startFastAnim();
                 return;
@@ -207,11 +210,46 @@ public class ThumbView extends View {
             if (mThumbUpAnim != null) {
                 mClickCount = 0;
             } else {
-                startThumbDownAnim();
-                mClickCount = -1;
+                startThumbUpAnim();
+                mClickCount = 1;
             }
         }
         mEndCount = mClickCount;
+    }
+
+    private void startThumbUpAnim() {
+        ObjectAnimator notThumbUpScale = ObjectAnimator.ofFloat(this, "notThumbUpScale", SCALE_MAX, SCALE_MIN);
+        notThumbUpScale.setDuration(SCALE_DURING);
+        notThumbUpScale.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mIsThumbUp = true;
+            }
+        });
+
+
+        ObjectAnimator thumbUpScale = ObjectAnimator.ofFloat(this, "thumbUpScale", SCALE_MIN, SCALE_MAX);
+        thumbUpScale.setDuration(SCALE_DURING);
+        thumbUpScale.setInterpolator(new OvershootInterpolator());
+
+        ObjectAnimator circleScale = ObjectAnimator.ofFloat(this, "circleScale", mRadiusMin, mRadiusMax);
+        circleScale.setDuration(RADIUS_DURING);
+
+        mThumbUpAnim = new AnimatorSet();
+        mThumbUpAnim.play(thumbUpScale).with(circleScale);
+        mThumbUpAnim.play(thumbUpScale).after(notThumbUpScale);
+        mThumbUpAnim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mThumbUpAnim = null;
+                if (mThumbUpClickListener != null) {
+                    mThumbUpClickListener.thumbUpFinish();
+                }
+            }
+        });
+        mThumbUpAnim.start();
     }
 
     private void startThumbDownAnim() {
@@ -221,14 +259,15 @@ public class ThumbView extends View {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                mIsThumbpUp = false;
+                mIsThumbUp = false;
                 setNotThumbUpScale(SCALE_MAX);
                 if (mThumbUpClickListener != null) {
                     mThumbUpClickListener.thumbDownFinish();
-                    ;
                 }
             }
         });
+
+        thumbUpScale.start();
     }
 
     private void startFastAnim() {

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -147,6 +148,7 @@ public class CountView extends View {
 
 
     public void setTextOffsetY(float offsetY) {
+        Log.d("XXW", "onffestY :" + offsetY);
         mOldOffsetY = offsetY;
         if (mCountToBigger) {
             mNewOffsetY = offsetY - mMaxOffsetY;
@@ -154,7 +156,7 @@ public class CountView extends View {
             mNewOffsetY = mMaxOffsetY + offsetY;
         }
 
-        mFraction = (mMaxOffsetY - Math.abs(mOldOffsetY) / (mMaxOffsetY - mMinOffsetY));
+        mFraction = (mMaxOffsetY - Math.abs(mOldOffsetY)) / (mMaxOffsetY - mMinOffsetY);
         calculateLocation();
         postInvalidate();
     }
