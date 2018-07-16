@@ -1,15 +1,22 @@
 package com.wynne.knowledge.tree.widget.thumb;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.Utils;
@@ -34,6 +41,7 @@ public class ThumbView extends View {
     private TuvPoint mCirclePoint;
     private float mRadiusMax;
     private int mRadiusMin;
+    private float mRadius;
     private Path mClipPath;
     private boolean mIsThumbpUp;
 
@@ -41,6 +49,21 @@ public class ThumbView extends View {
     private int mEndCount;
     private ThumbUpClickListener mThumbUpClickListener;
     private boolean isThumbUp;
+    private long mLastStartTime;
+    private AnimatorSet mThumbUpAnim;
+
+    private static final int START_COLOR = Color.parseColor("#00e24d3d");
+    private static final int END_COLOR = Color.parseColor("#88e24d3d");
+
+    private static final float SCALE_MIN = 0.9f;
+    private static final float SCALE_MAX = 1f;
+
+
+    //缩放动画的时间
+    private static final int SCALE_DURING = 150;
+
+    private static final int RADIUS_DURING = 100;
+
 
     public ThumbView(Context context) {
         this(context, null);
@@ -166,7 +189,113 @@ public class ThumbView extends View {
     public void startAnim() {
         mClickCount++;
         boolean isFastAnim = false;
+        long currentTimeMillis = System.currentTimeMillis();
+        if (currentTimeMillis - mLastStartTime < 300) {
+            isFastAnim = true;
+        }
+
+        mLastStartTime = currentTimeMillis;
+
+        if (mIsThumbpUp) {
+            if (isFastAnim) {
+                startFastAnim();
+                return;
+            }
+            startThumbDownAnim();
+            mClickCount = 0;
+        } else {
+            if (mThumbUpAnim != null) {
+                mClickCount = 0;
+            } else {
+                startThumbDownAnim();
+                mClickCount = -1;
+            }
+        }
+        mEndCount = mClickCount;
     }
+
+    private void startThumbDownAnim() {
+        ObjectAnimator thumbUpScale = ObjectAnimator.ofFloat(this, "thumbUpScale", SCALE_MIN, SCALE_MAX);
+        thumbUpScale.setDuration(SCALE_DURING);
+        thumbUpScale.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mIsThumbpUp = false;
+                setNotThumbUpScale(SCALE_MAX);
+                if (mThumbUpClickListener != null) {
+                    mThumbUpClickListener.thumbDownFinish();
+                    ;
+                }
+            }
+        });
+    }
+
+    private void startFastAnim() {
+        ObjectAnimator thumbUpScale = ObjectAnimator.ofFloat(this, "thumbUpScale", SCALE_MIN, SCALE_MAX);
+        thumbUpScale.setDuration(SCALE_DURING);
+        thumbUpScale.setInterpolator(new OvershootInterpolator());
+
+        ObjectAnimator circleScale = ObjectAnimator.ofFloat(this, "circleScale", mRadiusMin, mRadiusMax);
+        circleScale.setDuration(RADIUS_DURING);
+
+        AnimatorSet set = new AnimatorSet();
+        set.play(thumbUpScale).with(circleScale);
+
+        set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mEndCount++;
+                if (mClickCount != mEndCount) {
+                    return;
+                }
+
+                if (mClickCount % 2 == 0) {
+                    startThumbDownAnim();
+                } else {
+                    if (mThumbUpClickListener != null) {
+                        mThumbUpClickListener.thumbUpFinish();
+                    }
+                }
+            }
+        });
+        set.start();
+    }
+
+    public void setNotThumbUpScale(float scale) {
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+        mThumbNormal = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_unselected);
+        mThumbNormal = Bitmap.createBitmap(mThumbNormal, 0, 0, mThumbNormal.getWidth(), mThumbNormal.getHeight(), matrix, true);
+        postInvalidate();
+    }
+
+    public void setThumbUpScale(float scale) {
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+        mThumbUp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_selected);
+        mThumbUp = Bitmap.createBitmap(mThumbUp, 0, 0, mThumbUp.getWidth(), mThumbUp.getHeight(), matrix, true);
+        postInvalidate();
+    }
+
+    public void setShiningScale(float scale) {
+        Matrix matrix = new Matrix();
+        matrix.setScale(scale, scale);
+        mShining = BitmapFactory.decodeResource(getResources(), R.drawable.ic_messages_like_selected_shining);
+        mShining = Bitmap.createBitmap(mShining, 0, 0, mShining.getWidth(), mShining.getHeight(), matrix, true);
+        postInvalidate();
+    }
+
+    public void setCircleScale(float radius) {
+        mRadius = radius;
+        mClipPath = new Path();
+        mClipPath.addCircle(mCirclePoint.x, mCirclePoint.y, mRadius, Path.Direction.CW);
+        float fraction = (mRadiusMax - radius) / (mRadiusMax - mRadiusMin);
+        mCirclePaint.setColor((int) Utils.evaluate(fraction, START_COLOR, END_COLOR));
+        postInvalidate();
+    }
+
 
     public interface ThumbUpClickListener {
         //点赞回调

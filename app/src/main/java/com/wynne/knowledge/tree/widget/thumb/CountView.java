@@ -204,11 +204,11 @@ public class CountView extends View {
         canvas.drawText(String.valueOf(mTexts[0]), mTextPoints[0].x, mTextPoints[0].y, mTextPaint);
 
         //变化前部分
-        mTextPaint.setColor((Integer) TuvUtils.evaluate(mFraction, mEndTextColor, mTextColor));
+        mTextPaint.setColor((Integer) Utils.evaluate(mFraction, mEndTextColor, mTextColor));
         canvas.drawText(String.valueOf(mTexts[1]), mTextPoints[1].x, mTextPoints[1].y, mTextPaint);
 
         //变化后部分
-        mTextPaint.setColor((Integer) TuvUtils.evaluate(mFraction, mTextColor, mEndTextColor));
+        mTextPaint.setColor((Integer) Utils.evaluate(mFraction, mTextColor, mEndTextColor));
         canvas.drawText(String.valueOf(mTexts[2]), mTextPoints[2].x, mTextPoints[2].y, mTextPaint);
 
     }
