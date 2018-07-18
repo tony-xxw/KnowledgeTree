@@ -46,6 +46,7 @@
     <string name="please_login">请登录</string>
     <string name="thread_poll">线程池</string>
     <string name="rx_study">rxjava 学习</string>
+    <string name="window">Window相关</string>
 
     <string-array name="spinner_item">
         <item>官方文档</item>

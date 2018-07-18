@@ -22,6 +22,7 @@ import com.wynne.knowledge.tree.custom.loader.ClassLoaderActivity;
 import com.wynne.knowledge.tree.custom.rx.RxJavaActivity;
 import com.wynne.knowledge.tree.custom.thread.ThreadPoolActivity;
 import com.wynne.knowledge.tree.custom.view.ThumbActivity;
+import com.wynne.knowledge.tree.custom.window.WindowActivity;
 
 /**
  * @author XXW
@@ -51,6 +52,7 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_view).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_thread_poll).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_rx).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_window).setOnClickListener(this);
         return mContentView;
     }
 
@@ -94,6 +96,9 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_rx:
                 startActivity(new Intent(getActivity(), RxJavaActivity.class));
+                break;
+            case R.id.btn_window:
+                startActivity(new Intent(getActivity(), WindowActivity.class));
                 break;
             default:
                 break;

@@ -62,4 +62,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rx_study" />
+
+    <Button
+        android:id="@+id/btn_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/window" />
 </LinearLayout>
