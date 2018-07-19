@@ -343,4 +343,9 @@ public class ThumbView extends View {
         //取消回调
         void thumbDownFinish();
     }
+
+    @Override
+    public void scrollTo(int x, int y) {
+        super.scrollTo(x, y);
+    }
 }
