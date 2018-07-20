@@ -32,14 +32,15 @@
         <attr name="cursor_width" format="dimension" />
         <attr name="cursor_length" format="dimension" />
         <attr name="cursor_drawable" format="dimension" />
-        <attr name="current_scale" format="dimension" />
-        <attr name="scale_color_small" format="color" />
-        <attr name="scale_color_large" format="color" />
+        <attr name="current_scale" format="float" />
+        <attr name="scale_color" format="color" />
         <attr name="scale_length_small" format="dimension" />
         <attr name="scale_length_large" format="dimension" />
-        <attr name="scale_interval" format="integer" />
-        <attr name="scale_max" format="dimension" />
-        <attr name="scale_min" format="dimension" />
+        <attr name="scale_width_small" format="dimension" />
+        <attr name="scale_width_large" format="dimension" />
+        <attr name="scale_interval" format="dimension" />
+        <attr name="scale_max" format="integer" />
+        <attr name="scale_min" format="integer" />
         <attr name="ruler_background" format="dimension" />
         <attr name="ruler_left_right" format="dimension" />
         <attr name="ruler_start_scale" format="dimension" />
@@ -49,5 +50,8 @@
         <attr name="canEdgeEffect" format="boolean" />
         <attr name="edgeColor" format="color" />
         <attr name="factor" format="float" />
+        <attr name="numberCount" format="integer" />
+        <attr name="number_text_size" format="dimension" />
+        <attr name="number_text_color" format="dimension" />
     </declare-styleable>
 </resources>
