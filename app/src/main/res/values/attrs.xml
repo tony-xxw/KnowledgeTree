@@ -53,5 +53,6 @@
         <attr name="numberCount" format="integer" />
         <attr name="number_text_size" format="dimension" />
         <attr name="number_text_color" format="dimension" />
+        <attr name="scale_margin_top" format="dimension" />
     </declare-styleable>
 </resources>

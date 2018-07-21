@@ -101,6 +101,8 @@ public class Ruler extends ViewGroup {
     @ColorInt
     int mScaleColor = getResources().getColor(R.color.colorGray);
 
+    private int mScaleMarginTop;
+
     private BaseInnerRuler mHeadRuler;
 
     private Context mContext;
@@ -144,9 +146,10 @@ public class Ruler extends ViewGroup {
         mFraction = typedArray.getFloat(R.styleable.Ruler_factor, mFraction);
         mCount = typedArray.getInteger(R.styleable.Ruler_numberCount, mCount);
         mRulerBackGround = typedArray.getDrawable(R.styleable.Ruler_ruler_background);
-        mTextSize = typedArray.getDimensionPixelSize(R.styleable.Ruler_number_text_size, mTextSize);
+        mTextSize = typedArray.getDimensionPixelOffset(R.styleable.Ruler_number_text_size, mTextSize);
         mTextColor = typedArray.getColor(R.styleable.Ruler_number_text_color, mTextColor);
         mScaleColor = typedArray.getColor(R.styleable.Ruler_scale_color, mScaleColor);
+        mScaleMarginTop = typedArray.getDimensionPixelOffset(R.styleable.Ruler_scale_margin_top, mScaleMarginTop);
         if (mCursorDrawable == null) {
             mCursorDrawable = getResources().getDrawable(R.drawable.bg_advertisement);
         }
@@ -296,5 +299,9 @@ public class Ruler extends ViewGroup {
 
     public int getScaleColor() {
         return mScaleColor;
+    }
+
+    public int getScaleMarginTop() {
+        return mScaleMarginTop;
     }
 }

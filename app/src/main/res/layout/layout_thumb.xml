@@ -31,6 +31,7 @@
         app:scale_interval="12dp"
         app:scale_length_large="40dp"
         app:scale_length_small="20dp"
+        app:scale_margin_top="80dp"
         app:scale_max="1000"
         app:scale_min="0"
         app:scale_width_large="2.5dp"

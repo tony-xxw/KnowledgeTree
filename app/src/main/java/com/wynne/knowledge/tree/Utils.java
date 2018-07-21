@@ -74,4 +74,27 @@ public class Utils {
 
         return Math.round(a) << 24 | Math.round(r) << 16 | Math.round(g) << 8 | Math.round(b);
     }
+
+    private static float mFactorCache = 0;
+    private static float mDividerCache = 1;
+
+
+    public static String resultValueOf(float input, float factor) {
+        if (factor > 1) {
+            return String.valueOf(input * factor);
+        } else if (factor > 0) {
+            if (mFactorCache != factor) {
+                mFactorCache = factor;
+                mDividerCache = 1 / factor;
+            }
+            return String.valueOf(input / mDividerCache);
+        } else {
+            try {
+                throw new Exception("Invalid factor!");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
 }

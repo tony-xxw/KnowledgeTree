@@ -2,7 +2,12 @@ package com.wynne.knowledge.tree.widget.ruler;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.os.Build;
+import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewTreeObserver;
+import android.widget.EdgeEffect;
 import android.widget.OverScroller;
 
 /**
@@ -12,29 +17,53 @@ import android.widget.OverScroller;
  */
 
 public abstract class BaseInnerRuler extends View {
-    private Ruler mRuler;
-    private Context mContext;
+    protected Ruler mRuler;
+    protected Context mContext;
     /**
      * 当前刻度值
      */
-    private float mCurrentScale = 0;
+    protected float mCurrentScale = 0;
     /**
      * 大刻度里的小刻度个数
      */
-    private int mCount = 10;
+    protected int mCount = 10;
     /**
      * 最大刻度值
      */
-    private int mMaxLength;
+    protected int mMaxLength;
     /**
      * 大刻度一半
      */
-    private int mDrwaOffest;
-    private Paint mSmallScalePaint;
-    private Paint mLargeScalePaint;
-    private Paint mTextPaint;
-    private Paint mOutLinePaint;
-    private OverScroller mOverScroller;
+    protected int mDrawOffest;
+    protected Paint mSmallScalePaint;
+    protected Paint mLargeScalePaint;
+    protected Paint mTextPaint;
+    protected Paint mOutLinePaint;
+    protected OverScroller mOverScroller;
+    /**
+     * 速度获取
+     */
+    protected VelocityTracker mVelocityTracker;
+    /**
+     * 惯性最大最小速度
+     */
+    protected int mMaximumVelocity, mMinimumVelocity;
+
+
+    /**
+     * 改变回调
+     */
+    protected RulerCallBack mRulerCallBack;
+    /**
+     * 开始与结束的边缘效果
+     */
+    protected EdgeEffect mStartEdgeEffect, mEndEdgeEffect;
+    /**
+     * 边缘效果长度,最大可滑动距离,最小滑动距离
+     */
+    protected int mEdgeLength, mMaxPosition, mMinPosition;
+
+    protected int mLength;
 
     public BaseInnerRuler(Context context, Ruler ruler) {
         super(context);
@@ -48,12 +77,48 @@ public abstract class BaseInnerRuler extends View {
         mCurrentScale = mRuler.getCurrentScale();
         mCount = mRuler.getCount();
 
-        mDrwaOffest = mCount * mRuler.getInterval() / 2;
+        mDrawOffest = mCount * mRuler.getInterval() / 2;
 
         initPaints();
 
         mOverScroller = new OverScroller(mContext);
 
+        mVelocityTracker = VelocityTracker.obtain();
+        mMaximumVelocity = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
+        mMinimumVelocity = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
+
+        initEdgeEffects();
+
+        getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                goToScale(mCurrentScale);
+            }
+        });
+
+        checkAPILevel();
+    }
+
+    private void checkAPILevel() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            setLayerType(LAYER_TYPE_NONE, null);
+        }
+    }
+
+    public void initEdgeEffects() {
+        //是否开启边缘
+        if (mRuler.isCanEdgeEffect()) {
+            if (mStartEdgeEffect == null || mEndEdgeEffect == null) {
+                mStartEdgeEffect = new EdgeEffect(mContext);
+                mEndEdgeEffect = new EdgeEffect(mContext);
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+                    mStartEdgeEffect.setColor(mRuler.getEdgeColor());
+                    mEndEdgeEffect.setColor(mRuler.getEdgeColor());
+                }
+                mEdgeLength = mRuler.getCursorHeight() + mRuler.getInterval() * mRuler.getCount();
+            }
+        }
     }
 
     private void initPaints() {
@@ -77,5 +142,40 @@ public abstract class BaseInnerRuler extends View {
         mOutLinePaint = new Paint();
         mOutLinePaint.setStrokeWidth(0);
         mOutLinePaint.setColor(mRuler.getScaleColor());
+    }
+
+    /**
+     * 指向某一个刻度
+     *
+     * @param scale
+     */
+    protected abstract void goToScale(float scale);
+
+    /**
+     * 滚动到当前刻度值
+     */
+    protected abstract void scrollBackToCurrentScale();
+
+    /**
+     * 刷新大小
+     */
+    public abstract void refreshSize();
+
+
+    public void setRulerCallBack(RulerCallBack mRulerCallBack) {
+        this.mRulerCallBack = mRulerCallBack;
+    }
+
+
+    @Override
+    public void computeScroll() {
+        if (mOverScroller.computeScrollOffset()) {
+            scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
+
+            if (!mOverScroller.computeScrollOffset() && mCurrentScale != Math.round(mCurrentScale)) {
+                scrollBackToCurrentScale();
+            }
+            invalidate();
+        }
     }
 }
