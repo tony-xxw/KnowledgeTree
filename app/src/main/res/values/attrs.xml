@@ -55,4 +55,14 @@
         <attr name="number_text_color" format="dimension" />
         <attr name="scale_margin_top" format="dimension" />
     </declare-styleable>
+
+
+    <declare-styleable name="Unit">
+        <attr name="scale_colors" format="color" />
+        <attr name="scale_size" format="dimension" />
+        <attr name="unit_color" format="color" />
+        <attr name="unit_size" format="dimension" />
+        <attr name="unit" format="string" />
+    </declare-styleable>
+
 </resources>

@@ -198,6 +198,10 @@ public class Ruler extends ViewGroup {
     }
 
 
+    public void setCallBack(RulerCallBack rulerCallBack) {
+        mHeadRuler.setRulerCallBack(rulerCallBack);
+    }
+
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
