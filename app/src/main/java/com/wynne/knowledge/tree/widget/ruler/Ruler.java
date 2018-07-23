@@ -168,6 +168,7 @@ public class Ruler extends ViewGroup {
 
         addView(mHeadRuler);
 
+        //除了ViewGroup 为true,当ViewGroup不具备绘制时.代表系统进行后续优化, 具备绘制则需要设置为false
         setWillNotDraw(false);
 
 
