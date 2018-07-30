@@ -202,6 +202,10 @@
         <activity
             android:name=".custom.window.WindowActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".bookmark.activity.HandlerActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

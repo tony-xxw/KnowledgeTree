@@ -7,9 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 
 /**
@@ -26,6 +26,7 @@ public class BookMarkFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         mContentView = inflater.inflate(R.layout.boorkmark_layout, null);
         mContentView.findViewById(R.id.btn_task).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_handler).setOnClickListener(this);
         return mContentView;
     }
 
@@ -41,6 +42,9 @@ public class BookMarkFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.btn_task:
                 startActivity(new Intent(getActivity(), TaskActivity.class));
+                break;
+            case R.id.btn_handler:
+                startActivity(new Intent(getActivity(), HandlerActivity.class));
                 break;
             default:
                 break;
