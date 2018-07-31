@@ -3,6 +3,7 @@ package com.wynne.knowledge.tree.bookmark.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -18,6 +19,7 @@ public class HandlerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.handler_layout);
+        Log.d("XXW", "好好准备两个月");
     }
 
     public void onHandler(View v) {
