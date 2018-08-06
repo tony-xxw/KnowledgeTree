@@ -197,7 +197,7 @@
         </receiver>
 
         <activity
-            android:name=".custom.view.ThumbActivity"
+            android:name=".custom.view.ThumbActivity"     
             android:launchMode="singleTop" />
         <activity
             android:name=".custom.window.WindowActivity"
