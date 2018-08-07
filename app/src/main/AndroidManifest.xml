@@ -182,7 +182,7 @@
             tools:remove=":remote" />
 
 
-        <!--authorities 必须保证唯一性 -->
+        <!--authorities 必须保证唯一 性 -->
         <!--permission  增加权限 外界需要声明权限才能访问 -->
         <provider
             android:name=".custom.ipc.provider.BookProvider"
@@ -197,7 +197,7 @@
         </receiver>
 
         <activity
-            android:name=".custom.view.ThumbActivity"     
+            android:name=".custom.view.ThumbActivity"
             android:launchMode="singleTop" />
         <activity
             android:name=".custom.window.WindowActivity"
