@@ -80,6 +80,7 @@ public class MainActivity extends FragmentActivity implements InitContent {
                             .replace(R.id.fl_content, BookMarkFragment.getInstance(), "bookmark")
                             .addToBackStack("bookmark")
                             .commit();
+                    //模块化
                     return true;
                 default:
                     break;
