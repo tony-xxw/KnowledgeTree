@@ -18,9 +18,6 @@ import com.wynne.knowledge.tree.guide.GuideFragment;
  * @author XXW
  */
 public class MainActivity extends FragmentActivity implements InitContent {
-    private BottomNavigationView mBngMenu;
-    private CustomFragment mCustomFragment;
-    private GuideFragment mCuideFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +30,14 @@ public class MainActivity extends FragmentActivity implements InitContent {
 
     @Override
     public void initView() {
-
-        mBngMenu = (BottomNavigationView) findViewById(R.id.bnm_menu);
+        BottomNavigationView mBngMenu = (BottomNavigationView) findViewById(R.id.bnm_menu);
         mBngMenu.setOnNavigationItemSelectedListener(listener);
-
-
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("XXW","如果是透明主题 则不会回调onPause");
+        Log.d("XXW", "如果是透明主题 则不会回调onPause");
     }
 
     @Override
@@ -88,31 +82,5 @@ public class MainActivity extends FragmentActivity implements InitContent {
             return false;
         }
     };
-
-    public class RvAdapter extends RecyclerView.Adapter<ViewHolder> {
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return null;
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return 0;
-        }
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
-
 
 }
