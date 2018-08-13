@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wynne.knowledge.tree.base.BaseActivity;
 import com.wynne.knowledge.tree.bookmark.BookMarkFragment;
 import com.wynne.knowledge.tree.custom.CustomFragment;
 import com.wynne.knowledge.tree.guide.GuideFragment;
@@ -17,35 +18,25 @@ import com.wynne.knowledge.tree.guide.GuideFragment;
 /**
  * @author XXW
  */
-public class MainActivity extends FragmentActivity implements InitContent {
+public class MainActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
-        initDate();
-        initView();
-        Log.d("XXW", "empty");
-    }
 
     @Override
     public void initView() {
-        BottomNavigationView mBngMenu = (BottomNavigationView) findViewById(R.id.bnm_menu);
-        mBngMenu.setOnNavigationItemSelectedListener(listener);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("XXW", "如果是透明主题 则不会回调onPause");
-    }
-
-    @Override
-    public void initDate() {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fl_content, GuideFragment.getInstance(), "guide")
                 .addToBackStack("guide")
                 .commit();
+
+        BottomNavigationView mBngMenu = findViewById(R.id.bnm_menu);
+        mBngMenu.setOnNavigationItemSelectedListener(listener);
+
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.main_activity;
     }
 
 
@@ -82,5 +73,4 @@ public class MainActivity extends FragmentActivity implements InitContent {
             return false;
         }
     };
-
 }

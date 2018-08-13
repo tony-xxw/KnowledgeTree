@@ -41,7 +41,7 @@ public class ServiceActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-//        bindService(bindIntent, connection, BIND_AUTO_CREATE);
+        bindService(bindIntent, connection, BIND_AUTO_CREATE);
         bindService(new Intent(this, BindService.class), messager,
                 BIND_AUTO_CREATE);
     }

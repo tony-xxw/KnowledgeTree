@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 
@@ -17,22 +18,13 @@ import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
  * @date 2018/3/9
  */
 
-public class BookMarkFragment extends Fragment implements View.OnClickListener {
-    private View mContentView;
-
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        mContentView = inflater.inflate(R.layout.boorkmark_layout, null);
-        mContentView.findViewById(R.id.btn_task).setOnClickListener(this);
-        mContentView.findViewById(R.id.btn_handler).setOnClickListener(this);
-        return mContentView;
-    }
-
+public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
+    public static BookMarkFragment fragment;
 
     public static BookMarkFragment getInstance() {
-        BookMarkFragment fragment = new BookMarkFragment();
+        if (fragment == null) {
+            fragment = new BookMarkFragment();
+        }
         return fragment;
     }
 
@@ -51,4 +43,14 @@ public class BookMarkFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @Override
+    public void initView() {
+        mContentView.findViewById(R.id.btn_task).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_handler).setOnClickListener(this::onClick);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.boorkmark_layout;
+    }
 }
