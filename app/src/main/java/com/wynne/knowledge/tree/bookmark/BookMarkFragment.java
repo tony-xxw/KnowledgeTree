@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 
@@ -38,6 +39,9 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
             case R.id.btn_handler:
                 startActivity(new Intent(getActivity(), HandlerActivity.class));
                 break;
+            case R.id.btn_bitmap:
+                startActivity(new Intent(getActivity(), BitmapActivity.class));
+                break;
             default:
                 break;
         }
@@ -47,6 +51,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
     public void initView() {
         mContentView.findViewById(R.id.btn_task).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_handler).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_bitmap).setOnClickListener(this::onClick);
     }
 
     @Override

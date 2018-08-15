@@ -11,6 +11,7 @@ import android.view.ViewConfiguration;
 import android.widget.Button;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 import com.wynne.knowledge.tree.widget.StarView;
 
 /**
@@ -18,15 +19,14 @@ import com.wynne.knowledge.tree.widget.StarView;
  * @date 2018/4/10
  */
 
-public class ViewActivity extends AppCompatActivity implements View.OnTouchListener {
+public class ViewActivity extends BaseActivity implements View.OnTouchListener {
     private Button buttonScroll;
     private ScrollerView mScroller;
     private StarView starView;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_activity);
+    public void initView() {
         buttonScroll = (Button) findViewById(R.id.btn_view_scroller);
         mScroller = (ScrollerView) findViewById(R.id.sv_sample);
         starView = (StarView) findViewById(R.id.sv_star);
@@ -36,6 +36,7 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
         buttonScroll.setOnTouchListener(this);
         buttonScroll.setOnClickListener(new View.OnClickListener() {
 
+            @Override
             public void onClick(View v) {
                 scrollSample(200);
             }
@@ -68,8 +69,11 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
 
 
         Log.d("XXW", "滑动最小距离 :" + ViewConfiguration.get(getBaseContext()).getScaledTouchSlop());
+    }
 
-
+    @Override
+    public int getLayoutId() {
+        return R.layout.view_activity;
     }
 
     /**
@@ -91,8 +95,6 @@ public class ViewActivity extends AppCompatActivity implements View.OnTouchListe
      */
     private void scrollSample(int x) {
         buttonScroll.scrollBy(x, 0);
-
-
     }
 
     @Override
