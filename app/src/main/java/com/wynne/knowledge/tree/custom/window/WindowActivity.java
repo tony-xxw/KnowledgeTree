@@ -15,27 +15,31 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/7/18
  */
 
-public class WindowActivity extends AppCompatActivity implements View.OnTouchListener, View.OnClickListener {
+public class WindowActivity extends BaseActivity implements View.OnTouchListener, View.OnClickListener {
     Button mCreateWindowButton;
     Button mFloatingButton;
     private WindowManager.LayoutParams mLayoutParams;
     private WindowManager manager;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.window_activity);
+    public void initView() {
         mCreateWindowButton = (Button) findViewById(R.id.btn_wd);
         mCreateWindowButton.setOnClickListener(this);
 
         manager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+    }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.window_activity;
     }
 
 

@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.custom.audio.AudioActivity;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
 import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
@@ -29,7 +31,7 @@ import com.wynne.knowledge.tree.custom.window.WindowActivity;
  * @date 2018/2/28
  */
 
-public class CustomFragment extends Fragment implements View.OnClickListener {
+public class CustomFragment extends BaseFragment implements View.OnClickListener {
 
 
     public static CustomFragment getInstance() {
@@ -39,10 +41,10 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
 
     View mContentView;
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mContentView = inflater.inflate(R.layout.custom_fragment, null);
+    public void initView() {
+        mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.custom_fragment, null);
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc_provider).setOnClickListener(this);
@@ -53,7 +55,11 @@ public class CustomFragment extends Fragment implements View.OnClickListener {
         mContentView.findViewById(R.id.btn_thread_poll).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_rx).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_window).setOnClickListener(this);
-        return mContentView;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.custom_fragment;
     }
 
     @Override

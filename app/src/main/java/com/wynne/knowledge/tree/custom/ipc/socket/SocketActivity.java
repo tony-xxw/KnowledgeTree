@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,7 +32,7 @@ import java.util.Date;
  * @date 2018/3/28
  */
 
-public class SocketActivity extends AppCompatActivity implements View.OnClickListener {
+public class SocketActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "SocketActivity";
     private static final int MESSAGE_RECEIVE_NEW_MSG = 1;
@@ -70,10 +71,9 @@ public class SocketActivity extends AppCompatActivity implements View.OnClickLis
         }
     };
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.socket_activity);
+    public void initView() {
         mMessageTextView = (TextView) findViewById(R.id.msg_container);
         mSendButton = (Button) findViewById(R.id.send);
         mSendButton.setOnClickListener(this);
@@ -86,6 +86,11 @@ public class SocketActivity extends AppCompatActivity implements View.OnClickLis
                 connectTCPServer();
             }
         }.start();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.socket_activity;
     }
 
     @Override

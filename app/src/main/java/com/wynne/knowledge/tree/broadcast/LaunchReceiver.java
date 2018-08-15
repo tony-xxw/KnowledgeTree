@@ -8,7 +8,8 @@ import android.widget.Toast;
 import com.wynne.knowledge.tree.MainActivity;
 
 /**
- * Created by Wynne on 2018/7/5.
+ * @author Wynne
+ * @date 2018/7/5
  */
 
 public class LaunchReceiver extends BroadcastReceiver {

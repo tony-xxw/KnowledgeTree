@@ -7,7 +7,9 @@ import com.wynne.knowledge.tree.R;
 
 
 /**
- * Created by Wynne on 2018/4/10.
+ *
+ * @author Wynne
+ * @date 2018/4/10
  */
 
 public class ErrorCode {

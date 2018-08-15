@@ -16,7 +16,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by Wynne on 2018/4/8.
+ *
+ * @author Wynne
+ * @date 2018/4/8
  */
 
 public class AudioRecorderUtil {

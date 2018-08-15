@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * Activity 常用的各种标记
@@ -28,13 +29,17 @@ import com.wynne.knowledge.tree.R;
  * @date 2018/3/15
  */
 
-public class FlagsActivity extends AppCompatActivity {
+public class FlagsActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.flags_activity);
+    public void initView() {
 
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.flags_activity;
     }
 
 

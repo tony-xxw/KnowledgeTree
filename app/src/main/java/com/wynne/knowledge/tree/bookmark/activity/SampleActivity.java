@@ -8,20 +8,25 @@ import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author XXW
  * @date 2018/3/11
  */
 
-public class SampleActivity extends AppCompatActivity {
+public class SampleActivity extends BaseActivity {
     public static final String TAG = SampleActivity.class.getSimpleName();
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_activity);
-        Log.d("XXW", TAG + "====onCreate");
+    public void initView() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.sample_activity;
     }
 
     public void onClick(View v) {

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.guide.appbar.AppbarActivity;
 import com.wynne.knowledge.tree.guide.constrain.ConstraintActivity;
 import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
@@ -23,15 +24,17 @@ import com.wynne.knowledge.tree.guide.webview.WebViewActivity;
  * @date 2018/2/28
  */
 
-public class GuideFragment extends Fragment implements View.OnClickListener {
-    private View mContentView;
+public class GuideFragment extends BaseFragment implements View.OnClickListener {
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.guide_fragment, container, false);
+    public void initView() {
         initClickListener();
-        return mContentView;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.guide_fragment;
     }
 
 

@@ -12,26 +12,26 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/3/12
  */
 
-public class StatusBarActivity extends AppCompatActivity {
+public class StatusBarActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.status_activity);
-
-        //全屏模式  隐藏了状态栏
-//        hideActionWidthStatus();
-        //全屏模式  状态栏覆盖在布局上
+    public void initView() {
         saveStatusTextWithImage();
 
         hideActionBar();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.status_activity;
     }
 
 

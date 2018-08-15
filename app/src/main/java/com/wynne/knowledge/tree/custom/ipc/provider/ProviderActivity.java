@@ -11,6 +11,7 @@ import android.util.Log;
 import com.aidl.sample.Book;
 import com.aidl.sample.User;
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,16 +24,14 @@ import java.io.ObjectOutputStream;
  * @date 2018/3/27
  */
 
-public class ProviderActivity extends AppCompatActivity {
+public class ProviderActivity extends BaseActivity {
 
     public static final String TAG = "ProviderActivity";
     private static final String AUTHORITIES = "com.wynne.knowledge.tree.custom.ipc.provider";
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.provider_activity);
 
+    @Override
+    public void initView() {
         /**authorities唯一标识
          Uri uri = Uri.parse("content://" + AUTHORITIES);
          getContentResolver().query(uri, null, null, null, null);
@@ -69,7 +68,12 @@ public class ProviderActivity extends AppCompatActivity {
 
 
         serializeImpl();
-    } 
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.provider_activity;
+    }
 
     private void serializeImpl() {
         User user = new User(1, "Wynne", true);

@@ -10,7 +10,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Created by Wynne on 2018/4/10.
+ *
+ * @author Wynne
+ * @date 2018/4/10
  */
 
 public class AudioRecordFunc {

@@ -64,7 +64,7 @@ public class UnitLayout extends FrameLayout implements RulerCallBack {
         mUnitView.setTextColor(mUnitColor);
         mUnitView.setTextSize(mUnitSize);
 
-        mUnitView.setText(mUnit );
+        mUnitView.setText(mUnit);
 
     }
 

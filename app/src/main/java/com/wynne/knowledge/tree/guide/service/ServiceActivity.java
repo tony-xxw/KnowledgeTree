@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -23,19 +24,23 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @date 2018/3/13
  */
 
-public class ServiceActivity extends AppCompatActivity {
+public class ServiceActivity extends BaseActivity {
     private Intent intent;
     private Intent bindIntent;
     private BindService bindService;
     private boolean mBinder = false;
     private Messenger mMessenger;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.service_activity);
+    public void initView() {
         intent = new Intent(this, StandardService.class);
         bindIntent = new Intent(this, BindService.class);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.service_activity;
     }
 
     @Override
@@ -57,7 +62,6 @@ public class ServiceActivity extends AppCompatActivity {
                 break;
             case R.id.btn_bind:
                 if (mBinder) {
-//                    Toast.makeText(this, bindService.getRandomNumber() + "", Toast.LENGTH_LONG).show();
                     sayHello(view);
                 }
                 break;

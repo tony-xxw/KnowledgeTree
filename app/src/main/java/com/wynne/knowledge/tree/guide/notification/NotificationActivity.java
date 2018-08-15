@@ -18,6 +18,7 @@ import android.view.View;
 import android.support.v4.app.NotificationCompat;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import static android.app.Notification.VISIBILITY_PRIVATE;
 
@@ -26,7 +27,7 @@ import static android.app.Notification.VISIBILITY_PRIVATE;
  * @date 2018/3/7
  */
 
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends BaseActivity {
     private NotificationManagerCompat manager;
     private NotificationCompat.Builder builder;
     public static final int START_NOTIFICATION = 0;
@@ -43,11 +44,9 @@ public class NotificationActivity extends AppCompatActivity {
 
     public String CHANNEL = "1";
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.notification_layout);
 
+    @Override
+    public void initView() {
         //启动Activity
 
         intent = new Intent(this, NotificationPendActivity.class);
@@ -72,6 +71,11 @@ public class NotificationActivity extends AppCompatActivity {
 
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_custom);
         largeBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_large);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.notification_layout;
     }
 
     public void onClick(View view) {

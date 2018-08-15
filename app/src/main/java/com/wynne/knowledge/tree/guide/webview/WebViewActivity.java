@@ -23,13 +23,14 @@ import android.widget.Toast;
 
 import com.wynne.knowledge.tree.MainActivity;
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/3/21
  */
 
-public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
+public class WebViewActivity extends BaseActivity implements View.OnClickListener {
     private WebView mWebView;
     private WebSettings mWebSetting;
     PackageInfo webInfo;
@@ -37,12 +38,15 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
 
     private String webLocal = "file:///android_asset/javascript.html";
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.webview_activity);
+    public void initView() {
         findViewById(R.id.btn_call).setOnClickListener(this);
-        mWebView = (WebView) findViewById(R.id.wv_sample);
+        initWebView();
+    }
+
+    public void initWebView() {
+        mWebView = findViewById(R.id.wv_sample);
 //        mWebView.loadUrl(webLocal);
         mWebView.loadUrl("https://www.zhidianbao.cn:8005/qs_yefang/screen/mytest.html?corpId=ding6f34e443f18c3ecc");
         //webInfo = mWebView.getCurrentWebViewPackage();  7.0开始可以 选择不同版本的Webview
@@ -72,6 +76,11 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.webview_activity;
     }
 
 

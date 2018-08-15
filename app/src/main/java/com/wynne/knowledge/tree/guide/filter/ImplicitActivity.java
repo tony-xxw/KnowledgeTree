@@ -11,23 +11,26 @@ import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author XXW
  * @date 2018/3/4
  */
 
-public class ImplicitActivity extends AppCompatActivity implements View.OnClickListener {
+public class ImplicitActivity extends BaseActivity implements View.OnClickListener {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.implicit_activity);
+    public void initView() {
         findViewById(R.id.btn_implicit_check).setOnClickListener(this);
         findViewById(R.id.btn_implicit_share).setOnClickListener(this);
         findViewById(R.id.btn_implicit_filter).setOnClickListener(this);
-        
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.implicit_activity;
     }
 
 

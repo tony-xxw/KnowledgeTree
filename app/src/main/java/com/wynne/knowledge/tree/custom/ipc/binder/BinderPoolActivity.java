@@ -10,14 +10,14 @@ import android.util.Log;
 import com.aidl.sample.ICompute;
 import com.aidl.sample.ISecurityCenter;
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
- *
  * @author Wynne
  * @date 2018/4/2
  */
 
-public class BinderPoolActivity extends AppCompatActivity {
+public class BinderPoolActivity extends BaseActivity {
 
     private static final String TAG = "BinderPoolActivity";
 
@@ -26,9 +26,7 @@ public class BinderPoolActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.binder_pool_activity);
+    public void initView() {
         new Thread(new Runnable() {
 
             @Override
@@ -36,6 +34,11 @@ public class BinderPoolActivity extends AppCompatActivity {
                 doWork();
             }
         }).start();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.binder_pool_activity;
     }
 
     private void doWork() {

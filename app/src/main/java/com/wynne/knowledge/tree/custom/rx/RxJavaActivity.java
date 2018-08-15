@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.util.concurrent.Callable;
 
@@ -17,20 +18,23 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
- * Created by Wynne on 2018/6/4.
+ * @author Wynne
+ * @date 2018/6/4
  */
 
-public class RxJavaActivity extends AppCompatActivity {
+public class RxJavaActivity extends BaseActivity {
+
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.rx_study_activity);
-
-
+    public void initView() {
         defaultFormat();
         justFormat();
         fromFormat();
+    }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.rx_study_activity;
     }
 
     /**

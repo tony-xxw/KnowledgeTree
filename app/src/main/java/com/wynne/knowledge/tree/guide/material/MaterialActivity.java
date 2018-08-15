@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.List;
  * @date 2018/4/27
  */
 
-public class MaterialActivity extends AppCompatActivity {
+public class MaterialActivity extends BaseActivity {
     private String[] arrys = {
             "Item1", "Item2", "Item3", "Item4",
             "Item5", "Item6", "Item7", "Item8",
@@ -31,6 +32,7 @@ public class MaterialActivity extends AppCompatActivity {
     };
     private List<String> mList;
     int resour;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +42,28 @@ public class MaterialActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void initView() {
+        initMaterial();
+
+        /** RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_list);
+         LinearLayoutManager mCastManager = new LinearLayoutManager(this);
+         mCastManager.setOrientation(LinearLayoutManager.VERTICAL);
+         mList = Arrays.asList(arrys);
+         RecycleViewAdapter adapter = new RecycleViewAdapter(this);
+         recyclerView.setLayoutManager(mCastManager);
+         recyclerView.setAdapter(adapter);**/
+    }
+
     private void initMaterial() {
         TitleCenterToolbar titleCenterToolbar = (TitleCenterToolbar) findViewById(R.id.toolbar);
         titleCenterToolbar.setTitle("测试");
     }
 
-    private void initView() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_list);
-        LinearLayoutManager mCastManager = new LinearLayoutManager(this);
-        mCastManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mList = Arrays.asList(arrys);
-        RecycleViewAdapter adapter = new RecycleViewAdapter(this);
-        recyclerView.setLayoutManager(mCastManager);
-        recyclerView.setAdapter(adapter);
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.mine_layout;
     }
 
 

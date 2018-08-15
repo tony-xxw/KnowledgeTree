@@ -10,7 +10,9 @@ import java.io.File;
  */
 
 public class AudioFileFunc {
-    //音频输入-麦克风
+    /**
+     * 音频输入-麦克风
+     **/
     public final static int AUDIO_INPUT = MediaRecorder.AudioSource.MIC;
 
     //采用频率

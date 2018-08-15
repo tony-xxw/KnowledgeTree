@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -24,19 +25,20 @@ import java.util.concurrent.TimeUnit;
  * @date 2018/5/21
  */
 
-public class ThreadPoolActivity extends AppCompatActivity {
+public class ThreadPoolActivity extends BaseActivity {
     private ThreadPoolExecutor executor;
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.thread_pool_activity);
-
-
+    public void initView() {
         initThreadPool();
 //        initNewSingerThreadPool();
 //        initNewFixedThreadPool();}
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.thread_pool_activity;
     }
 
     private void initNewFixedThreadPool() {

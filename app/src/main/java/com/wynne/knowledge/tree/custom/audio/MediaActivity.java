@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.io.File;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +24,7 @@ import java.util.concurrent.Executors;
  * @date 2018/4/8
  */
 
-public class MediaActivity extends AppCompatActivity {
+public class MediaActivity extends BaseActivity {
     private TextView tv_sendmsg, tv_press_send;
     private ExecutorService mExecutorService;
     private MediaRecorder mMediaRecorder;
@@ -43,7 +44,8 @@ public class MediaActivity extends AppCompatActivity {
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
         tv_sendmsg = (TextView) findViewById(R.id.tv_sendmsg);
         tv_press_send = (TextView) findViewById(R.id.tv_press_send);
         tv_press_send.setOnTouchListener(new View.OnTouchListener() {
@@ -68,6 +70,12 @@ public class MediaActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.media_layout;
     }
 
     /**

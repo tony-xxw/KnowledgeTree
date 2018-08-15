@@ -6,19 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/7/30
  */
 
-public class HandlerActivity extends AppCompatActivity {
+public class HandlerActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.handler_layout);
-    }
 
     public void onHandler(View v) {
         switch (v.getId()) {
@@ -27,5 +23,15 @@ public class HandlerActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.handler_layout;
     }
 }

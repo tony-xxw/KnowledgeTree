@@ -11,24 +11,28 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/3/5
  */
 
-public class FilterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class FilterActivity extends BaseActivity implements AdapterView.OnItemSelectedListener {
     private Button mSend;
     private Spinner mSpinner;
     private ArrayAdapter adapter;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.filter_activity);
+    public void initView() {
         mSend = (Button) findViewById(R.id.button_send);
         initSpinner();
+    }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.filter_activity;
     }
 
     private void initSpinner() {

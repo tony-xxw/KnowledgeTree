@@ -12,26 +12,29 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * @author Wynne
  * @date 2018/3/10
  */
 
-public class AppbarActivity extends AppCompatActivity {
+public class AppbarActivity extends BaseActivity {
     private Toolbar toolbar;
     private ActionBar actionBar;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.appbar_activity);
 
+    @Override
+    public void initView() {
         toolbar = (Toolbar) findViewById(R.id.tb_tool);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+    }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.appbar_activity;
     }
 
 

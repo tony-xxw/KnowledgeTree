@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,14 +19,13 @@ import java.io.IOException;
  * @date 2018/4/8
  */
 
-public class AudioActivity extends AppCompatActivity implements View.OnClickListener {
+public class AudioActivity extends BaseActivity implements View.OnClickListener {
     private String path;
     private MediaPlayer mediaPlayer;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.audio_layout);
+    public void initView() {
         findViewById(R.id.btn_start).setOnClickListener(this);
         findViewById(R.id.end_start).setOnClickListener(this);
         findViewById(R.id.play_start).setOnClickListener(this);
@@ -33,6 +33,11 @@ public class AudioActivity extends AppCompatActivity implements View.OnClickList
         path = getSDPath() + "/record/" + System.currentTimeMillis();
         Log.d("XXW", "path " + path);
         mediaPlayer = new MediaPlayer();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.audio_layout;
     }
 
     @Override

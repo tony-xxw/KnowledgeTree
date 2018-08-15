@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
  * 1.Activity的四种启动模式 Stands singTop SingTask SingleInstance
@@ -18,15 +19,19 @@ import com.wynne.knowledge.tree.R;
  * @date 2018/3/11
  */
 
-public class TaskActivity extends AppCompatActivity {
+public class TaskActivity extends BaseActivity {
     public static final String TAG = TaskActivity.class.getSimpleName();
     public static final int REQUEST = 100;
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.task_activity);
-        Log.d("XXW", TAG + "====onCreate");
+    public void initView() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.task_activity;
     }
 
 

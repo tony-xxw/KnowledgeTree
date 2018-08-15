@@ -17,6 +17,7 @@ import com.aidl.sample.Book;
 import com.aidl.sample.IBookManager;
 import com.aidl.sample.IOnNewBookArrivedListener;
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.base.BaseActivity;
 
 import java.util.List;
 
@@ -29,15 +30,19 @@ import java.util.List;
  * @date 2018/3/22
  */
 
-public class IpcActivity extends AppCompatActivity implements View.OnClickListener {
+public class IpcActivity extends BaseActivity implements View.OnClickListener {
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ipc_activity);
+    public void initView() {
         findViewById(R.id.test_remote).setOnClickListener(this);
         Intent intent = new Intent(this, BookManagerService.class);
         bindService(intent, connection, BIND_AUTO_CREATE);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.ipc_activity;
     }
 
 
