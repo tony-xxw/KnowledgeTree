@@ -13,6 +13,7 @@ import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
+import com.wynne.knowledge.tree.bookmark.activity.ThreadActivity;
 
 /**
  * @author XXW
@@ -42,6 +43,9 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
             case R.id.btn_bitmap:
                 startActivity(new Intent(getActivity(), BitmapActivity.class));
                 break;
+            case R.id.btn_thread:
+                startActivity(new Intent(getActivity(), ThreadActivity.class));
+                break;
             default:
                 break;
         }
@@ -52,6 +56,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_task).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_handler).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_bitmap).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_thread).setOnClickListener(this::onClick);
     }
 
     @Override

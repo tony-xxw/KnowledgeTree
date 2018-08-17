@@ -210,6 +210,10 @@
         <activity
             android:name=".bookmark.activity.BitmapActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".bookmark.activity.ThreadActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

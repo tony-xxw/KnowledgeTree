@@ -22,4 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="一张图片所占内存" />
+
+    <Button
+        android:id="@+id/btn_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多线程相关" />
 </LinearLayout>

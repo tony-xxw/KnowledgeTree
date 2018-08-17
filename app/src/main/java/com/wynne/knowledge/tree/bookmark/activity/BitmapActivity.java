@@ -28,6 +28,8 @@ public class BitmapActivity extends BaseActivity {
         mBitmapIv.setImageBitmap(getBitmap(100, 100));
 
         Glide.with(this).load(R.drawable.icon_large).into(mBitmapIv);
+
+
     }
 
 
