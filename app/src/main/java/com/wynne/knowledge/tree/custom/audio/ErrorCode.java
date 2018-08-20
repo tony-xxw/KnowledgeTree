@@ -3,7 +3,6 @@ package com.wynne.knowledge.tree.custom.audio;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.wynne.knowledge.tree.R;
 
 
 /**

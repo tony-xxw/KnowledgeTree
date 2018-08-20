@@ -1,10 +1,7 @@
 package com.wynne.knowledge.tree.custom.thread;
 
 
-import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.wynne.knowledge.tree.R;

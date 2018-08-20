@@ -3,8 +3,6 @@ package com.wynne.knowledge.tree.guide.material;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,6 @@ import android.widget.TextView;
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseActivity;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
