@@ -1,7 +1,12 @@
 package com.wynne.knowledge.tree;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.wynne.knowledge.tree.base.BaseActivity;
@@ -26,6 +31,31 @@ public class MainActivity extends BaseActivity {
         mBngMenu.setOnNavigationItemSelectedListener(listener);
 
 
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d("XXW", "onConfigurationChanged : " + newConfig.orientation);
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d("XXW", "onSaveInstanceState ");
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onRestoreInstanceState(savedInstanceState, persistentState);
+        Log.d("XXW", "onRestoreInstanceState ");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d("XXW", "onNewIntent ");
     }
 
     @Override
@@ -67,4 +97,6 @@ public class MainActivity extends BaseActivity {
             return false;
         }
     };
+
+
 }
