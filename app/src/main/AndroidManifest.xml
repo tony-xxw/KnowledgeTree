@@ -99,6 +99,8 @@
 
         <service android:name=".guide.service.BindService" />
 
+        <service android:name=".service.MyIntentService"/>
+
         <activity
             android:name=".guide.webview.WebViewActivity"
             android:launchMode="singleTop" />
