@@ -22,6 +22,7 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author xxw
  */
 public class ThreadActivity extends BaseActivity implements View.OnClickListener {
+    private ThreadLocal local;
 
     private Handler mHandler = new Handler() {
         @Override
@@ -33,6 +34,9 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void initView() {
+        local = new ThreadLocal();
+        local.set(true);
+        Log.d("XXW", "ThreadLocal " + local.get());
 //        initViewStub();
         ViewStub thread = findViewById(R.id.vs_thread);
         thread.inflate();
@@ -40,12 +44,12 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
         findViewById(R.id.btn_handler).setOnClickListener(this);
         findViewById(R.id.btn_service).setOnClickListener(this);
         findViewById(R.id.btn_executor).setOnClickListener(this);
-        new Thread(new Runnable() {
+        Executors.newFixedThreadPool(1).execute(new Runnable() {
             @Override
             public void run() {
                 mHandler.sendEmptyMessage(1);
             }
-        }).start();
+        });
     }
 
     private void initViewStub() {
@@ -98,7 +102,7 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
 
         //单利线程 核心线程为1
         ExecutorService single = Executors.newSingleThreadExecutor();
-        scheduled.execute(runnable);
+        single.execute(runnable);
     }
 
 
