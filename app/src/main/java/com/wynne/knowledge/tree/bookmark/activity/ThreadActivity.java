@@ -1,5 +1,6 @@
 package com.wynne.knowledge.tree.bookmark.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseActivity;
 import com.wynne.knowledge.tree.service.MyIntentService;
 
+import java.lang.ref.WeakReference;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -24,13 +26,21 @@ import java.util.concurrent.ScheduledExecutorService;
 public class ThreadActivity extends BaseActivity implements View.OnClickListener {
     private ThreadLocal local;
 
-    private Handler mHandler = new Handler() {
+    static class MyHandler extends Handler {
+        WeakReference<Activity> weakReference;
+
+        public MyHandler(Activity activity) {
+            this.weakReference = new WeakReference<>(activity);
+        }
+
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            Log.d("XXW", "sss");
+            Activity activity = weakReference.get();
         }
-    };
+    }
+
+    private MyHandler mHandler = new MyHandler(this);
 
     @Override
     public void initView() {
