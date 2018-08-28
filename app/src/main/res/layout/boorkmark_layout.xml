@@ -29,9 +29,9 @@
         android:layout_height="wrap_content"
         android:text="多线程相关" />
 
-    <TextView
+    <Button
         android:text="auto_framework"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="password" />
 </LinearLayout>
