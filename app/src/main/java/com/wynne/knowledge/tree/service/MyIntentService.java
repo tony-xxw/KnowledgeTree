@@ -22,6 +22,18 @@ public class MyIntentService extends IntentService {
     }
 
     @Override
+    public void onStart(@Nullable Intent intent, int startId) {
+        Log.d("XXW", "onStart");
+        super.onStart(intent, startId);
+    }
+
+    @Override
+    public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
+        Log.d("XXW", "onStartCommand");
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         String action = intent.getStringExtra("task_action");
         SystemClock.sleep(2000);
