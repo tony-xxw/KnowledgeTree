@@ -6,7 +6,7 @@ import android.view.VelocityTracker;
 
 /**
  * @author Wynne
- * @date 2018/7/20
+ * @date 2018/7/20  
  */
 
 public abstract class BaseDirectionRuler extends BaseInnerRuler {

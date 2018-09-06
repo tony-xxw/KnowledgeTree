@@ -24,7 +24,6 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author xxw
  */
 public class ThreadActivity extends BaseActivity implements View.OnClickListener {
-    private ThreadLocal local;
 
     static class MyHandler extends Handler {
         WeakReference<Activity> weakReference;
@@ -44,9 +43,6 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void initView() {
-        local = new ThreadLocal();
-        local.set(true);
-        Log.d("XXW", "ThreadLocal " + local.get());
 //        initViewStub();
         ViewStub thread = findViewById(R.id.vs_thread);
         thread.inflate();
