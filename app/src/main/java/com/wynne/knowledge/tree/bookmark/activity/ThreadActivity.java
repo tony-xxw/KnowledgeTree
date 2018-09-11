@@ -39,7 +39,7 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-    private MyHandler mHandler = new MyHandler(this);
+    private MyHandler mHandlers = new MyHandler(this);
 
     @Override
     public void initView() {
@@ -53,7 +53,7 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
         Executors.newFixedThreadPool(1).execute(new Runnable() {
             @Override
             public void run() {
-                mHandler.sendEmptyMessage(1);
+                mHandlers.sendEmptyMessage(1);
             }
         });
     }

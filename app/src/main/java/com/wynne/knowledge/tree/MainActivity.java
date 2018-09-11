@@ -31,6 +31,11 @@ public class MainActivity extends BaseActivity {
         mBngMenu.setOnNavigationItemSelectedListener(listener);
 
 
+        Log.d("XXW", "density :" + getResources().getDisplayMetrics().density);
+        Log.d("XXW", "density :" + getResources().getDisplayMetrics().densityDpi);
+        Log.d("XXW", "density :" + getResources().getDisplayMetrics().widthPixels);
+        Log.d("XXW", "density :" + getResources().getDisplayMetrics().heightPixels);
+
     }
 
     @Override
