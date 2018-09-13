@@ -42,14 +42,6 @@ public class MaterialActivity extends BaseActivity {
     @Override
     public void initView() {
         initMaterial();
-
-        /** RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_list);
-         LinearLayoutManager mCastManager = new LinearLayoutManager(this);
-         mCastManager.setOrientation(LinearLayoutManager.VERTICAL);
-         mList = Arrays.asList(arrys);
-         RecycleViewAdapter adapter = new RecycleViewAdapter(this);
-         recyclerView.setLayoutManager(mCastManager);
-         recyclerView.setAdapter(adapter);**/
     }
 
     private void initMaterial() {
@@ -73,7 +65,7 @@ public class MaterialActivity extends BaseActivity {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item, null);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item, parent, false);
             return new ViewHolder(view);
         }
 
