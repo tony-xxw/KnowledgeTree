@@ -1,6 +1,7 @@
 package com.wynne.knowledge.tree.bookmark;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -40,6 +41,21 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.btn_thread:
                 startActivity(new Intent(getActivity(), ThreadActivity.class));
+                break;
+            case R.id.btn_ui:
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                });
+
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                });
                 break;
             default:
                 break;

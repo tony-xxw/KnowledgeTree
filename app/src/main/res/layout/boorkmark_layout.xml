@@ -30,8 +30,8 @@
         android:text="多线程相关" />
 
     <Button
-        android:text="auto_framework"
+        android:id="@+id/btn_ui"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="password" />
+        android:text="主线程UI" />
 </LinearLayout>
