@@ -1,10 +1,10 @@
 package com.wynne.knowledge.tree.bookmark;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.ScrollingActivity;
 import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
@@ -43,19 +43,18 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
                 startActivity(new Intent(getActivity(), ThreadActivity.class));
                 break;
             case R.id.btn_ui:
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
+                /**getActivity().runOnUiThread(new Runnable() {
+                @Override public void run() {
 
-                    }
+                }
                 });
 
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
+                 new Handler().post(new Runnable() {
+                @Override public void run() {
 
-                    }
-                });
+                }
+                });*/
+                startActivity(new Intent(getActivity(), ScrollingActivity.class));
                 break;
             default:
                 break;
