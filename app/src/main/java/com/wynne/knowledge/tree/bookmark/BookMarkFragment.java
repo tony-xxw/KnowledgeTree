@@ -67,6 +67,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_handler).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_bitmap).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_thread).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_ui).setOnClickListener(this::onClick);
     }
 
     @Override
