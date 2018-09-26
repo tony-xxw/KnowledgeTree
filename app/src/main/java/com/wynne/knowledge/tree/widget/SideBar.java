@@ -11,17 +11,21 @@ import android.view.View;
  */
 
 public class SideBar extends View {
+
     private Context mContext;
 
     public SideBar(Context context) {
         super(context);
+        mContext = context;
     }
 
     public SideBar(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
     }
 
     public SideBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
     }
 }
