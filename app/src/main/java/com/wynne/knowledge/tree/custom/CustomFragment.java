@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.custom.audio.AudioActivity;
+import com.wynne.knowledge.tree.custom.interfere.InterfereActivity;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;
 import com.wynne.knowledge.tree.custom.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.tree.custom.ipc.provider.ProviderActivity;
@@ -34,12 +34,9 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
         return fragment;
     }
 
-    View mContentView;
-
 
     @Override
     public void initView() {
-        mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.custom_fragment, null);
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_interfere).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
@@ -103,7 +100,7 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
                 startActivity(new Intent(getActivity(), WindowActivity.class));
                 break;
             case R.id.btn_interfere:
-
+                startActivity(new Intent(getActivity(), InterfereActivity.class));
                 break;
             default:
                 break;
