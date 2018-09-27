@@ -182,7 +182,11 @@
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".custom.interfere.InterfereActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

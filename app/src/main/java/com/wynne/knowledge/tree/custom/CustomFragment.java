@@ -41,6 +41,7 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
     public void initView() {
         mContentView = LayoutInflater.from(getActivity()).inflate(R.layout.custom_fragment, null);
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_interfere).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_ipc_provider).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_socket).setOnClickListener(this);
@@ -100,6 +101,9 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.btn_window:
                 startActivity(new Intent(getActivity(), WindowActivity.class));
+                break;
+            case R.id.btn_interfere:
+
                 break;
             default:
                 break;
