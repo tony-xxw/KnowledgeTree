@@ -84,7 +84,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
                 break;
         }
 
-        mLastX = x;
+        mLastX = x;      
         mLastY = y;
         mLastInterceptedX = x;
         mLastInterceptedY = y;
