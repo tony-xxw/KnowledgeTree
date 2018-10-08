@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.widget.HorizontalScrollViewEx;
+import com.wynne.knowledge.tree.widget.HorizontalScrollViewEx2;
+import com.wynne.knowledge.tree.widget.ListViewExt;
 
 import java.util.ArrayList;
 
@@ -25,21 +27,44 @@ import java.util.ArrayList;
  */
 
 public class InterfereActivity extends AppCompatActivity {
-    //外部拦截法
+    /**
+     * 外部拦截法
+     */
     private HorizontalScrollViewEx mListContainer;
+    /**
+     * 内部拦截
+     */
+    private HorizontalScrollViewEx2 mListContainer2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfere_layout);
-        initView();
+//        initView();
+        initView2();
+    }
+
+    private void initView2() {
+        LayoutInflater layoutInflater = getLayoutInflater();
+        mListContainer2 = findViewById(R.id.container2);
+        int screenWidth = getResources().getDisplayMetrics().widthPixels;
+
+
+        for (int i = 0; i < 3; i++) {
+            ViewGroup layout = (ViewGroup) layoutInflater.inflate(R.layout.content_layout2, mListContainer2, false);
+            layout.getLayoutParams().width = screenWidth;
+            TextView textView = layout.findViewById(R.id.title);
+            textView.setText("page" + (i + 1));
+            layout.setBackgroundColor(Color.rgb(255 / (i + 1), 255 / (i + 1), 0));
+            createList2(layout);
+            mListContainer2.addView(layout);
+        }
     }
 
     private void initView() {
         LayoutInflater layoutInflater = getLayoutInflater();
         mListContainer = findViewById(R.id.container);
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
-        int screenHeight = getResources().getDisplayMetrics().heightPixels;
 
 
         for (int i = 0; i < 3; i++) {
@@ -59,7 +84,18 @@ public class InterfereActivity extends AppCompatActivity {
         for (int i = 0; i < 50; i++) {
             date.add("name " + i);
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.content_list_item, R.id.name, date);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.content_list_item, R.id.name, date);
+        listView.setAdapter(adapter);
+    }
+
+    private void createList2(ViewGroup layout) {
+        ListViewExt listView = (ListViewExt) layout.findViewById(R.id.list);
+        ArrayList<String> date = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            date.add("name " + i);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.content_list_item, R.id.name, date);
+        listView.setHorizontalScrollViewEx2(mListContainer2);
         listView.setAdapter(adapter);
     }
 }

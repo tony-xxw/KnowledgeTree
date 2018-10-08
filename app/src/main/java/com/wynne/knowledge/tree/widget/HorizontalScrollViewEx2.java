@@ -11,10 +11,10 @@ import android.widget.Scroller;
 
 /**
  * @author Wynne
- * @date 2018/9/27
+ * @date 2018/10/8
  */
 
-public class HorizontalScrollViewEx extends ViewGroup {
+public class HorizontalScrollViewEx2 extends ViewGroup {
 
     private int mLastX = 0;
     private int mLastY = 0;
@@ -26,18 +26,18 @@ public class HorizontalScrollViewEx extends ViewGroup {
     private int mChildWidth;
     private int mChildSize;
 
-    public HorizontalScrollViewEx(Context context) {
+    public HorizontalScrollViewEx2(Context context) {
         super(context);
         init();
     }
 
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs) {
+    public HorizontalScrollViewEx2(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HorizontalScrollViewEx(Context context, AttributeSet attrs, int defStyleAttr) {
+    public HorizontalScrollViewEx2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -53,48 +53,24 @@ public class HorizontalScrollViewEx extends ViewGroup {
         mVelocityTracker = VelocityTracker.obtain();
     }
 
-
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean intercepted = false;
-        int x = (int) ev.getX();
-        int y = (int) ev.getY();
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        int action = event.getAction();
 
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN: {
-                intercepted = false;
-                if (!mScroller.isFinished()) {
-                    //停止滑动
-                    mScroller.abortAnimation();
-                    intercepted = true;
-                }
-                break;
+        if (action == MotionEvent.ACTION_DOWN) {
+            mLastX = x;
+            if (!mScroller.isFinished()) {
+                mScroller.abortAnimation();
+                return true;
             }
-            case MotionEvent.ACTION_MOVE: {
-                int deleteX = x - mLastInterceptedX;
-                int deleteY = y - mLastInterceptedY;
+            return false;
 
-                if (Math.abs(deleteX) > Math.abs(deleteY)) {
-                    //外部拦截 子类无法操作
-                    intercepted = true;
-                } else {
-                    intercepted = false;
-                }
-                break;
-            }
-            case MotionEvent.ACTION_UP: {
-                intercepted = false;
-                break;
-            }
-            default:
-                break;
+        } else {
+            return true;
         }
 
-        mLastX = x;
-        mLastY = y;
-        mLastInterceptedX = x;
-        mLastInterceptedY = y;
-        return intercepted;
     }
 
     @Override
@@ -204,6 +180,4 @@ public class HorizontalScrollViewEx extends ViewGroup {
             }
         }
     }
-
-
 }
