@@ -52,7 +52,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
         mScroller = new Scroller(getContext());
         mVelocityTracker = VelocityTracker.obtain();
     }
-    
+
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
