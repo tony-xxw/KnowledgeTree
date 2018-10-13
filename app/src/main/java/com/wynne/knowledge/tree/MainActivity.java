@@ -18,7 +18,7 @@ import com.wynne.knowledge.tree.guide.GuideFragment;
  * @author XXW
  */
 public class MainActivity extends BaseActivity {
-
+              
 
     @Override
     public void initView() {
@@ -29,12 +29,6 @@ public class MainActivity extends BaseActivity {
 
         BottomNavigationView mBngMenu = findViewById(R.id.bnm_menu);
         mBngMenu.setOnNavigationItemSelectedListener(listener);
-
-
-        Log.d("XXW", "density :" + getResources().getDisplayMetrics().density);
-        Log.d("XXW", "density :" + getResources().getDisplayMetrics().densityDpi);
-        Log.d("XXW", "density :" + getResources().getDisplayMetrics().widthPixels);
-        Log.d("XXW", "density :" + getResources().getDisplayMetrics().heightPixels);
 
     }
 
