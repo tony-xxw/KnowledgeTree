@@ -11,6 +11,7 @@ import android.widget.EdgeEffect;
 import android.widget.OverScroller;
 
 /**
+ * 艺术探索 第四章学习
  * Created by Wynne on 2018/7/20.
  *
  * @author xxw
