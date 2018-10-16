@@ -45,8 +45,16 @@ public class CircleView extends View {
         paintR.setStyle(Paint.Style.FILL);
         paintR.setAntiAlias(true);
 
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int paddingTop = getPaddingTop();
+        int paddingBottom = getPaddingBottom();
+
+        int width = getMeasuredWidth() - paddingLeft - paddingRight;
+        int height = getMeasuredHeight() - paddingTop - paddingBottom;
+
         Path path = new Path();
-        path.addCircle(100, 100, 100, Path.Direction.CW);
+        path.addCircle((width / 2) + paddingLeft, height / 2, height / 2, Path.Direction.CW);
 
 
         /**canvas.save();

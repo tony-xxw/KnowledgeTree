@@ -26,6 +26,7 @@ public class Utils {
         switch (specMode) {
             case View.MeasureSpec.UNSPECIFIED:
             case View.MeasureSpec.AT_MOST:
+                result = 200;
                 break;
             case View.MeasureSpec.EXACTLY:
                 result = specSize;
