@@ -57,6 +57,12 @@ public class ViewActivity extends BaseActivity implements View.OnTouchListener {
                 Log.d("XXW", "Y :" + event.getY());
 
 
+
+
+
+
+
+
                 velocityTracker.clear();
                 velocityTracker.recycle();
                 return false;
