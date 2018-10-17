@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/ic_messages_like_selected"
+        android:maxLevel="100"
+        android:minLevel="50" />
+
+    <item
+        android:drawable="@drawable/ic_messages_like_unselected"
+        android:maxLevel="49"
+        android:minLevel="1" />
+
+    <item android:drawable="@drawable/ic_messages_like_selected" />
+</level-list>

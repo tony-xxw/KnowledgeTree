@@ -7,6 +7,7 @@ import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.ScrollingActivity;
 import com.wynne.knowledge.tree.base.BaseFragment;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
+import com.wynne.knowledge.tree.bookmark.activity.DrawableActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 import com.wynne.knowledge.tree.bookmark.activity.ThreadActivity;
@@ -57,6 +58,8 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
                 }
                 });*/
                 startActivity(new Intent(getActivity(), ScrollingActivity.class));
+            case R.id.btn_drawable:
+                startActivity(new Intent(getActivity(), DrawableActivity.class));
                 break;
             default:
                 break;
@@ -70,6 +73,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_bitmap).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_thread).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_ui).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_drawable).setOnClickListener(this::onClick);
     }
 
     @Override
