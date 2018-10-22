@@ -6,6 +6,7 @@ import android.view.View;
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.ScrollingActivity;
 import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.bookmark.activity.AnimationActivity;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.DrawableActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
@@ -61,6 +62,11 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
             case R.id.btn_drawable:
                 startActivity(new Intent(getActivity(), DrawableActivity.class));
                 break;
+            case R.id.btn_anim:
+                startActivity(new Intent(getActivity(), AnimationActivity.class));
+                getActivity().overridePendingTransition(R.anim.translate_out_toast, R.anim.translate_int_toast);
+                break;
+
             default:
                 break;
         }
@@ -74,6 +80,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_thread).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_ui).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_drawable).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_anim).setOnClickListener(this::onClick);
     }
 
     @Override
