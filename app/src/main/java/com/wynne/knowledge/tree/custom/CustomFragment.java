@@ -5,7 +5,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseFragment;
@@ -48,6 +52,16 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
         mContentView.findViewById(R.id.btn_thread_poll).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_rx).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_window).setOnClickListener(this);
+
+
+        EditText editText = mContentView.findViewById(R.id.btn_keyevent);
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                Log.e("XXW", "标签: " + textView.getText().toString());
+                return false;
+            }
+        });
     }
 
     @Override
