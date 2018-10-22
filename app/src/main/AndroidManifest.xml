@@ -195,6 +195,10 @@
         <activity
             android:name=".bookmark.activity.AnimationActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".custom.book.CustomAnimationActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

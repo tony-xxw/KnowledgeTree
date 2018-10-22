@@ -12,6 +12,7 @@ import com.wynne.knowledge.tree.bookmark.activity.DrawableActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 import com.wynne.knowledge.tree.bookmark.activity.ThreadActivity;
+import com.wynne.knowledge.tree.custom.book.CustomAnimationActivity;
 
 /**
  * 艺术探索读书笔记
@@ -66,7 +67,9 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
                 startActivity(new Intent(getActivity(), AnimationActivity.class));
                 getActivity().overridePendingTransition(R.anim.translate_out_toast, R.anim.translate_int_toast);
                 break;
-
+            case R.id.btn_anim_custom:
+                startActivity(new Intent(getActivity(), CustomAnimationActivity.class));
+                break;
             default:
                 break;
         }
@@ -81,6 +84,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_ui).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_drawable).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_anim).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_anim_custom).setOnClickListener(this::onClick);
     }
 
     @Override
