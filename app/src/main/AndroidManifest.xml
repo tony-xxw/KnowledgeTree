@@ -199,6 +199,9 @@
         <activity
             android:name=".custom.book.CustomAnimationActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".custom.book.AnimationPathActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
