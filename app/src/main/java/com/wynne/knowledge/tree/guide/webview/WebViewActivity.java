@@ -36,7 +36,7 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
     PackageInfo webInfo;
 
 
-    private String webLocal = "file:///android_asset/javascript.html";
+    private String webLocal = "file:///android_asset/start.html";
 
 
     @Override
@@ -47,8 +47,8 @@ public class WebViewActivity extends BaseActivity implements View.OnClickListene
 
     public void initWebView() {
         mWebView = findViewById(R.id.wv_sample);
-//        mWebView.loadUrl(webLocal);
-        mWebView.loadUrl("https://www.zhidianbao.cn:8005/qs_yefang/screen/mytest.html?corpId=ding6f34e443f18c3ecc");
+        mWebView.loadUrl(webLocal);
+//        mWebView.loadUrl("https://www.zhidianbao.cn:8005/qs_yefang/screen/mytest.html?corpId=ding6f34e443f18c3ecc");
         //webInfo = mWebView.getCurrentWebViewPackage();  7.0开始可以 选择不同版本的Webview
         mWebSetting = mWebView.getSettings();
         //启动JavaScript
