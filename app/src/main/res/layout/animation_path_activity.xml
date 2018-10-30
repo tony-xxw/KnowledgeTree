@@ -10,12 +10,22 @@
 
     <com.wynne.knowledge.tree.widget.PlayAnimationView
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="200dp" />
+        android:layout_height="150dp" />
 
     <ImageView
         android:id="@+id/iv_vector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/svg_sample" />
+
+
+    <com.wynne.knowledge.tree.widget.QuadView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.wynne.knowledge.tree.widget.AnimWaveView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
