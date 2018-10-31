@@ -203,6 +203,10 @@
         <activity
             android:name=".custom.book.AnimationPathActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".bookmark.activity.ShadowActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

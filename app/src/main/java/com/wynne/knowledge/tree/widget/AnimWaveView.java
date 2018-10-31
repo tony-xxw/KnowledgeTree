@@ -43,7 +43,7 @@ public class AnimWaveView extends View {
         int originY = 300;
         int halfWaveLen = mItemWaveLength / 2;
         mPath.moveTo(-mItemWaveLength + dx, originY);
-        for (int i = -mItemWaveLength; i < getWidth() + mItemWaveLength; i += mItemWaveLength) {
+        for (int i = -mItemWaveLength; i < getWidth() + mItemWaveLength; i  += mItemWaveLength) {
             mPath.rQuadTo(halfWaveLen / 2, -100, halfWaveLen, 0);
             mPath.rQuadTo(halfWaveLen / 2, 100, halfWaveLen, 0);
         }

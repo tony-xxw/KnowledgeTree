@@ -10,6 +10,7 @@ import com.wynne.knowledge.tree.bookmark.activity.AnimationActivity;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.DrawableActivity;
 import com.wynne.knowledge.tree.bookmark.activity.HandlerActivity;
+import com.wynne.knowledge.tree.bookmark.activity.ShadowActivity;
 import com.wynne.knowledge.tree.bookmark.activity.TaskActivity;
 import com.wynne.knowledge.tree.bookmark.activity.ThreadActivity;
 import com.wynne.knowledge.tree.custom.book.AnimationPathActivity;
@@ -74,6 +75,9 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
             case R.id.btn_anim_path:
                 startActivity(new Intent(getActivity(), AnimationPathActivity.class));
                 break;
+            case R.id.btn_shadown:
+                startActivity(new Intent(getActivity(), ShadowActivity.class));
+                break;
             default:
                 break;
         }
@@ -90,6 +94,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_anim).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_anim_custom).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_anim_path).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_shadown).setOnClickListener(this::onClick);
     }
 
     @Override
