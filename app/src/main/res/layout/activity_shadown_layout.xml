@@ -26,7 +26,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <com.wynne.knowledge.tree.widget.BlurMaskFilterView
             android:id="@+id/bmfv_sample"
@@ -66,6 +67,16 @@
                 android:text="OUTER" />
         </LinearLayout>
     </LinearLayout>
+
+    <com.wynne.knowledge.tree.widget.ShaderView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:visibility="gone" />
+
+    <com.wynne.knowledge.tree.widget.AvatorView
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
 
     <TextView
         android:layout_width="wrap_content"
