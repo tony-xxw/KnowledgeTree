@@ -17,7 +17,6 @@ import com.wynne.knowledge.tree.custom.book.AnimationPathActivity;
 import com.wynne.knowledge.tree.custom.book.CustomAnimationActivity;
 
 /**
- *
  * 艺术探索读书笔记
  *
  * @author XXW
@@ -96,6 +95,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         mContentView.findViewById(R.id.btn_anim_custom).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_anim_path).setOnClickListener(this::onClick);
         mContentView.findViewById(R.id.btn_shadown).setOnClickListener(this::onClick);
+        mContentView.findViewById(R.id.btn_xfermode).setOnClickListener(this::onClick);
     }
 
     @Override

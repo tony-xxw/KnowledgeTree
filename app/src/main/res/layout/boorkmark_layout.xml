@@ -64,4 +64,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="自定义实战 Path动画" />
+
+    <Button
+        android:id="@+id/btn_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义实战Xfermode" />
 </LinearLayout>
