@@ -212,4 +212,6 @@
             android:launchMode="singleTop" />
     </application>
 
+
+
 </manifest>

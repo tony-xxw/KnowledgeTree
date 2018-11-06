@@ -14,7 +14,9 @@ import android.view.View;
 import com.wynne.knowledge.tree.R;
 
 /**
- * Created by Wynne on 2018/11/5.
+ *
+ * @author Wynne
+ * @date 2018/11/5
  */
 
 public class AvoidXfermodeView extends View {

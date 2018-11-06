@@ -27,7 +27,6 @@ public class ShadowActivity extends BaseActivity implements View.OnClickListener
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
-
     }
 
     @Override
