@@ -52,6 +52,7 @@ public class ShadowActivity extends BaseActivity implements View.OnClickListener
             case R.id.btn4:
                 blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.OUTER);
                 break;
+
             default:
                 break;
         }
