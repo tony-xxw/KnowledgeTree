@@ -5,6 +5,9 @@ import android.view.View;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.design.LoginActivity;
+import com.wynne.knowledge.tree.design.LoginContext;
+import com.wynne.knowledge.tree.design.LogoutState;
 import com.wynne.knowledge.tree.guide.appbar.AppbarActivity;
 import com.wynne.knowledge.tree.guide.constrain.ConstraintActivity;
 import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
@@ -42,6 +45,9 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_service).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_webview).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_material).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_clone).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_forward).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
     }
 
     public static GuideFragment getInstance() {
@@ -77,7 +83,15 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
             case R.id.btn_material:
                 startActivity(new Intent(getActivity(), MaterialActivity.class));
                 break;
-
+            case R.id.btn_clone:
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                break;
+            case R.id.btn_forward:
+                LoginContext.getLoginContext().forWard(getActivity());
+                break;
+            case R.id.btn_logout:
+                LoginContext.getLoginContext().setState(new LogoutState());
+                break;
             default:
                 break;
         }

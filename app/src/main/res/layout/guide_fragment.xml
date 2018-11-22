@@ -51,6 +51,21 @@
             style="@style/BtnCommon"
             android:text="@string/material" />
 
+        <Button
+            android:id="@+id/btn_clone"
+            style="@style/BtnCommon"
+            android:text="@string/please_login" />
+
+        <Button
+            android:id="@+id/btn_forward"
+            style="@style/BtnCommon"
+            android:text="@string/forward" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            style="@style/BtnCommon"
+            android:text="@string/logout" />
+
     </LinearLayout>
 
 
