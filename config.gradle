@@ -1,11 +1,10 @@
 ext {
 
     isModule = true
-    moduleHot = false
-    moduleFind = false
-    moduleAccount = false
-    moduleWelfare = false
-    moduleMain = true
+    moduleGuide = false
+    moduleCustom = false
+    moduleBookmark = false
+    moduleMain = false
 
     android = [
             compileSdkVersion       : 26,
