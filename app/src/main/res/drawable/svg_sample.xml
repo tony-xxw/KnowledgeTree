@@ -7,6 +7,6 @@
     <path
         android:name="bar"
         android:pathData="M50,25 L100,25"
-        android:strokeColor="@android:color/darker_gray"
+
         android:strokeWidth="2" />
 </vector>

@@ -12,14 +12,7 @@ android {
         versionName rootProject.ext.versions.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-                includeCompileClasspath = true
-            }
-        }
     }
 
     buildTypes {
@@ -33,13 +26,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.dependencies["appcompat_v7"]
-    api rootProject.ext.dependencies["constraint_layout"]
-    api rootProject.ext.dependencies["design"]
-    api rootProject.ext.dependencies["glide"]
-    api rootProject.ext.dependencies["multidex"]
-    api rootProject.ext.dependencies["circleimageview"]
-    api rootProject.ext.dependencies["rxjava"]
-    api rootProject.ext.dependencies["rxandroid"]
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':commonbase')
 
 }
