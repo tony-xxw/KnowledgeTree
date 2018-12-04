@@ -50,6 +50,8 @@ dependencies {
     if (!Boolean.valueOf(rootProject.ext.isModule)) {
         //main模块
         implementation project(':modelMain')
+        implementation project(':modelGuide')
+        implementation project(':modelMark')
     }
 
 }

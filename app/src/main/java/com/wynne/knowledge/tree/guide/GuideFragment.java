@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
-import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.base.view.BaseFragment;
 import com.wynne.knowledge.tree.design.LoginActivity;
 import com.wynne.knowledge.tree.design.LoginContext;
 import com.wynne.knowledge.tree.design.LogoutState;

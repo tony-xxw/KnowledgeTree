@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wynne.knowledge.tree.R;
-import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.base.view.BaseFragment;
 import com.wynne.knowledge.tree.custom.audio.AudioActivity;
 import com.wynne.knowledge.tree.custom.interfere.InterfereActivity;
 import com.wynne.knowledge.tree.custom.ipc.IpcActivity;

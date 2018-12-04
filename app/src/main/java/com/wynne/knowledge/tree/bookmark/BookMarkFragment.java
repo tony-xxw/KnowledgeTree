@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.ScrollingActivity;
-import com.wynne.knowledge.tree.base.BaseFragment;
+import com.wynne.knowledge.tree.base.view.BaseFragment;
 import com.wynne.knowledge.tree.bookmark.activity.AnimationActivity;
 import com.wynne.knowledge.tree.bookmark.activity.BitmapActivity;
 import com.wynne.knowledge.tree.bookmark.activity.DrawableActivity;
