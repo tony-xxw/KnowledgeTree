@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import com.wynne.knowledge.tree.base.BaseActivity;
 import com.wynne.knowledge.tree.bookmark.BookMarkFragment;
 import com.wynne.knowledge.tree.custom.CustomFragment;
-import com.wynne.knowledge.tree.guide.GuideFragment;
+import com.wynne.knowledge.tree.home.GuideFragment;
 
 /**
  * @author XXW

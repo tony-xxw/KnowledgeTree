@@ -22,19 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.HOME" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
 
-        </activity>
         <activity
             android:name=".guide.filter.ImplicitActivity"
             android:launchMode="singleTop"
@@ -63,7 +52,7 @@
         <receiver android:name=".guide.notification.NotificationActivity$MyBroadCast" />
 
         <activity
-            android:name=".guide.appbar.AppbarActivity"
+            android:name=".appbar.AppbarActivity"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

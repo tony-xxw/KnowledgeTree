@@ -2,7 +2,7 @@ package com.wynne.knowledge.tree;
 
 import android.app.Application;
 
-import com.wynne.knowledge.tree.service.AccountServiceImpl;
+import com.wynne.knowledge.tree.service.MainServiceImpl;
 import com.wynne.knowledge.tree.service.ServiceFactory;
 
 /**
@@ -22,7 +22,7 @@ public class MainApplication extends BaseApplication {
 
     @Override
     public void initModuleApp(Application application) {
-        ServiceFactory.getInstance().setAccountService(new AccountServiceImpl());
+        ServiceFactory.getInstance().setAccountService(new MainServiceImpl());
     }
 
     @Override

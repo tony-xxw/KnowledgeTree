@@ -1,9 +1,5 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
@@ -44,12 +40,9 @@ public class FlagsActivity extends BaseActivity {
 
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_flags:
-
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_flags) {
+        } else {
         }
     }
 }

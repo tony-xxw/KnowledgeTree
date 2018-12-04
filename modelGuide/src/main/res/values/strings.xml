@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">modelGuide</string>
+    <string name="guide">guide</string>
+    <string name="action_favorite">偏好</string>
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="share">分享</string>
+    <string name="share_title">选择</string>
+    <string name="progress_title_notification">progress标题</string>
+    <string name="reply">回复信息</string>
+    <string name="progress_notification">progress通知</string>
+    <string name="start_notification">启动通知</string>
+
+    <string-array name="spinner_item">
+        <item>官方文档</item>
+        <item>玉刚说学习周</item>
+        <item>艺术探索</item>
+        <item>LeetCoder</item>
+        <item>Think in java</item>
+    </string-array>
 </resources>

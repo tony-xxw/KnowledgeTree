@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import com.wynne.knowledge.tree.R;
 import com.wynne.knowledge.tree.base.BaseActivity;

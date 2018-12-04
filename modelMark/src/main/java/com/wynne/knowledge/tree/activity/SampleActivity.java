@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,15 +30,14 @@ public class SampleActivity extends BaseActivity {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_result:
-                Intent intent = new Intent();
-                intent.putExtra(TAG, "result");
-                setResult(RESULT_OK);
-                finish();
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_result) {
+            Intent intent = new Intent();
+            intent.putExtra(TAG, "result");
+            setResult(RESULT_OK);
+            finish();
+
+        } else {
         }
     }
 

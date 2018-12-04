@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.graphics.BlurMaskFilter;
 import android.view.View;
@@ -36,25 +36,23 @@ public class ShadowActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_cancel:
-                shadowView.setShadow(true);
-                break;
-            case R.id.btn1:
-                blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.INNER);
-                break;
-            case R.id.btn2:
-                blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.SOLID);
-                break;
-            case R.id.btn3:
-                blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.NORMAL);
-                break;
-            case R.id.btn4:
-                blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.OUTER);
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_cancel) {
+            shadowView.setShadow(true);
 
-            default:
-                break;
+        } else if (i == R.id.btn1) {
+            blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.INNER);
+
+        } else if (i == R.id.btn2) {
+            blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.SOLID);
+
+        } else if (i == R.id.btn3) {
+            blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.NORMAL);
+
+        } else if (i == R.id.btn4) {
+            blurMaskFilterView.setMaskFilter(BlurMaskFilter.Blur.OUTER);
+
+        } else {
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.wynne.knowledge.tree.R;
+import com.wynne.knowledge.tree.activity.SampleActivity;
 import com.wynne.knowledge.tree.base.BaseActivity;
 
 /**
@@ -36,21 +37,19 @@ public class TaskActivity extends BaseActivity {
 
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_task:
-//                startActivityForResult(new Intent(this, SampleActivity.class), REQUEST);
-                Intent intent = new Intent(this, TaskActivity.class);
-                intent.putExtra("time", System.currentTimeMillis());
-                startActivity(intent);
-                break;
-            case R.id.btn_filter:
-                Intent filter = new Intent();
-                filter.setAction("com.wynne.activity.baskactivity");
-                filter.addCategory("com.wynne.activity.category.a");
-                startActivity(filter);
-                break;
-            default:
-                break;
+        int i = view.getId();
+        if (i == R.id.btn_task) {//                startActivityForResult(new Intent(this, SampleActivity.class), REQUEST);
+            Intent intent = new Intent(this, TaskActivity.class);
+            intent.putExtra("time", System.currentTimeMillis());
+            startActivity(intent);
+
+        } else if (i == R.id.btn_filter) {
+            Intent filter = new Intent();
+            filter.setAction("com.wynne.activity.baskactivity");
+            filter.addCategory("com.wynne.activity.category.a");
+            startActivity(filter);
+
+        } else {
         }
     }
 

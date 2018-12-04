@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.content.Context;
 import android.os.Handler;
@@ -26,11 +26,9 @@ public class HandlerActivity extends BaseActivity {
     MyHandler myHandler;
 
     public void onHandler(View v) {
-        switch (v.getId()) {
-            case R.id.btn_handler:
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_handler) {
+        } else {
         }
     }
 

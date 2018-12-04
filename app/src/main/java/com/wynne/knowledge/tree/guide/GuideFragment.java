@@ -8,7 +8,7 @@ import com.wynne.knowledge.tree.base.view.BaseFragment;
 import com.wynne.knowledge.tree.design.LoginActivity;
 import com.wynne.knowledge.tree.design.LoginContext;
 import com.wynne.knowledge.tree.design.LogoutState;
-import com.wynne.knowledge.tree.guide.appbar.AppbarActivity;
+import com.wynne.knowledge.tree.appbar.AppbarActivity;
 import com.wynne.knowledge.tree.guide.constrain.ConstraintActivity;
 import com.wynne.knowledge.tree.guide.filter.ImplicitActivity;
 import com.wynne.knowledge.tree.guide.material.MaterialActivity;
@@ -50,8 +50,8 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
     }
 
-    public static GuideFragment getInstance() {
-        GuideFragment fragment = new GuideFragment();
+    public static com.wynne.knowledge.tree.home.GuideFragment getInstance() {
+        com.wynne.knowledge.tree.home.GuideFragment fragment = new com.wynne.knowledge.tree.home.GuideFragment();
 
         return fragment;
     }

@@ -1,13 +1,13 @@
 package com.wynne.knowledge.tree.service;
 
-import com.wynne.knowledge.tree.service.base.IAccountService;
-import com.wynne.knowledge.tree.service.empty.EmptyAccountServiceImpl;
+import com.wynne.knowledge.tree.service.base.IBaseService;
+import com.wynne.knowledge.tree.service.empty.EmptyBaseServiceImpl;
 
 /**
  * @author xxw
  */
 public class ServiceFactory {
-    private IAccountService mIAccountService;
+    private IBaseService mIBaseService;
 
     private ServiceFactory() {
 
@@ -21,16 +21,16 @@ public class ServiceFactory {
         private static ServiceFactory serviceFactory = new ServiceFactory();
     }
 
-    public void setAccountService(IAccountService iAccountService) {
-        mIAccountService = iAccountService;
+    public void setAccountService(IBaseService iBaseService) {
+        mIBaseService = iBaseService;
     }
 
 
-    public IAccountService getAccountService() {
-        if (mIAccountService == null) {
-            mIAccountService = new EmptyAccountServiceImpl();
+    public IBaseService getAccountService() {
+        if (mIBaseService == null) {
+            mIBaseService = new EmptyBaseServiceImpl();
         }
-        return mIAccountService;
+        return mIBaseService;
     }
 
 

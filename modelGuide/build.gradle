@@ -39,10 +39,6 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
-                java {
-                    //排除java/debug文件夹下的所有文件
-                    exclude '*module'
-                }
             }
         }
     }

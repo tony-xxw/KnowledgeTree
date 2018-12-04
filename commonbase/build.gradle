@@ -41,5 +41,8 @@ dependencies {
     api rootProject.ext.dependencies["circleimageview"]
     api rootProject.ext.dependencies["rxjava"]
     api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["arouter_api"]
+    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+
 
 }

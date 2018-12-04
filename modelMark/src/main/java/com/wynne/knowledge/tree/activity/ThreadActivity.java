@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -75,21 +75,20 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_async:
-                new MyAsyncTask().execute("Thead");
-                break;
-            case R.id.btn_handler:
-                initHandlerThread();
-                break;
-            case R.id.btn_service:
-                initService();
-                break;
-            case R.id.btn_executor:
-                initExecutor();
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_async) {
+            new MyAsyncTask().execute("Thead");
+
+        } else if (i == R.id.btn_handler) {
+            initHandlerThread();
+
+        } else if (i == R.id.btn_service) {
+            initService();
+
+        } else if (i == R.id.btn_executor) {
+            initExecutor();
+
+        } else {
         }
     }
 
@@ -133,7 +132,7 @@ public class ThreadActivity extends BaseActivity implements View.OnClickListener
     private void initHandlerThread() {
         HandlerThread handlerThread = new HandlerThread("11");
         handlerThread.start();
-        Handler handler = new Handler(handlerThread.getLooper()) {
+        final Handler handler = new Handler(handlerThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);

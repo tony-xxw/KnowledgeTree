@@ -1,4 +1,4 @@
-package com.wynne.knowledge.tree.bookmark.activity;
+package com.wynne.knowledge.tree.activity;
 
 import android.graphics.drawable.TransitionDrawable;
 import android.view.View;
@@ -33,18 +33,17 @@ public class DrawableActivity extends BaseActivity {
     }
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.iv_level:
-                if (!isOnClick) {
-                    ivLevel.setImageLevel(60);
-                    isOnClick = true;
-                } else {
-                    ivLevel.setImageLevel(20);
-                    isOnClick = false;
-                }
-                break;
-            default:
-                break;
+        int i = view.getId();
+        if (i == R.id.iv_level) {
+            if (!isOnClick) {
+                ivLevel.setImageLevel(60);
+                isOnClick = true;
+            } else {
+                ivLevel.setImageLevel(20);
+                isOnClick = false;
+            }
+
+        } else {
         }
     }
 }

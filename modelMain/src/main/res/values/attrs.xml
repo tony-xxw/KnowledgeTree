@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StarView">
+        <!--星星个数-->
+        <attr name="starCount" format="integer" />
+        <!--星星间距-->
+        <attr name="starSpace" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--选中的星星图片-->
+        <attr name="starFill" format="reference" />
+        <!--默认显示的星星图片-->
+        <attr name="starDefault" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ThumbUpView">
+        <attr name="tuv_count" format="integer" />
+        <attr name="tuv_text_color" format="color" />
+        <attr name="tuv_text_size" format="dimension" />
+        <attr name="tuv_drawable_padding" format="dimension" />
+        <attr name="tuv_isThumbUp" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CountView">
+        <attr name="count" format="integer" />
+        <attr name="count_color" format="color" />
+        <attr name="count_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="Ruler">
+        <attr name="cursor_width" format="dimension" />
+        <attr name="cursor_length" format="dimension" />
+        <attr name="cursor_drawable" format="dimension" />
+        <attr name="current_scale" format="float" />
+        <attr name="scale_color" format="color" />
+        <attr name="scale_length_small" format="dimension" />
+        <attr name="scale_length_large" format="dimension" />
+        <attr name="scale_width_small" format="dimension" />
+        <attr name="scale_width_large" format="dimension" />
+        <attr name="scale_interval" format="dimension" />
+        <attr name="scale_max" format="integer" />
+        <attr name="scale_min" format="integer" />
+        <attr name="ruler_background" format="dimension" />
+        <attr name="ruler_left_right" format="dimension" />
+        <attr name="ruler_start_scale" format="dimension" />
+        <attr name="ruler_end_scale" format="dimension" />
+        <attr name="ruler_start_location" format="dimension" />
+        <attr name="ruler_start_end" format="dimension" />
+        <attr name="canEdgeEffect" format="boolean" />
+        <attr name="edgeColor" format="color" />
+        <attr name="factor" format="float" />
+        <attr name="numberCount" format="integer" />
+        <attr name="number_text_size" format="dimension" />
+        <attr name="number_text_color" format="dimension" />
+        <attr name="scale_margin_top" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Unit">
+        <attr name="scale_colors" format="color" />
+        <attr name="scale_size" format="dimension" />
+        <attr name="unit_color" format="color" />
+        <attr name="unit_size" format="dimension" />
+        <attr name="unit" format="string" />
+    </declare-styleable>
+
+</resources>
