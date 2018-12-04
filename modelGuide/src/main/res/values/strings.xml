@@ -10,7 +10,20 @@
     <string name="reply">回复信息</string>
     <string name="progress_notification">progress通知</string>
     <string name="start_notification">启动通知</string>
-
+    <string name="implicit_check">Intent隐式需要检查是否存在跳转应用</string>
+    <string name="implicit_share">分享到不同应用</string>
+    <string name="implicit_filter">过滤到不同应用</string>
+    <string name="implicit_intent">Intent隐式跳转注意事项</string>
+    <string name="constrain_layout">ConstrainLayout的使用</string>
+    <string name="use_notification">Notification的使用</string>
+    <string name="use_appbar">appbar</string>
+    <string name="please_login">请登录</string>
+    <string name="status_about">系统拦 相关</string>
+    <string name="material">Material</string>
+    <string name="webview_about">WebView</string>
+    <string name="service_about">服务相关</string>
+    <string name="forward">转发</string>
+    <string name="logout">注销</string>
     <string-array name="spinner_item">
         <item>官方文档</item>
         <item>玉刚说学习周</item>

@@ -24,13 +24,13 @@
             android:layout_gravity="center"
             android:text="Scroller" />
 
-        <com.wynne.knowledge.tree.custom.view.ScrollerView
+        <com.wynne.knowledge.main.custom.view.ScrollerView
             android:id="@+id/sv_sample"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/colorAccent" />
 
-        <com.wynne.knowledge.tree.widget.StarView
+        <com.wynne.knowledge.main.widget.StarView
             android:id="@+id/sv_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
 
     </LinearLayout>
 
-    <com.wynne.knowledge.tree.custom.view.CircleView
+    <com.wynne.knowledge.main.custom.view.CircleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"

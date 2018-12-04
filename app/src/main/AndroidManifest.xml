@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wynne.knowledge.tree">
+    package="com.wynne.knowledge.main">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,11 +11,11 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <permission
-        android:name="com.wynne.knowledge.tree.permission.ACCESS_BOOK_SERVICE"
+        android:name="com.wynne.knowledge.main.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".guide.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -52,15 +52,6 @@
         <receiver android:name=".guide.notification.NotificationActivity$MyBroadCast" />
 
         <activity
-            android:name=".appbar.AppbarActivity"
-            android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
             android:name=".bookmark.activity.SampleActivity"
             android:launchMode="singleTop" />
         <activity
@@ -77,7 +68,7 @@
             android:name=".guide.service.StandardService"
             android:exported="false" />
         <service android:name=".guide.service.BindService" />
-        <service android:name=".service.MyIntentService" />
+        <service android:name=".guide.service.MyIntentService" />
 
         <activity
             android:name=".guide.webview.WebViewActivity"
@@ -145,11 +136,11 @@
         <!-- permission  增加权限 外界需要声明权限才能访问 -->
         <provider
             android:name=".custom.ipc.provider.BookProvider"
-            android:authorities="com.wynne.knowledge.tree.custom.ipc.provider"
+            android:authorities="com.wynne.knowledge.main.custom.ipc.provider"
             android:permission="com.wynne.PROVIDER"
             android:process=":provider" />
 
-        <receiver android:name=".broadcast.LaunchReceiver">
+        <receiver android:name=".guide.broadcast.LaunchReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -171,7 +162,7 @@
             android:name=".bookmark.activity.ThreadActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".guide.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -200,7 +191,7 @@
         <activity
             android:name=".bookmark.activity.XFermodeActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".design.LoginActivity" />
+        <activity android:name=".guide.design.LoginActivity" />
     </application>
 
 

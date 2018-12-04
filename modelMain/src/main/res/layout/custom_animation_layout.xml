@@ -15,7 +15,7 @@
         android:visibility="gone" />
 
     <!--上下弹动动画-->
-    <com.wynne.knowledge.tree.widget.LoadingView
+    <com.wynne.knowledge.main.widget.LoadingView
         android:id="@+id/iv_load"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -51,7 +51,7 @@
         android:visibility="gone">
 
 
-        <com.wynne.knowledge.tree.widget.ObjectImageView
+        <com.wynne.knowledge.main.widget.ObjectImageView
             android:id="@+id/iv_object"
             android:layout_width="50dp"
             android:layout_height="50dp"

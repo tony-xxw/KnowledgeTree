@@ -5,26 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.wynne.knowledge.tree.widget.thumb.ThumbView
+    <com.wynne.knowledge.main.widget.thumb.ThumbView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
-    <com.wynne.knowledge.tree.widget.thumb.ThumbUpView
+    <com.wynne.knowledge.main.widget.thumb.ThumbUpView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:tuv_count="199" />
 
 
-    <com.wynne.knowledge.tree.widget.ruler.UnitLayout
+    <com.wynne.knowledge.main.widget.ruler.UnitLayout
         android:id="@+id/unit_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp" />
 
-    <com.wynne.knowledge.tree.widget.ruler.Ruler
+    <com.wynne.knowledge.main.widget.ruler.Ruler
         android:id="@+id/ruler"
         android:layout_width="match_parent"
         android:layout_height="100dp"

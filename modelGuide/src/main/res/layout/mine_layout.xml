@@ -97,7 +97,7 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <com.wynne.knowledge.tree.guide.material.TitleCenterToolbar
+            <com.wynne.knowledge.main.guide.material.TitleCenterToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="fill_parent"
                 android:layout_height="?android:actionBarSize"

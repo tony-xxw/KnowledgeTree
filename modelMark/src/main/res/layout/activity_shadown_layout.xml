@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.wynne.knowledge.tree.widget.ShadowView
+        <com.wynne.knowledge.mark.widget.ShadowView
             android:id="@+id/sv_shadown"
             android:layout_width="wrap_content"
             android:layout_height="400dp"
@@ -29,7 +29,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.wynne.knowledge.tree.widget.BlurMaskFilterView
+        <com.wynne.knowledge.mark.widget.BlurMaskFilterView
             android:id="@+id/bmfv_sample"
             android:layout_width="wrap_content"
             android:layout_height="100dp" />
@@ -68,13 +68,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.wynne.knowledge.tree.widget.ShaderView
+    <com.wynne.knowledge.main.widget.ShaderView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:visibility="gone" />
 
-    <com.wynne.knowledge.tree.widget.AvatorView
+    <com.wynne.knowledge.main.widget.AvatorView
         android:layout_width="200dp"
         android:layout_height="200dp" />
 
