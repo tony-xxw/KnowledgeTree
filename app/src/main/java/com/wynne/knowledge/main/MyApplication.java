@@ -25,6 +25,9 @@ public class MyApplication extends BaseApplication {
         }
 
         ARouter.init(this);
+
+        initModuleApp(this);
+        initModuleData(this);
     }
 
 

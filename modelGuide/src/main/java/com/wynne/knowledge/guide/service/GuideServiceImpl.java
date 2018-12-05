@@ -23,10 +23,20 @@ public class GuideServiceImpl implements IBaseService {
     }
 
     @Override
-    public Fragment newUserFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+    public Fragment newCustomFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+        return null;
+    }
+
+    @Override
+    public GuideFragment newGuideFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
         FragmentTransaction transaction = manager.beginTransaction();
         GuideFragment mainFragment = new GuideFragment();
         transaction.add(containerId, mainFragment, tag).addToBackStack(tag).commit();
         return mainFragment;
+    }
+
+    @Override
+    public Fragment newMarkFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+        return null;
     }
 }

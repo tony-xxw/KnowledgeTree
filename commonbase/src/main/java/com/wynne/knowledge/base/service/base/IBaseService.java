@@ -30,5 +30,25 @@ public interface IBaseService {
      * @param tag
      * @return 创建 UserFragment
      */
-    Fragment newUserFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task);
+    Fragment newCustomFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task);
+
+    /**
+     * @param activity
+     * @param containerId
+     * @param manager
+     * @param tag
+     * @param task
+     * @return
+     */
+    Fragment newGuideFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task);
+
+    /**
+     * @param activity
+     * @param containerId
+     * @param manager
+     * @param tag
+     * @param task
+     * @return
+     */
+    Fragment newMarkFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task);
 }

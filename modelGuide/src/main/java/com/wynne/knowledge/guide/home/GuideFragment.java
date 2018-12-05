@@ -51,11 +51,6 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
     }
 
-    public static GuideFragment getInstance() {
-        GuideFragment fragment = new GuideFragment();
-
-        return fragment;
-    }
 
     @Override
     public void onClick(View view) {

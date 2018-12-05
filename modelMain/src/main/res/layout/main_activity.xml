@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:ignore="MissingDefaultResource">
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/fl_content"
@@ -18,9 +16,10 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bnm_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom|center"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/colorAccent"
+        app:itemBackground="?android:attr/windowBackground"
         app:menu="@menu/navigation_item" />
 
 </LinearLayout>

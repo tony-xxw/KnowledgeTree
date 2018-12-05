@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btn_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task" />
+
+    <Button
+        android:id="@+id/btn_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="消息机制" />
+
+    <Button
+        android:id="@+id/btn_bitmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一张图片所占内存" />
+
+    <Button
+        android:id="@+id/btn_thread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多线程相关" />
+
+    <Button
+        android:id="@+id/btn_ui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="主线程UI" />
+
+    <Button
+        android:id="@+id/btn_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="艺术探索Drawable" />
+
+    <Button
+        android:id="@+id/btn_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="艺术探索 动画" />
+
+    <Button
+        android:id="@+id/btn_anim_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义实战 动画" />
+
+    <Button
+        android:id="@+id/btn_anim_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义实战 Path动画" />
+
+    <Button
+        android:id="@+id/btn_shadown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义实战 Path动画" />
+
+    <Button
+        android:id="@+id/btn_xfermode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义实战Xfermode" />
+</LinearLayout>

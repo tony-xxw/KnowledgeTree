@@ -15,7 +15,7 @@
         android:protectionLevel="normal" />
 
     <application
-        android:name=".guide.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,174 +24,12 @@
         android:theme="@style/AppTheme">
 
 
-        <activity
-            android:name=".guide.filter.ImplicitActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/transparent" />
-        <activity
-            android:name=".guide.constrain.ConstraintActivity"
-            android:launchMode="singleTop" />
-        <activity android:name=".guide.filter.FilterActivity">
-            <intent-filter>
-                <action android:name="com.wynne.knowledge.tree.Filter" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="video/*" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".custom.loader.ClassLoaderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".guide.notification.NotificationActivity"
-            android:launchMode="singleTop" />
-        <activity android:name=".guide.notification.NotificationPendActivity" />
-
-        <receiver android:name=".guide.notification.NotificationActivity$MyBroadCast" />
-
-        <activity
-            android:name=".bookmark.activity.SampleActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.TaskActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".guide.systemstatus.StatusBarActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".guide.service.ServiceActivity"
-            android:launchMode="singleTop" />
-
-        <service
-            android:name=".guide.service.StandardService"
-            android:exported="false" />
-        <service android:name=".guide.service.BindService" />
-        <service android:name=".guide.service.MyIntentService" />
-
-        <activity
-            android:name=".guide.webview.WebViewActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.ipc.IpcActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.FlagsActivity"
-            android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="com.wynne.activity.taskactivity" />
-                <action android:name="com.wynne.activity.baskactivity" />
-
-                <category android:name="com.wynne.activity.category.a" />
-                <category android:name="com.wynne.activity.category.b" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".custom.ipc.provider.ProviderActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.ipc.socket.SocketActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.ipc.binder.BinderPoolActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.audio.MediaActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.audio.AudioActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.view.ViewActivity"
-            android:label="@string/view"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".guide.material.MaterialActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.thread.ThreadPoolActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.rx.RxJavaActivity"
-            android:launchMode="singleTop" />
-
         <!-- WebView 添加Google浏览器 安全认证 -->
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
 
-        <service
-            android:name=".custom.ipc.BookManagerService"
-            android:process=":remote" />
-        <service
-            android:name=".custom.ipc.socket.TCPService"
-            tools:remove=":remote" />
-        <service
-            android:name=".custom.ipc.binder.BinderPoolService"
-            tools:remove=":remote" />
 
-        <!-- authorities 必须保证唯一 性 -->
-        <!-- permission  增加权限 外界需要声明权限才能访问 -->
-        <provider
-            android:name=".custom.ipc.provider.BookProvider"
-            android:authorities="com.wynne.knowledge.main.custom.ipc.provider"
-            android:permission="com.wynne.PROVIDER"
-            android:process=":provider" />
-
-        <receiver android:name=".guide.broadcast.LaunchReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <activity
-            android:name=".custom.view.ThumbActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.window.WindowActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.HandlerActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.BitmapActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.ThreadActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".guide.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".custom.interfere.InterfereActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name=".bookmark.activity.DrawableActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name=".bookmark.activity.AnimationActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name=".custom.book.CustomAnimationActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".custom.book.AnimationPathActivity"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name=".bookmark.activity.ShadowActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".bookmark.activity.XFermodeActivity"
-            android:launchMode="singleTop" />
-        <activity android:name=".guide.design.LoginActivity" />
     </application>
 
 

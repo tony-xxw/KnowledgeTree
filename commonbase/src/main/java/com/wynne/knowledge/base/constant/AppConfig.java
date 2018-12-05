@@ -7,8 +7,11 @@ package com.wynne.knowledge.base.constant;
  */
 public class AppConfig {
 
-    private static final String MainApp = "com.wynne.knowledge.tree.MainApplication";
+    private static final String MAIN_APP = "com.wynne.knowledge.main.MainApplication";
+    private static final String GUIDE_APP = "com.wynne.knowledge.guide.GuideApplication";
+    private static final String MARK_APP = "com.wynne.knowledge.mark.MarkApplication";
 
-    public static String[] moduleApps = {MainApp};
+
+    public static String[] moduleApps = {MAIN_APP, GUIDE_APP, MARK_APP};
 
 }

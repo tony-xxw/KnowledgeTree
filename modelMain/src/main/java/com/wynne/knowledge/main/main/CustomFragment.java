@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.main.audio.AudioActivity;
 import com.wynne.knowledge.base.base.view.BaseFragment;
@@ -30,7 +32,7 @@ import com.wynne.knowledge.main.view.ViewActivity;
  * @date 2018/2/28
  */
 
-
+@Route(path = ARouterPath.FRAGMENT_CUSTOM)
 public class CustomFragment extends BaseFragment implements View.OnClickListener {
 
 

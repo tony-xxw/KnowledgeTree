@@ -21,7 +21,17 @@ public class EmptyBaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public Fragment newUserFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+    public Fragment newCustomFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+        return null;
+    }
+
+    @Override
+    public Fragment newGuideFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+        return null;
+    }
+
+    @Override
+    public Fragment newMarkFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
         return null;
     }
 
