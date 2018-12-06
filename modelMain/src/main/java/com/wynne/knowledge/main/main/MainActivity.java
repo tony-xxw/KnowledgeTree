@@ -1,6 +1,7 @@
 package com.wynne.knowledge.main.main;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -43,6 +44,11 @@ public class MainActivity extends BaseActivity {
         return R.layout.main_activity;
     }
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
     /**
      * popBackStack()
