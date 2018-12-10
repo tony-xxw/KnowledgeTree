@@ -17,5 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".service.ServiceActivity"
+            android:launchMode="singleTop" />
+
+        <service android:name=".service.StandardService" />
+        <service android:name=".service.BindService" />
     </application>
 </manifest>

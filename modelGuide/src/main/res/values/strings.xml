@@ -21,7 +21,7 @@
     <string name="status_about">系统拦 相关</string>
     <string name="material">Material</string>
     <string name="webview_about">WebView</string>
-    <string name="service_about">服务相关</string>
+    <string name="service_about">Service About</string>
     <string name="forward">转发</string>
     <string name="logout">注销</string>
     <string-array name="spinner_item">

@@ -31,7 +31,6 @@
     <string name="task">任务栈</string>
     <string name="task_activity">任务栈</string>
     <string name="status_about">系统拦 相关</string>
-    <string name="service_about">服务相关</string>
     <string name="filter">过滤规则</string>
     <string name="webview_about">WebView</string>
     <string name="ipc">IPC机制</string>

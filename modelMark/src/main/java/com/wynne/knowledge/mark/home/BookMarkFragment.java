@@ -15,7 +15,7 @@ import com.wynne.knowledge.mark.memo.MemoActivity;
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
-    Button btnMemo;
+    private Button btnMemo;
 
     @Override
     public void initView() {
@@ -39,12 +39,10 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_memo:
-                startActivity(new Intent(getActivity(), MemoActivity.class));
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.btn_memo) {
+            startActivity(new Intent(getActivity(), MemoActivity.class));
+
         }
     }
 }

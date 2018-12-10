@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity {
             fragment = ARouterUtils.getFragment(ARouterPath.FRAGMENT_BOOKMARK);
         }
         mCurrentFragment = fragment;
-        transaction.replace(R.id.fl_content, fragment, tag).addToBackStack(tag).commit();
+        transaction.add(R.id.fl_content, fragment, tag).addToBackStack(tag).commit();
 
     }
 
