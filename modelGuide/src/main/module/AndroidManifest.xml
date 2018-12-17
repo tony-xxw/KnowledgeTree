@@ -24,5 +24,9 @@
 
         <service android:name=".service.StandardService" />
         <service android:name=".service.BindService" />
+
+        <activity
+            android:name=".constrain.ConstraintActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
