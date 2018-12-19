@@ -36,12 +36,6 @@ import com.wynne.knowledge.main.view.ViewActivity;
 public class CustomFragment extends BaseFragment implements View.OnClickListener {
 
 
-    public static CustomFragment getInstance() {
-        CustomFragment fragment = new CustomFragment();
-        return fragment;
-    }
-
-
     @Override
     public void initView() {
         mContentView.findViewById(R.id.btn_classloader).setOnClickListener(this);
