@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wynne.knowledge.guide.R;
-import com.wynne.knowledge.guide.material.MaterialActivity;
+import com.wynne.knowledge.guide.material.RecycleActivity;
 import com.wynne.knowledge.guide.systemstatus.StatusBarActivity;
 
 import com.wynne.knowledge.guide.appbar.AppbarActivity;
@@ -49,6 +49,7 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_clone).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_forward).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_recycle).setOnClickListener(this);
     }
 
 
@@ -77,7 +78,7 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
             startActivity(new Intent(getActivity(), WebViewActivity.class));
 
         } else if (i == R.id.btn_material) {
-            startActivity(new Intent(getActivity(), MaterialActivity.class));
+            startActivity(new Intent(getActivity(), RecycleActivity.class));
 
         } else if (i == R.id.btn_clone) {
 //            startActivity(new Intent(getActivity(), LoginActivity.class));
@@ -88,7 +89,8 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         } else if (i == R.id.btn_logout) {
 //            LoginContext.getLoginContext().setState(new LogoutState());
 
-        } else {
+        } else if (i == R.id.btn_recycle) {
+            startActivity(new Intent(getActivity(), RecycleActivity.class));
         }
     }
 

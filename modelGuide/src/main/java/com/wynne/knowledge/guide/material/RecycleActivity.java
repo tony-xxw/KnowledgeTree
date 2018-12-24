@@ -3,7 +3,9 @@ package com.wynne.knowledge.guide.material;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.guide.R;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,7 +23,7 @@ import java.util.List;
  * @date 2018/4/27
  */
 
-public class MaterialActivity extends BaseActivity {
+public class RecycleActivity extends BaseActivity {
     private String[] arrys = {
             "Item1", "Item2", "Item3", "Item4",
             "Item5", "Item6", "Item7", "Item8",
@@ -29,25 +32,24 @@ public class MaterialActivity extends BaseActivity {
             "Item17", "Item18", "Item19", "Item20"
     };
     private List<String> mList;
-    int resour;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_layout);
-//        initView();
-        initMaterial();
+        initView();
 
     }
 
     @Override
     public void initView() {
-        initMaterial();
-    }
-
-    private void initMaterial() {
-        TitleCenterToolbar titleCenterToolbar = (TitleCenterToolbar) findViewById(R.id.toolbar);
-        titleCenterToolbar.setTitle("测试");
+        mList = Arrays.asList(arrys);
+        RecyclerView recyclerView = findViewById(R.id.rv_list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        RecycleViewAdapter adapter = new RecycleViewAdapter(this);
+        recyclerView.setAdapter(adapter);
     }
 
 
@@ -66,6 +68,7 @@ public class MaterialActivity extends BaseActivity {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            Log.d("XXW", "viewType :" + viewType);
             View view = LayoutInflater.from(mContext).inflate(R.layout.layout_item, parent, false);
             return new ViewHolder(view);
         }
@@ -88,5 +91,7 @@ public class MaterialActivity extends BaseActivity {
                 mTextView = (TextView) itemView.findViewById(R.id.tv_item);
             }
         }
+
+
     }
 }

@@ -66,6 +66,11 @@
             style="@style/BtnCommon"
             android:text="@string/logout" />
 
+        <Button
+            android:id="@+id/btn_recycle"
+            style="@style/BtnCommon"
+            android:text="@string/recycle" />
+
     </LinearLayout>
 
 
