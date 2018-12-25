@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wynne.knowledge.guide.R;
+import com.wynne.knowledge.guide.material.BottomSheetActivity;
 import com.wynne.knowledge.guide.material.RecycleActivity;
 import com.wynne.knowledge.guide.systemstatus.StatusBarActivity;
 
@@ -50,6 +51,7 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_forward).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_recycle).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_material_sheet).setOnClickListener(this);
     }
 
 
@@ -91,6 +93,8 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
 
         } else if (i == R.id.btn_recycle) {
             startActivity(new Intent(getActivity(), RecycleActivity.class));
+        } else if (i == R.id.btn_material_sheet) {
+            startActivity(new Intent(getActivity(), BottomSheetActivity.class));
         }
     }
 

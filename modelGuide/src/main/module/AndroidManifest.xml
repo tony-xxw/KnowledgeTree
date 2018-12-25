@@ -29,5 +29,6 @@
             android:name=".constrain.ConstraintActivity"
             android:launchMode="singleTop" />
         <activity android:name=".material.RecycleActivity" />
+        <activity android:name=".material.BottomSheetActivity" />
     </application>
 </manifest>

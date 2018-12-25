@@ -71,6 +71,11 @@
             style="@style/BtnCommon"
             android:text="@string/recycle" />
 
+        <Button
+            android:id="@+id/btn_material_sheet"
+            style="@style/BtnCommon"
+            android:text="bottomSheet" />
+
     </LinearLayout>
 
 
