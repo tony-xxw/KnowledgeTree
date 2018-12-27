@@ -49,4 +49,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':commonbase')
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+apply plugin: 'kotlin-android'
+repositories {
+    mavenCentral()
 }
