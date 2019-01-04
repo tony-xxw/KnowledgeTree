@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wynne.knowledge.base.base.view.BaseFragment;
 import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.art.ArtActivity;
 import com.wynne.knowledge.mark.memo.MemoActivity;
 
 /**
@@ -15,7 +16,7 @@ import com.wynne.knowledge.mark.memo.MemoActivity;
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
-    private Button btnMemo;
+    private Button btnMemo, btnArt;
 
     @Override
     public void initView() {
@@ -26,10 +27,12 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
 
     private void setOnClick() {
         btnMemo.setOnClickListener(this);
+        btnArt.setOnClickListener(this);
     }
 
     private void findByView() {
         btnMemo = mContentView.findViewById(R.id.btn_memo);
+        btnArt = mContentView.findViewById(R.id.btn_art);
     }
 
     @Override
@@ -42,6 +45,10 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         int i = v.getId();
         if (i == R.id.btn_memo) {
             startActivity(new Intent(getActivity(), MemoActivity.class));
+
+        }
+        if (i == R.id.btn_art) {
+            startActivity(new Intent(getActivity(), ArtActivity.class));
 
         }
     }

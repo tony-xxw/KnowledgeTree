@@ -18,5 +18,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".memo.MemoActivity" />
+        <activity android:name=".activity.DrawableActivity" />
+        <activity android:name=".activity.AnimationActivity" />
+        <activity android:name=".art.ArtActivity" />
+        <activity
+            android:name=".art.charpter1.ChapterOneActivity"
+            android:configChanges="screenSize|orientation" />
+        <activity android:name=".art.charpter2.ChapterTwoActivity">
+            <intent-filter>
+                <action android:name="com.wynne.chapter.two" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.wynne.chapter.three" />
+                <category android:name="com.wynne.chapter.four" />
+
+                <data android:scheme="http" />
+                <data android:scheme="file" />
+                <!--<data android:host="www.baidu.com" />-->
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
