@@ -15,11 +15,6 @@
             android:layout_height="wrap_content"
             android:text="备忘录" />
 
-        <Button
-            android:id="@+id/btn_task"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/task" />
 
         <Button
             android:id="@+id/btn_handler"
@@ -45,35 +40,22 @@
             android:layout_height="wrap_content"
             android:text="主线程UI" />
 
-
-        <Button
-            android:id="@+id/btn_anim_custom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义实战 动画" />
-
-        <Button
-            android:id="@+id/btn_anim_path"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义实战 Path动画" />
-
-        <Button
-            android:id="@+id/btn_shadown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义实战 Path动画" />
-
-        <Button
-            android:id="@+id/btn_xfermode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自定义实战Xfermode" />
-
         <Button
             android:id="@+id/btn_art"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Android艺术探索" />
+
+        <Button
+            android:id="@+id/btn_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义View实战Demo" />
+
+        <Button
+            android:id="@+id/btn_jetpack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jetpack集合" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

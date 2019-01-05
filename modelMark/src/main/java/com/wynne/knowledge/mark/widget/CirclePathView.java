@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.widget;
+package com.wynne.knowledge.mark.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.wynne.knowledge.main.R;
+import com.wynne.knowledge.mark.R;
 
 /**
  * @author Wynne
@@ -99,7 +99,7 @@ public class CirclePathView extends View {
 
         Matrix matrix = new Matrix();
         mPathMeasure.getMatrix(stop, matrix, PathMeasure.POSITION_MATRIX_FLAG | PathMeasure.TANGENT_MATRIX_FLAG);
-        matrix.preTranslate(-mBitmap.getWidth()/2, -mBitmap.getHeight()/2);
+        matrix.preTranslate(-mBitmap.getWidth() / 2, -mBitmap.getHeight() / 2);
         canvas.drawBitmap(mBitmap, matrix, mPaint);
 
 

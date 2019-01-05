@@ -37,5 +37,11 @@
                 <!--<data android:host="www.baidu.com" />-->
             </intent-filter>
         </activity>
+        <activity android:name=".activity.CustomActivity" />
+        <activity android:name=".activity.ShadowActivity" />
+        <activity android:name=".jetpack.JetPackActivity" />
+        <activity android:name=".activity.XFermodeActivity" />
+        <activity android:name=".activity.AnimationPathActivity" />
+        <activity android:name=".jetpack.PagingActivity" />
     </application>
 </manifest>

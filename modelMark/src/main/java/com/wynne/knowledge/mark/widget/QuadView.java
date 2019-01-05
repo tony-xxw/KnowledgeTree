@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.widget;
+package com.wynne.knowledge.mark.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
