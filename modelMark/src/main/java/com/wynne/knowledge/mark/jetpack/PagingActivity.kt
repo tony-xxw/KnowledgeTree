@@ -12,4 +12,8 @@ class PagingActivity : BaseActivity() {
     override fun initView() {
 
     }
+
+    fun handleData() {
+
+    }
 }
