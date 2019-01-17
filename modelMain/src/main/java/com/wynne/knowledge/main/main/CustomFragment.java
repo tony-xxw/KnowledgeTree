@@ -23,6 +23,7 @@ import com.wynne.knowledge.main.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.main.ipc.provider.ProviderActivity;
 import com.wynne.knowledge.main.ipc.socket.SocketActivity;
 import com.wynne.knowledge.main.loader.ClassLoaderActivity;
+import com.wynne.knowledge.main.retrofit.RetrofitActivity;
 import com.wynne.knowledge.main.rx.RxJavaActivity;
 import com.wynne.knowledge.main.thread.ThreadPoolActivity;
 import com.wynne.knowledge.main.view.ViewActivity;
@@ -49,6 +50,7 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
         mContentView.findViewById(R.id.btn_thread_poll).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_rx).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_window).setOnClickListener(this);
+        mContentView.findViewById(R.id.btn_retrofit).setOnClickListener(this);
 
 
         EditText editText = mContentView.findViewById(R.id.btn_keyevent);
@@ -113,7 +115,8 @@ public class CustomFragment extends BaseFragment implements View.OnClickListener
         } else if (i == R.id.btn_interfere) {
             startActivity(new Intent(getActivity(), InterfereActivity.class));
 
-        } else {
+        } else if (i == R.id.btn_retrofit) {
+            startActivity(new Intent(getActivity(), RetrofitActivity.class));
         }
     }
 

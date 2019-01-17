@@ -78,6 +78,12 @@
             android:layout_height="wrap_content"
             android:text="@string/scroll_interfere" />
 
+        <Button
+            android:id="@+id/btn_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retrofit" />
+
         <EditText
             android:id="@+id/btn_keyevent"
             android:layout_width="match_parent"
