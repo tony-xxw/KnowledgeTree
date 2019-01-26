@@ -1,5 +1,7 @@
 package com.wynne.knowledge.main.retrofit;
 
+import android.util.Log;
+
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.base.model.BaseListModel;
 import com.wynne.knowledge.base.model.BaseModel;
@@ -25,7 +27,9 @@ public class RetrofitActivity extends BaseActivity {
 
             @Override
             public void onNext(BaseModel<BaseListModel<ArticleModel>> o) {
-
+                for (ArticleModel articleModel : o.getData().getDatas()) {
+                    Log.d("XXW", "toString: " + articleModel.getAuthor());
+                }
             }
 
             @Override
