@@ -8,7 +8,7 @@ import com.wynne.knowledge.mark.service.MarkServiceImpl;
 import com.wynne.knowledge.base.service.ServiceFactory;
 
 /**
- * 2019.2.12
+ * 2019.2.12 accept heart a work
  * @author xxw
  */
 public class MarkApplication extends BaseApplication {
