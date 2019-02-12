@@ -8,6 +8,7 @@ import com.wynne.knowledge.mark.service.MarkServiceImpl;
 import com.wynne.knowledge.base.service.ServiceFactory;
 
 /**
+ * 过完年收心了
  * @author xxw
  */
 public class MarkApplication extends BaseApplication {
@@ -21,7 +22,7 @@ public class MarkApplication extends BaseApplication {
     @Override
     public void initModuleApp(Application application) {
         ServiceFactory.getInstance().setAccountService(new MarkServiceImpl());
-        Log.d("XXW", "测试分支");
+
     }
 
     @Override
