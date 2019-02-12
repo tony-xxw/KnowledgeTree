@@ -1,6 +1,7 @@
 package com.wynne.knowledge.mark;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.wynne.knowledge.base.BaseApplication;
 import com.wynne.knowledge.mark.service.MarkServiceImpl;
@@ -20,6 +21,7 @@ public class MarkApplication extends BaseApplication {
     @Override
     public void initModuleApp(Application application) {
         ServiceFactory.getInstance().setAccountService(new MarkServiceImpl());
+        Log.d("XXW", "测试分支");
     }
 
     @Override
