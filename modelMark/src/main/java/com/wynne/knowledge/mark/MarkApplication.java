@@ -8,7 +8,6 @@ import com.wynne.knowledge.mark.service.MarkServiceImpl;
 import com.wynne.knowledge.base.service.ServiceFactory;
 
 /**
- * Test
  *
  * @author xxw
  */
