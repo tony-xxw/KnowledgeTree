@@ -6,7 +6,7 @@ import com.wynne.knowledge.guide.R;
 /**
  * 单独开发GuideActivity
  *
- *
+ *  test test test
  *
  * @author xxw
  */
@@ -17,7 +17,7 @@ public class GuideActivity extends BaseActivity {
     }
 
     @Override
-    public int getLayoutId() {
+    public int getLayoutId()     {
         return R.layout.guide_activity;
     }
 }
