@@ -6,7 +6,7 @@ import com.wynne.knowledge.guide.R;
 /**
  * 单独开发GuideActivity
  *
- * 名字测试
+ * 名字测试   xxw
  *
  * @author xxw
  */
