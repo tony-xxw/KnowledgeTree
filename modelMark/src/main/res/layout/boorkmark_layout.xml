@@ -57,5 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jetpack集合" />
+
+        <Button
+            android:id="@+id/btn_inter_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="面试合集" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

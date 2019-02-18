@@ -9,6 +9,7 @@ import com.wynne.knowledge.base.base.view.BaseFragment;
 import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.activity.CustomActivity;
+import com.wynne.knowledge.mark.interview.InterViewActivity;
 import com.wynne.knowledge.mark.jetpack.JetPackActivity;
 import com.wynne.knowledge.mark.art.ArtActivity;
 import com.wynne.knowledge.mark.memo.MemoActivity;
@@ -18,7 +19,7 @@ import com.wynne.knowledge.mark.memo.MemoActivity;
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
-    private Button btnMemo, btnArt, btnCustom, btnJetpack;
+    private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView;
 
     @Override
     public void initView() {
@@ -32,6 +33,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnArt.setOnClickListener(this);
         btnCustom.setOnClickListener(this);
         btnJetpack.setOnClickListener(this);
+        btnInterView.setOnClickListener(this);
     }
 
     private void findByView() {
@@ -39,6 +41,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnArt = mContentView.findViewById(R.id.btn_art);
         btnCustom = mContentView.findViewById(R.id.btn_custom);
         btnJetpack = mContentView.findViewById(R.id.btn_jetpack);
+        btnInterView = mContentView.findViewById(R.id.btn_inter_view);
     }
 
     @Override
@@ -62,6 +65,9 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         }
         if (i == R.id.btn_jetpack) {
             startActivity(new Intent(getActivity(), JetPackActivity.class));
+        }
+        if (i == R.id.btn_inter_view) {
+            startActivity(new Intent(getActivity(), InterViewActivity.class));
         }
 
     }

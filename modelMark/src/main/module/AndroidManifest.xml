@@ -43,5 +43,7 @@
         <activity android:name=".activity.XFermodeActivity" />
         <activity android:name=".activity.AnimationPathActivity" />
         <activity android:name=".jetpack.PagingActivity" />
+        <activity android:name=".interview.InterViewActivity" />
+        <activity android:name=".interview.HttpActivity" />
     </application>
 </manifest>
