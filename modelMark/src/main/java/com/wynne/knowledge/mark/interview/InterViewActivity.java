@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.interview.http.HttpActivity;
 
 /**
  * 面试集合

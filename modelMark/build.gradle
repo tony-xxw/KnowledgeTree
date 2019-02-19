@@ -4,6 +4,8 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
     apply plugin: 'com.android.library'
 }
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jakewharton.butterknife'
+
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -52,7 +54,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     implementation project(':commonbase')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

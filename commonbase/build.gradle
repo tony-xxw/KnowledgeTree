@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -46,6 +48,8 @@ dependencies {
     api rootProject.ext.dependencies["retrofit_converter"]
     api rootProject.ext.dependencies["okhttp"]
     api rootProject.ext.dependencies["retrofit_adpater"]
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
 
 
