@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/bg_divider"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+
+    <ViewStub
+        android:id="@+id/vs_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/inter_view_activity" />
+
+    <Button
+        android:id="@+id/btn_viewStub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewStub测试" />
+
+
+    <Space
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</LinearLayout>

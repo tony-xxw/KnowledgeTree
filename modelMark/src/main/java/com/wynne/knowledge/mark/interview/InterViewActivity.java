@@ -7,20 +7,21 @@ import android.widget.Button;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.interview.http.HttpActivity;
+import com.wynne.knowledge.mark.interview.optimize.OptimizeActivity;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 面试集合
  *
  * @author Wynne
  */
-public class InterViewActivity extends BaseActivity implements View.OnClickListener {
-    Button btnHttp;
+public class InterViewActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        btnHttp = findViewById(R.id.btn_http);
 
-        btnHttp.setOnClickListener(this);
     }
 
     @Override
@@ -28,9 +29,12 @@ public class InterViewActivity extends BaseActivity implements View.OnClickListe
         return R.layout.inter_view_activity;
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_http) {
+
+    @OnClick({R.id.btn_optimize})
+    public void onViewClicked(View v) {
+        if (v.getId() == R.id.btn_optimize) {
+            startActivity(new Intent(this, OptimizeActivity.class));
+        } else if (v.getId() == R.id.btn_http) {
             startActivity(new Intent(this, HttpActivity.class));
         }
     }

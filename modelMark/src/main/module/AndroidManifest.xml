@@ -45,5 +45,6 @@
         <activity android:name=".jetpack.PagingActivity" />
         <activity android:name=".interview.InterViewActivity" />
         <activity android:name=".interview.http.HttpActivity" />
+        <activity android:name=".interview.optimize.OptimizeActivity" />
     </application>
 </manifest>
