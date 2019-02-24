@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:text="性能优化" />
 
+    <Button
+        android:id="@+id/btn_rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxJava" />
+
 </LinearLayout>

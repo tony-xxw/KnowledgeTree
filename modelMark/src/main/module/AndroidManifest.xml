@@ -46,5 +46,6 @@
         <activity android:name=".interview.InterViewActivity" />
         <activity android:name=".interview.http.HttpActivity" />
         <activity android:name=".interview.optimize.OptimizeActivity" />
+        <activity android:name=".interview.rxjava.RxJavaActivity" />
     </application>
 </manifest>

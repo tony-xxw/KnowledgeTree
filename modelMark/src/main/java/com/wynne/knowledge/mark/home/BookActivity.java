@@ -11,7 +11,7 @@ import com.wynne.knowledge.mark.R;
 public class BookActivity extends BaseActivity {
     private String ab = "ab";
     private String cd = "cd";
-    private String abcd = ab+cd;
+    private String abcd = ab + cd;
 
     @Override
     public void initView() {

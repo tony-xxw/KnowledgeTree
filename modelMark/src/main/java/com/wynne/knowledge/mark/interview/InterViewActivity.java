@@ -8,6 +8,7 @@ import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.interview.http.HttpActivity;
 import com.wynne.knowledge.mark.interview.optimize.OptimizeActivity;
+import com.wynne.knowledge.mark.interview.rxjava.RxJavaActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -30,12 +31,14 @@ public class InterViewActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_optimize})
+    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava})
     public void onViewClicked(View v) {
         if (v.getId() == R.id.btn_optimize) {
             startActivity(new Intent(this, OptimizeActivity.class));
         } else if (v.getId() == R.id.btn_http) {
             startActivity(new Intent(this, HttpActivity.class));
+        } else if (v.getId() == R.id.btn_rxjava) {
+            startActivity(new Intent(this, RxJavaActivity.class));
         }
     }
 }
