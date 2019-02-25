@@ -66,7 +66,7 @@ public class RxJavaActivity extends BaseActivity {
     private Subscription mSubscription;
 
     private void stepSix() {
-        Flowable<Integer    > flowable = Flowable.create(new FlowableOnSubscribe<Integer>() {
+        Flowable<Integer> flowable = Flowable.create(new FlowableOnSubscribe<Integer>() {
             @Override
             public void subscribe(FlowableEmitter<Integer> emitter) throws Exception {
                 emitter.onNext(1);
@@ -130,7 +130,14 @@ public class RxJavaActivity extends BaseActivity {
         }).flatMap(new Function<Integer, ObservableSource<String>>() {
             @Override
             public ObservableSource<String> apply(Integer integer) throws Exception {
-                return Observable.fromArray("a value of " + integer + ", b value of " + integer);
+                LogUtil.d("flatMap: " + integer.toString());
+                if (integer == 1) {
+                    return Observable.fromArray("第一个");
+                } else if (integer == 2) {
+                    return Observable.fromArray("第二个");
+                } else {
+                    return Observable.fromArray("第三个");
+                }
             }
         }).subscribe(new Consumer<String>() {
             @Override
