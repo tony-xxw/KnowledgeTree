@@ -7,6 +7,7 @@ import android.widget.Button;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.interview.http.HttpActivity;
+import com.wynne.knowledge.mark.interview.okhttp.OkHttpActivity;
 import com.wynne.knowledge.mark.interview.optimize.OptimizeActivity;
 import com.wynne.knowledge.mark.interview.rxjava.RxJavaActivity;
 
@@ -31,7 +32,7 @@ public class InterViewActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava})
+    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava,R.id.btn_okhttp})
     public void onViewClicked(View v) {
         if (v.getId() == R.id.btn_optimize) {
             startActivity(new Intent(this, OptimizeActivity.class));
@@ -39,6 +40,8 @@ public class InterViewActivity extends BaseActivity {
             startActivity(new Intent(this, HttpActivity.class));
         } else if (v.getId() == R.id.btn_rxjava) {
             startActivity(new Intent(this, RxJavaActivity.class));
+        } else if (v.getId() == R.id.btn_okhttp) {
+            startActivity(new Intent(this, OkHttpActivity.class));
         }
     }
 }

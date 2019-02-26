@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wynne.knowledge.mark">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MarkApplication"
         android:allowBackup="true"
@@ -47,5 +49,6 @@
         <activity android:name=".interview.http.HttpActivity" />
         <activity android:name=".interview.optimize.OptimizeActivity" />
         <activity android:name=".interview.rxjava.RxJavaActivity" />
+        <activity android:name=".interview.okhttp.OkHttpActivity" />
     </application>
 </manifest>
