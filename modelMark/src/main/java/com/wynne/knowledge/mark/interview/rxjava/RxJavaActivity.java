@@ -28,8 +28,8 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- *
  * 线程切换源码分析
+ *
  * @author Wynne
  */
 public class RxJavaActivity extends BaseActivity {
@@ -222,35 +222,44 @@ public class RxJavaActivity extends BaseActivity {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                LogUtil.d("observable: " + Thread.currentThread().getName());
-                emitter.onNext("Android开发");
-                emitter.onNext("Android开发");
+                LogUtil.d("上游: " + Thread.currentThread().getName());
                 emitter.onNext("1");
                 emitter.onNext("2");
+                emitter.onNext("3");
+                emitter.onNext("4");
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<String>() {
+        }).map(new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) throws Exception {
+                LogUtil.d("上游:  apply" + Thread.currentThread().getName());
+                return Integer.valueOf(s);
+            }
+        }).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtil.d("onSubscribe");
-                        LogUtil.d("observer: " + Thread.currentThread().getName());
+                        LogUtil.d("下游: onSubscribe");
+                        LogUtil.d("下游: onSubscribe: " + Thread.currentThread().getName());
                     }
 
                     @Override
-                    public void onNext(String s) {
-                        LogUtil.d("onNext: " + s);
+                    public void onNext(Integer s) {
+                        LogUtil.d("下游: onNext: " + s);
+                        LogUtil.d("下游: onNext: " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.d("onError");
+                        LogUtil.d("下游: onError");
+                        LogUtil.d("下游: onError: " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtil.d("onComplete");
+                        LogUtil.d("下游: onComplete");
+                        LogUtil.d("下游: onComplete: " + Thread.currentThread().getName());
                     }
                 });
     }
