@@ -28,6 +28,8 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
+ *
+ * 线程切换源码分析
  * @author Wynne
  */
 public class RxJavaActivity extends BaseActivity {
