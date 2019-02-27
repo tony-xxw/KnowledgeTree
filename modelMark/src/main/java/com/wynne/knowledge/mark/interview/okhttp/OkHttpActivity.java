@@ -15,6 +15,8 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -48,25 +50,26 @@ public class OkHttpActivity extends BaseActivity {
     private void okHttpPost() {
 
 
-
     }
 
     private void okHttpGet() {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                OkHttpClient client = new OkHttpClient();
+            public void subscribe(final ObservableEmitter<String> emitter) throws Exception {
+                OkHttpClient client = new OkHttpClient.Builder().build();
                 Request request = new Request.Builder().url(getUrl).build();
-                try {
-                    Response response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        emitter.onNext(response.body().string());
-                    } else {
-                        throw new IOException("error : " + response);
+
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        emitter.onNext(response.body().string());
+                    }
+                });
             }
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).
