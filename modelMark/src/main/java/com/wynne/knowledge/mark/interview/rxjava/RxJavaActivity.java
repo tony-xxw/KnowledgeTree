@@ -187,35 +187,37 @@ public class RxJavaActivity extends BaseActivity {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
                 Log.d("XXW", "subscribe");
+                Log.d("XXW", "subscribe Thread Name : " + Thread.currentThread().getName());
                 emitter.onNext(1);
+                emitter.onNext(2);
+                emitter.onNext(3);
+                emitter.onNext(4);
                 emitter.onComplete();
             }
-        }).map(new Function<Integer, String>() {
-            @Override
-            public String apply(Integer integer) throws Exception {
-                return integer.toString();
-            }
-        }).subscribe(new Observer<String>() {
-            @Override
-            public void onSubscribe(Disposable d) {
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        d.dispose();
+                        Log.d("XXW", "onSubscribe  Thread Name : " + Thread.currentThread().getName());
+                    }
 
-            }
+                    @Override
+                    public void onNext(Integer s) {
+                        LogUtil.d("onNext " + s);
+                    }
 
-            @Override
-            public void onNext(String s) {
-                LogUtil.d("onNext " + s);
-            }
+                    @Override
+                    public void onError(Throwable e) {
 
-            @Override
-            public void onError(Throwable e) {
+                    }
 
-            }
+                    @Override
+                    public void onComplete() {
 
-            @Override
-            public void onComplete() {
-
-            }
-        });
+                    }
+                });
     }
 
     private void stepOne() {
