@@ -32,7 +32,7 @@ public class InterViewActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava,R.id.btn_okhttp})
+    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava, R.id.btn_okhttp, R.id.btn_thread})
     public void onViewClicked(View v) {
         if (v.getId() == R.id.btn_optimize) {
             startActivity(new Intent(this, OptimizeActivity.class));
@@ -42,6 +42,8 @@ public class InterViewActivity extends BaseActivity {
             startActivity(new Intent(this, RxJavaActivity.class));
         } else if (v.getId() == R.id.btn_okhttp) {
             startActivity(new Intent(this, OkHttpActivity.class));
+        } else if (v.getId() == R.id.btn_thread) {
+            startActivity(new Intent(this, ThreadFactoryActivity.class));
         }
     }
 }

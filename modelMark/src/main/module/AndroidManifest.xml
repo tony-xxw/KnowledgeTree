@@ -50,5 +50,6 @@
         <activity android:name=".interview.optimize.OptimizeActivity" />
         <activity android:name=".interview.rxjava.RxJavaActivity" />
         <activity android:name=".interview.okhttp.OkHttpActivity" />
+        <activity android:name=".interview.ThreadFactoryActivity" />
     </application>
 </manifest>
