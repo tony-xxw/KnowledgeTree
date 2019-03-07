@@ -51,5 +51,6 @@
         <activity android:name=".interview.rxjava.RxJavaActivity" />
         <activity android:name=".interview.okhttp.OkHttpActivity" />
         <activity android:name=".interview.ThreadFactoryActivity" />
+        <activity android:name=".interview.basejava.BaseJavaActivity" />
     </application>
 </manifest>
