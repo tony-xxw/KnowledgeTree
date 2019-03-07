@@ -8,6 +8,8 @@ import android.util.Log
 import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
+import com.wynne.knowledge.mark.art.charpter2.ChapterTwoActivity
+import com.wynne.knowledge.mark.home.BookActivity
 
 /**
  * 返回home界面 再回到应用     跳到新Activity再返回原Activity
@@ -23,6 +25,13 @@ class ChapterOneActivity : BaseActivity() {
 
     @Override
     override fun initView() {
+
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("XXW", "ChapterOneActivity: onCreate")
 
     }
 
@@ -72,12 +81,14 @@ class ChapterOneActivity : BaseActivity() {
     fun onClick(view: View) {
         when (view.id) {
             R.id.tvSample -> {
-                val intent = Intent()
-                intent.action = "com.wynne.chapter.two"
-                intent.addCategory("com.wynne.chapter.three")
-                intent.addCategory("com.wynne.chapter.four")
-                intent.data = Uri.fromParts("file", "", "")
-                startActivity(intent)
+//                val intent = Intent()
+//                intent.action = ChapterOneActivity;
+//                intent.action = "com.wynne.chapter.two"
+//                intent.addCategory("com.wynne.chapter.three")
+//                intent.addCategory("com.wynne.chapter.four")
+//                intent.data = Uri.fromParts("file", "", "")
+
+                startActivity(Intent(ChapterOneActivity@ this, ChapterTwoActivity::class.java));
                 return
             }
         }
@@ -93,5 +104,10 @@ class ChapterOneActivity : BaseActivity() {
                 Log.d("XXW", "ChapterOneActivity: onConfigurationChanged 横向")
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.d("XXW", "onNewIntent");
     }
 }

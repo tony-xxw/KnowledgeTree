@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <style name="transparent" parent="@android:style/Theme.Translucent">
+
+    </style>
+
+    <style name="transparentWindow" parent="AlertDialog.AppCompat">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wynne.knowledge.mark">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MarkApplication"
@@ -19,25 +19,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".memo.MemoActivity" />
         <activity android:name=".activity.DrawableActivity" />
         <activity android:name=".activity.AnimationActivity" />
         <activity android:name=".art.ArtActivity" />
         <activity
             android:name=".art.charpter1.ChapterOneActivity"
-            android:configChanges="screenSize|orientation" />
+            android:taskAffinity=".home.xxx"
+            android:launchMode="singleTask"
+            android:configChanges="orientation" />
+
         <activity android:name=".art.charpter2.ChapterTwoActivity">
-            <intent-filter>
-                <action android:name="com.wynne.chapter.two" />
+            <!--<intent-filter>-->
+            <!--<action android:name="com.wynne.chapter.two" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.wynne.chapter.three" />
-                <category android:name="com.wynne.chapter.four" />
+            <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--<category android:name="com.wynne.chapter.three" />-->
+            <!--<category android:name="com.wynne.chapter.four" />-->
 
-                <data android:scheme="http" />
-                <data android:scheme="file" />
-                <!--<data android:host="www.baidu.com" />-->
-            </intent-filter>
+            <!--<data android:scheme="http" />-->
+            <!--<data android:scheme="file" />-->
+            <!--&lt;!&ndash;<data android:host="www.baidu.com" />&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.ShadowActivity" />
@@ -52,5 +56,6 @@
         <activity android:name=".interview.okhttp.OkHttpActivity" />
         <activity android:name=".interview.ThreadFactoryActivity" />
         <activity android:name=".interview.basejava.BaseJavaActivity" />
+        <activity android:name=".art.charpter1.SecondActivity" />
     </application>
 </manifest>
