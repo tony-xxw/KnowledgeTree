@@ -2,14 +2,11 @@ package com.wynne.knowledge.mark.art.charpter1
 
 import android.content.Intent
 import android.content.res.Configuration
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
-import com.wynne.knowledge.mark.art.charpter2.ChapterTwoActivity
-import com.wynne.knowledge.mark.home.BookActivity
 
 /**
  * 返回home界面 再回到应用     跳到新Activity再返回原Activity

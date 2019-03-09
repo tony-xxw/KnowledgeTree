@@ -1,6 +1,7 @@
 package com.wynne.knowledge.mark.home;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -9,14 +10,15 @@ import com.wynne.knowledge.base.base.view.BaseFragment;
 import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.activity.CustomActivity;
+import com.wynne.knowledge.mark.art.charpter1.UserManager;
 import com.wynne.knowledge.mark.interview.InterViewActivity;
 import com.wynne.knowledge.mark.jetpack.JetPackActivity;
 import com.wynne.knowledge.mark.art.ArtActivity;
 import com.wynne.knowledge.mark.memo.MemoActivity;
 
 /**
- *
  * okhttp 拦截器流程
+ *
  * @author xxw
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
@@ -59,6 +61,8 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
 
         }
         if (i == R.id.btn_art) {
+            UserManager.sUserId = 2;
+            Log.d("XXW", "userId: " + UserManager.sUserId);
             startActivity(new Intent(getActivity(), ArtActivity.class));
 
         }

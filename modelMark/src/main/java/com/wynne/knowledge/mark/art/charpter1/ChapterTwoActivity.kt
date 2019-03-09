@@ -1,14 +1,10 @@
-package com.wynne.knowledge.mark.art.charpter2
+package com.wynne.knowledge.mark.art.charpter1
 
 import android.content.Intent
-import android.os.Bundle
-import android.os.PersistableBundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
-import com.wynne.knowledge.mark.art.charpter1.SecondActivity
 
 class ChapterTwoActivity : BaseActivity() {
     override fun getLayoutId(): Int = R.layout.chapter_two_activity

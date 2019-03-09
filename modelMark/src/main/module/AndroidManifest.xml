@@ -23,14 +23,17 @@
         <activity android:name=".memo.MemoActivity" />
         <activity android:name=".activity.DrawableActivity" />
         <activity android:name=".activity.AnimationActivity" />
-        <activity android:name=".art.ArtActivity" />
+        <activity
+            android:name=".art.ArtActivity"
+            android:process=":remote" />
         <activity
             android:name=".art.charpter1.ChapterOneActivity"
-            android:taskAffinity=".home.xxx"
+            android:configChanges="orientation"
             android:launchMode="singleTask"
-            android:configChanges="orientation" />
+            android:process="com.wynne.knowledge.remote"
+            android:taskAffinity=".home.xxx" />
 
-        <activity android:name=".art.charpter2.ChapterTwoActivity">
+        <activity android:name=".art.charpter1.ChapterTwoActivity">
             <!--<intent-filter>-->
             <!--<action android:name="com.wynne.chapter.two" />-->
 

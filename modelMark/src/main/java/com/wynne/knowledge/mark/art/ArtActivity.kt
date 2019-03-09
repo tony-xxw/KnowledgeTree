@@ -1,17 +1,20 @@
 package com.wynne.knowledge.mark.art
 
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
+import com.wynne.knowledge.mark.art.charpter1.UserManager
 
 class ArtActivity : BaseActivity() {
     override fun getLayoutId() = R.layout.art_activity
 
     override fun initView() {
+        Log.d("XXW", "userId: " + UserManager.sUserId)
 
     }
 
