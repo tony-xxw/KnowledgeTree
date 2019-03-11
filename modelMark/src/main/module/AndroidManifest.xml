@@ -25,7 +25,7 @@
         <activity android:name=".activity.AnimationActivity" />
         <activity
             android:name=".art.ArtActivity"
-            android:process=":remote" />
+             />
         <activity
             android:name=".art.charpter1.ChapterOneActivity"
             android:configChanges="orientation"
@@ -60,5 +60,6 @@
         <activity android:name=".interview.ThreadFactoryActivity" />
         <activity android:name=".interview.basejava.BaseJavaActivity" />
         <activity android:name=".art.charpter1.SecondActivity" />
+        <activity android:name=".art.charpter3.ChapterViewActivity" />
     </application>
 </manifest>

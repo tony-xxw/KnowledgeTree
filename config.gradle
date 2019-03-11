@@ -7,7 +7,7 @@ ext {
             versionName             : "1.0.0",              //版本名称
 
             compileSdkVersion       : 27,
-            buildToolsVersion       : "27.0.3",
+            buildToolsVersion       : "27.0.2",
             minSdkVersion           : 17,
             targetSdkVersion        : 27,
 

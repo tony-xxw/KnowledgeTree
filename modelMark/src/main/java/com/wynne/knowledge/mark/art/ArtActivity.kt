@@ -9,6 +9,7 @@ import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
 import com.wynne.knowledge.mark.art.charpter1.UserManager
+import com.wynne.knowledge.mark.art.charpter3.ChapterViewActivity
 
 class ArtActivity : BaseActivity() {
     override fun getLayoutId() = R.layout.art_activity
@@ -28,6 +29,9 @@ class ArtActivity : BaseActivity() {
             }
             R.id.btnOneChapter -> {
                 startActivity(Intent(this, ChapterOneActivity::class.java))
+            }
+            R.id.btn_view -> {
+                startActivity(Intent(this, ChapterViewActivity::class.java))
             }
 
         }
