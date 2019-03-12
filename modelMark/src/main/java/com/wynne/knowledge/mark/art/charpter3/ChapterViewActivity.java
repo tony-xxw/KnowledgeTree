@@ -15,6 +15,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ * 分发机制与绘制流程
+ *
  * @author Wynne
  */
 public class ChapterViewActivity extends BaseActivity {
