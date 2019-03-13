@@ -37,6 +37,8 @@ public class ChapterViewActivity extends BaseActivity {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             Log.d("XXW", "X :" + event.getRawX());
             Log.d("XXW", "Y :" + event.getRawY());
+            Log.d("XXW", "Y :" + event.getX());
+            Log.d("XXW", "Y :" + event.getY());
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
             int testX = (int) (event.getRawX() - x);
             int testY = (int) (event.getRawY() - y);
