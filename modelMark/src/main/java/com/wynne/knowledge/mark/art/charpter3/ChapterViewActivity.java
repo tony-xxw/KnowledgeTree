@@ -1,11 +1,9 @@
 package com.wynne.knowledge.mark.art.charpter3;
 
-import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.wynne.knowledge.base.base.BaseActivity;
