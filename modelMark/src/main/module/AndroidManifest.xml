@@ -61,5 +61,6 @@
         <activity android:name=".interview.basejava.BaseJavaActivity" />
         <activity android:name=".art.charpter1.SecondActivity" />
         <activity android:name=".art.charpter3.ChapterViewActivity" />
+        <activity android:name=".art.charpter8.WindowActivity" />
     </application>
 </manifest>
