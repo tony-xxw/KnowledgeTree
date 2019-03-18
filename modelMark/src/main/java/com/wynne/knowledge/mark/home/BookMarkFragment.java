@@ -23,7 +23,7 @@ import com.wynne.knowledge.mark.memo.MemoActivity;
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
-    private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView;
+    private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView, btnThread;
 
     @Override
     public void initView() {
@@ -38,6 +38,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnCustom.setOnClickListener(this);
         btnJetpack.setOnClickListener(this);
         btnInterView.setOnClickListener(this);
+        btnThread.setOnClickListener(this);
     }
 
     private void findByView() {
@@ -46,6 +47,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnCustom = mContentView.findViewById(R.id.btn_custom);
         btnJetpack = mContentView.findViewById(R.id.btn_jetpack);
         btnInterView = mContentView.findViewById(R.id.btn_inter_view);
+        btnThread = mContentView.findViewById(R.id.btn_thread);
     }
 
     @Override
@@ -76,5 +78,32 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
             startActivity(new Intent(getActivity(), InterViewActivity.class));
         }
 
+        if (i == R.id.btn_thread) {
+            run();
+        }
+
+    }
+
+
+    public void run() {
+        Runnable runnable = new MyRunable();
+        Thread[] threads = new Thread[20];
+        for (int i = 0; i < 20; i++) {
+            threads[i] = new Thread(runnable, "thread" + (i + 1));
+        }
+
+        for (Thread thread : threads) {
+            thread.start();
+        }
+    }
+
+
+      class MyRunable implements Runnable {
+        private int count = 20;
+
+        @Override
+        public void run() {
+            Log.d("XXW", Thread.currentThread().getName() + " --- count " + count--);
+        }
     }
 }
