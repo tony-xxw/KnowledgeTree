@@ -8,8 +8,8 @@ apply plugin: 'com.jakewharton.butterknife'
 
 
 android {
-    compileSdkVersion rootProject.ext.versions.compileSdkVersion
-    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
 
 
     defaultConfig {
@@ -48,12 +48,13 @@ android {
                     exclude '*module'
                 }
             }
+            aidl.srcDirs = ['src/main/java', 'src/main/aidl/']
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]

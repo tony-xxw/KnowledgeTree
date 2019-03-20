@@ -8,6 +8,7 @@ import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
+import com.wynne.knowledge.mark.art.charpter1.ChapterTwoActivity
 import com.wynne.knowledge.mark.art.charpter1.UserManager
 import com.wynne.knowledge.mark.art.charpter3.ChapterViewActivity
 import com.wynne.knowledge.mark.art.charpter8.WindowActivity
@@ -37,6 +38,10 @@ class ArtActivity : BaseActivity() {
             R.id.btn_window -> {
                 startActivity(Intent(this, WindowActivity::class.java))
             }
+            R.id.btnTwoChapter -> {
+                startActivity(Intent(this, ChapterTwoActivity::class.java))
+            }
+
 
         }
     }

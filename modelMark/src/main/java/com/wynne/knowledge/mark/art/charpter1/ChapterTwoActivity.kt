@@ -11,33 +11,9 @@ class ChapterTwoActivity : BaseActivity() {
 
     override fun initView() {
 
+        var intent = Intent()
+        intent.action = "com.wynne.aidl"
+        intent.setPackage("com.wynne.knowledge.mark")
     }
 
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("XXW", "ChapterTwoActivity : onRestart")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("XXW", "ChapterTwoActivity :onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("XXW", "ChapterTwoActivity :onResume")
-    }
-
-
-    fun onClick(view: View) {
-        when (view.id) {
-            R.id.btn_intent -> {
-//
-
-                startActivity(Intent(ChapterTwoActivity@ this, SecondActivity::class.java))
-                return
-            }
-        }
-    }
 }

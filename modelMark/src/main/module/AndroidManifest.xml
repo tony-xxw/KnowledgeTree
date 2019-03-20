@@ -24,9 +24,7 @@
         <activity android:name=".memo.MemoActivity" />
         <activity android:name=".activity.DrawableActivity" />
         <activity android:name=".activity.AnimationActivity" />
-        <activity
-            android:name=".art.ArtActivity"
-             />
+        <activity android:name=".art.ArtActivity" />
         <activity
             android:name=".art.charpter1.ChapterOneActivity"
             android:configChanges="orientation"
@@ -63,5 +61,15 @@
         <activity android:name=".art.charpter1.SecondActivity" />
         <activity android:name=".art.charpter3.ChapterViewActivity" />
         <activity android:name=".art.charpter8.WindowActivity" />
+
+        <service
+            android:name=".art.charpter2.AIDLService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.wynne.aidl" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </service>
     </application>
 </manifest>

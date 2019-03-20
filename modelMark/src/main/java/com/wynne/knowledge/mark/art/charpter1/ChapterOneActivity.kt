@@ -85,7 +85,6 @@ class ChapterOneActivity : BaseActivity() {
 //                intent.addCategory("com.wynne.chapter.four")
 //                intent.data = Uri.fromParts("file", "", "")
 
-                startActivity(Intent(ChapterOneActivity@ this, ChapterTwoActivity::class.java));
                 return
             }
         }
