@@ -8,8 +8,8 @@ import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
-import com.wynne.knowledge.mark.art.charpter1.ChapterTwoActivity
-import com.wynne.knowledge.mark.art.charpter1.UserManager
+ import com.wynne.knowledge.mark.art.charpter1.UserManager
+import com.wynne.knowledge.mark.art.charpter2.ChapterTwoActivity
 import com.wynne.knowledge.mark.art.charpter3.ChapterViewActivity
 import com.wynne.knowledge.mark.art.charpter8.WindowActivity
 

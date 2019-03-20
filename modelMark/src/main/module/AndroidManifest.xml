@@ -32,19 +32,7 @@
             android:process="com.wynne.knowledge.remote"
             android:taskAffinity=".home.xxx" />
 
-        <activity android:name=".art.charpter1.ChapterTwoActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="com.wynne.chapter.two" />-->
 
-            <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--<category android:name="com.wynne.chapter.three" />-->
-            <!--<category android:name="com.wynne.chapter.four" />-->
-
-            <!--<data android:scheme="http" />-->
-            <!--<data android:scheme="file" />-->
-            <!--&lt;!&ndash;<data android:host="www.baidu.com" />&ndash;&gt;-->
-            <!--</intent-filter>-->
-        </activity>
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.ShadowActivity" />
         <activity android:name=".jetpack.JetPackActivity" />
@@ -61,6 +49,7 @@
         <activity android:name=".art.charpter1.SecondActivity" />
         <activity android:name=".art.charpter3.ChapterViewActivity" />
         <activity android:name=".art.charpter8.WindowActivity" />
+        <activity android:name=".art.charpter2.ChapterTwoActivity" />
 
         <service
             android:name=".art.charpter2.AIDLService"
