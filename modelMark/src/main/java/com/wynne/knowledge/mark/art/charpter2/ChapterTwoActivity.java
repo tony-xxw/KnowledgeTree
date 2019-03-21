@@ -36,6 +36,7 @@ public class ChapterTwoActivity extends BaseActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             demandManager = IDemandManager.Stub.asInterface(service);
+
         }
 
         @Override

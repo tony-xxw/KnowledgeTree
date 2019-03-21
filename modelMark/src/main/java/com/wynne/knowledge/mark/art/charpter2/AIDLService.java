@@ -3,9 +3,11 @@ package com.wynne.knowledge.mark.art.charpter2;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.wynne.knowledge.mark.IDemandListener;
 import com.wynne.knowledge.mark.IDemandManager;
 import com.wynne.knowledge.mark.MessageBean;
 
@@ -14,9 +16,22 @@ import com.wynne.knowledge.mark.MessageBean;
  */
 public class AIDLService extends Service {
 
+    RemoteCallbackList<IDemandListener> dList = new RemoteCallbackList<>();
+
     @Override
     public IBinder onBind(Intent intent) {
         return demandManager;
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        try {
+            demandManager.registerListener(listener);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return super.onStartCommand(intent, flags, startId);
+
     }
 
     IDemandManager.Stub demandManager = new IDemandManager.Stub() {
@@ -44,5 +59,26 @@ public class AIDLService extends Service {
             msg.setContent("颜色个i上粉色");
             msg.setLevel(3);
         }
+
+        @Override
+        public void registerListener(IDemandListener list) throws RemoteException {
+            dList.register(list);
+        }
+
+        @Override
+        public void unregisterListener(IDemandListener list) throws RemoteException {
+            dList.unregister(list);
+        }
     };
+
+
+    IDemandListener.Stub listener =new IDemandListener.Stub() {
+        @Override
+        public void onDemandReceiver(MessageBean msg) throws RemoteException {
+
+        }
+    };
+
+
+
 }
