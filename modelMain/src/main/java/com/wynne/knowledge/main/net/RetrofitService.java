@@ -1,5 +1,8 @@
 package com.wynne.knowledge.main.net;
 
+import android.os.Handler;
+import android.os.Message;
+
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.IOException;

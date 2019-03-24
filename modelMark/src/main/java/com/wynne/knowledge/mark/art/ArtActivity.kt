@@ -8,7 +8,7 @@ import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
- import com.wynne.knowledge.mark.art.charpter1.UserManager
+import com.wynne.knowledge.mark.art.charpter1.UserManager
 import com.wynne.knowledge.mark.art.charpter2.ChapterTwoActivity
 import com.wynne.knowledge.mark.art.charpter3.ChapterViewActivity
 import com.wynne.knowledge.mark.art.charpter8.WindowActivity
@@ -25,6 +25,7 @@ class ArtActivity : BaseActivity() {
         when (view.id) {
             R.id.btn_drawable -> {
                 startActivity(Intent(this, DrawableActivity::class.java))
+                Log.d("XXW", "Drawable")
             }
             R.id.btn_anim -> {
                 startActivity(Intent(this, AnimationActivity::class.java))
