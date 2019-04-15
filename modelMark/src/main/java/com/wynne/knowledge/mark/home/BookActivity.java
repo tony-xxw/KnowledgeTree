@@ -17,6 +17,10 @@ public class BookActivity extends BaseActivity {
     public void initView() {
         Log.d("XXW", ab.toString());
         Log.d("XXW", abcd.toString());
+        Log.d("XXW", 0x300 + " 十六进制");
+        int a = 2 & 1;
+        int ab = 2 | 1;
+        Log.d("XXW", a + " 十六进制 " + ab);
     }
 
     @Override
