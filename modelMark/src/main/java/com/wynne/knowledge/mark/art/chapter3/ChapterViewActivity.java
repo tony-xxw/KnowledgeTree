@@ -1,4 +1,4 @@
-package com.wynne.knowledge.mark.art.charpter3;
+package com.wynne.knowledge.mark.art.chapter3;
 
 import android.animation.ObjectAnimator;
 import android.util.Log;

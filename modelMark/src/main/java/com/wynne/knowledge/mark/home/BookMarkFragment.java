@@ -10,7 +10,7 @@ import com.wynne.knowledge.base.base.view.BaseFragment;
 import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.activity.CustomActivity;
-import com.wynne.knowledge.mark.art.charpter1.UserManager;
+import com.wynne.knowledge.mark.art.chapter1.UserManager;
 import com.wynne.knowledge.mark.interview.InterViewActivity;
 import com.wynne.knowledge.mark.jetpack.JetPackActivity;
 import com.wynne.knowledge.mark.art.ArtActivity;

@@ -1,4 +1,4 @@
-package com.wynne.knowledge.mark.art.charpter1;
+package com.wynne.knowledge.mark.art.chapter1;
 
 public class UserManager {
 

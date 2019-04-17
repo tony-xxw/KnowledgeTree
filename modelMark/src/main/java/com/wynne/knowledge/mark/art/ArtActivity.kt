@@ -7,10 +7,11 @@ import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
-import com.wynne.knowledge.mark.art.charpter1.ChapterOneActivity
-import com.wynne.knowledge.mark.art.charpter1.UserManager
-import com.wynne.knowledge.mark.art.charpter2.ChapterTwoActivity
-import com.wynne.knowledge.mark.art.charpter3.ChapterViewActivity
+import com.wynne.knowledge.mark.art.chapter1.ChapterOneActivity
+import com.wynne.knowledge.mark.art.chapter1.UserManager
+import com.wynne.knowledge.mark.art.chapter2.ChapterTwoActivity
+import com.wynne.knowledge.mark.art.chapter3.ChapterViewActivity
+import com.wynne.knowledge.mark.art.chapter4.ChapterFourActivity
 import com.wynne.knowledge.mark.art.charpter8.WindowActivity
 
 class ArtActivity : BaseActivity() {
@@ -41,6 +42,9 @@ class ArtActivity : BaseActivity() {
             }
             R.id.btnTwoChapter -> {
                 startActivity(Intent(this, ChapterTwoActivity::class.java))
+            }
+            R.id.btn_view_base -> {
+                startActivity(Intent(this, ChapterFourActivity::class.java))
             }
 
 

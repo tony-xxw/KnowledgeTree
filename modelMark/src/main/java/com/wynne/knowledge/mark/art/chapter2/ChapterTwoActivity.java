@@ -1,4 +1,4 @@
-package com.wynne.knowledge.mark.art.charpter2;
+package com.wynne.knowledge.mark.art.chapter2;
 
 import android.content.ComponentName;
 import android.content.Context;
