@@ -51,6 +51,7 @@
         <activity android:name=".art.charpter8.WindowActivity" />
         <activity android:name=".art.chapter2.ChapterTwoActivity" />
         <activity android:name=".art.chapter4.ChapterFourActivity" />
+        <activity android:name=".structure.StructureActivity" />
 
         <service
             android:name=".art.chapter2.AIDLService"

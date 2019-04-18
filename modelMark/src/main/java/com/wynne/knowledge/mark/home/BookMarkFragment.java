@@ -15,6 +15,7 @@ import com.wynne.knowledge.mark.interview.InterViewActivity;
 import com.wynne.knowledge.mark.jetpack.JetPackActivity;
 import com.wynne.knowledge.mark.art.ArtActivity;
 import com.wynne.knowledge.mark.memo.MemoActivity;
+import com.wynne.knowledge.mark.structure.StructureActivity;
 
 /**
  * okhttp 拦截器流程
@@ -23,7 +24,7 @@ import com.wynne.knowledge.mark.memo.MemoActivity;
  */
 @Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
-    private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView, btnThread;
+    private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView, btnThread, btnStructure;
 
     @Override
     public void initView() {
@@ -39,6 +40,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnJetpack.setOnClickListener(this);
         btnInterView.setOnClickListener(this);
         btnThread.setOnClickListener(this);
+        btnStructure.setOnClickListener(this);
     }
 
     private void findByView() {
@@ -48,6 +50,8 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnJetpack = mContentView.findViewById(R.id.btn_jetpack);
         btnInterView = mContentView.findViewById(R.id.btn_inter_view);
         btnThread = mContentView.findViewById(R.id.btn_thread);
+        btnStructure = mContentView.findViewById(R.id.btn_structure);
+
     }
 
     @Override
@@ -76,10 +80,14 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         }
         if (i == R.id.btn_inter_view) {
             startActivity(new Intent(getActivity(), InterViewActivity.class));
+
         }
 
         if (i == R.id.btn_thread) {
             run();
+        }
+        if (i == R.id.btn_structure) {
+            startActivity(new Intent(getActivity(), StructureActivity.class));
         }
 
     }
@@ -98,7 +106,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-      class MyRunable implements Runnable {
+    class MyRunable implements Runnable {
         private int count = 20;
 
         @Override
