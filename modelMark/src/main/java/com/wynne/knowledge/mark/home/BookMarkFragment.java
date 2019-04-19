@@ -26,6 +26,7 @@ import com.wynne.knowledge.mark.structure.StructureActivity;
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
     private Button btnMemo, btnArt, btnCustom, btnJetpack, btnInterView, btnThread, btnStructure;
 
+
     @Override
     public void initView() {
 
@@ -51,7 +52,6 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnInterView = mContentView.findViewById(R.id.btn_inter_view);
         btnThread = mContentView.findViewById(R.id.btn_thread);
         btnStructure = mContentView.findViewById(R.id.btn_structure);
-
     }
 
     @Override

@@ -5,12 +5,17 @@ import android.view.View;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.model.User;
 import com.wynne.knowledge.mark.structure.linked.QueueLinked;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * @author xxw
  */
 public class StructureActivity extends BaseActivity {
+
     @Override
     public void initView() {
 
@@ -33,6 +38,21 @@ public class StructureActivity extends BaseActivity {
             for (int i = 0; i < 4; i++) {
                 Log.d("XXW", "取出: " + q.dequeue().toString());
             }
+        } else if (view.getId() == R.id.btn_linkedList) {
+            LinkedList<String> linkedList = new LinkedList<>();
+            linkedList.add("Android");
+            linkedList.add("IOS");
+            linkedList.add("Web");
+            linkedList.add("Java");
+
+            linkedList.add(2, "随机插入");
+            new ArrayList<>();
+
+
+            linkedList.get(0);
+            Log.d("XXW", "First :" + linkedList.getFirst());
+            Log.d("XXW", "Last :" + linkedList.getLast());
+
         }
     }
 }
