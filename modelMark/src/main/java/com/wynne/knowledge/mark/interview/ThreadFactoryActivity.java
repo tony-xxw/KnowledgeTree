@@ -1,5 +1,6 @@
 package com.wynne.knowledge.mark.interview;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.View;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.base.utils.LogUtil;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.activity.ThreadActivity;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -42,6 +44,7 @@ public class ThreadFactoryActivity extends BaseActivity {
             case R.id.btn_handlerThread:
                 break;
             case R.id.btn_intentService:
+                startActivity(new Intent(this, ThreadActivity.class));
                 break;
             case R.id.btn_synchronized:
                 for (int i = 0; i < 3; i++) {

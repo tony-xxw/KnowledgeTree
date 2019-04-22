@@ -17,9 +17,9 @@
         android:layout="@layout/vs_text" />
 
     <ViewStub
-        android:layout="@layout/vs_thread"
         android:id="@+id/vs_thread"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout="@layout/vs_thread" />
 
 </LinearLayout>

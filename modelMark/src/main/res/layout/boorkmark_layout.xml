@@ -9,36 +9,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_memo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="备忘录" />
-
-
-        <Button
-            android:id="@+id/btn_handler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="消息机制" />
-
-        <Button
-            android:id="@+id/btn_bitmap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="一张图片所占内存" />
-
-        <Button
-            android:id="@+id/btn_thread"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="多线程相关" />
-
-        <Button
-            android:id="@+id/btn_ui"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="主线程UI" />
 
         <Button
             android:id="@+id/btn_art"

@@ -6,6 +6,9 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+/**
+ * @author xxw
+ */
 public class MyIntentService extends IntentService {
 
 
@@ -26,7 +29,8 @@ public class MyIntentService extends IntentService {
 
     @Override
     public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
-        Log.d("XXW", "onStartCommand");
+        String action = intent.getStringExtra("task_action");
+        Log.d("XXW", "onStartCommand : " + action);
         return super.onStartCommand(intent, flags, startId);
     }
 
