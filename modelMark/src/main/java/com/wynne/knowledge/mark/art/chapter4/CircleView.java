@@ -19,7 +19,6 @@ public class CircleView extends View {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int mColor = Color.RED;
 
-
     public CircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
@@ -60,5 +59,20 @@ public class CircleView extends View {
         int height = getHeight() - getPaddingTop() - getPaddingBottom();
         int radius = Math.min(width, height) / 2;
         canvas.drawCircle(getPaddingLeft() + width / 2, getPaddingTop() + height / 2, radius, mPaint);
+    }
+
+    class Test {
+
+        public void test() {
+            int a = mColor;
+        }
+    }
+
+    static class Sample {
+
+
+        public void sample() {
+
+        }
     }
 }

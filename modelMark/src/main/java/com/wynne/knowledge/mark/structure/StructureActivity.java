@@ -5,7 +5,6 @@ import android.view.View;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
-import com.wynne.knowledge.mark.model.User;
 import com.wynne.knowledge.mark.structure.linked.QueueLinked;
 
 import java.util.ArrayList;
