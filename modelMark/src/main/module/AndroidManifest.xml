@@ -47,11 +47,12 @@
         <activity android:name=".interview.basejava.BaseJavaActivity" />
         <activity android:name=".art.chapter1.SecondActivity" />
         <activity android:name=".art.chapter3.ChapterViewActivity" />
-        <activity android:name=".art.charpter8.WindowActivity" />
+        <activity android:name=".art.chapter8.WindowActivity" />
         <activity android:name=".art.chapter2.ChapterTwoActivity" />
         <activity android:name=".art.chapter4.ChapterFourActivity" />
         <activity android:name=".structure.StructureActivity" />
         <activity android:name=".activity.ThreadActivity" />
+        <activity android:name=".art.chapter10.ArtMessageActivity" />
 
         <service
             android:name=".art.chapter2.AIDLService"

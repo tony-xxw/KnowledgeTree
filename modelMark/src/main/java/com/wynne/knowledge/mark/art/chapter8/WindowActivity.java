@@ -1,8 +1,6 @@
-package com.wynne.knowledge.mark.art.charpter8;
+package com.wynne.knowledge.mark.art.chapter8;
 
-import android.graphics.ImageFormat;
 import android.graphics.PixelFormat;
-import android.os.Build;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -12,9 +10,7 @@ import android.widget.Button;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 
-import butterknife.BindView;
 import butterknife.OnClick;
-import retrofit2.http.PATCH;
 
 /**
  * @author Wynne
