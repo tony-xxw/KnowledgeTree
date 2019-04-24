@@ -15,4 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Handler" />
+
+    <Button
+        android:id="@+id/tv_async_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask" />
 </LinearLayout>

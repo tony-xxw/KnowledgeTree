@@ -1,6 +1,7 @@
 package com.wynne.knowledge.mark.art.chapter10;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -9,8 +10,12 @@ import android.widget.Toast;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.art.Sun;
+import com.wynne.knowledge.mark.interview.ThreadFactoryActivity;
 
 import java.lang.ref.SoftReference;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import butterknife.OnClick;
 
@@ -24,7 +29,7 @@ public class ArtMessageActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        Sun sun = new Sun();
     }
 
     @Override
@@ -33,7 +38,7 @@ public class ArtMessageActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.tv_thread_local, R.id.tv_handler})
+    @OnClick({R.id.tv_thread_local, R.id.tv_handler, R.id.tv_async_task})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.tv_thread_local) {
             runThreadLocalSample();
@@ -41,7 +46,16 @@ public class ArtMessageActivity extends BaseActivity {
         if (view.getId() == R.id.tv_handler) {
             runHandlerSample();
         }
+        if (view.getId() == R.id.tv_async_task) {
+            try {
+                new ArtAsyncTask().execute(new URL("http://www.baidu.com"),
+                        new URL("http://www.renyugang.cn"));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
 
     private void runHandlerSample() {
         new Thread() {
@@ -101,5 +115,40 @@ public class ArtMessageActivity extends BaseActivity {
                 Log.d("XXW", getName() + ":  value     " + booleanThreadLocal.get());
             }
         }.start();
+    }
+
+    private class ArtAsyncTask extends AsyncTask<URL, Integer, Long> {
+
+        @Override
+        protected Long doInBackground(URL... urls) {
+            int count = urls.length;
+            long totalSize = 0;
+            for (int i = 0; i < count; i++) {
+                publishProgress(i);
+                if (isCancelled()) {
+                    break;
+                }
+            }
+            return totalSize;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            Log.d("XXW", "onPreExecute");
+            super.onPreExecute();
+        }
+
+
+        @Override
+        protected void onPostExecute(Long aLong) {
+            Log.d("XXW", "onPostExecute   :" + aLong);
+            super.onPostExecute(aLong);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            Log.d("XXW", "onProgressUpdate   :" + values.length);
+            super.onProgressUpdate(values);
+        }
     }
 }
