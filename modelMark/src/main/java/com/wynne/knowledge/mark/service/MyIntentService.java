@@ -23,7 +23,7 @@ public class MyIntentService extends IntentService {
 
     @Override
     public void onStart(@Nullable Intent intent, int startId) {
-        Log.d("XXW", "onStart");
+        Log.d("XXW", "onStart :       startId :" + startId);
         super.onStart(intent, startId);
     }
 
@@ -37,11 +37,11 @@ public class MyIntentService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         String action = intent.getStringExtra("task_action");
-        SystemClock.sleep(2000);
+        SystemClock.sleep(3000);
 
         Log.d("XXW", "onHandleIntent : task  " + action);
 
-        if ("action3".equals(action)) {
+        if ("action1".equals(action)) {
             Log.d("XXW", "onHandleIntent : " + action);
         }
     }

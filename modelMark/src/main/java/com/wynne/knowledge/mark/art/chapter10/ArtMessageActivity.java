@@ -1,6 +1,8 @@
 package com.wynne.knowledge.mark.art.chapter10;
 
 import android.app.Activity;
+import android.app.IntentService;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +14,7 @@ import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.art.Sun;
 import com.wynne.knowledge.mark.interview.ThreadFactoryActivity;
+import com.wynne.knowledge.mark.service.MyIntentService;
 
 import java.lang.ref.SoftReference;
 import java.net.MalformedURLException;
@@ -38,7 +41,7 @@ public class ArtMessageActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.tv_thread_local, R.id.tv_handler, R.id.tv_async_task})
+    @OnClick({R.id.tv_thread_local, R.id.tv_handler, R.id.tv_async_task, R.id.tv_IntentService, R.id.tv_thread_pool})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.tv_thread_local) {
             runThreadLocalSample();
@@ -53,6 +56,19 @@ public class ArtMessageActivity extends BaseActivity {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
+        }
+        if (view.getId() == R.id.tv_IntentService) {
+            Intent intent = new Intent(this, MyIntentService.class);
+            intent.putExtra("task_action", "action1");
+            startService(intent);
+            intent.putExtra("task_action", "action2");
+            startService(intent);
+            intent.putExtra("task_action", "action3");
+            startService(intent);
+        }
+
+        if (view.getId() == R.id.tv_thread_pool) {
+
         }
     }
 

@@ -21,4 +21,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AsyncTask" />
+
+    <Button
+        android:id="@+id/tv_IntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IntentService" />
+
+    <Button
+        android:id="@+id/tv_thread_pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="线程池" />
 </LinearLayout>
