@@ -23,6 +23,7 @@ import java.net.URL;
 import butterknife.OnClick;
 
 /**
+ * 测试新密钥~~
  * @author Wynne
  */
 public class ArtMessageActivity extends BaseActivity {
