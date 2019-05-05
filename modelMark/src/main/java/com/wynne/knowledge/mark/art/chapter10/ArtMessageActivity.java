@@ -1,11 +1,12 @@
 package com.wynne.knowledge.mark.art.chapter10;
 
 import android.app.Activity;
-import android.app.IntentService;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -13,17 +14,20 @@ import android.widget.Toast;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 import com.wynne.knowledge.mark.art.Sun;
-import com.wynne.knowledge.mark.interview.ThreadFactoryActivity;
 import com.wynne.knowledge.mark.service.MyIntentService;
 
 import java.lang.ref.SoftReference;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.OnClick;
 
 /**
- * 测试新密钥~~
  * @author Wynne
  */
 public class ArtMessageActivity extends BaseActivity {
@@ -42,7 +46,8 @@ public class ArtMessageActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.tv_thread_local, R.id.tv_handler, R.id.tv_async_task, R.id.tv_IntentService, R.id.tv_thread_pool})
+    @OnClick({R.id.tv_thread_local, R.id.tv_handler, R.id.tv_async_task, R.id.tv_IntentService,
+            R.id.tv_fix_thread_pool, R.id.tv_cache_thread_pool, R.id.tv_schedule_thread_pool, R.id.tv_single_thread_pool})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.tv_thread_local) {
             runThreadLocalSample();
@@ -68,9 +73,97 @@ public class ArtMessageActivity extends BaseActivity {
             startService(intent);
         }
 
-        if (view.getId() == R.id.tv_thread_pool) {
-
+        if (view.getId() == R.id.tv_fix_thread_pool) {
+            runFixExecutor();
         }
+        if (view.getId() == R.id.tv_cache_thread_pool) {
+            runCacheExecutor();
+        }
+        if (view.getId() == R.id.tv_schedule_thread_pool) {
+            runScheduleExecutor();
+        }
+        if (view.getId() == R.id.tv_single_thread_pool) {
+            runSingleExecutor();
+        }
+    }
+
+    ScheduledExecutorService delaryFixedThreadPool;
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            SystemClock.sleep(2000);
+            Log.d("XXW", "runnable start");
+            Log.d("XXW", "Hello executor");
+            Log.d("XXW", "runnable end");
+        }
+    };
+    Runnable runnable1 = new Runnable() {
+        @Override
+        public void run() {
+            Log.d("XXW", "runnable1 start");
+            SystemClock.sleep(2000);
+            Log.d("XXW", "Hello executor 1");
+            Log.d("XXW", "runnable1 end");
+        }
+    };
+    Runnable runnable2 = new Runnable() {
+        @Override
+        public void run() {
+            SystemClock.sleep(2000);
+            Log.d("XXW", "runnable2 start");
+            Log.d("XXW", "Hello executor 2");
+            Log.d("XXW", "runnable2 end");
+        }
+    };
+    Runnable runnable3 = new Runnable() {
+        @Override
+        public void run() {
+            SystemClock.sleep(2000);
+            Log.d("XXW", "runnable3 start");
+            Log.d("XXW", "Hello executor 3");
+            Log.d("XXW", "runnable3 end");
+        }
+    };
+
+
+    private void runFixExecutor() {
+        ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(2);
+        newFixedThreadPool.execute(runnable);
+        newFixedThreadPool.execute(runnable1);
+        newFixedThreadPool.execute(runnable2);
+        newFixedThreadPool.execute(runnable3);
+    }
+
+    private void runCacheExecutor() {
+        ExecutorService cacheFixedThreadPool = Executors.newCachedThreadPool(new ThreadFactory() {
+            @Override
+            public Thread newThread(@NonNull Runnable r) {
+                return new Thread(r);
+            }
+        });
+        cacheFixedThreadPool.execute(runnable);
+        cacheFixedThreadPool.execute(runnable1);
+        cacheFixedThreadPool.execute(runnable2);
+        cacheFixedThreadPool.execute(runnable3);
+    }
+
+    private void runScheduleExecutor() {
+        delaryFixedThreadPool = Executors.newScheduledThreadPool(2);
+//        delaryFixedThreadPool.schedule(runnable, 2000, TimeUnit.MILLISECONDS);
+//        delaryFixedThreadPool.schedule(runnable1, 2000, TimeUnit.MILLISECONDS);
+//        delaryFixedThreadPool.schedule(runnable2, 2000, TimeUnit.MILLISECONDS);
+//        delaryFixedThreadPool.schedule(runnable3, 2000, TimeUnit.MILLISECONDS);
+        delaryFixedThreadPool.scheduleAtFixedRate(runnable, 10, 1000, TimeUnit.MILLISECONDS);
+    }
+
+    private void runSingleExecutor() {
+
+        ExecutorService newSingleThreadPool = Executors.newSingleThreadExecutor();
+        newSingleThreadPool.execute(runnable);
+        newSingleThreadPool.execute(runnable1);
+        newSingleThreadPool.execute(runnable2);
+        newSingleThreadPool.execute(runnable3);
     }
 
 
@@ -167,5 +260,11 @@ public class ArtMessageActivity extends BaseActivity {
             Log.d("XXW", "onProgressUpdate   :" + values.length);
             super.onProgressUpdate(values);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        delaryFixedThreadPool.shutdown();
     }
 }

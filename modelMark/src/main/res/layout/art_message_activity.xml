@@ -28,9 +28,39 @@
         android:layout_height="wrap_content"
         android:text="IntentService" />
 
-    <Button
-        android:id="@+id/tv_thread_pool"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="线程池" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tv_fix_thread_pool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fix线程池" />
+
+        <Button
+            android:id="@+id/tv_cache_thread_pool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cache线程池" />
+
+        <Button
+            android:id="@+id/tv_schedule_thread_pool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="schedule线程池" />
+
+        <Button
+            android:id="@+id/tv_single_thread_pool"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Single线程池" />
+    </LinearLayout>
+
+
 </LinearLayout>
