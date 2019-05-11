@@ -28,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.OnClick;
 
 /**
+ * Mac test
  * @author Wynne
  */
 public class ArtMessageActivity extends BaseActivity {
