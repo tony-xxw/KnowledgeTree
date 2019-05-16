@@ -8,7 +8,7 @@ import com.wynne.knowledge.mark.service.MarkServiceImpl;
 import com.wynne.knowledge.base.service.ServiceFactory;
 
 /**
- *
+ * 又是堕落的1天啊
  * @author xxw
  */
 public class MarkApplication extends BaseApplication {
