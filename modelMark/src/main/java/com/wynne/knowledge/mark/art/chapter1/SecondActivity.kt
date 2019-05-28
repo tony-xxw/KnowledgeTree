@@ -15,7 +15,7 @@ class SecondActivity : BaseActivity() {
     fun onClick(view: View) {
         when (view.id) {
             R.id.btn_intent -> {
-                startActivity(Intent(SecondActivity@ this, ChapterOneActivity::class.java));
+                startActivity(Intent(this, ChapterOneActivity::class.java));
                 return
             }
         }

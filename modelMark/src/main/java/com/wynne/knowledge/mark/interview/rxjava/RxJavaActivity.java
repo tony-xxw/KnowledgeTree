@@ -6,6 +6,7 @@ import android.view.View;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.base.utils.LogUtil;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -39,22 +40,22 @@ public class RxJavaActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three,
-            R.id.btn_four, R.id.btn_five, R.id.btn_six, R.id.btn_sevent})
+    @OnClick({R2.id.btn_one, R2.id.btn_two, R2.id.btn_three,
+            R2.id.btn_four, R2.id.btn_five, R2.id.btn_six, R2.id.btn_sevent})
     public void onViewClicked(View view) {
-        if (view.getId() == R.id.btn_one) {
+        if (view.getId() == R2.id.btn_one) {
             stepOne();
-        } else if (view.getId() == R.id.btn_two) {
+        } else if (view.getId() == R2.id.btn_two) {
             stepTwo();
-        } else if (view.getId() == R.id.btn_three) {
+        } else if (view.getId() == R2.id.btn_three) {
             stepThree();
-        } else if (view.getId() == R.id.btn_four) {
+        } else if (view.getId() == R2.id.btn_four) {
             stepFour();
-        } else if (view.getId() == R.id.btn_five) {
+        } else if (view.getId() == R2.id.btn_five) {
             stepFive();
-        } else if (view.getId() == R.id.btn_six) {
+        } else if (view.getId() == R2.id.btn_six) {
             stepSix();
-        } else if (view.getId() == R.id.btn_sevent) {
+        } else if (view.getId() == R2.id.btn_sevent) {
             requestUp();
         }
     }

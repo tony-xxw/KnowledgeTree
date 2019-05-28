@@ -16,10 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wynne.knowledge.main.R;
+import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.main.animator.CharEvaluator;
 import com.wynne.knowledge.main.animator.Point;
 import com.wynne.knowledge.main.animator.PointEvaluator;
-import com.wynne.knowledge.base.base.BaseActivity;
 
 
 /**

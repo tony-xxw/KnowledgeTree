@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 
 import butterknife.OnClick;
 
@@ -29,14 +30,10 @@ public class WindowActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_add_window})
+    @OnClick({R2.id.btn_add_window})
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.btn_add_window:
-                addWindow();
-                break;
-            default:
-                break;
+        if (view.getId() == R2.id.btn_add_window) {
+            addWindow();
         }
     }
 

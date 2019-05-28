@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.wynne.knowledge.main.main.CustomFragment;
 import com.wynne.knowledge.base.service.base.IBaseService;
+import com.wynne.knowledge.main.main.CustomFragment;
 
 /**
  * @author xxw

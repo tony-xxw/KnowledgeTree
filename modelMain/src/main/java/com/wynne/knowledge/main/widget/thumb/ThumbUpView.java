@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.base.utils.StringUtils;
+import com.wynne.knowledge.home.widget.thumb.ThumbView;
 
 /**
  * Created by Wynne on 2018/7/3.

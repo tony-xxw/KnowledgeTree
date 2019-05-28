@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,9 +34,9 @@ public class HttpActivity extends BaseActivity {
         return R.layout.http_activity;
     }
 
-    @OnClick({R.id.btn_get})
+    @OnClick({R2.id.btn_get})
     public void onViewClicked(View view) {
-        if (view.getId() == R.id.btn_get) {
+        if (view.getId() == R2.id.btn_get) {
             handleGetRequest(new IRequest() {
                 @Override
                 public String getBaseUrl() {

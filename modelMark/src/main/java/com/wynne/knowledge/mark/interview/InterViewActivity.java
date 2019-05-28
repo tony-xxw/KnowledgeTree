@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 import com.wynne.knowledge.mark.interview.basejava.BaseJavaActivity;
 import com.wynne.knowledge.mark.interview.http.HttpActivity;
 import com.wynne.knowledge.mark.interview.okhttp.OkHttpActivity;
@@ -33,19 +34,19 @@ public class InterViewActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_optimize, R.id.btn_http, R.id.btn_rxjava, R.id.btn_okhttp, R.id.btn_thread, R.id.base_java})
+    @OnClick({R2.id.btn_optimize, R2.id.btn_http, R2.id.btn_rxjava, R2.id.btn_okhttp, R2.id.btn_thread, R2.id.base_java})
     public void onViewClicked(View v) {
-        if (v.getId() == R.id.btn_optimize) {
+        if (v.getId() == R2.id.btn_optimize) {
             startActivity(new Intent(this, OptimizeActivity.class));
-        } else if (v.getId() == R.id.btn_http) {
+        } else if (v.getId() == R2.id.btn_http) {
             startActivity(new Intent(this, HttpActivity.class));
-        } else if (v.getId() == R.id.btn_rxjava) {
+        } else if (v.getId() == R2.id.btn_rxjava) {
             startActivity(new Intent(this, RxJavaActivity.class));
-        } else if (v.getId() == R.id.btn_okhttp) {
+        } else if (v.getId() == R2.id.btn_okhttp) {
             startActivity(new Intent(this, OkHttpActivity.class));
-        } else if (v.getId() == R.id.btn_thread) {
+        } else if (v.getId() == R2.id.btn_thread) {
             startActivity(new Intent(this, ThreadFactoryActivity.class));
-        } else if (v.getId() == R.id.base_java) {
+        } else if (v.getId() == R2.id.base_java) {
             startActivity(new Intent(this, BaseJavaActivity.class));
         }
     }

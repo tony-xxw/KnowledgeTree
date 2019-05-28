@@ -12,13 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.wynne.knowledge.base.base.view.BaseFragment;
 import com.wynne.knowledge.base.constant.ARouterPath;
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.main.audio.AudioActivity;
-import com.wynne.knowledge.base.base.view.BaseFragment;
-import com.wynne.knowledge.main.custom.ipc.IpcActivity;
-import com.wynne.knowledge.main.custom.window.WindowActivity;
 import com.wynne.knowledge.main.interfere.InterfereActivity;
+import com.wynne.knowledge.main.ipc.IpcActivity;
 import com.wynne.knowledge.main.ipc.binder.BinderPoolActivity;
 import com.wynne.knowledge.main.ipc.provider.ProviderActivity;
 import com.wynne.knowledge.main.ipc.socket.SocketActivity;
@@ -27,6 +26,8 @@ import com.wynne.knowledge.main.retrofit.RetrofitActivity;
 import com.wynne.knowledge.main.rx.RxJavaActivity;
 import com.wynne.knowledge.main.thread.ThreadPoolActivity;
 import com.wynne.knowledge.main.view.ViewActivity;
+import com.wynne.knowledge.main.window.WindowActivity;
+
 
 /**
  * @author XXW

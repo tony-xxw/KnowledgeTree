@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wynne.knowledge.main">
+    package="com.wynne.knowledge.home">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,7 +11,7 @@
 
 
     <permission
-        android:name="com.wynne.knowledge.main.permission.ACCESS_BOOK_SERVICE"
+        android:name="com.wynne.knowledge.home.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
 
     <application
@@ -28,7 +28,6 @@
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
-
 
     </application>
 

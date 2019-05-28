@@ -8,8 +8,8 @@ import android.graphics.Point;
  * Desc：
  */
 public class TuvPoint {
-    float x;
-    float y;
+    public float x;
+    public float y;
 
     public TuvPoint() {
 

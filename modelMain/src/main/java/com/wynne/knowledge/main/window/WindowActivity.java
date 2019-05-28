@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.custom.window;
+package com.wynne.knowledge.main.window;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

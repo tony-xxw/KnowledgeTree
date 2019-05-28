@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.base.base.BaseActivity;
-import com.wynne.knowledge.main.custom.ipc.socket.TCPService;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

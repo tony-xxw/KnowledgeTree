@@ -9,8 +9,6 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import com.aidl.sample.IBinderPool;
-import com.wynne.knowledge.main.custom.ipc.binder.ComputeImp;
-import com.wynne.knowledge.main.custom.ipc.binder.SecurityCenterImp;
 
 import java.util.concurrent.CountDownLatch;
 

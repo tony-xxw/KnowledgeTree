@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/fragment_custom"
-        class="com.wynne.knowledge.main.main.CustomFragment"
+        class="com.wynne.knowledge.home.main.CustomFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

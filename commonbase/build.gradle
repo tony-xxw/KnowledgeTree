@@ -39,7 +39,6 @@ dependencies {
     api rootProject.ext.dependencies["constraint_layout"]
     api rootProject.ext.dependencies["design"]
     api rootProject.ext.dependencies["glide"]
-    api rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["circleimageview"]
     api rootProject.ext.dependencies["rxjava"]
     api rootProject.ext.dependencies["rxandroid"]

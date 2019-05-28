@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.custom.ipc;
+package com.wynne.knowledge.main.ipc;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import com.aidl.sample.IBookManager;
 import com.aidl.sample.IOnNewBookArrivedListener;
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.base.base.BaseActivity;
-import com.wynne.knowledge.main.ipc.BookManagerService;
+
 
 import java.util.List;
 

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -18,9 +19,9 @@ import butterknife.OnClick;
  * @author Wynne
  */
 public class ChapterViewActivity extends BaseActivity {
-    @BindView(R.id.btn_scroll)
+    @BindView(R2.id.btn_scroll)
     Button btnScroll;
-    @BindView(R.id.btn_all_scroll)
+    @BindView(R2.id.btn_all_scroll)
     Button btnAllScroll;
 
     int x, y;
@@ -59,9 +60,9 @@ public class ChapterViewActivity extends BaseActivity {
         return R.layout.art_view_activity;
     }
 
-    @OnClick({R.id.btn_scroll})
+    @OnClick({R2.id.btn_scroll})
     public void onViewClicked(View view) {
-        if (view.getId() == R.id.btn_scroll) {
+        if (view.getId() == R2.id.btn_scroll) {
             Log.d("XXW", "before scrollX: " + btnScroll.getScaleX());
             Log.d("XXW", "before scrollY: " + btnScroll.getScaleY());
             Log.d("XXW", "before X: " + btnScroll.getLeft());

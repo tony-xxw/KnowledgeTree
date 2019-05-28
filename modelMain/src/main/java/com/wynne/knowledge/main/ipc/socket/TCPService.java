@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.custom.ipc.socket;
+package com.wynne.knowledge.main.ipc.socket;
 
 import android.app.Service;
 import android.content.Intent;

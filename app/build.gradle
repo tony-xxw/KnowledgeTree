@@ -34,7 +34,7 @@ android {
         }
     }
 
-    compileOptions { 
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -48,7 +48,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 
-    implementation project(':commonbase')
 
     if (!Boolean.valueOf(rootProject.ext.isModule)) {
         //main模块
@@ -56,6 +55,8 @@ dependencies {
         implementation project(':modelGuide')
         implementation project(':modelMark')
     }
+    implementation project(':commonbase')
+    implementation rootProject.ext.dependencies["multidex"]
 
 }
 

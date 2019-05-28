@@ -68,13 +68,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.wynne.knowledge.main.widget.ShaderView
+    <com.wynne.knowledge.home.widget.ShaderView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:visibility="gone" />
 
-    <com.wynne.knowledge.main.widget.AvatorView
+    <com.wynne.knowledge.home.widget.AvatorView
         android:layout_width="200dp"
         android:layout_height="200dp" />
 

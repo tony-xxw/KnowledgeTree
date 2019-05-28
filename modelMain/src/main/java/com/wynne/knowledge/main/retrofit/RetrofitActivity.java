@@ -19,7 +19,8 @@ public class RetrofitActivity extends BaseActivity {
     @Override
     public void initView() {
 
-        requestNet(RetrofitService.getInstance().obtainMains(0), new Observer<BaseModel<BaseListModel<ArticleModel>>>() {
+        requestNet(RetrofitService.getInstance().obtainMains(0),
+                new Observer<BaseModel<BaseListModel<ArticleModel>>>() {
             @Override
             public void onSubscribe(Disposable d) {
 

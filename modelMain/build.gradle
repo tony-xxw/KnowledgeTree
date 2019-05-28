@@ -52,6 +52,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonbase')
+    compile project(':commonbase')
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
 }

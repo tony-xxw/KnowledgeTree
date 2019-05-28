@@ -60,6 +60,7 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     implementation project(':commonbase')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    compile 'cn.jzvd:jiaozivideoplayer:7.0.3'
 }
 apply plugin: 'kotlin-android'
 repositories {

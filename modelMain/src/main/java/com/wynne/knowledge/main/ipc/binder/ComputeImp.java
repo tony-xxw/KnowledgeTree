@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.custom.ipc.binder;
+package com.wynne.knowledge.main.ipc.binder;
 
 import android.os.RemoteException;
 

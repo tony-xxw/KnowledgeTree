@@ -8,8 +8,6 @@ import com.aidl.sample.ICompute;
 import com.aidl.sample.ISecurityCenter;
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.base.base.BaseActivity;
-import com.wynne.knowledge.main.custom.ipc.binder.ComputeImp;
-import com.wynne.knowledge.main.custom.ipc.binder.SecurityCenterImp;
 
 /**
  * @author Wynne

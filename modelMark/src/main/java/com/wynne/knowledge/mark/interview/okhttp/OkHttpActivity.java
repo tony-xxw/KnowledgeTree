@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 import com.wynne.knowledge.mark.widget.Sample;
 
 import java.io.File;
@@ -46,11 +47,11 @@ public class OkHttpActivity extends BaseActivity {
         return R.layout.okhttp_activity;
     }
 
-    @OnClick({R.id.btn_get, R.id.btn_post})
+    @OnClick({R2.id.btn_get, R2.id.btn_post})
     public void onViewClicked(View view) {
-        if (view.getId() == R.id.btn_get) {
+        if (view.getId() == R2.id.btn_get) {
             okHttpGet();
-        } else if (view.getId() == R.id.btn_post) {
+        } else if (view.getId() == R2.id.btn_post) {
             okHttpPost();
         }
     }

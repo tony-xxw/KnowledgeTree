@@ -6,13 +6,13 @@
     android:background="#cccccc"
     android:orientation="vertical">
 
-    <com.wynne.knowledge.main.custom.tray.TrayViewBottom
+    <com.wynne.knowledge.home.custom.tray.TrayViewBottom
         android:id="@+id/tv_bottom"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
 
 
-    <com.wynne.knowledge.main.custom.tray.TrayViewGroup
+    <com.wynne.knowledge.home.custom.tray.TrayViewGroup
         android:id="@+id/tv_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 android:text="教师刷卡" />
         </LinearLayout>
 
-    </com.wynne.knowledge.main.custom.tray.TrayViewGroup>
+    </com.wynne.knowledge.home.custom.tray.TrayViewGroup>
 
 
 </FrameLayout>

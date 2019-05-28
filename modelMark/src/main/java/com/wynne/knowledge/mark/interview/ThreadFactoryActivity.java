@@ -8,6 +8,7 @@ import android.view.View;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.base.utils.LogUtil;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 import com.wynne.knowledge.mark.activity.ThreadActivity;
 
 import java.util.concurrent.ExecutionException;
@@ -34,19 +35,19 @@ public class ThreadFactoryActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.btn_executor, R.id.btn_handlerThread, R.id.btn_intentService, R.id.btn_synchronized})
+    @OnClick({R2.id.btn_executor, R2.id.btn_handlerThread, R2.id.btn_intentService, R2.id.btn_synchronized})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_executor:
+            case R2.id.btn_executor:
                 MyAsyncTask myAsyncTask = new MyAsyncTask();
                 myAsyncTask.execute(100, 100);
                 break;
-            case R.id.btn_handlerThread:
+            case R2.id.btn_handlerThread:
                 break;
-            case R.id.btn_intentService:
+            case R2.id.btn_intentService:
                 startActivity(new Intent(this, ThreadActivity.class));
                 break;
-            case R.id.btn_synchronized:
+            case R2.id.btn_synchronized:
                 for (int i = 0; i < 3; i++) {
                     MyThread thread = new MyThread();
                     thread.start();

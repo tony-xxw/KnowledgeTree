@@ -1,4 +1,4 @@
-package com.wynne.knowledge.main.widget.thumb;
+package com.wynne.knowledge.home.widget.thumb;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -20,6 +20,7 @@ import android.view.animation.OvershootInterpolator;
 
 import com.wynne.knowledge.main.R;
 import com.wynne.knowledge.base.utils.StringUtils;
+import com.wynne.knowledge.main.widget.thumb.TuvPoint;
 
 /**
  * Created by Wynne on 2018/7/3.

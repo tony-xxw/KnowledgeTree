@@ -1,5 +1,5 @@
 ext {
-    isModule = true
+    isModule = false
     //版本号
     versions = [
             applicationId           : "com.wynne.knowledge.tree",        //应用ID
@@ -18,7 +18,7 @@ ext {
             junitVersion            : "4.12",
             annotationsVersion      : "24.0.0",
 
-            multidexVersion         : "1.0.2",
+            multidexVersion         : "1.0.3",
             butterknifeVersion      : "8.4.0",
             arouterApiVersion       : "1.4.0",
             arouterCompilerVersion  : "1.2.1",

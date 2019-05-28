@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 
+
 /**
  * @author Wynne
  * @date 2018/7/20  

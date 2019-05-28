@@ -5,6 +5,7 @@ import android.view.ViewStub;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.R2;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -13,7 +14,7 @@ import butterknife.OnClick;
  * @author xxw
  */
 public class OptimizeActivity extends BaseActivity {
-    @BindView(R.id.vs_sample)
+    @BindView(R2.id.vs_sample)
     ViewStub vsSample;
 
     @Override
@@ -26,7 +27,7 @@ public class OptimizeActivity extends BaseActivity {
         return R.layout.optimize_activity;
     }
 
-    @OnClick({R.id.btn_viewStub})
+    @OnClick({R2.id.btn_viewStub})
     public void onViewClicked(View view) {
         vsSample.inflate();
     }

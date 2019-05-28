@@ -3,8 +3,8 @@ package com.wynne.knowledge.main;
 import android.app.Application;
 
 import com.wynne.knowledge.base.BaseApplication;
-import com.wynne.knowledge.main.service.MainServiceImpl;
 import com.wynne.knowledge.base.service.ServiceFactory;
+import com.wynne.knowledge.main.service.MainServiceImpl;
 
 /**
  * Main
