@@ -23,3 +23,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn javax.lang.model.element.**
+-dontwarn okio.**
+-dontwarn okhttp3.**
+-dontwarn retrofit2.Platform$Java8
+-dontwarn sun.misc.Unsafe
+-dontwarn javax.annotation.**
+

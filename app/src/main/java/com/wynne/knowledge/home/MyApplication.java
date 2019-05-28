@@ -3,6 +3,7 @@ package com.wynne.knowledge.home;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.didichuxing.doraemonkit.DoraemonKit;
 import com.wynne.knowledge.base.BaseApplication;
 import com.wynne.knowledge.base.constant.AppConfig;
 
@@ -28,6 +29,8 @@ public class MyApplication extends BaseApplication {
 
         initModuleApp(this);
         initModuleData(this);
+
+        DoraemonKit.install(this);
     }
 
 

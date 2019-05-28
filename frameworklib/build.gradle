@@ -12,7 +12,6 @@ android {
     buildToolsVersion rootProject.ext.versions.buildToolsVersion
 
 
-
     defaultConfig {
         minSdkVersion rootProject.ext.versions.minSdkVersion
         targetSdkVersion rootProject.ext.versions.targetSdkVersion

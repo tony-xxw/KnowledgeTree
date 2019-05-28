@@ -20,8 +20,6 @@ class ConstraintActivity : BaseActivity() {
         tvTitle.setOnClickListener {
             Log.d("XXW", "哈哈哈")
         }
-
-        startActivity(Intent(this, RecycleActivity::class.java))
     }
 
     override fun getLayoutId(): Int {

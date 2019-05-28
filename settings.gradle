@@ -1,1 +1,1 @@
-include ':app', ':modelMain', ':commonbase', ':modelGuide', ':modelMark', ':frameworklib'
+include ':app', ':commonbase', ':modelGuide', ':modelMark', ':frameworklib'

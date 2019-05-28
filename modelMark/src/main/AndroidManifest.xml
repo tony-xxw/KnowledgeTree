@@ -1,5 +1,53 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wynne.knowledge.mark">
 
+    <application>
 
+        <activity android:name=".home.BookActivity" />
+
+        <activity android:name=".activity.DrawableActivity" />
+        <activity android:name=".activity.AnimationActivity" />
+        <activity android:name=".art.ArtActivity" />
+        <activity
+            android:name=".art.chapter1.ChapterOneActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:process="com.wynne.knowledge.remote"
+            android:taskAffinity=".home.xxx" />
+
+
+        <activity android:name=".activity.CustomActivity" />
+        <activity android:name=".activity.ShadowActivity" />
+        <activity android:name=".jetpack.JetPackActivity" />
+        <activity android:name=".activity.XFermodeActivity" />
+        <activity android:name=".activity.AnimationPathActivity" />
+        <activity android:name=".jetpack.PagingActivity" />
+        <activity android:name=".interview.InterViewActivity" />
+        <activity android:name=".interview.http.HttpActivity" />
+        <activity android:name=".interview.optimize.OptimizeActivity" />
+        <activity android:name=".interview.rxjava.RxJavaActivity" />
+        <activity android:name=".interview.okhttp.OkHttpActivity" />
+        <activity android:name=".interview.ThreadFactoryActivity" />
+        <activity android:name=".interview.basejava.BaseJavaActivity" />
+        <activity android:name=".art.chapter1.SecondActivity" />
+        <activity android:name=".art.chapter3.ChapterViewActivity" />
+        <activity android:name=".art.chapter8.WindowActivity" />
+        <activity android:name=".art.chapter2.ChapterTwoActivity" />
+        <activity android:name=".art.chapter4.ChapterFourActivity" />
+        <activity android:name=".structure.StructureActivity" />
+        <activity android:name=".activity.ThreadActivity" />
+        <activity android:name=".art.chapter10.ArtMessageActivity" />
+
+        <service
+            android:name=".art.chapter2.AIDLService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.wynne.aidl" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </service>
+
+        <service android:name=".service.MyIntentService" />
+    </application>
 </manifest>

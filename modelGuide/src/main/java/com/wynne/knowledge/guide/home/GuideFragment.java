@@ -47,9 +47,6 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
         mContentView.findViewById(R.id.btn_service).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_webview).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_material).setOnClickListener(this);
-        mContentView.findViewById(R.id.btn_clone).setOnClickListener(this);
-        mContentView.findViewById(R.id.btn_forward).setOnClickListener(this);
-        mContentView.findViewById(R.id.btn_logout).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_recycle).setOnClickListener(this);
         mContentView.findViewById(R.id.btn_material_sheet).setOnClickListener(this);
     }
@@ -81,15 +78,6 @@ public class GuideFragment extends BaseFragment implements View.OnClickListener 
 
         } else if (i == R.id.btn_material) {
             startActivity(new Intent(getActivity(), RecycleActivity.class));
-
-        } else if (i == R.id.btn_clone) {
-//            startActivity(new Intent(getActivity(), LoginActivity.class));
-
-        } else if (i == R.id.btn_forward) {
-//            LoginContext.getLoginContext().forWard(getActivity());
-
-        } else if (i == R.id.btn_logout) {
-//            LoginContext.getLoginContext().setState(new LogoutState());
 
         } else if (i == R.id.btn_recycle) {
             startActivity(new Intent(getActivity(), RecycleActivity.class));
