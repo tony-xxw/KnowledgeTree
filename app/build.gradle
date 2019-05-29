@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -40,17 +42,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    subprojects {
-        project.configurations.all {
-            resolutionStrategy.eachDependency { details ->
-                if (details.requested.group == 'com.android.support'
-                        && !details.requested.name.contains('multidex') ) {
-                    details.useVersion "26.1.0"
-                }
-            }
-        }
-    }
-
 }
 
 dependencies {
@@ -59,8 +50,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.1.7'
-    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.1.7'
+
 
     if (!Boolean.valueOf(rootProject.ext.isModule)) {
         //main模块
@@ -68,6 +58,7 @@ dependencies {
         implementation project(':modelMark')
     }
     implementation rootProject.ext.dependencies["multidex"]
+    compile project(path: ':commonbase')
 
 }
 

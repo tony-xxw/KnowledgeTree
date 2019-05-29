@@ -24,11 +24,16 @@
         android:theme="@style/AppTheme">
 
 
-        <!-- WebView 添加Google浏览器 安全认证 -->
-        <meta-data
-            android:name="android.webkit.WebView.EnableSafeBrowsing"
-            android:value="true" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 
