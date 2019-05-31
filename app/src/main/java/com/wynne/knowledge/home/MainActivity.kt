@@ -1,7 +1,8 @@
 package com.wynne.knowledge.home
 
-import android.support.v7.widget.GridLayoutManager
+import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.constant.ARouterPath.BASE_JAVA
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -21,7 +22,16 @@ class MainActivity : BaseActivity() {
     override fun initView() {
         adapter = MainAdapter(this)
         adapter.mList = list
-        rvMain.layoutManager = GridLayoutManager(this, 3)
+        adapter.listener = {
+            when (it) {
+                0 -> {
+                    ARouter.getInstance().build(BASE_JAVA).navigation()
+                }
+                1 -> {
+
+                }
+            }
+        }
         rvMain.adapter = adapter
 
     }

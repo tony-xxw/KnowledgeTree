@@ -1,11 +1,7 @@
-if (Boolean.valueOf(rootProject.ext.isModule)) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
-
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -20,11 +16,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-                includeCompileClasspath = true
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
+            generateStubs = true
         }
     }
 
@@ -35,21 +31,16 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            if (Boolean.valueOf(rootProject.ext.isModule)) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-            }
-        }
-    }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonbase')
-    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation rootProject.ext.dependencies["multidex"]
+    api rootProject.ext.dependencies["arouter_api"]
+    kapt rootProject.ext.dependencies["arouter_compiler"]
+    compile project(path: ':commonbase')
 }

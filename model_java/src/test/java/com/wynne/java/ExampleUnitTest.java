@@ -1,4 +1,4 @@
-package com.wynne.framework;
+package com.wynne.java;
 
 import org.junit.Test;
 

@@ -9,5 +9,5 @@ public class ARouterPath {
 
     public static final String FRAGMENT_GUIDE = "/guide/home";
     public static final String FRAGMENT_BOOKMARK = "/mark/home";
-    public static final String FRAGMENT_CUSTOM = "/main/main";
+    public static final String BASE_JAVA = "/java/home";
 }

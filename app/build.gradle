@@ -18,7 +18,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
                 includeCompileClasspath = true
             }
         }
@@ -56,6 +56,7 @@ dependencies {
         //main模块
         implementation project(':modelGuide')
         implementation project(':modelMark')
+        implementation project(':model_java')
     }
     implementation rootProject.ext.dependencies["multidex"]
     compile project(path: ':commonbase')

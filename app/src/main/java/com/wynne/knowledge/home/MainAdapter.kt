@@ -9,6 +9,7 @@ import android.widget.TextView
 
 class MainAdapter(val context: Context) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     var mList = mutableListOf<String>()
+    lateinit var listener: (position: Int) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_main_layout, parent, false)
@@ -20,6 +21,10 @@ class MainAdapter(val context: Context) : RecyclerView.Adapter<MainAdapter.MainV
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         if (mList.isNotEmpty()) {
             holder.tvModelName.text = mList[position]
+        }
+
+        holder.itemView.setOnClickListener {
+            listener(position)
         }
     }
 
