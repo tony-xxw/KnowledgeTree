@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_base_java_layout.*
 @Route(path = BASE_JAVA)
 class BaseJavaActivity : BaseActivity() {
     override fun initView() {
-        toolBar.title = getString(R.string.model_name)
+        toolBar.title = "Java基础"
     }
 
     override fun getLayoutId(): Int = R.layout.activity_base_java_layout

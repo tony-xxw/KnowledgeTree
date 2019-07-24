@@ -1,1 +1,1 @@
-include ':app', ':commonbase', ':modelGuide', ':modelMark', ':model_java'
+include ':app', ':commonbase', ':modelGuide', ':modelMark', ':model_java', ':model_thread'

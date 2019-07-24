@@ -21,7 +21,6 @@ import com.wynne.knowledge.mark.structure.StructureActivity;
  *
  * @author xxw
  */
-@Route(path = ARouterPath.FRAGMENT_BOOKMARK)
 public class BookMarkFragment extends BaseFragment implements View.OnClickListener {
     private Button btnArt, btnCustom, btnJetpack, btnInterView, btnStructure;
 

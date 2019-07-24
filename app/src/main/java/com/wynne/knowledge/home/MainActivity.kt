@@ -2,7 +2,7 @@ package com.wynne.knowledge.home
 
 import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.base.BaseActivity
-import com.wynne.knowledge.base.constant.ARouterPath.BASE_JAVA
+import com.wynne.knowledge.base.constant.ARouterPath.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -17,7 +17,9 @@ class MainActivity : BaseActivity() {
             "Android进阶",
             "设计模式",
             "数据结构与算法",
-            "网络基础")
+            "网络基础",
+            "额外一",
+            "额外二")
 
     override fun initView() {
         adapter = MainAdapter(this)
@@ -28,7 +30,28 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_JAVA).navigation()
                 }
                 1 -> {
-
+                    ARouter.getInstance().build(BASE_THREAD).navigation()
+                }
+                2 -> {
+                    ARouter.getInstance().build(BASE_ANDROID).navigation()
+                }
+                3 -> {
+                    ARouter.getInstance().build(BASE_ADVANCED).navigation()
+                }
+                4 -> {
+                    ARouter.getInstance().build(BASE_DESIGN).navigation()
+                }
+                5 -> {
+                    ARouter.getInstance().build(BASE_MATH).navigation()
+                }
+                6 -> {
+                    ARouter.getInstance().build(BASE_NETWORK).navigation()
+                }
+                7 -> {
+                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
+                }
+                8 -> {
+                    ARouter.getInstance().build(FRAGMENT_BOOKMARK).navigation()
                 }
             }
         }

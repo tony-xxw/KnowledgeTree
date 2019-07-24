@@ -23,7 +23,6 @@ import com.wynne.knowledge.guide.webview.WebViewActivity;
  * @date 2018/2/28
  */
 
-@Route(path = ARouterPath.FRAGMENT_GUIDE)
 public class GuideFragment extends BaseFragment implements View.OnClickListener {
 
 
