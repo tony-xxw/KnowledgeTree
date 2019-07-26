@@ -58,6 +58,7 @@ dependencies {
         implementation project(':modelMark')
         implementation project(':model_java')
         implementation project(':model_thread')
+        implementation project(':model_android')
     }
     implementation rootProject.ext.dependencies["multidex"]
     compile project(path: ':commonbase')
