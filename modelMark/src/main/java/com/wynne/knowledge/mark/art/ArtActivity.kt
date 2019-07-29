@@ -6,6 +6,7 @@ import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
 import com.wynne.knowledge.mark.activity.AnimationActivity
+import com.wynne.knowledge.mark.activity.BitmapActivity
 import com.wynne.knowledge.mark.activity.DrawableActivity
 import com.wynne.knowledge.mark.art.chapter1.ChapterOneActivity
 import com.wynne.knowledge.mark.art.chapter1.UserManager
@@ -37,6 +38,9 @@ class ArtActivity : BaseActivity() {
             }
             R.id.btn_view -> {
                 startActivity(Intent(this, ChapterViewActivity::class.java))
+            }
+            R.id.btn_bitmap -> {
+                startActivity(Intent(this, BitmapActivity::class.java))
             }
             R.id.btn_window -> {
                 startActivity(Intent(this, WindowActivity::class.java))

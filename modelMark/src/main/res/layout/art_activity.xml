@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="艺术探索 第一章(Activity)" />
+        android:text="艺术探索 第一章 Activity " />
 
     <Button
         android:id="@+id/btnTwoChapter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="艺术探索 第二章(IPC)" />
+        android:text="艺术探索 第二章 IPC " />
 
     <Button
         android:id="@+id/btn_view"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="艺术探索Drawable" />
+        android:text="艺术探索 第六章 Drawable" />
 
     <Button
         android:id="@+id/btn_anim"
@@ -53,12 +53,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="艺术探索 第八章(Window)" />
+        android:text="艺术探索 第八章 Window " />
 
     <Button
         android:id="@+id/btn_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="艺术探索 第十,十一章(Message,ThreadPool)" />
+        android:text="艺术探索 第十,十一章 Message,ThreadPool" />
+
+    <Button
+        android:id="@+id/btn_bitmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="艺术探索 第十二章 Bitmap " />
 </LinearLayout>

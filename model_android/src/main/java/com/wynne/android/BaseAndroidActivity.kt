@@ -1,6 +1,5 @@
 package com.wynne.android
 
-import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,7 +11,6 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.custom.AndroidCustomActivity
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_ANDROID
-import junit.framework.TestListener
 import kotlinx.android.synthetic.main.actiivty_base_android_layout.*
 
 @Route(path = BASE_ANDROID)
@@ -22,7 +20,7 @@ class BaseAndroidActivity : BaseActivity() {
     override fun initView() {
         tlBar.title = "Android基础"
 
-        list.add("flowLayout")
+        list.add("流式布局")
         rvList.layoutManager = LinearLayoutManager(this)
         val adapter = adapter(list)
         adapter.listener = {

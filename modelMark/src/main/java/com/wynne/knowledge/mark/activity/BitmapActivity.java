@@ -51,6 +51,8 @@ public class BitmapActivity extends BaseActivity {
         options.inJustDecodeBounds = false;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_large, options);
         Log.d("XXW", "压缩后的值内存大小: " + bitmap.getByteCount());
+        Log.d("XXW", "采样率: " + options.inSampleSize);
+        Log.d("XXW", "压缩后的实际图片宽高 width ->" + options.outWidth + " == height ->" + options.outHeight + "== type ->" + imageType);
         return bitmap;
     }
 

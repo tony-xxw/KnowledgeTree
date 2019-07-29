@@ -1,5 +1,6 @@
 package com.wynne.knowledge.home
 
+import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.*
@@ -9,6 +10,9 @@ import kotlinx.android.synthetic.main.activity_main.*
  * @author Wynne
  */
 class MainActivity : BaseActivity() {
+
+
+
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
             "Java基础",
@@ -61,6 +65,7 @@ class MainActivity : BaseActivity() {
         }
         rvMain.adapter = adapter
 
+        Thread(Test()).start()
     }
 
 
@@ -68,5 +73,19 @@ class MainActivity : BaseActivity() {
         return R.layout.activity_main
     }
 
+
+    class Test :Runnable{
+        override fun run() {
+            try {
+                Log.d("XXW","111")
+             Thread.sleep(4000)
+
+            }finally {
+                Log.d("XXW","222")
+            }
+
+        }
+
+    }
 
 }

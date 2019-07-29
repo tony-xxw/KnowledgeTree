@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -30,6 +32,7 @@ import butterknife.OnClick;
 
 /**
  * Mac test
+ *
  * @author Wynne
  */
 public class ArtMessageActivity extends BaseActivity {
@@ -48,16 +51,16 @@ public class ArtMessageActivity extends BaseActivity {
     }
 
 
-    @OnClick({R2.id.tv_thread_local, R2.id.tv_handler, R2.id.tv_async_task, R2.id.tv_IntentService,
+    @OnClick({R2.id.tv_thread_local, R2.id.tv_handler, R2.id.tv_thread_handler, R2.id.tv_async_task, R2.id.tv_IntentService,
             R2.id.tv_fix_thread_pool, R2.id.tv_cache_thread_pool, R2.id.tv_schedule_thread_pool, R2.id.tv_single_thread_pool})
     public void onViewClicked(View view) {
-        if (view.getId() == R2.id.tv_thread_local) {
+        if (view.getId() == R.id.tv_thread_local) {
             runThreadLocalSample();
         }
-        if (view.getId() == R2.id.tv_handler) {
+        if (view.getId() == R.id.tv_handler) {
             runHandlerSample();
         }
-        if (view.getId() == R2.id.tv_async_task) {
+        if (view.getId() == R.id.tv_async_task) {
             try {
                 new ArtAsyncTask().execute(new URL("http://www.baidu.com"),
                         new URL("http://www.renyugang.cn"));
@@ -65,7 +68,7 @@ public class ArtMessageActivity extends BaseActivity {
                 e.printStackTrace();
             }
         }
-        if (view.getId() == R2.id.tv_IntentService) {
+        if (view.getId() == R.id.tv_IntentService) {
             Intent intent = new Intent(this, MyIntentService.class);
             intent.putExtra("task_action", "action1");
             startService(intent);
@@ -75,17 +78,23 @@ public class ArtMessageActivity extends BaseActivity {
             startService(intent);
         }
 
-        if (view.getId() == R2.id.tv_fix_thread_pool) {
+        if (view.getId() == R.id.tv_fix_thread_pool) {
             runFixExecutor();
         }
-        if (view.getId() == R2.id.tv_cache_thread_pool) {
+        if (view.getId() == R.id.tv_cache_thread_pool) {
             runCacheExecutor();
         }
-        if (view.getId() == R2.id.tv_schedule_thread_pool) {
+        if (view.getId() == R.id.tv_schedule_thread_pool) {
             runScheduleExecutor();
         }
-        if (view.getId() == R2.id.tv_single_thread_pool) {
+        if (view.getId() == R.id.tv_single_thread_pool) {
             runSingleExecutor();
+        }
+        if (view.getId()==R2.id.tv_thread_handler){
+            HandlerThread thread = new HandlerThread("Handler");
+
+            thread.start();
+
         }
     }
 
