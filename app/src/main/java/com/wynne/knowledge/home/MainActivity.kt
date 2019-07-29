@@ -18,6 +18,7 @@ class MainActivity : BaseActivity() {
             "设计模式",
             "数据结构与算法",
             "网络基础",
+            "开源框架",
             "额外一",
             "额外二")
 
@@ -36,7 +37,7 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_ANDROID).navigation()
                 }
                 3 -> {
-                    ARouter.getInstance().build(BASE_ADVANCED).navigation()
+                    ARouter.getInstance().build(BASE_HIGH).navigation()
                 }
                 4 -> {
                     ARouter.getInstance().build(BASE_DESIGN).navigation()
@@ -45,12 +46,15 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_MATH).navigation()
                 }
                 6 -> {
-                    ARouter.getInstance().build(BASE_NETWORK).navigation()
+                    ARouter.getInstance().build(BASE_HTTP).navigation()
                 }
                 7 -> {
-                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
+                    ARouter.getInstance().build(BASE_FRAMWORK).navigation()
                 }
                 8 -> {
+                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
+                }
+                9 -> {
                     ARouter.getInstance().build(FRAGMENT_BOOKMARK).navigation()
                 }
             }

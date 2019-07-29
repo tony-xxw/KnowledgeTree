@@ -1,11 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wynne.thread" >
+    package="com.wynne.thread">
 
-
-        <application>
-            <activity
-                android:name="com.wynne.thread.BaseThreadActivity"
-                android:launchMode="singleTop" />
-        </application>
-
+    <application>
+        <activity
+            android:name=".BaseThreadActivity"
+            android:launchMode="singleTop" />
+    </application>
 </manifest>
