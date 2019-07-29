@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="con.wynne.thread" >
+    package="com.wynne.thread" >
 
 
         <application>
             <activity
-                android:name=".BaseThreadActivity"
+                android:name="com.wynne.thread.BaseThreadActivity"
                 android:launchMode="singleTop" />
         </application>
 

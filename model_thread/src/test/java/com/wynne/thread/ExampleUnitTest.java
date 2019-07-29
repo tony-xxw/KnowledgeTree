@@ -1,4 +1,4 @@
-package con.wynne.thread;
+package com.wynne.thread;
 
 import org.junit.Test;
 

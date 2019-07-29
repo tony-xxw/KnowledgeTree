@@ -1,4 +1,4 @@
-package con.wynne.thread;
+package com.wynne.thread;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
