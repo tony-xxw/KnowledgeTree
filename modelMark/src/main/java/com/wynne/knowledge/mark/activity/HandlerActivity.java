@@ -1,12 +1,18 @@
 package com.wynne.knowledge.mark.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
+import com.wynne.knowledge.mark.widget.Sample;
+
+import java.lang.ref.SoftReference;
 
 /**
  * @author Wynne
@@ -24,11 +30,24 @@ public class HandlerActivity extends BaseActivity {
      */
     public static Sample sample;
 
+    protected int size = 1;
+
     MyHandler myHandler;
 
     public void onHandler(View v) {
         int i = v.getId();
         if (i == R.id.btn_handler) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Message message = myHandler.obtainMessage();
+                    message.what = 1;
+                    myHandler.sendMessageDelayed(message, 1000);
+                    myHandler.sendEmptyMessage(1);
+                    myHandler.sendEmptyMessage(1);
+
+                }
+            }).start();
         } else {
         }
     }
@@ -37,7 +56,10 @@ public class HandlerActivity extends BaseActivity {
     public void initView() {
         //不能直接传activity给静态变量，使用getApplication() 与静态变量生命周期同步
         sample = new Sample(this);
-        myHandler = new MyHandler();
+        myHandler = new MyHandler(new SoftReference<HandlerActivity>(this));
+
+        int i = 2;
+
     }
 
     @Override
@@ -53,7 +75,23 @@ public class HandlerActivity extends BaseActivity {
     }
 
     private static class MyHandler extends Handler {
+        private SoftReference<HandlerActivity> mSoft;
+
+        public MyHandler(SoftReference<HandlerActivity> softReference) {
+            mSoft = softReference;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Log.d("XXW", "size" + mSoft.get().size);
+        }
+    }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        myHandler.removeCallbacksAndMessages(null);
     }
 }

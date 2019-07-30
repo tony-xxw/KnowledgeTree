@@ -31,6 +31,9 @@
             android:process="com.wynne.knowledge.remote"
             android:taskAffinity=".home.xxx" />
 
+        <activity android:name=".activity.HandlerActivity"
+            android:launchMode="singleTop"/>
+
 
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.ShadowActivity" />

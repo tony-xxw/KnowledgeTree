@@ -4,8 +4,9 @@
     <application>
 
         <activity android:name=".home.BookActivity" />
-        <activity android:name=".activity.BitmapActivity"
-            android:launchMode="singleTop"/>
+        <activity
+            android:name=".activity.BitmapActivity"
+            android:launchMode="singleTop" />
 
         <activity android:name=".activity.DrawableActivity" />
         <activity android:name=".activity.AnimationActivity" />
@@ -51,5 +52,9 @@
         </service>
 
         <service android:name=".service.MyIntentService" />
+
+        <activity
+            android:name=".activity.HandlerActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
