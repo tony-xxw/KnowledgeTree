@@ -90,10 +90,9 @@ public class ArtMessageActivity extends BaseActivity {
         if (view.getId() == R.id.tv_single_thread_pool) {
             runSingleExecutor();
         }
-        if (view.getId()==R2.id.tv_thread_handler){
+        if (view.getId()==R.id.tv_thread_handler){
             HandlerThread thread = new HandlerThread("Handler");
-
-            thread.start();
+             thread.start();
 
         }
     }

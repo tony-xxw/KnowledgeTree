@@ -49,6 +49,7 @@ public class BookMarkFragment extends BaseFragment implements View.OnClickListen
         btnInterView = mContentView.findViewById(R.id.btn_inter_view);
         btnStructure = mContentView.findViewById(R.id.btn_structure);
         btnHandler = mContentView.findViewById(R.id.btn_handler);
+
     }
 
     @Override
