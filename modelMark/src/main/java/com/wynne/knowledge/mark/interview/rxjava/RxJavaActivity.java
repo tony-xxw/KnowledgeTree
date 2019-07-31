@@ -45,7 +45,7 @@ public class RxJavaActivity extends BaseActivity {
     public void onViewClicked(View view) {
         if (view.getId() == R2.id.btn_one) {
             stepOne();
-        } else if (view.getId() == R2.id.btn_two) {
+        } else if (view.getId() == R.id.btn_two) {
             stepTwo();
         } else if (view.getId() == R2.id.btn_three) {
             stepThree();
@@ -195,30 +195,28 @@ public class RxJavaActivity extends BaseActivity {
                 emitter.onNext(4);
                 emitter.onComplete();
             }
-        }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Integer>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        d.dispose();
-                        Log.d("XXW", "onSubscribe  Thread Name : " + Thread.currentThread().getName());
-                    }
+        }).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                d.dispose();
+                Log.d("XXW", "onSubscribe  Thread Name : " + Thread.currentThread().getName());
+            }
 
-                    @Override
-                    public void onNext(Integer s) {
-                        LogUtil.d("onNext " + s);
-                    }
+            @Override
+            public void onNext(Integer s) {
+                Log.d("XXW ", "" + s);
+            }
 
-                    @Override
-                    public void onError(Throwable e) {
+            @Override
+            public void onError(Throwable e) {
 
-                    }
+            }
 
-                    @Override
-                    public void onComplete() {
+            @Override
+            public void onComplete() {
 
-                    }
-                });
+            }
+        });
     }
 
     private void stepOne() {
