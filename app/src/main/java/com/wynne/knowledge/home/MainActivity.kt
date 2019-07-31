@@ -66,6 +66,9 @@ class MainActivity : BaseActivity() {
         rvMain.adapter = adapter
 
         Thread(Test()).start()
+
+
+
     }
 
 
@@ -74,14 +77,14 @@ class MainActivity : BaseActivity() {
     }
 
 
-    class Test :Runnable{
+    class Test : Runnable {
         override fun run() {
             try {
-                Log.d("XXW","111")
-             Thread.sleep(4000)
+                Log.d("XXW", "111")
+                Thread.sleep(4000)
 
-            }finally {
-                Log.d("XXW","222")
+            } finally {
+                Log.d("XXW", "222")
             }
 
         }

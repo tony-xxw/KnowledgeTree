@@ -15,6 +15,8 @@ public class BookActivity extends BaseActivity {
     private String ab = "ab";
     private String cd = "cd";
     private String abcd = ab + cd;
+    private String[] strings = {"1", "3", "4", "2", "5"};
+    private String change ;
 
     @Override
     public void initView() {
@@ -24,10 +26,44 @@ public class BookActivity extends BaseActivity {
         int a = 2 & 1;
         int ab = 2 | 1;
         Log.d("XXW", a + " 十六进制 " + ab);
+
+        for (int i = 0; i < strings.length; i++) {
+            for (int j = i + 1; j < strings.length; j++) {
+                if (Integer.valueOf(strings[i])<Integer.valueOf(strings[j])){
+                    change = strings[j];
+                    strings[j]= strings[i];
+                    strings[i] =change;
+                }
+            }
+        }
+        for (String string : strings) {
+            Log.d("XXW",string);
+        }
+
+
+    run();
+
+    }
+
+    public static void run(){
+        ((A)new B()).start();
     }
 
     @Override
     public int getLayoutId() {
         return R.layout.book_activity;
+    }
+
+
+    public static class A {
+        void start(){
+            Log.d("XXW","A");
+        }
+    }
+
+    public static class B extends A{
+        void start(){
+            Log.d("XXW","B");
+        }
     }
 }
