@@ -21,13 +21,14 @@ import java.net.ServerSocket
 import java.net.Socket
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import com.wynne.http.SocketActivity.TestHandler
 
 
 class SocketActivity : BaseActivity() {
     lateinit var socket: Socket
     lateinit var bufferedReader: BufferedReader
     lateinit var outputStream: OutputStream
-    var executorService: ExecutorService = Executors.newSingleThreadExecutor()
+    var executorService: ExecutorService = Executors.newCachedThreadPool()
     lateinit var response: String
     var handler: Handler = object : Handler() {
 
@@ -56,24 +57,29 @@ class SocketActivity : BaseActivity() {
             }
 
         } else if (v.id == R.id.btn_socket_disable) {
-            bufferedReader.close()
-            outputStream.close()
-            socket.close()
-            Log.d("XXW", "socket isConnect" + socket.isConnected)
+            executorService.execute {
+                outputStream.close()
+                bufferedReader.close()
+                socket.close()
+                Log.d("XXW", "socket isConnect  " + socket.isConnected)
+            }
         } else if (v.id == R.id.btn_socket_send) {
-            executorService.execute({
+            executorService.execute {
                 outputStream = socket.getOutputStream()
-                outputStream.write((edit.toString() + "\n").toByteArray(Charsets.UTF_8))
+                outputStream.write((edit.text.toString() + "\n").toByteArray(Charsets.UTF_8))
                 outputStream.flush()
-            })
+            }
         } else if (v.id == R.id.btn_socket_connect) {
-            executorService.execute({
-
-                socket = Socket("111.111.11.11", 12306)
+            Thread(Runnable {
+                socket = Socket("127.0.0.1", 12306)
                 Log.d("XXW", "socket isConnect " + socket.isConnected)
-            })
+            }).start()
         } else if (v.id == R.id.test_server) {
-            statServer()
+            var acceptor = NioSocketAcceptor()
+            acceptor.setHandler(TestHandler())
+            acceptor.getFilterChain().addLast("mFilter", ProtocolCodecFilter(TextLineCodecFactory()))
+            acceptor.setReuseAddress(true)
+            acceptor.bind(InetSocketAddress(12306))
         }
     }
 
