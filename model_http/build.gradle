@@ -34,8 +34,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -43,4 +42,6 @@ dependencies {
     api rootProject.ext.dependencies["arouter_api"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
     compile project(path: ':commonbase')
+    implementation files('libs/mina-core-2.0.16.jar')
+    implementation files('libs/slf4j-api-1.7.21.jar')
 }

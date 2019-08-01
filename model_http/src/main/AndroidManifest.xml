@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wynne.http" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application>
         <activity android:name=".BaseHttpActivity"
             android:launchMode="singleTop"/>
+        <activity
+            android:name=".SocketActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
