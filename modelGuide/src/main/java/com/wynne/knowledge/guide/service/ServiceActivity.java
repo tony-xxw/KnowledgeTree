@@ -6,6 +6,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.guide.R;
@@ -17,10 +18,12 @@ import com.wynne.knowledge.guide.R;
 
 public class ServiceActivity extends BaseActivity {
     private Intent intent;
+    private TextView textView;
 
 
     @Override
     public void initView() {
+        textView = findViewById(R.id.tvTest);
         intent = new Intent(this, StandardService.class);
     }
 
@@ -39,6 +42,9 @@ public class ServiceActivity extends BaseActivity {
             bindService(intent, connection, BIND_AUTO_CREATE);
         } else if (i == R.id.btn_unbind) {
             unbindService(connection);
+        } else if (i == R.id.btn_unbind_stop) {
+            unbindService(connection);
+            stopService(intent);
         }
     }
 
