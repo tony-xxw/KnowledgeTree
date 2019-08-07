@@ -5,7 +5,11 @@
         <activity
             android:name=".BaseAndroidActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".custom.AndroidCustomActivity"
-            android:launchMode="singleTop"/>
+        <activity
+            android:name=".custom.AndroidCustomActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".recycle.RecycleViewActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

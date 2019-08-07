@@ -4,6 +4,7 @@ import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.*
+import com.wynne.knowledge.home.R.id.rvMain
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

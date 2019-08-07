@@ -8,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.wynne.android.R.id.rvList
+import com.wynne.android.R.id.tlBar
 import com.wynne.android.custom.AndroidCustomActivity
+import com.wynne.android.recycle.RecycleViewActivity
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_ANDROID
+import com.wynne.knowledge.base.utils.Constant
 import kotlinx.android.synthetic.main.actiivty_base_android_layout.*
 
 @Route(path = BASE_ANDROID)
@@ -21,10 +25,19 @@ class BaseAndroidActivity : BaseActivity() {
         tlBar.title = "Android基础"
 
         list.add("流式布局")
+        list.add("RecycleView")
         rvList.layoutManager = LinearLayoutManager(this)
         val adapter = adapter(list)
         adapter.listener = {
-            startActivity(Intent(this, AndroidCustomActivity::class.java))
+            when (it) {
+                0 -> {
+                    startActivity(Intent(this, AndroidCustomActivity::class.java))
+                }
+                1 -> {
+                    startActivity(Intent(this, RecycleViewActivity::class.java))
+                }
+            }
+
         }
         rvList.adapter = adapter
     }
@@ -35,7 +48,8 @@ class BaseAndroidActivity : BaseActivity() {
     class adapter(list: List<String>) : RecyclerView.Adapter<viewHolder>() {
         var count = 0
         var list: List<String>
-        lateinit var listener: () -> Unit
+        lateinit var listener: (Int) -> Unit
+
 
         init {
             count = list.size
@@ -51,7 +65,7 @@ class BaseAndroidActivity : BaseActivity() {
         override fun onBindViewHolder(holder: viewHolder, position: Int) {
             holder.textView.text = list[position]
             holder.textView.setOnClickListener {
-                listener()
+                listener(position)
             }
         }
 
