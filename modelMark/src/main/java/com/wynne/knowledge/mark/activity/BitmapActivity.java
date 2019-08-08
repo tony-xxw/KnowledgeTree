@@ -1,17 +1,20 @@
 package com.wynne.knowledge.mark.activity;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.mark.R;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
 /**
@@ -25,23 +28,54 @@ public class BitmapActivity extends BaseActivity {
     @Override
     public void initView() {
         mBitmapIv = findViewById(R.id.iv_bitmap);
+
+
+//        Glide.with(this).load(R.drawable.icon_large).into(mBitmapIv);
+
+        Resources resource = getResources();
+        InputStream inputStream = resource.openRawResource(R.drawable.icon_large);
+        BitmapDrawable drawable = new BitmapDrawable(inputStream);
         mBitmapIv.setImageBitmap(getBitmap(100, 100));
 
-        Glide.with(this).load(R.drawable.icon_large).into(mBitmapIv);
 
+        /**Bitmap before = BitmapFactory.decodeResource(getResources(), R.drawable.icon_large);
+         Log.d("XXW", "Before compress : " + before.getByteCount());
+         Bitmap compress = getCompress(BitmapFactory.decodeResource(getResources(), R.drawable.icon_large));
+         Log.d("XXW", "after compress : " + compress.getByteCount());*/
+
+
+    }
+
+    private Bitmap getCompress(Bitmap bitmap) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+        int options = 100;
+        while (outputStream.toByteArray().length / 1024 > 50) {
+            outputStream.reset();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, outputStream);
+            options -= 10;
+        }
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+        return BitmapFactory.decodeStream(inputStream, null, null);
 
     }
 
 
     private Bitmap getBitmap(int requestX, int requestY) {
-        Bitmap bitmapFactory = BitmapFactory.decodeResource(getResources(), R.drawable.icon_large);
+        Bitmap bitmapFactory = getCompress(BitmapFactory.decodeResource(getResources(), R.drawable.icon_large));
         Log.d("XXW", "压缩前的值内存大小: " + bitmapFactory.getByteCount());
 
+
         BitmapFactory.Options options = new BitmapFactory.Options();
+
+//        options.inPreferredConfig = Bitmap.Config.RGB_565;
+//        options.inPreferredConfig = Bitmap.Config.ARGB_4444;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(getResources(), R.drawable.icon_large, options);
         int width = options.outWidth;
         int height = options.outHeight;
+
 
         String imageType = options.outMimeType;
         Log.d("XXW", "width ->" + width + " == height ->" + height + "== type ->" + imageType);
