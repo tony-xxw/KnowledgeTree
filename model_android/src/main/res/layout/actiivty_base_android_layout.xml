@@ -21,22 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tlBar" />
 
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/btn2"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvList" />
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn1"
-        app:layout_constraintTop_toTopOf="@+id/btn1" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.R.id.rvList
 import com.wynne.android.R.id.tlBar
+import com.wynne.android.carousel.CarouselActivity
 import com.wynne.android.custom.AndroidCustomActivity
 import com.wynne.android.recycle.RecycleViewActivity
 import com.wynne.knowledge.base.base.BaseActivity
@@ -26,6 +27,7 @@ class BaseAndroidActivity : BaseActivity() {
 
         list.add("流式布局")
         list.add("RecycleView")
+        list.add("无限轮播ViewPager")
         rvList.layoutManager = LinearLayoutManager(this)
         val adapter = adapter(list)
         adapter.listener = {
@@ -35,6 +37,9 @@ class BaseAndroidActivity : BaseActivity() {
                 }
                 1 -> {
                     startActivity(Intent(this, RecycleViewActivity::class.java))
+                }
+                2 -> {
+                    startActivity(Intent(this, CarouselActivity::class.java))
                 }
             }
 

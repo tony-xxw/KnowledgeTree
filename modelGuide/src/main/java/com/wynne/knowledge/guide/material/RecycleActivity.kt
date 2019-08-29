@@ -40,6 +40,8 @@ class RecycleActivity : BaseActivity() {
         recyclerView.layoutManager = layoutManager
         val adapter = RecycleViewAdapter(this)
         recyclerView.adapter = adapter
+
+
     }
 
 

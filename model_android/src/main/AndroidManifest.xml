@@ -11,5 +11,8 @@
         <activity
             android:name=".recycle.RecycleViewActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".carousel.CarouselActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
