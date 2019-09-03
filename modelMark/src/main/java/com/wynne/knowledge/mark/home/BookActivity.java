@@ -88,6 +88,10 @@ public class BookActivity extends BaseActivity {
         void subsribe(A a) {
             Log.d("XXW", "" + a.getClass().getName());
         }
+
+        void getType(){
+            Log.d("XXW","A");
+        }
     }
 
     public class B extends A {
@@ -97,6 +101,12 @@ public class BookActivity extends BaseActivity {
             subsribeOn();
         }
 
+        void getType(){
+
+            Log.d("XXW","B");
+        }
 
     }
+
+
 }

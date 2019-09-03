@@ -13,6 +13,7 @@ import com.wynne.android.R.id.tlBar
 import com.wynne.android.carousel.CarouselActivity
 import com.wynne.android.custom.AndroidCustomActivity
 import com.wynne.android.recycle.RecycleViewActivity
+import com.wynne.android.version.VersionActivity
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_ANDROID
 import com.wynne.knowledge.base.utils.Constant
@@ -28,6 +29,7 @@ class BaseAndroidActivity : BaseActivity() {
         list.add("流式布局")
         list.add("RecycleView")
         list.add("无限轮播ViewPager")
+        list.add("版本适配")
         rvList.layoutManager = LinearLayoutManager(this)
         val adapter = adapter(list)
         adapter.listener = {
@@ -40,6 +42,9 @@ class BaseAndroidActivity : BaseActivity() {
                 }
                 2 -> {
                     startActivity(Intent(this, CarouselActivity::class.java))
+                }
+                3 -> {
+                    startActivity(Intent(this, VersionActivity::class.java))
                 }
             }
 

@@ -14,5 +14,8 @@
         <activity
             android:name=".carousel.CarouselActivity"
             android:launchMode="singleTop" />
+
+        <activity android:name=".version.VersionActivity"
+            android:launchMode="singleTop"/>
     </application>
 </manifest>
