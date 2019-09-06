@@ -3,7 +3,7 @@ package com.wynne.android.version
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.BaseActivity
 
-class VersionActivity:BaseActivity() {
+class VersionActivity : BaseActivity() {
     override fun initView() {
     }
 
