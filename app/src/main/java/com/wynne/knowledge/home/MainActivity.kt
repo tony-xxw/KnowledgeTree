@@ -8,6 +8,7 @@ import com.wynne.knowledge.home.R.id.rvMain
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
+ * 公司测试github With gitlab
  * @author Wynne
  */
 class MainActivity : BaseActivity() {
