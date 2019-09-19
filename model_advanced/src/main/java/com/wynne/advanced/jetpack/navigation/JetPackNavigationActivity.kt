@@ -1,0 +1,12 @@
+package com.wynne.advanced.jetpack.navigation
+
+import com.wynne.advanced.R
+import com.wynne.knowledge.base.base.BaseActivity
+
+class JetPackNavigationActivity :BaseActivity() {
+    override fun initView() {
+
+    }
+
+    override fun getLayoutId(): Int = R.layout.activity_base_advanced_jetpack_navagation_layout
+}
