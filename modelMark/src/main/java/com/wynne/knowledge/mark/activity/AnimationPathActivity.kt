@@ -1,6 +1,6 @@
 package com.wynne.knowledge.mark.activity
 
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.mark.R
 import kotlinx.android.synthetic.main.animation_path_activity.*

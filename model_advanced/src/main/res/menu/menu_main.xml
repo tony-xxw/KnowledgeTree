@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/welcome"
+        android:icon="@drawable/icon_custom"
+        android:title="欢迎" />
+
+    <item
+        android:id="@+id/login"
+        android:icon="@drawable/icon_guide"
+        android:title="登录" />
+
+    <item
+        android:id="@+id/register"
+        android:icon="@drawable/icon_train"
+        android:title="注册" />
+</menu>

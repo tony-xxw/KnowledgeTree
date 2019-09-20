@@ -20,7 +20,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0'
 
-//        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
 
 
     }
