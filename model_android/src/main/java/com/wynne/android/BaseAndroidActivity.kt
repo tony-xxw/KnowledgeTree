@@ -1,15 +1,13 @@
 package com.wynne.android
 
 import android.content.Intent
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
+ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.wynne.android.R.id.rvList
-import com.wynne.android.R.id.tlBar
 import com.wynne.android.carousel.CarouselActivity
 import com.wynne.android.custom.AndroidCustomActivity
 import com.wynne.android.recycle.RecycleViewActivity

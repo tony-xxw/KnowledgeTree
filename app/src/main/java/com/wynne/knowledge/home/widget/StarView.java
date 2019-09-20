@@ -7,7 +7,6 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -34,7 +33,7 @@ public class StarView extends View {
         super(context);
     }
 
-    public StarView(Context context, @Nullable AttributeSet attrs) {
+    public StarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttributeSet(context, attrs);
     }
@@ -82,17 +81,17 @@ public class StarView extends View {
         }
 
         /**if (startMark >= 1) {
-            canvas.drawRect(0, 0, starSize, starSize, mPaint);
-            if (startMark - (int) (startMark) == 0) {
-                for (int i = 0; i < startMark - 1; i++) {
-                    canvas.translate(starSpace + starSize, 0);
-                    canvas.drawRect(0, 0, starSize, starSize, mPaint);
-                }
-            } else {
-                canvas.drawRect(0, 0, starSize * startMark, starSize, mPaint);
-            }
+         canvas.drawRect(0, 0, starSize, starSize, mPaint);
+         if (startMark - (int) (startMark) == 0) {
+         for (int i = 0; i < startMark - 1; i++) {
+         canvas.translate(starSpace + starSize, 0);
+         canvas.drawRect(0, 0, starSize, starSize, mPaint);
+         }
+         } else {
+         canvas.drawRect(0, 0, starSize * startMark, starSize, mPaint);
+         }
 
-        }**/
+         }**/
 
     }
 

@@ -1,22 +1,22 @@
 package com.wynne.knowledge.guide.material;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.guide.R;
 
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @author xxw

@@ -5,8 +5,8 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'kotlin-kapt'
-
 
 
 android {
@@ -57,6 +57,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["arouter_api"]
+
     kapt rootProject.ext.dependencies["arouter_compiler"]
+
+    api rootProject.ext.dependencies["navigation"]
+    api rootProject.ext.dependencies["navigation-ui-ktx"]
+
     compile project(path: ':commonbase')
 }

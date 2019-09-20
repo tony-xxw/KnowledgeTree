@@ -1,8 +1,6 @@
 package com.wynne.knowledge.guide.systemstatus;
 
 import android.os.Build;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -11,6 +9,9 @@ import android.view.WindowManager;
 
 import com.wynne.knowledge.base.base.BaseActivity;
 import com.wynne.knowledge.guide.R;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.core.view.ViewCompat;
 
 /**
  * @author Wynne

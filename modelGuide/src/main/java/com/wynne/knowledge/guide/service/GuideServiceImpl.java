@@ -1,12 +1,13 @@
 package com.wynne.knowledge.guide.service;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 
 import com.wynne.knowledge.guide.home.GuideFragment;
 import com.wynne.knowledge.base.service.base.IBaseService;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * @author Wynne

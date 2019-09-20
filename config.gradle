@@ -6,10 +6,10 @@ ext {
             versionCode             : 1,                    //版本号
             versionName             : "1.0.0",              //版本名称
 
-            compileSdkVersion       : 27,
+            compileSdkVersion       : 28,
             buildToolsVersion       : "27.0.2",
             minSdkVersion           : 17,
-            targetSdkVersion        : 27,
+            targetSdkVersion        : 28,
 
             androidSupportSdkVersion: "27.1.1",
             constraintLayoutVersion : "1.1.1",
@@ -37,6 +37,9 @@ ext {
             pickerViewVersion       : "4.1.6",
             superAdapterVersion     : "3.6.8",
             scaleImageViewVersion   : "3.10.0",
+
+            //JetPack系列
+            navigationVersion       : "2.0.0",
 
     ]
     dependencies = [
@@ -113,7 +116,13 @@ ext {
 
             "okhttp"              : "com.squareup.okhttp3:okhttp:3.8.0",
 
-            "retrofit_adpater"    : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+            "retrofit_adpater"    : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0",
+            //JetPack系列
+
+            "navigation"          : "androidx.navigation:navigation-fragment-ktx:${versions["navigationVersion"]}",
+
+            "navigation-ui-ktx"   : "androidx.navigation:navigation-ui-ktx:${versions["navigationVersion"]}"
+
 
     ]
 

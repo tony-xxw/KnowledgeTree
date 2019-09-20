@@ -2,12 +2,13 @@ package com.wynne.android.custom
 
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.BaseActivity
+import kotlinx.android.synthetic.main.actiivty_base_android_layout.tlBar
 import kotlinx.android.synthetic.main.activity_base_custom_layout.*
 
 class AndroidCustomActivity : BaseActivity() {
     override fun initView() {
-        tlBar.title="自定义控件"
-        val list= mutableListOf<String>()
+        tlBar.title = "自定义控件"
+        val list = mutableListOf<String>()
         list.add("201")
         list.add("美国")
         list.add("科幻")

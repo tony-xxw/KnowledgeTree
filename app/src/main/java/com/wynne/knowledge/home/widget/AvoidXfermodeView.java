@@ -7,7 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -23,7 +22,7 @@ public class AvoidXfermodeView extends View {
     private Paint mPaint;
     private Bitmap mBmp;
 
-    public AvoidXfermodeView(Context context, @Nullable AttributeSet attrs) {
+    public AvoidXfermodeView(Context context,     AttributeSet attrs) {
         super(context, attrs);
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         mPaint = new Paint();

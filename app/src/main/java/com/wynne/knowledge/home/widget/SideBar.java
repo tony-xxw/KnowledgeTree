@@ -1,7 +1,6 @@
 package com.wynne.knowledge.home.widget;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -19,12 +18,12 @@ public class SideBar extends View {
         mContext = context;
     }
 
-    public SideBar(Context context, @Nullable AttributeSet attrs) {
+    public SideBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
     }
 
-    public SideBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SideBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
     }

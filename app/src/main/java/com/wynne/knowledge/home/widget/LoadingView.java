@@ -4,12 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageView;
-import android.util.AttributeSet;
+ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.animation.AccelerateInterpolator;
 
 import com.wynne.knowledge.home.R;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * Created by Wynne on 2018/10/23.

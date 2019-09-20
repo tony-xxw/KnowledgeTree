@@ -1,8 +1,9 @@
 package com.wynne.knowledge.home.widget;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageView;
-import android.util.AttributeSet;
+ import android.util.AttributeSet;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 
 /**

@@ -1,10 +1,12 @@
 package com.wynne.knowledge.base.service.empty;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+
 
 import com.wynne.knowledge.base.service.base.IBaseService;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * @author xxw
@@ -21,7 +23,7 @@ public class EmptyBaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public Fragment newCustomFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+    public Fragment newMarkFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
         return null;
     }
 
@@ -31,7 +33,7 @@ public class EmptyBaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public Fragment newMarkFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
+    public Fragment newCustomFragment(Activity activity, int containerId, FragmentManager manager, String tag, String task) {
         return null;
     }
 

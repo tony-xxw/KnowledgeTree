@@ -8,8 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
+ import android.util.AttributeSet;
 import android.view.View;
 
 import com.wynne.knowledge.home.R;
@@ -25,7 +24,7 @@ public class AvatorView extends View {
     private Bitmap bitmap;
     private BitmapShader shader;
 
-    public AvatorView(Context context, @Nullable AttributeSet attrs) {
+    public AvatorView(Context context,      AttributeSet attrs) {
         super(context, attrs);
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg_advertisement);
         paint = new Paint();

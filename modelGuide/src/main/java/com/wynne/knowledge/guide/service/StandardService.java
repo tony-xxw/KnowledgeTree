@@ -4,10 +4,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.wynne.knowledge.base.utils.StringUtils;
+
+import androidx.annotation.Nullable;
 
 /**
  * 1.start再Bind一个Service ,如何停止一个Service

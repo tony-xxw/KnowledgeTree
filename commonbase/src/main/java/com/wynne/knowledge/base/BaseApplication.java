@@ -3,15 +3,16 @@ package com.wynne.knowledge.base;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
 /**
  * @author xxw
  */
 public abstract class BaseApplication extends MultiDexApplication {
 
-    private ActivityLifecycleCallbacks lifecycleCallbacks = new ActivityLifecycleCallbacks() {
+    private Application.ActivityLifecycleCallbacks lifecycleCallbacks = new Application.ActivityLifecycleCallbacks() {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 

@@ -8,7 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Shader;
-import android.support.annotation.Nullable;
+
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,7 +25,7 @@ public class ShaderView extends View {
     Bitmap bitmap, bitmapBG;
     int dx, dy;
 
-    public ShaderView(Context context, @Nullable AttributeSet attrs) {
+    public ShaderView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint();
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg_advertisement);

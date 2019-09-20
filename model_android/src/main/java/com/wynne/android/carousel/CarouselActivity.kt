@@ -3,13 +3,13 @@ package com.wynne.android.carousel
 import android.content.Context
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.BaseActivity
-import android.support.v4.view.ViewPager
 import android.widget.Toast
 import android.view.ViewGroup
-import android.support.v4.view.PagerAdapter
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_base_carousel_layout.*
 
 

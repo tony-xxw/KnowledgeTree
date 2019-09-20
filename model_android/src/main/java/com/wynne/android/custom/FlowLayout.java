@@ -3,7 +3,6 @@ package com.wynne.android.custom;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -12,10 +11,8 @@ import android.widget.TextView;
 
 import com.wynne.android.R;
 
-import java.security.MessageDigest;
 import java.util.List;
 
-import retrofit2.http.POST;
 
 public class FlowLayout extends ViewGroup {
     private int mWorkMarign;
@@ -27,13 +24,13 @@ public class FlowLayout extends ViewGroup {
         super(context);
     }
 
-    public FlowLayout(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+    public FlowLayout(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public FlowLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mContext =context;
+        mContext = context;
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.flow_view);
         mWorkMarign = typedArray.getDimensionPixelOffset(R.styleable.flow_view_wordMargin, 0);
         mHeightMarign = typedArray.getDimensionPixelOffset(R.styleable.flow_view_lineMargin, 0);
@@ -153,13 +150,11 @@ public class FlowLayout extends ViewGroup {
     }
 
 
-
-
-    private  void addLabel(String text) {
+    private void addLabel(String text) {
         final TextView tags = new TextView(mContext);
         tags.setPadding(10, 10, 10, 10);
         tags.setTextSize(TypedValue.COMPLEX_UNIT_PX, 72);
-        tags.setTextColor( ColorStateList.valueOf(0xFF000000));
+        tags.setTextColor(ColorStateList.valueOf(0xFF000000));
         //设置给label的背景(Drawable)是一个Drawable对象的拷贝，
         // 因为如果所有的标签都共用一个Drawable对象，会引起背景错乱。
         addView(tags);

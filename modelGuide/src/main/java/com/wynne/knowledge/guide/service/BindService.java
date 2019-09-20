@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -41,7 +40,7 @@ public class BindService extends Service {
         }
     }
 
-    @Nullable
+
     @Override
 
     public IBinder onBind(Intent intent) {

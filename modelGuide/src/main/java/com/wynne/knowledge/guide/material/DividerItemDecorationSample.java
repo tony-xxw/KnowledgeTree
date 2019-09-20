@@ -5,10 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Wynne on 2018/6/15.

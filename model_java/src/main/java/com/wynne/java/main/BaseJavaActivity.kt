@@ -10,6 +10,7 @@ import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_JAVA
 import kotlinx.android.synthetic.main.activity_base_java_layout.*
 
+
 @Route(path = BASE_JAVA)
 class BaseJavaActivity : BaseActivity() {
     override fun initView() {
