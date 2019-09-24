@@ -62,6 +62,8 @@ dependencies {
 
     api rootProject.ext.dependencies["navigation"]
     api rootProject.ext.dependencies["navigation-ui-ktx"]
+    api 'com.clj.fastble:FastBleLib:2.3.4'
+
 
     compile project(path: ':commonbase')
 }

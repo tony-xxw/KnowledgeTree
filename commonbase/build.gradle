@@ -53,4 +53,5 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+
 }

@@ -16,5 +16,8 @@
         <activity
             android:name=".jetpack.navigation.JatPackNavigationMainActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".bluetooth.BluetoothActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

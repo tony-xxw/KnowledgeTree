@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.clj.fastble.BleManager
+import com.wynne.advanced.bluetooth.BluetoothActivity
 import com.wynne.advanced.jetpack.JetPackActivity
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_HIGH
@@ -22,6 +24,7 @@ class BaseAdvancedActivity : BaseActivity() {
         tlBar.title = "JetPack"
 
         list.add("JetPack")
+        list.add("BlueTooth")
         rvList.layoutManager = LinearLayoutManager(this)
         val adapter = adapter(list)
         adapter.listener = {
@@ -29,10 +32,21 @@ class BaseAdvancedActivity : BaseActivity() {
                 0 -> {
                     startActivity(Intent(this, JetPackActivity::class.java))
                 }
+                1 -> {
+                    startActivity(Intent(this, BluetoothActivity::class.java))
+                }
             }
 
         }
         rvList.adapter = adapter
+
+        BleManager.getInstance().init(application)
+        BleManager.getInstance().
+                enableLog(true).
+                setReConnectCount(1, 5000).
+                setSplitWriteNum(20).
+                setConnectOverTime(10000).
+                setOperateTimeout(5000)
     }
 
     override fun getLayoutId(): Int = R.layout.activity_base_advanced_layout
