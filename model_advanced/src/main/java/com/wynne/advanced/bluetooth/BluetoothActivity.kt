@@ -2,7 +2,6 @@ package com.wynne.advanced.bluetooth
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothGatt
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.BluetoothLeScanner
 import android.bluetooth.le.ScanCallback
@@ -16,10 +15,8 @@ import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.clj.fastble.BleManager
-import com.clj.fastble.callback.BleGattCallback
 import com.clj.fastble.callback.BleScanCallback
 import com.clj.fastble.data.BleDevice
-import com.clj.fastble.exception.BleException
 import com.clj.fastble.scan.BleScanRuleConfig
 import com.wynne.advanced.R
 import com.wynne.knowledge.base.base.BaseActivity
@@ -189,12 +186,8 @@ class BluetoothActivity : BaseActivity() {
                 BluetoothAdapter.ACTION_DISCOVERY_FINISHED -> {
 
                 }
-
             }
-
         }
-
-
     }
 
     private fun getBluetoothAddress(): String? {
