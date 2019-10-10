@@ -28,9 +28,6 @@ class BluetoothActivity : BaseActivity() {
     lateinit var adapter: BluetoothAdapter
     lateinit var bluetoothLeScanner: BluetoothLeScanner
     lateinit var scanCallback: ScanCallback
-    lateinit var leScanCallback: BluetoothAdapter.LeScanCallback
-    lateinit var bledevice: BluetoothDevice
-
     lateinit var broadcastReceiver: BroadcastReceiver
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -65,24 +62,6 @@ class BluetoothActivity : BaseActivity() {
         }
 
         btnBlue.setOnClickListener {
-//            BleManager.getInstance().connect("B4:0B:44:91:93:A1", object : BleGattCallback() {
-//                override fun onStartConnect() {
-//
-//                }
-//
-//                override fun onDisConnected(isActiveDisConnected: Boolean, device: BleDevice?, gatt: BluetoothGatt?, status: Int) {
-//                }
-//
-//                override fun onConnectSuccess(bleDevice: BleDevice?, gatt: BluetoothGatt?, status: Int) {
-//                    Log.d("XXW", "onsuccess : " + bleDevice?.device?.name)
-//                }
-//
-//                override fun onConnectFail(bleDevice: BleDevice?, exception: BleException?) {
-//                    Log.d("XXW", "onConnectFail : " + exception.toString())
-//
-//                }
-//
-//            })
 
             BleManager.getInstance().scan(object : BleScanCallback() {
                 override fun onScanFinished(scanResultList: MutableList<BleDevice>) {
