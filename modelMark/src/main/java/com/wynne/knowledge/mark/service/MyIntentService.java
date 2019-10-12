@@ -3,7 +3,6 @@ package com.wynne.knowledge.mark.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 /**
@@ -22,20 +21,20 @@ public class MyIntentService extends IntentService {
     }
 
     @Override
-    public void onStart(@Nullable Intent intent, int startId) {
+    public void onStart( Intent intent, int startId) {
         Log.d("XXW", "onStart :       startId :" + startId);
         super.onStart(intent, startId);
     }
 
     @Override
-    public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
+    public int onStartCommand( Intent intent, int flags, int startId) {
         String action = intent.getStringExtra("task_action");
         Log.d("XXW", "onStartCommand : " + action);
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
+    protected void onHandleIntent( Intent intent) {
         String action = intent.getStringExtra("task_action");
         SystemClock.sleep(3000);
 

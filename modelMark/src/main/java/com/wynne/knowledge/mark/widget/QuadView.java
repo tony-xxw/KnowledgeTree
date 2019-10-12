@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,12 +24,12 @@ public class QuadView extends View {
         init();
     }
 
-    public QuadView(Context context, @Nullable AttributeSet attrs) {
+    public QuadView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public QuadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public QuadView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

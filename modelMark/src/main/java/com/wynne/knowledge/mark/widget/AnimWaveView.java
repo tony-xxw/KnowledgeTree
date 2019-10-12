@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -27,7 +26,7 @@ public class AnimWaveView extends View {
         super(context);
     }
 
-    public AnimWaveView(Context context, @Nullable AttributeSet attrs) {
+    public AnimWaveView(Context context,  AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint();
         mPath = new Path();

@@ -19,6 +19,8 @@ class WelComeFragment : BaseFragment() {
         btnRegister.setOnClickListener {
             val action = WelComeFragmentDirections.actionWelcomeToRegister()
             findNavController().navigate(action)
+
+
         }
 
         btnMain.setOnClickListener {

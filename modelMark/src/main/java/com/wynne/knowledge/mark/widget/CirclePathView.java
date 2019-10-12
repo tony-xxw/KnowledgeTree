@@ -10,7 +10,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -38,12 +37,12 @@ public class CirclePathView extends View {
         initPaint();
     }
 
-    public CirclePathView(Context context, @Nullable AttributeSet attrs) {
+    public CirclePathView(Context context,  AttributeSet attrs) {
         super(context, attrs);
         initPaint();
     }
 
-    public CirclePathView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CirclePathView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initPaint();
     }

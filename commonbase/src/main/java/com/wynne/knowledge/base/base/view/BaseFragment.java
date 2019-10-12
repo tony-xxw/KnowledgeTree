@@ -15,15 +15,15 @@ import androidx.fragment.app.Fragment;
 public abstract class BaseFragment extends Fragment {
     protected View mContentView;
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         mContentView = inflater.inflate(getLayoutId(), container, false);
         return mContentView;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
 

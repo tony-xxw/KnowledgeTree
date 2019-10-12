@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -148,7 +146,7 @@ public class ArtMessageActivity extends BaseActivity {
     private void runCacheExecutor() {
         ExecutorService cacheFixedThreadPool = Executors.newCachedThreadPool(new ThreadFactory() {
             @Override
-            public Thread newThread(@NonNull Runnable r) {
+            public Thread newThread( Runnable r) {
                 return new Thread(r);
             }
         });

@@ -9,7 +9,6 @@ import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -24,7 +23,7 @@ public class BlurMaskFilterView extends View {
         super(context);
     }
 
-    public BlurMaskFilterView(Context context, @Nullable AttributeSet attrs) {
+    public BlurMaskFilterView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setLayerType(LAYER_TYPE_SOFTWARE, null);
         paint = new Paint();

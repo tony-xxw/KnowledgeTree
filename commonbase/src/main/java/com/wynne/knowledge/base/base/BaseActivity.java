@@ -21,7 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     Unbinder unbinder;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         unbinder = ButterKnife.bind(this);

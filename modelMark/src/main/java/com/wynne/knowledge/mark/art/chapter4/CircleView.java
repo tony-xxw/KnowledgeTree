@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -19,12 +18,12 @@ public class CircleView extends View {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int mColor = Color.RED;
 
-    public CircleView(Context context, @Nullable AttributeSet attrs) {
+    public CircleView(Context context,  AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public CircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CircleView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }

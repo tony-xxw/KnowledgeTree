@@ -41,7 +41,7 @@ public class StandardService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    @Nullable
+
     @Override
     public IBinder onBind(Intent intent) {
         StringUtils.d("XXW", "onBind");
