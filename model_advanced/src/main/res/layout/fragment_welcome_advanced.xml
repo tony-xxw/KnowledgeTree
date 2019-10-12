@@ -5,13 +5,13 @@
     android:layout_height="match_parent">
 
     <Button
+        android:layout_marginTop="60dp"
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
         android:background="@drawable/bg_stoken_btn_gray"
         android:text="登录"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,19 +33,32 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_stoken_btn_gray"
         android:text="主页面Demo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
-    <TextView
-        android:id="@+id/tvWelCome"
+    <Button
+        android:id="@+id/btnGlobal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="WelComeFriend"
-        android:textColor="@color/colorAccent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_stoken_btn_gray"
+        android:text="全局action"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    <Button
+        android:padding="10dp"
+        android:id="@+id/btnWelCome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_stoken_btn_gray"
+        android:text="嵌套导航图跳转"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGlobal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,12 @@
         android:id="@+id/login"
         android:name="com.wynne.advanced.jetpack.navigation.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login_advanced" />
+        tools:layout="@layout/fragment_login_advanced" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="xxw" />
+    </fragment>
 
     <fragment
         android:id="@+id/register"
@@ -35,9 +40,41 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_welcome_to_login"
-            app:destination="@id/login" />
+            app:destination="@+id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
 
     </fragment>
+    <action
+        android:id="@+id/action_global_login"
+        app:destination="@id/login" />
+
+    <navigation android:id="@+id/nesting"
+        app:startDestination="@id/register"
+        >
+
+        <fragment
+            android:id="@+id/login"
+            android:name="com.wynne.advanced.jetpack.navigation.LoginFragment"
+            android:label="LoginFragment"
+            tools:layout="@layout/fragment_login_advanced" >
+            <argument
+                android:name="name"
+                app:argType="string"
+                android:defaultValue="xxw" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/register"
+            android:name="com.wynne.advanced.jetpack.navigation.RegisterFragment"
+            android:label="RegisterFragment"
+            tools:layout="@layout/fragment_register_advanced">
+
+        </fragment>
+    </navigation>
 
 
 </navigation>
