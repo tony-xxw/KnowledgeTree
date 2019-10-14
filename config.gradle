@@ -19,7 +19,7 @@ ext {
             annotationsVersion      : "24.0.0",
 
             multidexVersion         : "1.0.3",
-            butterknifeVersion      : "8.4.0",
+            butterknifeVersion      : "10.2.0",
             arouterApiVersion       : "1.4.0",
             arouterCompilerVersion  : "1.2.1",
             arouterannotationVersion: "1.0.4",

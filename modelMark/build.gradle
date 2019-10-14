@@ -60,8 +60,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     implementation project(':commonbase')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
