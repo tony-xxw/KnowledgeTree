@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".BaseThreadActivity"
+            android:name=".ThreadAndroidActivity"
             android:launchMode="singleTop" />
     </application>
 </manifest>

@@ -15,10 +15,11 @@
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintTop_toBottomOf="@+id/toolBar"
         android:background="@color/white"
-        android:id="@+id/rvMain"
+        android:id="@+id/rvThread"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layoutAnimation="@anim/layout_animation"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

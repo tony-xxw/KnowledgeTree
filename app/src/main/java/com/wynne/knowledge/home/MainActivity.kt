@@ -1,7 +1,8 @@
 package com.wynne.knowledge.home
 
-import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
+import com.wynne.knowledge.base.adapter.MainAdapter
+import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,33 +17,36 @@ class MainActivity : BaseActivity() {
 
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
-            "Java基础",
-            "并发/异步",
-            "Android基础",
-            "Android进阶",
-            "设计模式",
-            "数据结构与算法",
-            "网络基础",
-            "开源框架",
-            "额外一",
-            "额外二")
+            MainData("Android基础", R.drawable.icon_apple),
+            MainData("Android进阶", R.drawable.icon_watermelon),
+            MainData("Java基础", R.drawable.icon_orange),
+            MainData("并发/异步", R.drawable.icon_grape),
+            MainData("设计模式", R.drawable.icon_peach),
+            MainData("数据结构与算法", R.drawable.icon_pear),
+            MainData("网络基础", R.drawable.icon_plum),
+            MainData("操作系统", R.drawable.icon_tomato),
+            MainData("开源框架", R.drawable.icon_lemon),
+            MainData("额外一", R.drawable.google_plus),
+            MainData("额外二", R.drawable.google_plus))
 
     override fun initView() {
+        toolBar.title="知识体系"
         adapter = MainAdapter(this)
         adapter.mList = list
         adapter.listener = {
             when (it) {
                 0 -> {
-                    ARouter.getInstance().build(BASE_JAVA).navigation()
-                }
-                1 -> {
-                    ARouter.getInstance().build(BASE_THREAD).navigation()
-                }
-                2 -> {
                     ARouter.getInstance().build(BASE_ANDROID).navigation()
                 }
-                3 -> {
+                1 -> {
+
                     ARouter.getInstance().build(BASE_HIGH).navigation()
+                }
+                2 -> {
+                    ARouter.getInstance().build(BASE_JAVA).navigation()
+                }
+                3 -> {
+                    ARouter.getInstance().build(BASE_THREAD).navigation()
                 }
                 4 -> {
                     ARouter.getInstance().build(BASE_DESIGN).navigation()
@@ -57,19 +61,17 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_FRAMWORK).navigation()
                 }
                 8 -> {
-                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
+                    ARouter.getInstance().build(BASE_FRAMWORK).navigation()
                 }
                 9 -> {
+                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
+                }
+                10 -> {
                     ARouter.getInstance().build(FRAGMENT_BOOKMARK).navigation()
                 }
             }
         }
         rvMain.adapter = adapter
-
-        Thread(Test()).start()
-
-
-
     }
 
 
@@ -78,18 +80,5 @@ class MainActivity : BaseActivity() {
     }
 
 
-    class Test : Runnable {
-        override fun run() {
-            try {
-                Log.d("XXW", "111")
-                Thread.sleep(4000)
-
-            } finally {
-                Log.d("XXW", "222")
-            }
-
-        }
-
-    }
 
 }
