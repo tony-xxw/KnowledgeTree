@@ -1,4 +1,151 @@
 ### KnowledgeTree
 ![具体知识](https://pic1.zhimg.com/v2-340eb90708ccb3af05d3f2fa4ca2aa6e_r.jpg)
 
-[知识体系图](https://github.com/tony-xxw/KnowledgeTree/blob/master/photo/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.png?raw=true)
+#### Android基础
+- 四大组件,生命周期启动方式
+  - Actvitiy生命周期, 启动模式,Intent过滤 启动流程
+  - Service 启动模式 启动流程
+  - BroadCast启动流程
+  - ContentProvider启动流程
+- 自定义View
+	- 	绘制流程
+	- 	事件冲突
+	- 	滑动冲突
+- 	Handler的使用和消息队列源码
+- 	动画和手势
+	- 	补间动画
+	- 	属性动画
+	- 手势检测和缩放手势检测
+- 图片加载
+	- 	Bitmap
+	- 	drawable
+	- 	LruCache和DiskLruCache
+- 文件和数据库
+	- Java文件流
+	- 随机访问文件
+	- 序列化
+	- Sqlite
+	- 数据库线程安全
+- Resources
+- 第三方库
+	- retrofit
+	- okhttp
+	- rxjava
+	- glide
+	- 注解框架(星球资料)
+	- Architecture components
+- 单元测试
+- 性能优化
+   - 内存优化
+      - 内存泄漏如果避免和检测
+		- 内存抖动怎么办
+		- 如何避免OOM
+		- 使用什么工具
+		- Bitamap内存优化
+		- 缓存
+	- UI优化
+		- 布局卡顿
+		- 如何判断是否需要优化
+		- 有哪些工具
+	- 启动优化
+	- 电池优化
+#### Android高级
+- Jetpack
+- RemoteViews
+- 四大组件源码
+- Binder、AIDL、多进程
+- JNI和JDK
+- Gradle
+	- Groovy
+	- Gradle插件基础
+- 架构模式
+	- MVP
+	- MVVM
+	- AOP切面
+	- 组件化
+- J VM
+	- JMM(Java内存模型)
+	- GC(垃圾回收策略)
+	- 虚拟机性能监控.调优
+	- 类文件结构
+	- 类加载机制
+	- 程序 编译优化
+- 插件化和热修复
+- 安全
+- wms,pms,systemServerw
+#### Java基础
+- 内部类,静态内部类区别,使用场景
+- 抽象类, 接口 实战使用场景
+- 集合
+- 注解
+- 什么是注解以及运行时注解的使用
+- 使用编译时注解简单实现类似ButterKnife效果
+- 反射
+- 泛型
+- 异常
+- 文件流IO
+#### 并发/异步
+- Android并发
+	- 线程池
+	- AsyncTask
+	- IntentService
+	- HandlerThread
+	- 多进程通信Binder,AIDL,多进程
+- Java并发知识
+	- 同步锁synchronized和Lock区别
+	- 什么是可重入锁
+	- 线程通信方法
+	- wait和sleep区别
+	- wait-notify模型
+	- 生产者消费者模型
+#### 设计模式(大话设计模式)
+- 单例模式
+- 工厂模式
+- 简单工厂模式
+- 工厂方法模式
+- 抽象工厂模式
+- 代理模式
+- 装饰模式
+- 观察者模式
+- 适配器模式
+- 策略模式
+- 组合模式
+- 桥接模式
+- 职责原则
+- 封闭原则
+- 迪米特法则
+- 中介者模式
+- 外观模式
+- 迭代器模式
+- 访问者模式
+- 解释器模式
+- 享元模式
+- 职责链模式
+- 状态模式
+- 命令模式
+- 模板方法模式
+- 备忘录模式
+- 原型模式
+- 依赖倒转原则
+- 数据结构和算法
+- 数据结构
+- 数组链表区别
+- 链表插入删除
+- 栈及使用场景
+- 队列及使用场景
+#### 算法
+- 图解算法
+- 剑指offer
+- leetCoder
+#### 网络基础
+- 七层模型
+- HTTP,HTTPS
+- 常见响应码,header,请求方法
+- 缓存相关
+- TCP三次握手,四次挥手
+- Socket使用
+    - 长链接
+    - 心跳
+#### 操作系统
+- Linux内核
+- Linux驱动
