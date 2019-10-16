@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wynne.android">
+
+    <application android:name=".AndroidApplication">
+        <activity
+            android:name=".BaseAndroidActivity"
+            android:launchMode="singleTop" />
+    </application>
+</manifest>

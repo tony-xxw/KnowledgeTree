@@ -5,20 +5,19 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="@color/white"
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@+id/toolBar"
-        android:background="@color/white"
         android:id="@+id/rvMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:background="@color/white"
         android:layoutAnimation="@anim/layout_animation"
-        />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

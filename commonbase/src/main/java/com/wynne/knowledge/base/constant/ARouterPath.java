@@ -7,8 +7,7 @@ package com.wynne.knowledge.base.constant;
  */
 public class ARouterPath {
 
-    public static final String FRAGMENT_GUIDE = "/guide/home";
-    public static final String FRAGMENT_BOOKMARK = "/mark/home";
+    public static final String BASE_OTHER = "/other/home";
     public static final String BASE_JAVA = "/java/home";
     public static final String BASE_THREAD = "/thread/home";
     public static final String BASE_ANDROID = "/android/home";
@@ -16,6 +15,6 @@ public class ARouterPath {
     public static final String BASE_DESIGN = "/design/home";
     public static final String BASE_MATH = "/math/home";
     public static final String BASE_HTTP = "/http/home";
-    public static final String BASE_FRAMWORK = "/FRAMWORK/home";
+    public static final String BASE_SYSTEM = "/system/home";
 
 }

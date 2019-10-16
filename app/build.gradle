@@ -54,8 +54,6 @@ dependencies {
 
     if (!Boolean.valueOf(rootProject.ext.isModule)) {
         //main模块
-        implementation project(':modelGuide')
-        implementation project(':modelMark')
         implementation project(':model_java')
         implementation project(':model_thread')
         implementation project(':model_android')
@@ -63,10 +61,11 @@ dependencies {
         implementation project(':model_math')
         implementation project(':model_http')
         implementation project(':model_advanced')
-        implementation project(':model_framwork')
+        implementation project(':model_system')
+        implementation project(':model_other')
     }
     implementation rootProject.ext.dependencies["multidex"]
-    compile project(path: ':commonbase')
+    api project(path: ':commonbase')
 
 }
 

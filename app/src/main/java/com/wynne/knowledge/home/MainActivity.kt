@@ -25,9 +25,7 @@ class MainActivity : BaseActivity() {
             MainData("数据结构与算法", R.drawable.icon_pear),
             MainData("网络基础", R.drawable.icon_plum),
             MainData("操作系统", R.drawable.icon_tomato),
-            MainData("开源框架", R.drawable.icon_lemon),
-            MainData("额外一", R.drawable.google_plus),
-            MainData("额外二", R.drawable.google_plus))
+            MainData("Other", R.drawable.icon_lemon))
 
     override fun initView() {
         toolBar.title="知识体系"
@@ -39,7 +37,6 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_ANDROID).navigation()
                 }
                 1 -> {
-
                     ARouter.getInstance().build(BASE_HIGH).navigation()
                 }
                 2 -> {
@@ -58,16 +55,10 @@ class MainActivity : BaseActivity() {
                     ARouter.getInstance().build(BASE_HTTP).navigation()
                 }
                 7 -> {
-                    ARouter.getInstance().build(BASE_FRAMWORK).navigation()
+                    ARouter.getInstance().build(BASE_SYSTEM).navigation()
                 }
                 8 -> {
-                    ARouter.getInstance().build(BASE_FRAMWORK).navigation()
-                }
-                9 -> {
-                    ARouter.getInstance().build(FRAGMENT_GUIDE).navigation()
-                }
-                10 -> {
-                    ARouter.getInstance().build(FRAGMENT_BOOKMARK).navigation()
+                    ARouter.getInstance().build(BASE_OTHER).navigation()
                 }
             }
         }

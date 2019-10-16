@@ -22,12 +22,14 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        kapt {
-            arguments {
-                arg("AROUTER_MODULE_NAME", project.getName())
-            }
-            generateStubs = true
+
+    }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
         }
+        generateStubs = true
     }
 
     buildTypes {
@@ -65,5 +67,5 @@ dependencies {
     api 'com.clj.fastble:FastBleLib:2.3.4'
 
 
-    compile project(path: ':commonbase')
+    api project(path: ':commonbase')
 }

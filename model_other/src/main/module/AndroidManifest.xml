@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wynne.other">
+
+    <application android:name=".OtherApplication">
+
+        <activity
+            android:name=".BaseOtherActivity"
+            android:launchMode="singleTop" />
+    </application>
+</manifest>

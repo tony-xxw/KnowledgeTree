@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wynne.math">
+
+    <application android:name=".MathApplication">
+        <activity
+            android:name=".BaseMathActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".linked.LinkedListActivity"
+            android:launchMode="singleTop" />
+    </application>
+</manifest>
