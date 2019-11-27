@@ -1,9 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.design">
 
-    <application android:name=".DesignApplication">
+    <application android:name=".DesignApplication"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".BaseDesignActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

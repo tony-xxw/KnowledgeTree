@@ -1,10 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.math">
 
-    <application android:name=".MathApplication">
+    <application android:name=".MathApplication"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".BaseMathActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".linked.LinkedListActivity"
             android:launchMode="singleTop" />
