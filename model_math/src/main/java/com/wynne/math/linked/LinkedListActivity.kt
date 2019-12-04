@@ -9,7 +9,12 @@ import com.wynne.math.R
  * @author Wynne
  */
 class LinkedListActivity : BaseActivity() {
+    lateinit var singleLinked: SingleLinked
     override fun initView() {
+        singleLinked = SingleLinked()
+        singleLinked.insertNode(Node("a"))
+        singleLinked.insertNode(Node("b"))
+        singleLinked.insertNode(Node("c"))
 
     }
 
@@ -20,7 +25,8 @@ class LinkedListActivity : BaseActivity() {
     fun onClick(v: View) {
         when (v.id) {
             R.id.btnSingle -> {
-
+                singleLinked.deletByIndex(3)
+                singleLinked.toPrint()
             }
             R.id.btnDouble -> {
 
@@ -34,4 +40,6 @@ class LinkedListActivity : BaseActivity() {
         }
 
     }
+
+
 }
