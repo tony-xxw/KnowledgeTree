@@ -23,6 +23,21 @@ class SingleLinked {
         size++
     }
 
+    fun resetNode(head: Node): Node {
+        var heads = head
+        var next: Node? = null
+        var pre: Node? = null
+
+        while (heads != null) {
+            next = heads.next
+            heads.next = pre
+            pre = heads
+            heads = next
+        }
+        Log.d("xxw", "${pre!!.data}")
+        return pre
+    }
+
     fun insertNodeByIndex(index: Int, node: Node) {
         //检查节点是否合法
         if (index < 1 || index > size + 1) {

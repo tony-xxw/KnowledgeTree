@@ -10,11 +10,25 @@ import com.wynne.math.R
  */
 class LinkedListActivity : BaseActivity() {
     lateinit var singleLinked: SingleLinked
+    lateinit var recycleSingleLinked: RecyleSingleLinked
+    lateinit var pairLinked: PairLinked
     override fun initView() {
         singleLinked = SingleLinked()
         singleLinked.insertNode(Node("a"))
         singleLinked.insertNode(Node("b"))
         singleLinked.insertNode(Node("c"))
+
+        recycleSingleLinked = RecyleSingleLinked()
+        recycleSingleLinked.addNode(Node("android"))
+        recycleSingleLinked.addNode(Node("ios"))
+        recycleSingleLinked.addNode(Node("web"))
+        recycleSingleLinked.addNode(Node("java"))
+
+        pairLinked = PairLinked()
+        pairLinked.addNode(DoubleNode("android"))
+        pairLinked.addNode(DoubleNode("ios"))
+        pairLinked.addNode(DoubleNode("web"))
+        pairLinked.addNode(DoubleNode("java"))
 
     }
 
@@ -29,13 +43,17 @@ class LinkedListActivity : BaseActivity() {
                 singleLinked.toPrint()
             }
             R.id.btnDouble -> {
-
+                pairLinked.toPrint()
             }
             R.id.btnRecycle -> {
-
+                recycleSingleLinked.toPrint()
             }
             R.id.btnSame -> {
 
+            }
+            R.id.btnSingleReversal -> {
+                singleLinked.resetNode(singleLinked.head)
+                singleLinked.toPrint()
             }
         }
 
