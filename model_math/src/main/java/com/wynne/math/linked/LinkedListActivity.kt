@@ -1,5 +1,6 @@
 package com.wynne.math.linked
 
+import android.util.Log
 import android.view.View
 
 import com.wynne.knowledge.base.base.BaseActivity
@@ -10,6 +11,8 @@ import com.wynne.math.R
  */
 class LinkedListActivity : BaseActivity() {
     lateinit var singleLinked: SingleLinked
+    lateinit var firstLinked: SingleLinked
+    lateinit var secondLinked: SingleLinked
     lateinit var recycleSingleLinked: RecyleSingleLinked
     lateinit var pairLinked: PairLinked
     override fun initView() {
@@ -17,6 +20,20 @@ class LinkedListActivity : BaseActivity() {
         singleLinked.insertNode(Node("a"))
         singleLinked.insertNode(Node("b"))
         singleLinked.insertNode(Node("c"))
+        singleLinked.insertNode(Node("d"))
+        singleLinked.insertNode(Node("e"))
+        singleLinked.insertNode(Node("f"))
+
+
+        secondLinked = SingleLinked()
+        secondLinked.insertNode(Node("2"))
+        secondLinked.insertNode(Node("3"))
+        secondLinked.insertNode(Node("12"))
+
+        firstLinked = SingleLinked()
+        firstLinked.insertNode(Node("4"))
+        firstLinked.insertNode(Node("8"))
+        firstLinked.insertNode(Node("23"))
 
         recycleSingleLinked = RecyleSingleLinked()
         recycleSingleLinked.addNode(Node("android"))
@@ -29,6 +46,7 @@ class LinkedListActivity : BaseActivity() {
         pairLinked.addNode(DoubleNode("ios"))
         pairLinked.addNode(DoubleNode("web"))
         pairLinked.addNode(DoubleNode("java"))
+
 
     }
 
@@ -52,8 +70,25 @@ class LinkedListActivity : BaseActivity() {
 
             }
             R.id.btnSingleReversal -> {
-                singleLinked.resetNode(singleLinked.head)
+                singleLinked.studyRestNode(singleLinked.head)?.let {
+                    singleLinked.toPrint(it)
+                }
+
+            }
+            R.id.btnLinkedDeleteN -> {
+                singleLinked.deleteReciprocalNode(1)
                 singleLinked.toPrint()
+            }
+            R.id.btnLinkedMerge -> {
+//                firstLinked.toPrint()
+//                secondLinked.toPrint()
+//                val merge = firstLinked.mergeOrderlyLinked(firstLinked, secondLinked)
+//                firstLinked.toPrint(merge.head)
+
+                firstLinked.mergeOrderlyLinkeds(firstLinked.head, secondLinked.head)?.let {
+                    firstLinked.toPrint(it)
+                }
+
             }
         }
 
