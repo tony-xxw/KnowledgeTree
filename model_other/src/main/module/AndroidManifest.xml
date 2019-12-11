@@ -2,17 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.other">
 
-    <application android:name=".OtherApplication"
+    <application
+        android:name=".OtherApplication"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
             android:name=".BaseOtherActivity"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".edit.OtherInputEditActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustNothing" />
+        <!-->android:windowSoftInputMode="adjustNothing" 无任何效果<-->
+        <!-->android:windowSoftInputMode="adjustResize" 当在不滑动的页面中,显示效果相当于adjustNothing<-->
+        <!-->android:windowSoftInputMode="adjustResize" 当滑动的页面中,会把获取焦点的视图往上抬起,显示在软键盘上方<-->
+        <!-->android:windowSoftInputMode="adjustPan" 将布局向上移动,直到获取焦点的视图显示<-->
+        <!-->android:windowSoftInputMode="adjustUnspecified"  当在不滑动的页面中,显示效果相当于adjustPan<-->
     </application>
 </manifest>
