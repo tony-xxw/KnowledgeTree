@@ -1,1 +1,1 @@
-include ':app', ':commonbase', ':model_java', ':model_android', ':model_advanced', ':model_thread', ':model_design', ':model_math', ':model_http', ':model_system', ':model_other'
+include ':app', ':commonbase', ':model_java', ':model_android', ':model_advanced', ':model_thread', ':model_design', ':model_math', ':model_http', ':model_system', ':model_other', ':model_weekly', ':gradleplugin'

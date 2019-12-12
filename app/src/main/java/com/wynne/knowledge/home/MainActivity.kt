@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
 
 
-
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
             MainData("Android基础", R.drawable.icon_apple),
@@ -25,10 +24,11 @@ class MainActivity : BaseActivity() {
             MainData("数据结构与算法", R.drawable.icon_pear),
             MainData("网络基础", R.drawable.icon_plum),
             MainData("操作系统", R.drawable.icon_tomato),
-            MainData("Other", R.drawable.icon_lemon))
+            MainData("Other", R.drawable.icon_lemon),
+            MainData("每周一题", R.drawable.icon_apple))
 
     override fun initView() {
-        toolBar.title="知识体系"
+        toolBar.title = "知识体系"
         adapter = MainAdapter(this)
         adapter.mList = list
         adapter.listener = {
@@ -60,6 +60,9 @@ class MainActivity : BaseActivity() {
                 8 -> {
                     ARouter.getInstance().build(BASE_OTHER).navigation()
                 }
+                9 -> {
+                    ARouter.getInstance().build(BASE_WEEKLY).navigation()
+                }
             }
         }
         rvMain.adapter = adapter
@@ -69,7 +72,6 @@ class MainActivity : BaseActivity() {
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
-
 
 
 }

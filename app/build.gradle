@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'plugin-custom'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -63,6 +64,7 @@ dependencies {
         implementation project(':model_advanced')
         implementation project(':model_system')
         implementation project(':model_other')
+        implementation project(':model_weekly')
     }
     implementation rootProject.ext.dependencies["multidex"]
     api project(path: ':commonbase')

@@ -16,5 +16,6 @@ public class ARouterPath {
     public static final String BASE_MATH = "/math/home";
     public static final String BASE_HTTP = "/http/home";
     public static final String BASE_SYSTEM = "/system/home";
+    public static final String BASE_WEEKLY = "/weekly/home";
 
 }
