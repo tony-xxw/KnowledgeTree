@@ -2,35 +2,31 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //build tools
-    //implementation 'com.android.tools.build:gradle:3.1.3'
     //gradle sdk
     implementation gradleApi()
     //groovy sdk
     implementation localGroovy()
-    //transform
-    implementation 'com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api'
-    //javassist
-    implementation 'org.javassist:javassist:3.23.1-GA'
-    //commons-io
-    implementation 'commons-io:commons-io:2.6'
+
+    implementation 'com.android.tools.build:gradle:3.5.2'
+    implementation 'org.javassist:javassist:3.20.0-GA'
+}
+
+repositories {
+    mavenCentral()
+}
+repositories {
+    mavenCentral()
 }
 
 uploadArchives {
     repositories {
-        mavenDeployer{
-            pom.groupId = 'com.wynne.gradleplugin'
-            pom.artifactId = 'gradleplugin'
-            pom.version = '1.0.0'
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.wynne.gradleplugin'//你的包名
+            pom.artifactId = 'myPlugin'
+            pom.version = '1.1.0'//版本号
+            //文件发布到下面目录  ../是父目录
+            repository(url: uri('../repo'))
         }
-    }
-}
-
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
     }
 }

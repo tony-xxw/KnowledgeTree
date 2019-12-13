@@ -8,7 +8,7 @@ class MyPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.task("testPlugin").doLast {
-            println("hello gradle plugin ")
+            println("Model 自定义插件 测试")
         }
 //        project.extensions.create("pluginSrc", MyExtension)
 //        project.task("testPlugin").doLast {
@@ -17,4 +17,3 @@ class MyPlugin implements Plugin<Project> {
     }
 
 }
-//apply plugin: MyPlugin

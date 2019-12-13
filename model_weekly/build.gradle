@@ -6,7 +6,7 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'plugin-custom'
+apply plugin: 'com.wynne.gradleplugin'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -47,6 +47,10 @@ android {
         }
     }
 
+
+//    buildscript {
+//         repos
+//    }
 }
 
 dependencies {
