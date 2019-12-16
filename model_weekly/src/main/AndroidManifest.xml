@@ -5,5 +5,9 @@
         <activity
             android:name=".WeeklyActivity"
             android:launchMode="singleTop" />
+
+        <activity
+            android:name=".week.TransformActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

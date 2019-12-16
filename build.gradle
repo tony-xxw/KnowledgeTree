@@ -31,7 +31,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url uri('../KnowledgeTree/repo') }
         jcenter()
         google()
     }

@@ -30,3 +30,23 @@ uploadArchives {
         }
     }
 }
+
+
+this.getProjects()
+
+def getProjects() {
+    println "----"
+    println "----getAllProjects----"
+    println '----'
+
+    //所有项目
+    // 所有子项目 getSubprojects()
+    this.getAllprojects().eachWithIndex { Project entry, int i ->
+        println "---- i  $i"
+        if (i == 0) {
+            println "---- root Project  ${entry.name} ----"
+        } else {
+            println "---- prject: ${entry.name} ----"
+        }
+    }
+}

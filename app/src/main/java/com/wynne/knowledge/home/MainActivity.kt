@@ -1,5 +1,6 @@
 package com.wynne.knowledge.home
 
+import android.content.Intent
 import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
@@ -34,7 +35,8 @@ class MainActivity : BaseActivity() {
         adapter.listener = {
             when (it) {
                 0 -> {
-                    ARouter.getInstance().build(BASE_ANDROID).navigation()
+                    startActivity(Intent(this, TestActivity::class.java))
+//                    ARouter.getInstance().build(BASE_ANDROID).navigation()
                 }
                 1 -> {
                     ARouter.getInstance().build(BASE_HIGH).navigation()
