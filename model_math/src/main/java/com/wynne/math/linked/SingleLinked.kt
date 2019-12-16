@@ -43,16 +43,22 @@ class SingleLinked {
             Log.d("xxw", "当前不符合")
             return
         }
+
         var temp = head
-        for (index in 0..size) {
-            if (temp.next != null) {
-                if (reciprocal + index == size) {
-                    temp.next = temp.next.next
+        var num = 0
+        while (temp.next != null) {
+            if (num == size - reciprocal) {
+                if (temp.next == null) {
+                    temp.next = null
                 } else {
-                    temp = temp.next
+                    temp.next = temp.next.next
                 }
+            } else {
+                temp = temp.next
             }
+            num++
         }
+
     }
 
     fun resetNode(head: Node): Node? {
@@ -248,7 +254,7 @@ class SingleLinked {
             linked.next = mergeOrderlyLinkeds(tempA.next, tempB)
         }
 
-        if (linked.next==null){
+        if (linked.next == null) {
 
         }
         return linked

@@ -2,7 +2,6 @@ package com.wynne.math.linked
 
 import android.util.Log
 import android.view.View
-
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.math.R
 
@@ -40,6 +39,14 @@ class LinkedListActivity : BaseActivity() {
         recycleSingleLinked.addNode(Node("ios"))
         recycleSingleLinked.addNode(Node("web"))
         recycleSingleLinked.addNode(Node("java"))
+        recycleSingleLinked.addNode(Node("a"))
+        recycleSingleLinked.addNode(Node("b"))
+        recycleSingleLinked.addNode(Node("c"))
+        recycleSingleLinked.addNode(Node("d"))
+        recycleSingleLinked.addNode(Node("e"))
+        recycleSingleLinked.addNode(Node("f"))
+        recycleSingleLinked.addNode(Node("g"))
+        recycleSingleLinked.addNode(Node("d"))
 
         pairLinked = PairLinked()
         pairLinked.addNode(DoubleNode("android"))
@@ -69,6 +76,12 @@ class LinkedListActivity : BaseActivity() {
             R.id.btnSame -> {
 
             }
+            R.id.btnLinkedCheck -> {
+                Log.d("xxw", "isExist :" + recycleSingleLinked.isExistLoop())
+            }
+            R.id.btnLinkedMiddleNode -> {
+
+            }
             R.id.btnSingleReversal -> {
                 singleLinked.studyRestNode(singleLinked.head)?.let {
                     singleLinked.toPrint(it)
@@ -76,7 +89,7 @@ class LinkedListActivity : BaseActivity() {
 
             }
             R.id.btnLinkedDeleteN -> {
-                singleLinked.deleteReciprocalNode(1)
+                singleLinked.deleteReciprocalNode(5)
                 singleLinked.toPrint()
             }
             R.id.btnLinkedMerge -> {
