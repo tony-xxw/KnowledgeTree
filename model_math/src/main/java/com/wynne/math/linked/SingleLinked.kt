@@ -4,16 +4,12 @@ import android.util.Log
 
 class SingleLinked {
     var head: Node = Node("head")
-    var current: Node = Node(null)
     var size: Int = 0
 
-    fun isEmpty(): Boolean {
-        return size == 0
-    }
 
-    fun getLong() = size
-
-
+    /**
+     * 插入节点(从尾端)
+     */
     fun insertNode(node: Node) {
         var temp = head
         while (temp.next != null) {
@@ -23,6 +19,9 @@ class SingleLinked {
         size++
     }
 
+    /**
+     * 反转链表
+     */
     fun studyRestNode(node: Node): Node? {
         var next: Node? = null
         var pre: Node? = null
@@ -38,12 +37,14 @@ class SingleLinked {
         return pre
     }
 
+    /**
+     * 删除倒数N的节点
+     */
     fun deleteReciprocalNode(reciprocal: Int) {
         if (reciprocal < 0 || reciprocal > size) {
             Log.d("xxw", "当前不符合")
             return
         }
-
         var temp = head
         var num = 0
         while (temp.next != null) {
@@ -61,21 +62,10 @@ class SingleLinked {
 
     }
 
-    fun resetNode(head: Node): Node? {
-        var temp: Node?
-        temp = head
-        var next: Node? = null
-        var pre: Node? = null
 
-        while (temp != null) {
-            next = temp.next
-            temp.next = pre
-            pre = temp
-            temp = next
-        }
-        return pre
-    }
-
+    /**
+     * 指定位置插入
+     */
     fun insertNodeByIndex(index: Int, node: Node) {
         //检查节点是否合法
         if (index < 1 || index > size + 1) {
@@ -118,123 +108,24 @@ class SingleLinked {
         }
     }
 
-    fun toPrint() {
-        var temp = head.next
-        while (temp != null) {
-            Log.d("xxw", "next content: ${temp.data}")
-            temp = temp.next
-        }
-        Log.d(SingleLinked::class.java.name, "size: $size")
-    }
-
-    fun toPrint(head: Node) {
-        var temp = head
-        while (temp.next != null) {
-            Log.d("xxw", "next content: ${temp.data}")
-            temp = temp.next
-        }
-        Log.d("xxw", "next content: ${temp.data}")
-    }
-
-    fun mergeOrderlyLinked(first: SingleLinked, sencond: SingleLinked): SingleLinked {
-        val mergeLinked = SingleLinked()
-
-
-        if (first.size > sencond.size) {
-            var tempFirst = first.head
-            var tempSecond = sencond.head
-            for (index in 1..first.size) {
-                if (tempFirst.data == "head") {
-                    //如果是头 直接跳出循环
-                    tempFirst = tempFirst.next
-                    continue
-                }
-                for (i in 1..sencond.size) {
-                    if (tempSecond.data == "head") {
-                        tempSecond = tempSecond.next
-                        continue
-                    }
-                    val firstValue = tempFirst.data.toString().toInt()
-                    val secondValue = tempSecond.data.toString().toInt()
-                    if (firstValue > secondValue) {
-                        mergeLinked.insertNode(tempSecond)
-                    } else {
-                        mergeLinked.insertNode(tempFirst)
-                        tempFirst = tempFirst.next
-                        break
-                    }
-                    tempSecond = tempSecond.next
-                }
-            }
-        } else if (first.size < sencond.size) {
-
-
-            var tempFirst = first.head
-            var tempSecond = sencond.head
-            for (index in 1..first.size) {
-                if (tempFirst.data == "head" && tempSecond.data == "head") {
-                    //如果是头 直接跳出循环
-                    tempFirst = tempFirst.next
-                    tempSecond = tempSecond.next
-                    continue
-                }
-                for (i in 1..sencond.size) {
-                    val firstValue = tempFirst.data.toString().toInt()
-                    val secondValue = tempSecond.data.toString().toInt()
-                    if (firstValue > secondValue) {
-                        mergeLinked.insertNode(Node(tempSecond.data))
-                        tempSecond = tempSecond.next
-                    } else {
-                        mergeLinked.insertNode(Node(tempFirst.data))
-                        if (tempFirst.next != null) {
-                            tempFirst = tempFirst.next
-                        }
-                    }
-                }
-            }
-
-        } else {
-            var tempFirst = first.head
-            var tempSecond = sencond.head
-            for (index in 1..first.size) {
-                if (tempFirst.data == "head" && tempSecond.data == "head") {
-                    //如果是头 直接跳出循环
-                    tempFirst = tempFirst.next
-                    tempSecond = tempSecond.next
-                    continue
-                }
-                for (i in 1..sencond.size) {
-                    val firstValue = tempFirst.data.toString().toInt()
-                    val secondValue = tempSecond.data.toString().toInt()
-                    if (firstValue > secondValue) {
-                        mergeLinked.insertNode(Node(tempSecond.data))
-                        tempSecond = tempSecond.next
-                    } else {
-                        mergeLinked.insertNode(Node(tempFirst.data))
-                        if (tempFirst.next != null) {
-                            tempFirst = tempFirst.next
-                        } else {
-                            mergeLinked.insertNode(Node(tempSecond.data))
-                            break
-                        }
-                    }
-                }
-            }
-        }
-
-
-        return mergeLinked
-    }
-
-
-    fun returnSize(): Int = size
-
+    /**
+     *
+     * 合并有序链表 (递归)
+     */
     fun mergeOrderlyLinkeds(first: Node?, sencond: Node?): Node? {
         var linked: Node
         var tempA: Node
         var tempB: Node
 
         if (first == null || sencond == null) {
+
+            if (first != null) {
+                return first
+            }
+
+            if (sencond != null) {
+                return sencond
+            }
             return null
         } else {
             tempA = first
@@ -246,18 +137,77 @@ class SingleLinked {
         }
 
 
+        /**
+         */
+
         if (tempA.data.toString().toInt() > tempB.data.toString().toInt()) {
+            Log.d("XXW", "if   tempA ${tempA.data}  tempB ${tempB.data}")
             linked = tempB
             linked.next = mergeOrderlyLinkeds(tempA, tempB.next)
         } else {
+            Log.d("XXW", "else   tempA ${tempA.data}  tempB ${tempB.data}")
             linked = tempA
             linked.next = mergeOrderlyLinkeds(tempA.next, tempB)
         }
+        Log.d("XXW", "return  linked ${linked.data}")
 
-        if (linked.next == null) {
-
-        }
         return linked
+    }
+
+
+    fun toPrint(node: Node = head) {
+        var temp = node
+        while (temp.next != null) {
+            Log.d("xxw", "content: ${temp.data}")
+            temp = temp.next
+        }
+        Log.d("xxw", "content: ${temp.data}")
+    }
+
+
+    /**
+     * 获取单链表的中间节点
+     */
+    fun obtainMiddleNode(node: Node = head): Node {
+        var pre: Node = node
+        var preTwo: Node = node
+
+
+        while (pre.next != null) {
+            pre = pre.next
+            if (preTwo.next == null || preTwo.next.next == null) {
+                break
+            } else {
+                preTwo = preTwo.next.next
+            }
+        }
+
+        return pre
 
     }
+
+
+    fun linkedIsPalindrome(node: Node = head): Boolean {
+        var middle = obtainMiddleNode(node)
+        //翻转
+        studyRestNode(middle)?.let {
+            middle = it
+        }
+        var temp = node.next
+        var result: Boolean
+
+        while (temp.next != null && middle.next != null) {
+            result = temp.data == middle.data
+            if (!result) {
+                break
+            }
+            temp = temp.next
+            middle = middle.next
+        }
+        //当middle.next || temp.next 有一个为null 表明已经是最后一个,此时需要单独判断
+        result = temp.data == middle.data
+
+        return result
+    }
+
 }

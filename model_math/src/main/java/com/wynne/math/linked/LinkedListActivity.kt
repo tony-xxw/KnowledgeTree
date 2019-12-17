@@ -19,15 +19,17 @@ class LinkedListActivity : BaseActivity() {
         singleLinked.insertNode(Node("a"))
         singleLinked.insertNode(Node("b"))
         singleLinked.insertNode(Node("c"))
-        singleLinked.insertNode(Node("d"))
-        singleLinked.insertNode(Node("e"))
-        singleLinked.insertNode(Node("f"))
+//        singleLinked.insertNode(Node("d"))
+//        singleLinked.insertNode(Node("e"))
+//        singleLinked.insertNode(Node("f"))
+//        singleLinked.insertNode(Node("g"))
 
 
         secondLinked = SingleLinked()
         secondLinked.insertNode(Node("2"))
         secondLinked.insertNode(Node("3"))
         secondLinked.insertNode(Node("12"))
+        secondLinked.insertNode(Node("28"))
 
         firstLinked = SingleLinked()
         firstLinked.insertNode(Node("4"))
@@ -74,13 +76,15 @@ class LinkedListActivity : BaseActivity() {
                 recycleSingleLinked.toPrint()
             }
             R.id.btnSame -> {
+                var palindormeLike = SingleLinked()
 
+                Log.d("XXW", "是否为回文链表: " + palindormeLike.linkedIsPalindrome())
             }
             R.id.btnLinkedCheck -> {
                 Log.d("xxw", "isExist :" + recycleSingleLinked.isExistLoop())
             }
             R.id.btnLinkedMiddleNode -> {
-
+                Log.d("XXW", " middle " + singleLinked.obtainMiddleNode().data)
             }
             R.id.btnSingleReversal -> {
                 singleLinked.studyRestNode(singleLinked.head)?.let {
@@ -93,11 +97,6 @@ class LinkedListActivity : BaseActivity() {
                 singleLinked.toPrint()
             }
             R.id.btnLinkedMerge -> {
-//                firstLinked.toPrint()
-//                secondLinked.toPrint()
-//                val merge = firstLinked.mergeOrderlyLinked(firstLinked, secondLinked)
-//                firstLinked.toPrint(merge.head)
-
                 firstLinked.mergeOrderlyLinkeds(firstLinked.head, secondLinked.head)?.let {
                     firstLinked.toPrint(it)
                 }
