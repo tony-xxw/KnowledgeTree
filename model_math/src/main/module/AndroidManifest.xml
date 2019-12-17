@@ -19,5 +19,8 @@
         <activity
             android:name=".linked.LinkedListActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".stack.StackActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>
