@@ -11,7 +11,8 @@ class MyPlugin implements Plugin<Project> {
         // 获取Android扩展
         def android = project.extensions.getByType(AppExtension)
         def transform = new MyTransform(project)
-//        // 注册Transform，其实就是添加了Task
+        // 注册Transform，其实就是添加了Task
+        project.extensions.create("dtcMethods", MyExtension)
         android.registerTransform(transform)
     }
 

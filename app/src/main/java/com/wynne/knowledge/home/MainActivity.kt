@@ -35,8 +35,7 @@ class MainActivity : BaseActivity() {
         adapter.listener = {
             when (it) {
                 0 -> {
-                    startActivity(Intent(this, TestActivity::class.java))
-//                    ARouter.getInstance().build(BASE_ANDROID).navigation()
+                    ARouter.getInstance().build(BASE_ANDROID).navigation()
                 }
                 1 -> {
                     ARouter.getInstance().build(BASE_HIGH).navigation()

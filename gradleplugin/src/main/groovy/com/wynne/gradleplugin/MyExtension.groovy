@@ -1,5 +1,6 @@
 package com.wynne.gradleplugin
 
 class MyExtension {
-    String message
+    String[] methods
+    String[] clazz
 }

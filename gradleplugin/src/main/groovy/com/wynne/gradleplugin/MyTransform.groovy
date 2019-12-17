@@ -10,6 +10,7 @@ class MyTransform extends Transform {
 
 
     private Project mProject
+    private MyInject myInjectByJavassit
 
     MyTransform(Project mProject) {
         this.mProject = mProject
@@ -43,7 +44,8 @@ class MyTransform extends Transform {
     void transform(Context context, Collection<TransformInput> inputs,
                    Collection<TransformInput> referencedInputs, TransformOutputProvider outputProvider,
                    boolean isIncremental) throws IOException, TransformException, InterruptedException {
-        println '--------------------transform 开始-------------------'
+
+        myInjectByJavassit = new MyInject(mProject)
 
         // Transform的inputs有两种类型，一种是目录，一种是jar包，要分开遍历
         inputs.each {
@@ -52,16 +54,12 @@ class MyTransform extends Transform {
                 //文件夹里面包含的是我们手写的类以及R.class、BuildConfig.class以及R$XXX.class等
                 input.directoryInputs.each {
                     DirectoryInput directoryInput ->
-                        println("info: $directoryInput.file.absolutePath")
+                        println "inject path : ${directoryInput.file.absolutePath}"
                         // 注入代码
-                        MyInjectByJavassit.injectToast(directoryInput.file.absolutePath, mProject)
-
-                        println("info: $directoryInput.name, $directoryInput.contentTypes")
+                        myInjectByJavassit.injectToast(directoryInput.file.absolutePath)
                         // 获取输出目录
-                        def dest = outputProvider.getContentLocation(directoryInput.name,
-                                directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
-
-                        println("directory output dest: $dest.absolutePath")
+                        def dest = outputProvider.getContentLocation(directoryInput.name, directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
+                        println "file output dest: ${dest.absolutePath}"
                         // 将input的目录复制到output指定目录
                         FileUtils.copyDirectory(directoryInput.file, dest)
                 }
@@ -72,13 +70,11 @@ class MyTransform extends Transform {
                     JarInput jarInput ->
                         // 重命名输出文件（同目录copyFile会冲突）
                         def jarName = jarInput.name
-                        println("jar: $jarInput.file.absolutePath")
                         def md5Name = DigestUtils.md5Hex(jarInput.file.absolutePath)
                         if (jarName.endsWith('.jar')) {
                             jarName = jarName.substring(0, jarName.length() - 4)
                         }
                         def dest = outputProvider.getContentLocation(jarName + md5Name, jarInput.contentTypes, jarInput.scopes, Format.JAR)
-
                         println("jar output dest: $dest.absolutePath")
                         FileUtils.copyFile(jarInput.file, dest)
                 }
