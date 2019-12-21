@@ -6,9 +6,9 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wynne.knowledge.base.base.BaseActivity;
-import com.wynne.weekly.utils.DetectionMethod;
-import com.wynne.weekly.utils.DetectionUtil;
+import com.wynne.weekly.bytes.ByteHandleActivity;
 import com.wynne.weekly.week.TransformActivity;
+
 
 import static com.wynne.knowledge.base.constant.ARouterPath.BASE_WEEKLY;
 
@@ -17,7 +17,7 @@ import static com.wynne.knowledge.base.constant.ARouterPath.BASE_WEEKLY;
 public class WeeklyActivity extends BaseActivity {
 
     public void initView() {
-        startActivity(new Intent(this, TransformActivity.class));
+
     }
 
 
@@ -29,6 +29,9 @@ public class WeeklyActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btnTransform:
                 startActivity(new Intent(this, TransformActivity.class));
+                break;
+            case R.id.btnByte:
+                startActivity(new Intent(this, ByteHandleActivity.class));
                 break;
             default:
                 break;
