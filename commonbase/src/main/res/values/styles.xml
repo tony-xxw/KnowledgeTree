@@ -2,12 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorDirtyWithe</item>
-        <item name="colorPrimaryDark">@color/colorDirtyWithe</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
 
         <!-- 状态栏半透明 target -4.42 布局会顶到屏幕最上方-->
         <!--        <item name="android:windowTranslucentStatus">true</item>-->

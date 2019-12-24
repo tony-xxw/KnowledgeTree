@@ -13,14 +13,19 @@ import com.wynne.weekly.week.TransformActivity;
 import static com.wynne.knowledge.base.constant.ARouterPath.BASE_WEEKLY;
 
 
+/**
+ * @author Wynne
+ */
 @Route(path = BASE_WEEKLY)
 public class WeeklyActivity extends BaseActivity {
 
+    @Override
     public void initView() {
 
     }
 
 
+    @Override
     public int getLayoutId() {
         return R.layout.activity_weekly_main_layout;
     }

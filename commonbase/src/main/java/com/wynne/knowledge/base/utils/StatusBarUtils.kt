@@ -61,10 +61,10 @@ class StatusBarUtils {
 
                 val decorView = window.decorView
                 var ui = decorView.systemUiVisibility
-                if (isWhite) {
-                    ui = ui or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                ui = if (isWhite) {
+                    ui or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
                 } else {
-                    ui = ui and (View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv())
+                    ui and (View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv())
                 }
                 decorView.systemUiVisibility = ui
 
@@ -79,6 +79,20 @@ class StatusBarUtils {
                 statusBarHeight = context.resources.getDimensionPixelSize(resourceId)
             }
             return statusBarHeight
+        }
+
+        fun adaptiveStatusBar(window: Window, isWhite: Boolean = false) {
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP -> {
+                    handleCompared21(window)
+                }
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && Build.VERSION.SDK_INT < Build.VERSION_CODES.M -> {
+                    handleCompared22(window)
+                }
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> {
+                    handleCompared23(window, isWhite)
+                }
+            }
         }
     }
 

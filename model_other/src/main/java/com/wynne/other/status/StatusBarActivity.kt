@@ -1,7 +1,6 @@
 package com.wynne.other.status
 
 
-import android.os.Build
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.wynne.knowledge.base.base.BaseActivity
@@ -32,7 +31,7 @@ class StatusBarActivity : BaseActivity() {
             }
             R.id.btnCompared23 -> {
                 StatusBarUtils.statusColor = ContextCompat.getColor(this, R.color.white)
-                StatusBarUtils.handleCompared22(window)
+                StatusBarUtils.handleCompared23(window, true)
             }
         }
     }

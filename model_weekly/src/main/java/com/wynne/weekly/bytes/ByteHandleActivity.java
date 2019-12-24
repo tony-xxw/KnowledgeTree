@@ -10,10 +10,12 @@ import com.wynne.weekly.R;
 public class ByteHandleActivity extends BaseActivity {
 
 
+    @Override
     public void initView() {
         helloByte();
     }
 
+    @Override
     public int getLayoutId() {
         return R.layout.activity_weekly_byte_layout;
     }

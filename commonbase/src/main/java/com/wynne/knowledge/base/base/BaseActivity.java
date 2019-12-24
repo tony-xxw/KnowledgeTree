@@ -3,15 +3,13 @@ package com.wynne.knowledge.base.base;
 
 import android.os.Bundle;
 
+import com.wynne.knowledge.base.R;
+import com.wynne.knowledge.base.utils.StatusBarUtils;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 
 /**
@@ -21,11 +19,16 @@ public abstract class BaseActivity extends AppCompatActivity {
     Unbinder unbinder;
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         unbinder = ButterKnife.bind(this);
         initView();
+
+        if (immerseModel()) {
+            StatusBarUtils.Companion.setStatusColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            StatusBarUtils.Companion.adaptiveStatusBar(getWindow(), false);
+        }
     }
 
     /**
@@ -43,6 +46,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract int getLayoutId();
 
 
+    /**
+     * 是否开启沉浸模式
+     *
+     * @return
+     */
+    public boolean immerseModel() {
+        return true;
+    }
 
     @Override
     protected void onDestroy() {
