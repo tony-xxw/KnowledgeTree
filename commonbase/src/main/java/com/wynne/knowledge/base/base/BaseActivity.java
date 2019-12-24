@@ -43,11 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract int getLayoutId();
 
 
-    public void requestNet(Observable observable, Observer observer) {
-        observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
-    }
 
     @Override
     protected void onDestroy() {

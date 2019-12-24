@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -8,13 +8,27 @@
         <item name="colorPrimaryDark">@color/colorDirtyWithe</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- 状态栏半透明 target -4.42 布局会顶到屏幕最上方-->
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 
     <style name="BtnCommon">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:onClick">onClick</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/colorGray</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_stoken_btn_gray</item>
     </style>
+
+    <style name="tlbCommon">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
 
     <style name="menu_ll">
         <item name="android:layout_width">wrap_content</item>

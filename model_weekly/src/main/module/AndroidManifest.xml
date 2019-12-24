@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.weekly">
@@ -6,9 +7,13 @@
         android:name=".WeeklyApplication"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".bytes.ByteHandleActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".WeeklyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -16,4 +21,5 @@
             android:name=".week.TransformActivity"
             android:launchMode="singleTop" />
     </application>
+
 </manifest>

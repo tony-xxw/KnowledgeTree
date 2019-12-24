@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".status.StatusBarActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlTitle"
+        style="@style/tlbCommon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="状态栏不同版本处理方式"
+        app:titleTextColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnCompared21"
+        style="@style/BtnCommon"
+        android:text="4.4处理方式"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlTitle" />
+
+    <Button
+        android:id="@+id/btnCompared22"
+        style="@style/BtnCommon"
+        android:text="5.1处理方式"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCompared21" />
+
+    <Button
+        android:id="@+id/btnCompared23"
+        style="@style/BtnCommon"
+        android:text="6.0+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCompared22" />
+</androidx.constraintlayout.widget.ConstraintLayout>
