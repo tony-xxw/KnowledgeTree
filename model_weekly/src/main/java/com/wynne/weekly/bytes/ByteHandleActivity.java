@@ -11,8 +11,6 @@ public class ByteHandleActivity extends BaseActivity {
 
 
     public void initView() {
-
-
         helloByte();
     }
 
@@ -21,14 +19,12 @@ public class ByteHandleActivity extends BaseActivity {
     }
 
     public void onClick(View v) {
-
     }
 
     public void helloByte() {
         int a = 1;
         int b = 2;
         int c = 3;
-        Log.d("XXW", "a: " + a + " b: " + b + " c: " + c);
         reverse(a, b, c);
     }
 
@@ -38,7 +34,9 @@ public class ByteHandleActivity extends BaseActivity {
         a = c;
         c = temp;
 
-        Log.d("XXW", "a: " + a + " b: " + b + " c: " + c);
+        for (int i = 0; i < a; i++) {
+            Log.d("xxw", "i : " + i);
+        }
     }
 
 }
