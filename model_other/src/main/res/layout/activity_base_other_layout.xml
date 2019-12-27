@@ -31,4 +31,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditInput" />
 
+    <Button
+        android:id="@+id/btnGrammar"
+        style="@style/BtnCommon"
+        android:text="kotlin语法"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStatusBar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

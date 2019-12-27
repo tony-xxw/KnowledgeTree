@@ -24,6 +24,9 @@
             android:name=".edit.OtherInputEditActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".grammar.KotlinGrammarActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

@@ -6,8 +6,8 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath
 import com.wynne.other.edit.OtherInputEditActivity
+import com.wynne.other.grammar.KotlinGrammarActivity
 import com.wynne.other.status.StatusBarActivity
-import kotlinx.android.synthetic.main.activity_base_other_layout.*
 
 @Route(path = ARouterPath.BASE_OTHER)
 class BaseOtherActivity : BaseActivity() {
@@ -24,8 +24,9 @@ class BaseOtherActivity : BaseActivity() {
             R.id.btnStatusBar -> {
                 startActivity(Intent(this, StatusBarActivity::class.java))
             }
-
-
+            R.id.btnGrammar -> {
+                startActivity(Intent(this, KotlinGrammarActivity::class.java))
+            }
         }
     }
 }
