@@ -1,18 +1,25 @@
 package com.wynne.other.grammar
 
-import android.util.Log
-import com.wynne.knowledge.base.base.BaseActivity
+ import android.util.Log
+ import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.utils.LogUtil
 import com.wynne.other.R
 
-class KotlinGrammarActivity : BaseActivity() {
+class KotlinGrammarActivity : BaseActivity(),KotlinInterface {
+    override val prop: Int= 29
+
+    override fun bar() {
+
+    }
+
     private val items = listOf("android", "kotlin", "java")
     private val grammars = listOf<Grammar>(Grammar("android"), Grammar("kotlin"), Grammar("java"), Grammar(null))
 
     override fun initView() {
-
-
+        LogUtil.d(propertyWithImplementation)
         baseGrammar()
+
+        Box("word").date ="hellow"
     }
 
     private fun baseGrammar() {
