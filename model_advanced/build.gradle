@@ -60,6 +60,12 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["arouter_api"]
 
+    api 'com.google.dagger:dagger-android:2.17'
+    kapt 'com.google.dagger:dagger-android-processor:2.24'
+
+    api 'com.google.dagger:dagger-android-support:2.17' // if you use the support libraries
+    api 'com.google.dagger:dagger:2.24'
+    kapt 'com.google.dagger:dagger-compiler:2.24'
     kapt rootProject.ext.dependencies["arouter_compiler"]
 
     api rootProject.ext.dependencies["navigation"]
