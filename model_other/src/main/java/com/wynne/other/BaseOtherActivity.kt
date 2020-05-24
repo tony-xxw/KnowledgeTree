@@ -8,6 +8,7 @@ import com.wynne.knowledge.base.constant.ARouterPath
 import com.wynne.other.edit.OtherInputEditActivity
 import com.wynne.other.grammar.KotlinGrammarActivity
 import com.wynne.other.status.StatusBarActivity
+import com.wynne.other.web.WebViewActivity
 
 @Route(path = ARouterPath.BASE_OTHER)
 class BaseOtherActivity : BaseActivity() {
@@ -26,6 +27,8 @@ class BaseOtherActivity : BaseActivity() {
             }
             R.id.btnGrammar -> {
                 startActivity(Intent(this, KotlinGrammarActivity::class.java))
+            }R.id.btnWebView -> {
+                startActivity(Intent(this, WebViewActivity::class.java))
             }
         }
     }

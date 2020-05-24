@@ -14,6 +14,8 @@ interface KotlinInterface {
     fun foo() {
         LogUtil.d(prop.toString())
         LogUtil.d(Box("A").value)
+
+        Box("word").date ="hellow"
     }
 
 

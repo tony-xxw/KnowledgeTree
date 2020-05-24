@@ -19,7 +19,6 @@ class KotlinGrammarActivity : BaseActivity(),KotlinInterface {
         LogUtil.d(propertyWithImplementation)
         baseGrammar()
 
-        Box("word").date ="hellow"
     }
 
     private fun baseGrammar() {
