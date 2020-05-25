@@ -2,7 +2,7 @@ package com.wynne.advanced.dagger
 
 import dagger.Component
 
-@Component(modules = ShangjiaModel::class)
+@Component()
 public interface Platform {
     fun waimai(): Person
 }
