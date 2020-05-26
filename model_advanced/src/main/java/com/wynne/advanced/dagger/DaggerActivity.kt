@@ -1,34 +1,41 @@
 package com.wynne.advanced.dagger
 
-import android.widget.Toast
 import com.wynne.advanced.R
+import com.wynne.advanced.dagger.Cloth
+import com.wynne.advanced.dagger.DaggerMainComponent
 import com.wynne.knowledge.base.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_base_advanced_dagger_layout.*
 import javax.inject.Inject
+import javax.inject.Named
 
 class DaggerActivity : BaseActivity() {
 
+    @Inject
+    lateinit var cloth: Cloth
 
+    @Inject
+    @field:Named("red")
+    lateinit var blueCloth: Cloth
 
+    @Inject
+    @field:Named("blue")
+    lateinit var redCloth: Cloth
+
+    @Inject
+    lateinit var stringBuffer: StringBuffer
+
+    @Inject
+    lateinit var cloths: Cloths
 
     override fun initView() {
+        DaggerMainComponent.builder().build().injenct(this)
+        btn1.text = cloth.toString() + blueCloth.toString() + redCloth.toString()
+        btn2.text = stringBuffer.toString()
+        btn3.text = cloths.toString()
 
-        btn1.setOnClickListener {
-            val platform = DaggerPlatform.builder().build().waimai()
-            Toast.makeText(this, platform.eat(), Toast.LENGTH_SHORT).show()
-        }
-
-        btn2.setOnClickListener {
-            val platform = DaggerTakeOutPlatform.builder().shangjiaModule(ShangjiaModule("衡阳鱼粉")).build()
-            val person = Person1()
-            platform.zhuru(person)
-            platform.inject(this)
-
-
-            Toast.makeText(this, platform.waimai().eat() + " test: ", Toast.LENGTH_SHORT).show()
-        }
 
     }
 
-    override fun getLayoutId() = R.layout.activity_base_advanced_dagger_layout
+    override fun getLayoutId(): Int = R.layout.activity_base_advanced_dagger_layout
+
 }
