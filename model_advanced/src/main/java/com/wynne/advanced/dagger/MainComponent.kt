@@ -1,11 +1,11 @@
 package com.wynne.advanced.dagger
 
-import com.wynne.advanced.dagger.DaggerActivity
-import com.wynne.advanced.dagger.MainModule
+import com.wynne.advanced.dagger.base.BaseComponent
 import dagger.Component
+import javax.inject.Singleton
 
-//@Component
-@Component(modules = [MainModule::class])
+@PreActivity
+@Component(modules = [MainModule::class], dependencies = [BaseComponent::class])
 interface MainComponent {
     fun injenct(activity: DaggerActivity)
 }

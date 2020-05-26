@@ -4,6 +4,7 @@ import android.util.Log
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 class MainModule {
@@ -13,6 +14,7 @@ class MainModule {
         return Cloth()
     }
 
+    @PreActivity
     @Provides
     @Named("red")
     fun getRedCloth(): Cloth {
@@ -38,4 +40,5 @@ class MainModule {
     fun getCloths(@Named("red") cloth: Cloth): Cloths {
         return Cloths(cloth)
     }
+
 }
