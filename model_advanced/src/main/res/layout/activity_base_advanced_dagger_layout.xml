@@ -11,8 +11,17 @@
         android:id="@+id/btn1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="test1"
+        android:text="Component + Inject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Component + Module"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
