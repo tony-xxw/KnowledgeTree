@@ -5,6 +5,7 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath
+import com.wynne.other.coroutine.CoroutineActivity
 import com.wynne.other.edit.OtherInputEditActivity
 import com.wynne.other.grammar.KotlinGrammarActivity
 import com.wynne.other.status.StatusBarActivity
@@ -27,8 +28,12 @@ class BaseOtherActivity : BaseActivity() {
             }
             R.id.btnGrammar -> {
                 startActivity(Intent(this, KotlinGrammarActivity::class.java))
-            }R.id.btnWebView -> {
+            }
+            R.id.btnWebView -> {
                 startActivity(Intent(this, WebViewActivity::class.java))
+            }
+            R.id.btnKotlinCoroutine -> {
+                startActivity(Intent(this, CoroutineActivity::class.java))
             }
         }
     }
