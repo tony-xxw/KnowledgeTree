@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import androidx.multidex.MultiDex;
-import androidx.multidex.MultiDexApplication;
 
 /**
  * @author xxw
  */
-public abstract class BaseApplication extends MultiDexApplication {
+public abstract class BaseApplication extends Application {
 
     private Application.ActivityLifecycleCallbacks lifecycleCallbacks = new Application.ActivityLifecycleCallbacks() {
         @Override
@@ -52,7 +50,7 @@ public abstract class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
+//        MultiDex.install(this);
     }
 
     /**
