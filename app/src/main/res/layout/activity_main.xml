@@ -19,5 +19,13 @@
         android:background="@color/white"
         android:layoutAnimation="@anim/layout_animation"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/btnFlutter"
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+    <Button
+        android:id="@+id/btnFlutter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvMain" />
 </androidx.constraintlayout.widget.ConstraintLayout>

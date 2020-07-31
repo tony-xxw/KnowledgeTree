@@ -10,6 +10,7 @@ import com.wynne.other.edit.OtherInputEditActivity
 import com.wynne.other.grammar.KotlinGrammarActivity
 import com.wynne.other.status.StatusBarActivity
 import com.wynne.other.web.WebViewActivity
+import io.flutter.embedding.android.FlutterActivity
 
 @Route(path = ARouterPath.BASE_OTHER)
 class BaseOtherActivity : BaseActivity() {
@@ -35,6 +36,12 @@ class BaseOtherActivity : BaseActivity() {
             R.id.btnKotlinCoroutine -> {
                 startActivity(Intent(this, CoroutineActivity::class.java))
             }
+            R.id.btnFlutter -> {
+                startActivity(
+                        FlutterActivity.createDefaultIntent(this)
+                )
+            }
+
         }
     }
 }

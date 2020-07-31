@@ -12,6 +12,9 @@ buildscript {
             name 'Google'
         }
         google()
+        maven {
+            url 'http://download.flutter.io'
+        }
 
     }
     dependencies {
@@ -33,6 +36,9 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven {
+            url 'http://download.flutter.io'
+        }
     }
 
 }
