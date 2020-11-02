@@ -8,6 +8,7 @@ import com.wynne.knowledge.base.constant.ARouterPath
 import com.wynne.other.coroutine.CoroutineActivity
 import com.wynne.other.edit.OtherInputEditActivity
 import com.wynne.other.grammar.KotlinGrammarActivity
+import com.wynne.other.kotlin.KotlinCoreActivity
 import com.wynne.other.status.StatusBarActivity
 import com.wynne.other.web.WebViewActivity
 import io.flutter.embedding.android.FlutterActivity
@@ -40,6 +41,9 @@ class BaseOtherActivity : BaseActivity() {
                 startActivity(
                         FlutterActivity.createDefaultIntent(this)
                 )
+            }
+            R.id.btnCore -> {
+                startActivity(Intent(this, KotlinCoreActivity::class.java))
             }
 
         }
