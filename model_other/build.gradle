@@ -63,4 +63,6 @@ dependencies {
     api project(path: ':commonbase')
 
 
+//    implementation project(':flutter')
+
 }

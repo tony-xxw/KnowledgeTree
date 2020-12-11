@@ -6,14 +6,8 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.wynne.gradleplugin'
 
-
-dtcMethods {
-    methods = ["com.wynne.weekly.WeeklyActivity.init"]
-    clazz = ["com.wynne.weekly.week.TransformActivity"]
-}
-
+ 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
     buildToolsVersion rootProject.ext.versions.buildToolsVersion

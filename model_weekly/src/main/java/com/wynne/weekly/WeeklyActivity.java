@@ -31,15 +31,11 @@ public class WeeklyActivity extends BaseActivity {
     }
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnTransform:
-                startActivity(new Intent(this, TransformActivity.class));
-                break;
-            case R.id.btnByte:
-                startActivity(new Intent(this, ByteHandleActivity.class));
-                break;
-            default:
-                break;
+        int id = view.getId();
+        if (id == R.id.btnTransform) {
+            startActivity(new Intent(this, TransformActivity.class));
+        } else if (id == R.id.btnByte) {
+            startActivity(new Intent(this, ByteHandleActivity.class));
         }
     }
 }

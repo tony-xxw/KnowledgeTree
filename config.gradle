@@ -1,5 +1,5 @@
 ext {
-    isModule = true
+    isModule = false
     //版本号
     versions = [
             applicationId           : "com.wynne.knowledge.tree",        //应用ID

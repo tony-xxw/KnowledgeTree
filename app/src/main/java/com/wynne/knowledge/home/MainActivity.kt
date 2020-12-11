@@ -6,7 +6,6 @@ import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.*
-import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -69,11 +68,7 @@ class MainActivity : BaseActivity() {
         }
         rvMain.adapter = adapter
 
-        btnFlutter.setOnClickListener {
-            startActivity(
-                    FlutterActivity.createDefaultIntent(this)
-            )
-        }
+
     }
 
 

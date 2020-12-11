@@ -67,6 +67,7 @@ dependencies {
     }
     implementation rootProject.ext.dependencies["multidex"]
     api project(path: ':commonbase')
+//    implementation project(':flutter')
 
 }
 
