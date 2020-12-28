@@ -1,5 +1,6 @@
 package com.wynne.android
 
+import android.content.Intent
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
@@ -31,10 +32,19 @@ class BaseAndroidActivity : BaseActivity() {
 
         rvAndroid.adapter = adapter
 
+        adapter.listener = {
+            when (list[it].name) {
+                "四大组件,生命周期启动方式" -> {
+                    startActivity(Intent(this, LifeActivity::class.java))
+                }
+            }
+
+        }
 
 
     }
-        override fun getLayoutId(): Int = R.layout.actiivty_base_android_layout
+
+    override fun getLayoutId(): Int = R.layout.actiivty_base_android_layout
 
 
 }
