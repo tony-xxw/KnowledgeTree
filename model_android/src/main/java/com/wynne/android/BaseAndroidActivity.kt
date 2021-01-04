@@ -41,6 +41,9 @@ class BaseAndroidActivity : BaseActivity() {
 
         }
 
+        adapter.listener = {
+            startActivity(Intent(this, AllowTaskReparentingActivity::class.java))
+        }
 
     }
 

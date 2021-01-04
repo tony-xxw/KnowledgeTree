@@ -60,7 +60,7 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["arouter_api"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
-    api project(path: ':commonbase')
+    implementation project(path: ':commonbase')
 
 
 //    implementation project(':flutter')

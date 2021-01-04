@@ -1,6 +1,7 @@
 package com.wynne.design
 
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity

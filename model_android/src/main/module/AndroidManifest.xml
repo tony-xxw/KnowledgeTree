@@ -3,8 +3,8 @@
     package="com.wynne.android">
 
     <application
-        android:theme="@style/AppTheme"
         android:name=".AndroidApplication"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".BaseAndroidActivity"
@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LifeActivity"
-            android:process="com.xxw" />
+            android:process="com.xxw"
+            android:name=".AllowTaskReparentingActivity"
+             />
     </application>
 </manifest>

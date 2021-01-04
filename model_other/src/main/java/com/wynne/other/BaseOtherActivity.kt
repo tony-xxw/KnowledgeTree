@@ -1,7 +1,6 @@
 package com.wynne.other
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.knowledge.base.base.BaseActivity

@@ -2,7 +2,12 @@
     package="com.wynne.android">
     <application>
         <activity
+            android:theme="@style/AppTheme"
             android:name=".BaseAndroidActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".AllowTaskReparentingActivity"
+            android:taskAffinity="com.xxw"
+            android:allowTaskReparenting="true"
+            />
     </application>
 </manifest>

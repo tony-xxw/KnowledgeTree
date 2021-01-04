@@ -5,6 +5,7 @@
     <application android:name=".DesignApplication"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:theme="@style/AppTheme"
             android:name=".BaseDesignActivity"
             android:launchMode="singleTop" >
             <intent-filter>

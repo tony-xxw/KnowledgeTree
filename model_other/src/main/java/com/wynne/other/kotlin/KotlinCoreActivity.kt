@@ -1,5 +1,6 @@
 package com.wynne.other.kotlin
 
+import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
 import com.wynne.knowledge.base.base.BaseActivity
@@ -14,7 +15,11 @@ class KotlinCoreActivity : BaseActivity() {
         Chapter3().show()
         val appInfo = this.packageManager.getApplicationInfo(this.packageName, PackageManager.GET_META_DATA)
 
+
+
     }
 
     override fun getLayoutId(): Int = R.layout.activity_kotlin_core_layout
 }
+
+
