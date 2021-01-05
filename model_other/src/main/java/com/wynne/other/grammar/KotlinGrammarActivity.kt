@@ -1,12 +1,14 @@
 package com.wynne.other.grammar
 
- import android.util.Log
- import com.wynne.knowledge.base.base.BaseActivity
+import android.util.Log
+import android.view.View
+import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.utils.LogUtil
 import com.wynne.other.R
+import kotlinx.android.synthetic.main.activity_grammar_other_layout.*
 
-class KotlinGrammarActivity : BaseActivity(),KotlinInterface {
-    override val prop: Int= 29
+class KotlinGrammarActivity : BaseActivity(), KotlinInterface {
+    override val prop: Int = 29
 
     override fun bar() {
 
@@ -19,6 +21,9 @@ class KotlinGrammarActivity : BaseActivity(),KotlinInterface {
         LogUtil.d(propertyWithImplementation)
         baseGrammar()
 
+        btnKotlin.setOnClickListener {
+
+        }
     }
 
     private fun baseGrammar() {
