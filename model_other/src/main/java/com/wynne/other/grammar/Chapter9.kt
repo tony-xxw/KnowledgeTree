@@ -515,13 +515,13 @@ class Rebot1(
 }
 
 class Rebot private constructor(
-        val code: String,
-        val battery: String?,
-        val height: Int?,
-        var weight: Int?
+        private val code: String,
+        private val battery: String?,
+        private val height: Int?,
+        private var weight: Int?
 ) {
 
-    class Builder(val code: String) {
+    class Builder(private val code: String) {
         private var battery: String? = null
         private var height: Int? = null
         private var weight: Int? = null

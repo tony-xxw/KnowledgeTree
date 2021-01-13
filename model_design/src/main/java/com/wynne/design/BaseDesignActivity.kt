@@ -2,10 +2,7 @@ package com.wynne.design
 
 import android.app.Activity
 import android.content.Intent
-import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
-import com.wynne.design.chapter.TenetActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
@@ -33,15 +30,6 @@ class BaseDesignActivity : BaseActivity() {
         toolBar.title = "设计模式"
         adapter = MainAdapter(this)
         adapter.mList = list
-        adapter.listener = {
-            when (list[it].name) {
-                "面向对象六大原则" -> startActivity<TenetActivity>()
-                else -> {
-                }
-
-            }
-        }
-
         rvDesign.adapter = adapter
     }
 
