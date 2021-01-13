@@ -2,17 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.design">
 
-    <application android:name=".DesignApplication"
+    <application
+        android:name=".DesignApplication"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:theme="@style/AppTheme"
             android:name=".BaseDesignActivity"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".chapter.TenetActivity"
+            android:launchMode="singleTop" />
     </application>
 </manifest>

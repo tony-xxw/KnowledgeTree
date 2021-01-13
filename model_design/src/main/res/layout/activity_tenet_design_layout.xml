@@ -4,21 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+        android:id="@+id/tenetToolBar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="?android:actionBarSize"
         android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="面向对象原则"
+        app:titleMarginStart="25dp"
         app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDesign"
+        android:id="@+id/tenetRv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenetToolBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
