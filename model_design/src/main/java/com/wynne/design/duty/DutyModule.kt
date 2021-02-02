@@ -73,4 +73,23 @@ fun main() {
     handlerChain.process(Request("Bill", BigDecimal("12345.45")))
 
 
+    var test = Test()
+    val value  = test.getAge().plus(1)
+    println("${test.getAge()} - $value")
+}
+
+
+class Test() {
+    private var age: Int = 0
+    var weight: Int = 0
+
+    init {
+        age = 25
+        weight = 140
+    }
+
+    fun getAge(): Int {
+        return age
+    }
+
 }

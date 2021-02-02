@@ -5,6 +5,7 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
+import javax.inject.Named
 import javax.inject.Singleton
 
 class Baozi {
@@ -90,6 +91,14 @@ class ActivityModule {
 
     @Provides
     fun providerIntValue(): Int = 4999
+
+    @Provides
+    @Named("phone")
+    fun obtainPhone(): String = "手机"
+
+    @Provides
+    @Named("number")
+    fun obtainNumber(): String = "数字"
 }
 
 @Component(modules = [ShenzhenModule::class, ActivityModule::class])

@@ -1,11 +1,13 @@
 package com.wynne.android.third.dagger
 
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.BaseActivity
 import kotlinx.android.synthetic.main.actiivty_dagger_layout.*
 import javax.inject.Inject
+import javax.inject.Named
 
 class DaggerActivity : BaseActivity() {
 
@@ -13,8 +15,19 @@ class DaggerActivity : BaseActivity() {
     @Inject
     var testValue: Int = 0
 
+    @JvmField
+    @Named("phone")
+    @Inject
+    var phone: String = ""
+
+    @JvmField
+    @Named("number")
+    @Inject
+    var number: String = ""
+
 
     override fun initView() {
+
         val waimai = DaggerPlatform.builder().build().waimai()
 
         /**
@@ -48,6 +61,8 @@ class DaggerActivity : BaseActivity() {
          */
         DaggerShopPlatform.builder().shenzhenModule(ShenzhenModule("小汶同学")).build().inject(this)
         btnActivity.setOnClickListener {
+            Log.d("XXW", "phone $phone  number $number")
+
             Toast.makeText(this, "注入值为 $testValue", Toast.LENGTH_LONG).show()
         }
 

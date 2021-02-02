@@ -6,6 +6,7 @@
         android:name=".DesignApplication"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".BaseDesignActivity"
             android:launchMode="singleTop"
