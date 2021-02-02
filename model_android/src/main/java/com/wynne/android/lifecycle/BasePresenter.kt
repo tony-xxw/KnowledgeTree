@@ -16,6 +16,6 @@ open class BasePresenter : IPresenter {
     }
 
     override fun onLifecycleChanged(owner: LifecycleOwner, event: Lifecycle.Event) {
-        Log.d("XXW1", "BasePresenter.onLifecycleChanged ")
+        Log.d("XXW1", "BasePresenter.onLifecycleChanged")
     }
 }

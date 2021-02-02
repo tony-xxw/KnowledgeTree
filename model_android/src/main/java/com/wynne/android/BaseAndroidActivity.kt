@@ -2,7 +2,9 @@ package com.wynne.android
 
 import android.content.Intent
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.wynne.android.third.dagger.DaggerActivity
 import com.wynne.android.lifecycle.LifeActivity
+import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
@@ -37,6 +39,9 @@ class BaseAndroidActivity : BaseActivity() {
             when (list[it].name) {
                 "四大组件,生命周期启动方式,LifeCycle库" -> {
                     startActivity(Intent(this, LifeActivity::class.java))
+                }
+                "第三方库" -> {
+                    startActivity(Intent(this, TripartiteActivity::class.java))
                 }
             }
 

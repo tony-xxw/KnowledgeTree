@@ -5,20 +5,22 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+        android:id="@+id/tlDagger1"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="Dagger"
         app:titleTextColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAndroid"
+    <Button
+        android:text="单例实现"
+        android:id="@+id/btnSingle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlDagger1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
