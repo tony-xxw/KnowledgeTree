@@ -3,6 +3,8 @@ package com.wynne.design
 import android.app.Activity
 import android.content.Intent
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.wynne.design.principle.PrincipleActivity
+import com.wynne.design.principle.PrincipleExtensionActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
@@ -27,10 +29,17 @@ class BaseDesignActivity : BaseActivity() {
     override fun getLayoutId(): Int = R.layout.activity_base_design_layout
 
     override fun initView() {
-        toolBar.title = "设计模式"
         adapter = MainAdapter(this)
         adapter.mList = list
         rvDesign.adapter = adapter
+
+        adapter.listener = {
+            when (list[it].name) {
+                "面向对象六大原则" -> {
+                    startActivity(Intent(this, PrincipleActivity::class.java))
+                }
+            }
+        }
     }
 
 

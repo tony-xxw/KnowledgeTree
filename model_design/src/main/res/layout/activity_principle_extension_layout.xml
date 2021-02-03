@@ -9,13 +9,12 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:title="设计模式"
         android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="对扩展开放,修改关闭"
         app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDesign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
