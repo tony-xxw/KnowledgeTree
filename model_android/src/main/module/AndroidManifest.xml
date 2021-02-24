@@ -20,6 +20,7 @@
             android:process="com.xxw" />
         <activity android:name=".lifecycle.LifeActivity" />
         <activity android:name="com.wynne.android.third.dagger.DaggerActivity" />
+        <activity android:name="com.wynne.android.third.retrofit.RetrofitActivity" />
         <activity android:name="com.wynne.android.third.TripartiteActivity" />
         <activity android:name="com.wynne.android.third.dagger.DaggerSecondActivity" />
 
