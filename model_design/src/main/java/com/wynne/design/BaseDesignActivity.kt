@@ -2,6 +2,7 @@ package com.wynne.design
 
 import android.app.Activity
 import android.content.Intent
+import androidx.core.content.ContextCompat.startActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.design.principle.PrincipleActivity
 import com.wynne.design.principle.PrincipleExtensionActivity
@@ -36,14 +37,14 @@ class BaseDesignActivity : BaseActivity() {
         adapter.listener = {
             when (list[it].name) {
                 "面向对象六大原则" -> {
-                    startActivity(Intent(this, PrincipleActivity::class.java))
+                    startActivity1<PrincipleActivity>()
                 }
             }
         }
     }
 
 
-    private inline fun <reified T : BaseActivity> Activity.startActivity() {
+    private inline fun <reified T : BaseActivity> Activity.startActivity1() {
         startActivity(Intent(this, T::class.java))
     }
 }

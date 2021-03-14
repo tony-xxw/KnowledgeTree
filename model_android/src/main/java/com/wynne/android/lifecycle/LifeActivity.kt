@@ -13,7 +13,7 @@ class LifeActivity : BaseActivity() {
         lifecycle.addObserver(presenter)
     }
 
-    override fun getLayoutId(): Int = R.layout.actiivty_life_layout
+    override val layoutId: Int = R.layout.actiivty_life_layout
 
     override fun onDestroy() {
         super.onDestroy()

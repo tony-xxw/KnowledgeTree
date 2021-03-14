@@ -1,10 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wynne.http" >
+    package="com.wynne.http">
 
-    <application android:name=".HttpApplication"
+    <application
+        android:theme="@style/AppTheme"
+        android:name=".HttpApplication"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".BaseHttpActivity"
+        <activity
+            android:name=".BaseHttpActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

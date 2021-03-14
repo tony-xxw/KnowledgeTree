@@ -1,9 +1,11 @@
 package com.wynne.android.third.dagger
 
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.wynne.android.R
+import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.base.BaseActivity
 import kotlinx.android.synthetic.main.actiivty_dagger_layout.*
 import javax.inject.Inject
@@ -24,6 +26,40 @@ class DaggerActivity : BaseActivity() {
     @Named("number")
     @Inject
     var number: String = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("XXW","onCreate: DaggerActivity")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("XXW","onStart: DaggerActivity")
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d("XXW","onResume: DaggerActivity")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("XXW","onRestart: DaggerActivity")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("XXW","onPause: DaggerActivity")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("XXW","onStop: DaggerActivity")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("XXW","onDestroy: DaggerActivity")
+    }
 
 
     override fun initView() {
@@ -68,12 +104,13 @@ class DaggerActivity : BaseActivity() {
 
 
         btnSingleton.setOnClickListener {
-            startActivity(Intent(this, DaggerSecondActivity::class.java))
+            startActivity(Intent(this, TripartiteActivity::class.java))
+//            startActivity(Intent(this, DaggerSecondActivity::class.java))
         }
 
     }
 
 
-    override fun getLayoutId(): Int = R.layout.actiivty_dagger_layout
+    override val layoutId: Int= R.layout.actiivty_dagger_layout
 
 }

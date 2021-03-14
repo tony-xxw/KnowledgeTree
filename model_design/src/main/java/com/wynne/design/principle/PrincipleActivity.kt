@@ -9,8 +9,10 @@ import kotlinx.android.synthetic.main.activity_principle_layout.*
 
 class PrincipleActivity : BaseActivity() {
     lateinit var adapter: MainAdapter
+
     private var list = mutableListOf(
-            MainData("对扩展开发,修改关闭", R.drawable.icon_apple)
+            MainData("对扩展开发,修改关闭", R.drawable.icon_apple),
+            MainData("need analyse demo", R.drawable.icon_apple)
     )
 
     override fun initView() {

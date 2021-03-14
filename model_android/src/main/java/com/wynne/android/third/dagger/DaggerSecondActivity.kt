@@ -27,5 +27,5 @@ class DaggerSecondActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.actiivty_dagger_second_layout
+    override val layoutId: Int = R.layout.actiivty_dagger_second_layout
 }

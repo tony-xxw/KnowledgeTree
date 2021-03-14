@@ -9,5 +9,5 @@ class RetrofitActivity : BaseActivity() {
 
      }
 
-    override fun getLayoutId(): Int = R.layout.actiivty_retrofit_layout
+    override val layoutId: Int= R.layout.actiivty_retrofit_layout
 }

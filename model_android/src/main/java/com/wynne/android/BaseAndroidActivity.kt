@@ -1,8 +1,13 @@
 package com.wynne.android
 
 import android.content.Intent
+import android.content.res.Configuration
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.wynne.android.third.dagger.DaggerActivity
 import com.wynne.android.lifecycle.LifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
@@ -13,6 +18,58 @@ import kotlinx.android.synthetic.main.actiivty_base_android_layout.*
 
 @Route(path = BASE_ANDROID)
 class BaseAndroidActivity : BaseActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d("XXW","onCreate: BaseAndroidActivity")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("XXW","onStart: BaseAndroidActivity")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("XXW","onResume: BaseAndroidActivity")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("XXW","onRestart: BaseAndroidActivity")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("XXW","onPause: BaseAndroidActivity")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("XXW","onStop: BaseAndroidActivity")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("XXW","onDestroy: BaseAndroidActivity")
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        Log.d("XXW","onSaveInstanceState: BaseAndroidActivity")
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.d("XXW","onRestoreInstanceState: BaseAndroidActivity")
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
+        Log.d("XXW","onConfigurationChanged: BaseAndroidActivity")
+    }
 
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
@@ -48,9 +105,21 @@ class BaseAndroidActivity : BaseActivity() {
         }
 
 
+        val decodeResource = BitmapFactory.decodeResource(resources, R.drawable.bg_advertisement)
+        Log.d("XXW", "size: ${decodeResource.allocationByteCount}")
+        val options = BitmapFactory.Options()
+        options.inPreferredConfig = Bitmap.Config.RGB_565
+        val decodeResource1 = BitmapFactory.decodeResource(resources, R.drawable.bg_advertisement, options)
+        Log.d("XXW", "size: ${decodeResource1.allocationByteCount}")
+        val options1 = BitmapFactory.Options()
+        options1.inPreferredConfig = Bitmap.Config.RGB_565
+        options1.inSampleSize = 2
+        val decodeResource2 = BitmapFactory.decodeResource(resources, R.drawable.bg_advertisement, options1)
+        Log.d("XXW", "size: ${decodeResource2.allocationByteCount}")
     }
 
-    override fun getLayoutId(): Int = R.layout.actiivty_base_android_layout
+
+    override val layoutId: Int = R.layout.actiivty_base_android_layout
 
 
 }
