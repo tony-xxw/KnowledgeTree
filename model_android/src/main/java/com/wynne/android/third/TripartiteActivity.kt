@@ -16,6 +16,7 @@ class TripartiteActivity : BaseActivity() {
     private val tripartiteList = mutableListOf(MainData("Dagger2", 0),MainData("Retrofit", 0))
     lateinit var adapter: MainAdapter
 
+<<<<<<< Updated upstream
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("XXW","onCreate: TripartiteActivity")
@@ -57,10 +58,14 @@ class TripartiteActivity : BaseActivity() {
     }
 
     override fun initView() {
+=======
+    override fun initView() {handl
+>>>>>>> Stashed changes
         adapter = MainAdapter(this)
         adapter.mList = tripartiteList
         rvTripartite.adapter = adapter
 
+ 
         adapter.listener = {
             when (tripartiteList[it].name) {
                 "Dagger2" -> {

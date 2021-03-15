@@ -19,7 +19,6 @@ class ThreadAndroidActivity : BaseActivity() {
         val TAG: String = ThreadAndroidActivity::class.java.name
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_thread_android_layout
 
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
@@ -58,6 +57,8 @@ class ThreadAndroidActivity : BaseActivity() {
             }
         }
     }
+
+    override val layoutId: Int = R.layout.activity_thread_android_layout
 
     private fun practiceHandlerThreadTest() {
 

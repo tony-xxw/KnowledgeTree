@@ -1,9 +1,6 @@
 package com.wynne.design.duty
 
-import android.util.Log
-import java.lang.RuntimeException
 import java.math.BigDecimal
-import java.util.function.BiConsumer
 
 
 data class Request(val name: String, val amount: BigDecimal)
