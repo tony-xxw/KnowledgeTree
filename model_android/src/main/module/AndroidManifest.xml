@@ -18,7 +18,7 @@
             android:name=".AllowTaskReparentingActivity"
             android:process="com.xxw" />
         <activity
-            android:name=".lifecycle.LifeActivity"
+            android:name=".lifecycle.FourComponentWithLifeActivity"
             android:launchMode="singleTask"
             />
         <activity android:name="com.wynne.android.third.dagger.DaggerActivity" />

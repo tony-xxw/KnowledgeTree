@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".dagger.DaggerActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"/>
+        <activity android:name=".BaseAdvancedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

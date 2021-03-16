@@ -12,7 +12,7 @@ class JetPackActivity : BaseActivity() {
         tlBar.title = "JetPack Demo"
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_jetpack_layout
+    override val layoutId: Int = R.layout.activity_base_advanced_jetpack_layout
 
 
     fun onNavigationClick(v: View) {

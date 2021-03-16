@@ -10,9 +10,9 @@ import kotlinx.android.synthetic.main.activity_base_advanced_layout.*
 @Route(path = BASE_HIGH)
 class BaseAdvancedActivity : BaseActivity() {
 
-    lateinit var adapter:MainAdapter
+    lateinit var adapter: MainAdapter
 
-     var list = mutableListOf(
+    var list = mutableListOf(
             MainData("Jetpack", R.drawable.icon_grape),
             MainData("RemoteViews", R.drawable.icon_apple),
             MainData("Binder、AIDL、多进程", R.drawable.icon_watermelon),
@@ -36,8 +36,7 @@ class BaseAdvancedActivity : BaseActivity() {
         rvAdvanced.adapter = adapter
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_layout
-
+    override val layoutId: Int = R.layout.activity_base_advanced_layout
 
 
 }

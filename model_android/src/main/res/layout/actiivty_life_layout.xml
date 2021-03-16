@@ -10,6 +10,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Lifecycle生命周期" />
+        app:title="四大组件,生命周期启动方式,LifeCycle库" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

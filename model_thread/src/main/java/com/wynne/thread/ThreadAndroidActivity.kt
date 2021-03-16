@@ -56,6 +56,30 @@ class ThreadAndroidActivity : BaseActivity() {
                 }
             }
         }
+
+        obtainHeight()
+    }
+
+    private fun obtainHeight() {
+
+        rvThread.post {
+            Log.d("XXW", "rv宽为1: ${rvThread.width}")
+            Log.d("XXW", "rv高为1: ${rvThread.height}")
+        }
+
+        val viewTreeObserver = rvThread.viewTreeObserver
+        viewTreeObserver.addOnGlobalLayoutListener {
+            Log.d("XXW", "rv宽为2: ${rvThread.width}")
+            Log.d("XXW", "rv高为2: ${rvThread.height}")
+        }
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            Log.d("XXW", "rv宽为3: ${rvThread.width}")
+            Log.d("XXW", "rv高为3: ${rvThread.height}")
+        }
     }
 
     override val layoutId: Int = R.layout.activity_thread_android_layout

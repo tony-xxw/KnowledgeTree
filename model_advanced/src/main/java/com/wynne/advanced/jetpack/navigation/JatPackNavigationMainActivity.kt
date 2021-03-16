@@ -15,5 +15,6 @@ class JatPackNavigationMainActivity : BaseActivity() {
         navigation_view.setupWithNavController(navController)
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_jetpack_navagation_main_layout
+    override val layoutId: Int = R.layout.activity_base_advanced_jetpack_navagation_main_layout
+
 }

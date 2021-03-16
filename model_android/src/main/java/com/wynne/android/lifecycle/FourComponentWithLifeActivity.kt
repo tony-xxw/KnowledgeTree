@@ -4,7 +4,7 @@ import android.util.Log
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.BaseActivity
 
-class LifeActivity : BaseActivity() {
+class FourComponentWithLifeActivity : BaseActivity() {
     lateinit var presenter: IPresenter
 
     override fun initView() {

@@ -25,5 +25,7 @@ class DaggerOneActivity : BaseActivity() {
         Log.d("xxw", "clothHandler地址 $clothHandler")
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_dagger1_layout
+    override val layoutId: Int = R.layout.activity_base_advanced_dagger1_layout
+
+
 }

@@ -51,6 +51,7 @@ class DaggerActivity : BaseActivity() {
         }
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_dagger_layout
+    override val layoutId: Int = R.layout.activity_base_advanced_dagger_layout
+
 
 }

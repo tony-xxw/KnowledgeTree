@@ -5,10 +5,9 @@ import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.wynne.android.lifecycle.LifeActivity
+import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
@@ -95,7 +94,7 @@ class BaseAndroidActivity : BaseActivity() {
         adapter.listener = {
             when (list[it].name) {
                 "四大组件,生命周期启动方式,LifeCycle库" -> {
-                    startActivity(Intent(this, LifeActivity::class.java))
+                    startActivity(Intent(this, FourComponentWithLifeActivity::class.java))
                 }
                 "第三方库" -> {
                     startActivity(Intent(this, TripartiteActivity::class.java))

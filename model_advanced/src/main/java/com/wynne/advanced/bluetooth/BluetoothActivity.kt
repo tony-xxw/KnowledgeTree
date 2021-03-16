@@ -83,6 +83,8 @@ class BluetoothActivity : BaseActivity() {
         Log.d("XXW", "adress : " + getBluetoothAddress())
     }
 
+    override val layoutId: Int =R.layout.activity_base_advanced_bluetooth
+
     lateinit var bleResultConfig: BleScanRuleConfig
 
     private fun initSdk() {
@@ -144,7 +146,6 @@ class BluetoothActivity : BaseActivity() {
         adapter.startDiscovery()
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_advanced_bluetooth
 
 
     object BlueToothRecvicer : BroadcastReceiver() {
