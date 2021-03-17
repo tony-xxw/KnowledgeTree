@@ -7,9 +7,10 @@ import kotlinx.android.synthetic.main.activity_base_framwork_layout.*
 
 @Route(path = BASE_SYSTEM)
 class BaseSystemActivity : BaseActivity() {
-    override fun getLayoutId(): Int = R.layout.activity_base_framwork_layout
 
     override fun initView() {
         tlBar.title = "操作系统"
     }
+
+    override val layoutId: Int = R.layout.activity_base_framwork_layout
 }

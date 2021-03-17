@@ -18,6 +18,8 @@ class AndroidFragmentActivity : BaseActivity(), ViewPager2.PageTransformer {
         val TAG = AndroidFragmentActivity.javaClass.canonicalName
     }
 
+    lateinit var text: String
+
     val adapter: ViewPageAdapter by lazy {
         ViewPageAdapter(this, arrayListOf<Fragment>(FirstFragment(), SecondFragment(), ThirdFragment()))
     }
@@ -31,7 +33,7 @@ class AndroidFragmentActivity : BaseActivity(), ViewPager2.PageTransformer {
 
         vpFragment.adapter = adapter
 
-        TabLayoutMediator(tlBar, vpFragment) { tab, position ->
+        TabLayoutMediator(tlBLayout, vpFragment) { tab, position ->
             tab.text = titles[position]
         }.attach()
     }

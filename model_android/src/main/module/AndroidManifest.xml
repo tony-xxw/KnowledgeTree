@@ -26,6 +26,7 @@
         <activity android:name="com.wynne.android.third.retrofit.RetrofitActivity" />
         <activity android:name="com.wynne.android.third.TripartiteActivity" />
         <activity android:name="com.wynne.android.third.dagger.DaggerSecondActivity" />
+        <activity android:name=".fragmengt.InlineFragmentActivity" />
 
     </application>
 </manifest>

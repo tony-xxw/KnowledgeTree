@@ -69,4 +69,9 @@ class ThirdFragment : BaseFragment() {
         super.onDestroy()
         Log.d(TAG,"onDestroy")
     }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d(FirstFragment.TAG,"onDetach")
+    }
 }
