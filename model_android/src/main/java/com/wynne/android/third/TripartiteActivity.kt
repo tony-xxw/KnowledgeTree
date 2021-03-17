@@ -13,47 +13,47 @@ import kotlinx.android.synthetic.main.actiivty_tripartite_layout.*
 import retrofit2.Retrofit
 
 class TripartiteActivity : BaseActivity() {
-    private val tripartiteList = mutableListOf(MainData("Dagger2", 0),MainData("Retrofit", 0))
+    private val tripartiteList = mutableListOf(MainData("Dagger2", 0), MainData("Retrofit", 0))
     lateinit var adapter: MainAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("XXW","onCreate: TripartiteActivity")
+        Log.d("XXW", "onCreate: TripartiteActivity")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("XXW","onStart: TripartiteActivity")
+        Log.d("XXW", "onStart: TripartiteActivity")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("XXW","onResume: TripartiteActivity")
+        Log.d("XXW", "onResume: TripartiteActivity")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("XXW","onRestart: TripartiteActivity")
+        Log.d("XXW", "onRestart: TripartiteActivity")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("XXW","onPause: TripartiteActivity")
+        Log.d("XXW", "onPause: TripartiteActivity")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("XXW","onStop: TripartiteActivity")
+        Log.d("XXW", "onStop: TripartiteActivity")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("XXW","onDestroy: TripartiteActivity")
+        Log.d("XXW", "onDestroy: TripartiteActivity")
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        Log.d("XXW","onNewIntent: TripartiteActivity")
+        Log.d("XXW", "onNewIntent: TripartiteActivity")
     }
 
 
@@ -63,13 +63,13 @@ class TripartiteActivity : BaseActivity() {
         adapter.mList = tripartiteList
         rvTripartite.adapter = adapter
 
- 
+
         adapter.listener = {
             when (tripartiteList[it].name) {
                 "Dagger2" -> {
                     startActivity(Intent(this, DaggerActivity::class.java))
                 }
-                "Retrofit"->{
+                "Retrofit" -> {
                     startActivity(Intent(this, RetrofitActivity::class.java))
                 }
             }

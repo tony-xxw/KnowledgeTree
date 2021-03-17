@@ -6,8 +6,7 @@
         android:name=".AndroidApplication"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".BaseAndroidActivity">
+        <activity android:name=".BaseAndroidActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,12 +17,14 @@
             android:name=".AllowTaskReparentingActivity"
             android:process="com.xxw" />
         <activity
+            android:name=".fragmengt.AndroidFragmentActivity"
+            android:launchMode="singleTop" />
+        <activity
             android:name=".lifecycle.FourComponentWithLifeActivity"
-            android:launchMode="singleTask"
-            />
+            android:launchMode="singleTask" />
         <activity android:name="com.wynne.android.third.dagger.DaggerActivity" />
         <activity android:name="com.wynne.android.third.retrofit.RetrofitActivity" />
-        <activity android:name="com.wynne.android.third.TripartiteActivity"/>
+        <activity android:name="com.wynne.android.third.TripartiteActivity" />
         <activity android:name="com.wynne.android.third.dagger.DaggerSecondActivity" />
 
     </application>

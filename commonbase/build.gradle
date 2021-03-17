@@ -54,6 +54,7 @@ dependencies {
     api rootProject.ext.dependencies["okhttp"]
     api rootProject.ext.dependencies["retrofit_adpater"]
     api "org.jetbrains.kotlin:kotlin-reflect:1.3.71"
+    api "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]

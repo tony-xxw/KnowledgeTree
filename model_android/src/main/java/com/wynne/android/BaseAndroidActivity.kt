@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.wynne.android.fragmengt.AndroidFragmentActivity
 import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
@@ -20,59 +21,60 @@ class BaseAndroidActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("XXW","onCreate: BaseAndroidActivity")
+        Log.d("XXW", "onCreate: BaseAndroidActivity")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("XXW","onStart: BaseAndroidActivity")
+        Log.d("XXW", "onStart: BaseAndroidActivity")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("XXW","onResume: BaseAndroidActivity")
+        Log.d("XXW", "onResume: BaseAndroidActivity")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("XXW","onRestart: BaseAndroidActivity")
+        Log.d("XXW", "onRestart: BaseAndroidActivity")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("XXW","onPause: BaseAndroidActivity")
+        Log.d("XXW", "onPause: BaseAndroidActivity")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("XXW","onStop: BaseAndroidActivity")
+        Log.d("XXW", "onStop: BaseAndroidActivity")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("XXW","onDestroy: BaseAndroidActivity")
+        Log.d("XXW", "onDestroy: BaseAndroidActivity")
     }
 
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("XXW","onSaveInstanceState: BaseAndroidActivity")
+        Log.d("XXW", "onSaveInstanceState: BaseAndroidActivity")
 
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.d("XXW","onRestoreInstanceState: BaseAndroidActivity")
+        Log.d("XXW", "onRestoreInstanceState: BaseAndroidActivity")
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        Log.d("XXW","onConfigurationChanged: BaseAndroidActivity")
+        Log.d("XXW", "onConfigurationChanged: BaseAndroidActivity")
     }
 
     lateinit var adapter: MainAdapter
     var list = mutableListOf(
-            MainData("四大组件,生命周期启动方式,LifeCycle库", R.drawable.icon_grape),
+            MainData("四大组件,生命周期启动方式", R.drawable.icon_grape),
+            MainData("Fragment", R.drawable.icon_maize),
             MainData("自定义View", R.drawable.icon_apple),
             MainData("Handler的使用和消息队列源码", R.drawable.icon_watermelon),
             MainData("动画和手势", R.drawable.icon_peach),
@@ -80,9 +82,9 @@ class BaseAndroidActivity : BaseActivity() {
             MainData("文件和数据库", R.drawable.icon_plum),
             MainData("Resources", R.drawable.icon_tomato),
             MainData("第三方库", R.drawable.icon_lemon),
-            MainData("Architecture components", R.drawable.icon_lemon),
-            MainData("性能优化", R.drawable.icon_lemon),
-            MainData("单元测试", R.drawable.icon_lemon))
+            MainData("Architecture components", R.drawable.icon_pepper),
+            MainData("性能优化", R.drawable.icon_strawberry),
+            MainData("单元测试", R.drawable.icon_orange))
 
     override fun initView() {
         toolBar.title = "Android基础"
@@ -93,11 +95,14 @@ class BaseAndroidActivity : BaseActivity() {
 
         adapter.listener = {
             when (list[it].name) {
-                "四大组件,生命周期启动方式,LifeCycle库" -> {
+                "四大组件,生命周期启动方式" -> {
                     startActivity(Intent(this, FourComponentWithLifeActivity::class.java))
                 }
                 "第三方库" -> {
                     startActivity(Intent(this, TripartiteActivity::class.java))
+                }
+                "Fragment" -> {
+                    startActivity(Intent(this, AndroidFragmentActivity::class.java))
                 }
             }
 
