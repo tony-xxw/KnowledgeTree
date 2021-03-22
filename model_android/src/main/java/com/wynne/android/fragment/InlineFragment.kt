@@ -1,7 +1,6 @@
-package com.wynne.android.fragmengt
+package com.wynne.android.fragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,35 +8,29 @@ import android.view.View
 import android.view.ViewGroup
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.view.BaseFragment
-import kotlinx.android.synthetic.main.fragment_first_layout.*
+import kotlinx.android.synthetic.main.fragment_inline_layout.*
 
-
-class FirstFragment : BaseFragment() {
+class InlineFragment : BaseFragment() {
 
     companion object {
-        val TAG = FirstFragment.javaClass.canonicalName
+        val TAG = InlineFragment.javaClass.canonicalName
+        fun newInstance(text: String): InlineFragment {
+            val fragment = InlineFragment()
+            val bundle = Bundle()
+            bundle.putString("Wynne", text)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-    }
-    var text = "smaple"
-
-    lateinit var activity: AndroidFragmentActivity
-    override fun getLayoutId(): Int = R.layout.fragment_first_layout
+    override fun getLayoutId(): Int = R.layout.fragment_inline_layout
 
     override fun initView() {
-        tvFirst.setOnClickListener {
-            startActivity(Intent(requireActivity(), InlineFragmentActivity::class.java))
-        }
-
-        activity.text = text
+        tvArgument.text = arguments?.getString("Wynne")
     }
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        activity = (context) as AndroidFragmentActivity
         Log.d(TAG, "onAttach")
     }
 

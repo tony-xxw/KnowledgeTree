@@ -1,13 +1,15 @@
 package com.wynne.android
 
+import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.wynne.android.fragmengt.AndroidFragmentActivity
+import com.wynne.android.fragment.AndroidFragmentActivity
 import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
@@ -18,6 +20,8 @@ import kotlinx.android.synthetic.main.actiivty_base_android_layout.*
 
 @Route(path = BASE_ANDROID)
 class BaseAndroidActivity : BaseActivity() {
+
+    var str: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,7 +112,6 @@ class BaseAndroidActivity : BaseActivity() {
 
         }
 
-
         val decodeResource = BitmapFactory.decodeResource(resources, R.drawable.bg_advertisement)
         Log.d("XXW", "size: ${decodeResource.allocationByteCount}")
         val options = BitmapFactory.Options()
@@ -120,10 +123,16 @@ class BaseAndroidActivity : BaseActivity() {
         options1.inSampleSize = 2
         val decodeResource2 = BitmapFactory.decodeResource(resources, R.drawable.bg_advertisement, options1)
         Log.d("XXW", "size: ${decodeResource2.allocationByteCount}")
+
+
     }
 
 
     override val layoutId: Int = R.layout.actiivty_base_android_layout
 
 
+    fun Activity.initView() {
+
+        Log.d("XXW","111111")
+    }
 }

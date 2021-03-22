@@ -1,11 +1,8 @@
-package com.wynne.android.fragmengt
+package com.wynne.android.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator

@@ -1,4 +1,4 @@
-package com.wynne.android.fragmengt
+package com.wynne.android.fragment
 
 import android.view.View
 import androidx.fragment.app.FragmentTransaction

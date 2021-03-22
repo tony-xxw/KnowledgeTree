@@ -1,4 +1,4 @@
-package com.wynne.android.fragmengt
+package com.wynne.android.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -8,29 +8,23 @@ import android.view.View
 import android.view.ViewGroup
 import com.wynne.android.R
 import com.wynne.knowledge.base.base.view.BaseFragment
-import kotlinx.android.synthetic.main.fragment_inline_layout.*
+import kotlinx.android.synthetic.main.fragment_second_layout.*
 
-class InlineFragment : BaseFragment() {
-
+class SecondFragment : BaseFragment() {
     companion object {
-        val TAG = InlineFragment.javaClass.canonicalName
-        fun newInstance(text: String): InlineFragment {
-            val fragment = InlineFragment()
-            val bundle = Bundle()
-            bundle.putString("Wynne", text)
-            fragment.arguments = bundle
-            return fragment
-        }
+        val TAG = SecondFragment.javaClass.canonicalName
     }
 
-    override fun getLayoutId(): Int = R.layout.fragment_inline_layout
-
+    override fun getLayoutId(): Int = R.layout.fragment_second_layout
+    lateinit var activity: AndroidFragmentActivity
     override fun initView() {
-        tvArgument.text = arguments?.getString("Wynne")
+        tvSecond.text = activity.text
     }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        activity = context as AndroidFragmentActivity
         Log.d(TAG, "onAttach")
     }
 
@@ -81,7 +75,6 @@ class InlineFragment : BaseFragment() {
 
     override fun onDetach() {
         super.onDetach()
-        Log.d(TAG, "onDetach")
+        Log.d(FirstFragment.TAG, "onDetach")
     }
-
 }
