@@ -1,6 +1,7 @@
 package com.wynne.thread
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Process
@@ -14,6 +15,8 @@ import kotlinx.android.synthetic.main.activity_thread_android_layout.*
 
 @Route(path = BASE_THREAD)
 class ThreadAndroidActivity : BaseActivity() {
+
+    lateinit var task: WynneAckTask
 
     companion object {
         val TAG: String = ThreadAndroidActivity::class.java.name
@@ -98,8 +101,9 @@ class ThreadAndroidActivity : BaseActivity() {
     }
 
     private fun practiceAsyncTaskTest() {
-
-    }
+        task = WynneAckTask()
+        task.execute("abc")
+     }
 
     private fun practiceIntentServiceTest() {
 
@@ -122,4 +126,48 @@ class ThreadAndroidActivity : BaseActivity() {
 
     }
 
+
+    class WynneAckTask : AsyncTask<String, Int, Boolean>() {
+
+        override fun onPreExecute() {
+
+            super.onPreExecute()
+            Log.d(TAG, "onPreExecute :${Thread.currentThread().name}")
+        }
+
+        override fun onPostExecute(result: Boolean?) {
+            super.onPostExecute(result)
+            Log.d(TAG, "onPostExecute :${Thread.currentThread().name}")
+        }
+
+        override fun onProgressUpdate(vararg values: Int?) {
+            super.onProgressUpdate(*values)
+            Log.d(TAG, "onProgressUpdate :${Thread.currentThread().name}  value $values")
+        }
+
+        override fun onCancelled() {
+            super.onCancelled()
+            Log.d(TAG, "onCancelled")
+        }
+
+        override fun onCancelled(result: Boolean?) {
+            super.onCancelled(result)
+            Log.d(TAG, "onCancelled :${result}")
+        }
+
+        override fun doInBackground(vararg params: String?): Boolean {
+            publishProgress(111)
+            Log.d(TAG, "doInBackground :${Thread.currentThread().name}")
+            return true
+        }
+
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if(task!=null){
+            task.cancel(true)
+        }
+    }
 }
