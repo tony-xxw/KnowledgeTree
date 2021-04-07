@@ -18,7 +18,7 @@ class BaseOtherActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_other_layout
+    override val layoutId: Int = R.layout.activity_base_other_layout
 
     fun onClick(v: View) {
         when (v.id) {

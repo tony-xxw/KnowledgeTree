@@ -27,7 +27,6 @@ class BaseDesignActivity : BaseActivity() {
             MainData("桥接模式", R.drawable.icon_lemon)
     )
 
-    override fun getLayoutId(): Int = R.layout.activity_base_design_layout
 
     override fun initView() {
         adapter = MainAdapter(this)
@@ -42,6 +41,8 @@ class BaseDesignActivity : BaseActivity() {
             }
         }
     }
+
+    override val layoutId: Int = R.layout.activity_base_design_layout
 
 
     private inline fun <reified T : BaseActivity> Activity.startActivity1() {

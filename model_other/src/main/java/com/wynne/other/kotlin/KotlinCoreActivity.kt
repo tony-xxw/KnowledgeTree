@@ -19,7 +19,7 @@ class KotlinCoreActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_kotlin_core_layout
+    override val layoutId: Int = R.layout.activity_kotlin_core_layout
 }
 
 

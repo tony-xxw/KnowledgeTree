@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".dagger.DaggerActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
         <activity android:name=".BaseAdvancedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,12 +36,17 @@
         <activity
             android:name=".bluetooth.BluetoothActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".arouter.ArouterActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".progress.BinderActivity"
+            android:launchMode="singleTop" />
     </application>
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"

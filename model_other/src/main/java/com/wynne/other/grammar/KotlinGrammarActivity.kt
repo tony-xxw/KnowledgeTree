@@ -98,7 +98,7 @@ class KotlinGrammarActivity : BaseActivity(), KotlinInterface {
         }
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_grammar_other_layout
+    override val layoutId: Int  = R.layout.activity_grammar_other_layout
 
     /**
      * 字符串模板

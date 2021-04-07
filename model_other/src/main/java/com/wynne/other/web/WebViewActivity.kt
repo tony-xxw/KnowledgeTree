@@ -15,7 +15,7 @@ class WebViewActivity : BaseActivity() {
         webView.webChromeClient = WebChromeClients()
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_webview_layout
+    override val layoutId: Int = R.layout.activity_webview_layout
 
     class WebChromeClients : WebChromeClient() {
         override fun onProgressChanged(view: WebView?, newProgress: Int) {

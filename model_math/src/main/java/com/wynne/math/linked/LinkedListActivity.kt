@@ -59,9 +59,8 @@ class LinkedListActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int {
-        return R.layout.activity_base_math_linked_layout
-    }
+    override val layoutId: Int = R.layout.activity_base_math_linked_layout
+
 
     fun onClick(v: View) {
         when (v.id) {

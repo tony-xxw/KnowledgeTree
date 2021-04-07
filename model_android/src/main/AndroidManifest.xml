@@ -12,5 +12,6 @@
         <activity android:name="com.wynne.android.third.dagger.DaggerActivity"/>
         <activity android:name="com.wynne.android.third.TripartiteActivity"/>
         <activity android:name=".lifecycle.FourComponentWithLifeActivity"/>
+        <activity android:name=".handler.HandlerActivity"/>
     </application>
 </manifest>

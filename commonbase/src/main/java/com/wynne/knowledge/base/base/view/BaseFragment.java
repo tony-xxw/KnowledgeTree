@@ -1,6 +1,7 @@
 package com.wynne.knowledge.base.base.view;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +17,44 @@ import androidx.fragment.app.Fragment;
 public abstract class BaseFragment extends Fragment {
     protected View mContentView;
 
+    boolean isViewInitiated = false;
+    boolean isDataLoaded = false;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContentView = inflater.inflate(getLayoutId(), container, false);
         return mContentView;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view,  Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        isViewInitiated = true;
+//        prepareRequestData();
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Log.d("XXW","setUserVisibleHint");
+        prepareRequestData();
+    }
+
+    private boolean prepareRequestData() {
+        return prepareRequestData(false);
+    }
+
+    public boolean prepareRequestData(boolean forceUpdate){
+        Log.d("XXW","prepareRequestData: " + getUserVisibleHint());
+        if (getUserVisibleHint() && isViewInitiated && (!isDataLoaded || forceUpdate)){
+            isDataLoaded =true;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
 

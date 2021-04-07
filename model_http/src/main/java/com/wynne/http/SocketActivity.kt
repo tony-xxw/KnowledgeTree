@@ -44,8 +44,7 @@ class SocketActivity : BaseActivity() {
 
     }
 
-
-    override fun getLayoutId(): Int = R.layout.activity_socket_layout
+    override val layoutId: Int = R.layout.activity_socket_layout
 
     fun onClick(v: View) {
         if (v.id == R.id.btn_socket_receive) {

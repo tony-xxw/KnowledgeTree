@@ -1,10 +1,16 @@
 package com.wynne.advanced
 
+import android.util.Log
+import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.facade.callback.NavigationCallback
+import com.alibaba.android.arouter.launcher.ARouter
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.constant.ARouterPath
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_HIGH
+import com.wynne.knowledge.base.constant.ARouterPath.BASE_HIGH_AROUTER
 import kotlinx.android.synthetic.main.activity_base_advanced_layout.*
 
 @Route(path = BASE_HIGH)
@@ -34,6 +40,17 @@ class BaseAdvancedActivity : BaseActivity() {
         adapter.mList = list
 
         rvAdvanced.adapter = adapter
+
+        adapter.listener = {
+            when (list[it].name) {
+                "组件化" -> {
+                    ARouter.getInstance().build(BASE_HIGH_AROUTER).navigation(this)
+                }
+            }
+        }
+        Thread {
+            toolBar.title ="111"
+        }.start()
     }
 
     override val layoutId: Int = R.layout.activity_base_advanced_layout

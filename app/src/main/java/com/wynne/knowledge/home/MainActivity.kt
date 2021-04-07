@@ -71,10 +71,7 @@ class MainActivity : BaseActivity() {
 
     }
 
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_main
-    }
+    override val layoutId: Int = R.layout.activity_main
 
 
 }

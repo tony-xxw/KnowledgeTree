@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_base_math_layout.*
 
 @Route(path = BASE_MATH)
 class BaseMathActivity : BaseActivity() {
-    override fun getLayoutId(): Int = R.layout.activity_base_math_layout
+    override val layoutId: Int = R.layout.activity_base_math_layout
 
     override fun initView() {
         tlBar.title = "数据结构与算法"

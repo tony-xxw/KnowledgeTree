@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.fragment.AndroidFragmentActivity
+import com.wynne.android.handler.HandlerActivity
 import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
@@ -108,6 +109,9 @@ class BaseAndroidActivity : BaseActivity() {
                 "Fragment" -> {
                     startActivity(Intent(this, AndroidFragmentActivity::class.java))
                 }
+                "Handler的使用和消息队列源码" -> {
+                    startActivity(Intent(this, HandlerActivity::class.java))
+                }
             }
 
         }
@@ -133,6 +137,6 @@ class BaseAndroidActivity : BaseActivity() {
 
     fun Activity.initView() {
 
-        Log.d("XXW","111111")
+        Log.d("XXW", "111111")
     }
 }

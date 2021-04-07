@@ -4,21 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tlArouter"
+        android:id="@+id/tlProgress"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Arouter" />
-
-    <FrameLayout
-        android:id="@+id/flContent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlArouter"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        app:title="IPC机制" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

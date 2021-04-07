@@ -12,10 +12,11 @@ import com.wynne.knowledge.base.constant.ARouterPath
 
 @Route(path = ARouterPath.BASE_HTTP)
 class BaseHttpActivity : BaseActivity() {
-    override fun getLayoutId(): Int = R.layout.activity_base_http_layout
     override fun initView() {
 
     }
+
+    override val layoutId: Int = R.layout.activity_base_http_layout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,4 +1,9 @@
 package com.wynne.knowledge.base.base
 
-interface ActivityProvider {
+import android.app.Activity
+import com.alibaba.android.arouter.facade.template.IProvider
+
+interface ActivityProvider : IProvider {
+
+    fun fetchActivity(): Activity
 }

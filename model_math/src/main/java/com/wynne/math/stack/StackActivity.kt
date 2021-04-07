@@ -8,5 +8,5 @@ class StackActivity:BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_base_math_stack_layout
+    override val layoutId: Int =R.layout.activity_base_math_stack_layout
 }

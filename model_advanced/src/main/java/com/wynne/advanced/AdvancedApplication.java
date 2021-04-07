@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.android.material.appbar.AppBarLayout;
 import com.wynne.advanced.dagger.base.BaseComponent;
 import com.wynne.advanced.dagger.base.DaggerBaseComponent;
@@ -31,6 +32,13 @@ public class AdvancedApplication extends BaseApplication {
         advancedApplication = this;
 
         baseComponent = DaggerBaseComponent.builder().build();
+
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+
+        ARouter.init(this);
     }
 
     public static AdvancedApplication getInstance() {

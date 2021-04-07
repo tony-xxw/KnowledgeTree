@@ -11,5 +11,5 @@ class OtherInputEditActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_edit_input_other_layout
+    override val layoutId: Int = R.layout.activity_edit_input_other_layout
 }

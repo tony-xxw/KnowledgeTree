@@ -31,6 +31,8 @@ class PrincipleActivity : BaseActivity() {
         controlReversal()
     }
 
+    override val layoutId: Int =R.layout.activity_principle_layout
+
     private fun controlReversal() {
         JunitApplication.register(IOCSample())
         JunitApplication.list.forEach {
@@ -39,5 +41,4 @@ class PrincipleActivity : BaseActivity() {
     }
 
 
-    override fun getLayoutId(): Int = R.layout.activity_principle_layout
 }

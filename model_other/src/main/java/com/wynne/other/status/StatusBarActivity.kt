@@ -16,7 +16,7 @@ class StatusBarActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_status_bar_other_layout
+    override val layoutId: Int = R.layout.activity_status_bar_other_layout
 
 
     fun onClick(view: View) {

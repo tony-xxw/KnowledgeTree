@@ -4,10 +4,8 @@ import com.wynne.design.R
 import com.wynne.knowledge.base.base.BaseActivity
 
 class PrincipleExtensionActivity : BaseActivity() {
-    override fun initView() {1
-
-
+    override fun initView() {
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_principle_extension_layout
+    override val layoutId: Int = R.layout.activity_principle_extension_layout
 }

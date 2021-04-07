@@ -20,7 +20,7 @@ class CoroutineActivity : BaseActivity() {
 
     }
 
-    override fun getLayoutId(): Int = R.layout.activity_coroutine_layout
+    override val layoutId: Int = R.layout.activity_coroutine_layout
 
 
 }
