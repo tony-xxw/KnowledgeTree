@@ -1,11 +1,9 @@
 package com.wynne.thread
 
 import android.content.Intent
-import android.os.AsyncTask
-import android.os.Handler
-import android.os.HandlerThread
-import android.os.Process
+import android.os.*
 import android.util.Log
+import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
@@ -60,6 +58,12 @@ class ThreadAndroidActivity : BaseActivity() {
             }
         }
 
+
+        Thread {
+            Looper.prepare()
+            Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
+            Looper.loop()
+        }.start()
         obtainHeight()
     }
 
@@ -106,7 +110,9 @@ class ThreadAndroidActivity : BaseActivity() {
      }
 
     private fun practiceIntentServiceTest() {
-
+        val intent = Intent(this,IntentServiceImp::class.java)
+        intent.putExtra("key","Wynne")
+        startService(intent)
 
     }
 

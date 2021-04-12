@@ -27,40 +27,6 @@ class DaggerActivity : BaseActivity() {
     @Inject
     var number: String = ""
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("XXW","onCreate: DaggerActivity")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("XXW","onStart: DaggerActivity")
-    }
-    override fun onResume() {
-        super.onResume()
-        Log.d("XXW","onResume: DaggerActivity")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("XXW","onRestart: DaggerActivity")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("XXW","onPause: DaggerActivity")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("XXW","onStop: DaggerActivity")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("XXW","onDestroy: DaggerActivity")
-    }
-
 
     override fun initView() {
 

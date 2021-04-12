@@ -1,0 +1,2 @@
+-tracepackage com/wynne/knowledge/tree
+-beatclass cn/cxzheng/tracemanui/TraceMan

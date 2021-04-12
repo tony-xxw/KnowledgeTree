@@ -7,7 +7,9 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.fragment.AndroidFragmentActivity
 import com.wynne.android.handler.HandlerActivity
@@ -96,6 +98,7 @@ class BaseAndroidActivity : BaseActivity() {
         adapter = MainAdapter(this)
         adapter.mList = list
 
+        rvAndroid.layoutManager = LinearLayoutManager(this)
         rvAndroid.adapter = adapter
 
         adapter.listener = {

@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".IntentServiceImp" />
         <activity
             android:name=".ExecutorsActivity"
             android:theme="@style/AppTheme" />

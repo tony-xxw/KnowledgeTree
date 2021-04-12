@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wynne.android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AndroidApplication"
         android:theme="@style/AppTheme"
@@ -29,6 +31,7 @@
         <activity android:name="com.wynne.android.third.TripartiteActivity" />
         <activity android:name="com.wynne.android.third.dagger.DaggerSecondActivity" />
         <activity android:name=".fragment.InlineFragmentActivity" />
-        <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".third.rxjava.RxJavaActivity" />
     </application>
 </manifest>
