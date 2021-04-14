@@ -6,6 +6,7 @@ import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -91,7 +92,8 @@ class BaseAndroidActivity : BaseActivity() {
             MainData("第三方库", R.drawable.icon_lemon),
             MainData("Architecture components", R.drawable.icon_pepper),
             MainData("性能优化", R.drawable.icon_strawberry),
-            MainData("单元测试", R.drawable.icon_orange))
+            MainData("单元测试", R.drawable.icon_orange),
+            MainData("ANR", R.drawable.icon_orange))
 
     override fun initView() {
         toolBar.title = "Android基础"
@@ -115,6 +117,10 @@ class BaseAndroidActivity : BaseActivity() {
                 "Handler的使用和消息队列源码" -> {
                     startActivity(Intent(this, HandlerActivity::class.java))
                 }
+                "ANR"->{
+                    startActivity(Intent(this, HandlerActivity::class.java))
+                }
+
             }
 
         }
@@ -132,6 +138,37 @@ class BaseAndroidActivity : BaseActivity() {
         Log.d("XXW", "size: ${decodeResource2.allocationByteCount}")
 
 
+        test()
+        val list1 = mutableListOf<String>()
+        val list2 = mutableListOf<String>()
+
+        list2 += list1
+        Log.d("XXW","list2 ${list2.toString()}")
+    }
+
+    private fun test() {
+        val parentThread = ParentThread()
+        Log.d("XXW1", parentThread.name)
+        parentThread.start()
+
+        parentThread.join()
+
+        ChildThread(parentThread.threadLocal).start()
+    }
+
+    open class ParentThread : Thread() {
+        var threadLocal: ThreadLocal<Thread>? = null
+        override fun run() {
+            threadLocal = ThreadLocal<Thread>()
+            threadLocal?.set(this)
+        }
+    }
+
+    class ChildThread(var parentThread: ThreadLocal<Thread>?) : ParentThread() {
+        override fun run() {
+
+            Log.d("XXW2", parentThread?.get().toString())
+        }
     }
 
 

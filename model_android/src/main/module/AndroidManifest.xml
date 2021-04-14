@@ -33,5 +33,6 @@
         <activity android:name=".fragment.InlineFragmentActivity" />
         <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".third.rxjava.RxJavaActivity" />
+        <activity android:name=".anr.AnrActivity" />
     </application>
 </manifest>
