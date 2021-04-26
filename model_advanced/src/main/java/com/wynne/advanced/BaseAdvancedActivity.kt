@@ -1,10 +1,12 @@
 package com.wynne.advanced
 
+import android.content.Intent
 import android.util.Log
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.callback.NavigationCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.wynne.advanced.hot.HotRepairActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
@@ -46,10 +48,13 @@ class BaseAdvancedActivity : BaseActivity() {
                 "组件化" -> {
                     ARouter.getInstance().build(BASE_HIGH_AROUTER).navigation(this)
                 }
+                "插件化和热修复" -> {
+                    startActivity(Intent(this, HotRepairActivity::class.java))
+                }
             }
         }
         Thread {
-            toolBar.title ="111"
+            toolBar.title = "111"
         }.start()
     }
 

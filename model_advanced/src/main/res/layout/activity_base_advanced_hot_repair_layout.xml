@@ -4,30 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="热修复"
         app:titleTextColor="@color/white" />
 
-    <com.zhpan.bannerview.BannerViewPager
-        android:id="@+id/bannerView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_margin="10dp"
+
+    <Button
+        android:id="@+id/btnBug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试bug"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAndroid"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/white"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
-
-
+    <Button
+        android:id="@+id/btnFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="修复Bug"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBug" />
 </androidx.constraintlayout.widget.ConstraintLayout>

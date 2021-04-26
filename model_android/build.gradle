@@ -57,6 +57,7 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     implementation rootProject.ext.dependencies["material"]
     api rootProject.ext.dependencies["arouter_api"]
+    api rootProject.ext.dependencies["banner1"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
     api 'com.google.dagger:dagger:2.30.1'
     kapt 'com.google.dagger:dagger-compiler:2.30.1'

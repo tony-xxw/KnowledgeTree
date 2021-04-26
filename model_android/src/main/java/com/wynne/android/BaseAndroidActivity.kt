@@ -8,8 +8,11 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.fragment.AndroidFragmentActivity
@@ -20,7 +23,14 @@ import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_ANDROID
+import com.zhpan.bannerview.BannerViewPager
+import com.zhpan.bannerview.adapter.OnPageChangeListenerAdapter
+import com.zhpan.bannerview.constants.IndicatorGravity
+import com.zhpan.bannerview.constants.IndicatorSlideMode
+import com.zhpan.bannerview.holder.ViewHolder
 import kotlinx.android.synthetic.main.actiivty_base_android_layout.*
+import java.util.*
+import java.util.stream.Collectors.toList
 
 @Route(path = BASE_ANDROID)
 class BaseAndroidActivity : BaseActivity() {
@@ -67,6 +77,26 @@ class BaseAndroidActivity : BaseActivity() {
         super.onSaveInstanceState(outState)
         Log.d("XXW", "onSaveInstanceState: BaseAndroidActivity")
 
+        val listOf = listOf(R.drawable.bg_advertisement, R.drawable.sapmle2)
+
+        mViewPager = findViewById(R.id.bannerView)
+        mViewPager.setCanLoop(true)
+                .setAutoPlay(true)
+                .setIndicatorMargin(0, 0, 0, getResources().getDimensionPixelOffset(R.dimen.design_fab_size_mini))
+                .setIndicatorGravity(IndicatorGravity.CENTER)
+                .setIndicatorColor(ContextCompat.getColor(this, R.color.colorPrimary),
+                        ContextCompat.getColor(this, R.color.colorAccent))
+                .setInterval(2000)
+                .setScrollDuration(1000)
+                .setHolderCreator { AnnounceViewHolder() }
+                .setOnPageChangeListener(
+                        object : OnPageChangeListenerAdapter() {
+                            override fun onPageSelected(position: Int) {
+                            }
+                        }
+                )
+                .create(listOf)
+
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
@@ -94,6 +124,9 @@ class BaseAndroidActivity : BaseActivity() {
             MainData("性能优化", R.drawable.icon_strawberry),
             MainData("单元测试", R.drawable.icon_orange),
             MainData("ANR", R.drawable.icon_orange))
+
+
+    private lateinit var mViewPager: BannerViewPager<Int, AnnounceViewHolder>
 
     override fun initView() {
         toolBar.title = "Android基础"
@@ -179,4 +212,14 @@ class BaseAndroidActivity : BaseActivity() {
 
         Log.d("XXW", "111111")
     }
+}
+
+public class AnnounceViewHolder : ViewHolder<Int> {
+    override fun getLayoutId(): Int = R.layout.item_banner
+
+    override fun onBind(itemView: View, data: Int, position: Int, size: Int) {
+        val imageView = itemView.findViewById<View>(R.id.ivBanner) as ImageView
+        imageView.setBackgroundResource(data)
+    }
+
 }

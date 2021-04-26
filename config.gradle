@@ -84,6 +84,7 @@ ext {
 
             //banner
             "banner"                : "com.bigkoo:ConvenientBanner:${versions["bannerVersion"]}",
+            "banner1"               : "com.zhpan.library:bannerview:2.6.4",
 
             //图片加载
 //                    "picasso"             : "com.squareup.picasso:picasso:${versions["picassoVersion"]}",
