@@ -1,6 +1,7 @@
 package com.wynne.advanced.hot
 
 import android.content.Context
+import android.util.Log
 import dalvik.system.BaseDexClassLoader
 import dalvik.system.DexClassLoader
 import dalvik.system.PathClassLoader
@@ -28,7 +29,7 @@ object FixDexUtils {
 
     fun loadFixedDex(context: Context?, pathFilesDir: File?) {
         context?.let {
-            var fileDir = pathFilesDir ?: File(it.filesDir, DEX_DIR)
+            val fileDir = pathFilesDir ?: File(it.filesDir, DEX_DIR)
             val listFiles = fileDir.listFiles()
             listFiles.forEach { file ->
                 if (file.name.startsWith("classes")
@@ -36,6 +37,7 @@ object FixDexUtils {
                         || file.name.endsWith(APK_SUFFIX)
                         || file.name.endsWith(JAR_SUFFIX)
                         || file.name.endsWith(ZIP_SUFFIX)) {
+                    Log.d("XXW", "111111111")
                     loadedDex.add(file)
                 }
             }
@@ -52,7 +54,7 @@ object FixDexUtils {
 
         try {
             val pathLoader = appContext.classLoader as PathClassLoader
-            val action: (File) -> Unit = { dex ->
+            loadedDex.forEach { dex ->
                 val dexClassLoader = DexClassLoader(dex.absolutePath, fopt.absolutePath, null, pathLoader)
                 val dexPathList = getPathList(dexClassLoader)
                 val pathPathList = getPathList(pathLoader)
@@ -63,7 +65,6 @@ object FixDexUtils {
                 val pathList = getPathList(pathLoader)
                 setField(pathList, pathList.javaClass, "dexElements", dexElements)
             }
-            loadedDex.forEach(action)
         } catch (e: Exception) {
             e.printStackTrace()
         }

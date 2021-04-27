@@ -53,9 +53,6 @@ class BaseAdvancedActivity : BaseActivity() {
                 }
             }
         }
-        Thread {
-            toolBar.title = "111"
-        }.start()
     }
 
     override val layoutId: Int = R.layout.activity_base_advanced_layout

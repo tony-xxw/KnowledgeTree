@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wynne.advanced">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".AdvancedApplication"
         android:allowBackup="true"
@@ -39,7 +42,7 @@
         <activity
             android:name=".arouter.ArouterActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".hot.HotRepairActivity"/>
+        <activity android:name=".hot.HotRepairActivity" />
         <activity
             android:name=".progress.BinderActivity"
             android:launchMode="singleTop" />
