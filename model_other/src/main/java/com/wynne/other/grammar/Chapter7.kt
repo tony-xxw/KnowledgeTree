@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 
@@ -92,37 +93,43 @@ fun chapterSeven1() {
 class Kots {
     val stu: Stu? = Stu(name = "xxw", age = 18, sex = "m", score = 100)
     var age = 10
+
     fun dealStu() {
-//        val result = stu?.run {
-//            age + this.age
-//            println("this age ${age}")
-//            println("stu age ${this.age}")
-//            this
-//        }
-//        println("Kot $result")
-//        val result = stu?.let {
-//            age + this.age
-//            println("this age ${age}")
-//            println("stu age ${this.age}")
-//            "this"
-//        }
-//        println("Kot $result")
 
-//        val result = stu?.also { t ->
-//            this.age += t.age
-//            println("this age ${this.age}")
-//            println("stu age ${t.age}")
-//            "1"
-//        }
-//        println("Kot $result")
+        val run = stu?.run {
+            age + this.age
+            println("this age ${age}")
+            println("stu age ${this.age}")
+            "1"
+        }
+        println("Kot $run")
+        val let = stu?.let {
+            age + this.age
+            println("this age ${age}")
+            println("stu age ${this.age}")
+            "this"
+        }
+        println("Kot $let")
 
-        val result = stu?.run {
+        val also = stu?.also { t ->
+            this.age += t.age
+            println("this age ${this.age}")
+            println("stu age ${t.age}")
+            "1"
+        }
+        println("Kot $also")
+
+        val apply = stu?.apply {
             this@Kots.age += age
             println("this age ${this.age}")
             "1"
         }
-        println("Kot $result")
+        println("Kot $apply")
 
+
+        with(stu == null) {
+            println("with: $this")
+        }
 //        val result = stu?.let {
 //            it.takeIf { it.age > 10 }?.run {
 //                this.age = 12

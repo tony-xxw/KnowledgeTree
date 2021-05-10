@@ -10,6 +10,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".BaseAndroidActivity"
+            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +26,7 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".lifecycle.FourComponentWithLifeActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTop" />
         <activity android:name="com.wynne.android.third.dagger.DaggerActivity" />
         <activity android:name="com.wynne.android.third.retrofit.RetrofitActivity" />
         <activity android:name="com.wynne.android.third.TripartiteActivity" />
