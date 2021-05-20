@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.android.fragment.AndroidFragmentActivity
 import com.wynne.android.handler.HandlerActivity
+import com.wynne.android.img.ImageLoaderActivity
 import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
@@ -73,6 +74,9 @@ class BaseAndroidActivity : BaseActivity() {
                 }
                 "ANR" -> {
                     startActivity(Intent(this, HandlerActivity::class.java))
+                }
+                "图片加载" -> {
+                    startActivity(Intent(this, ImageLoaderActivity::class.java))
                 }
             }
         }
