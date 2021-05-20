@@ -6,6 +6,7 @@ import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.callback.NavigationCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.wynne.advanced.window.WindowActivity
 import com.wynne.advanced.hot.HotRepairActivity
 import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
@@ -33,6 +34,7 @@ class BaseAdvancedActivity : BaseActivity() {
             MainData("MVP,MVC,MVVM", R.drawable.icon_pepper),
             MainData("组件化", R.drawable.icon_pomelo),
             MainData("安全", R.drawable.icon_strawberry),
+            MainData("Window", R.drawable.icon_maize),
             MainData("wms,pms,systemServerw", R.drawable.icon_tomato),
             MainData("单元测试", R.drawable.icon_lemon))
 
@@ -48,11 +50,17 @@ class BaseAdvancedActivity : BaseActivity() {
                 "组件化" -> {
                     ARouter.getInstance().build(BASE_HIGH_AROUTER).navigation(this)
                 }
+                "Window" -> {
+                    startActivity(Intent(this, WindowActivity::class.java))
+                }
                 "插件化和热修复" -> {
                     startActivity(Intent(this, HotRepairActivity::class.java))
                 }
             }
         }
+        Thread {
+            toolBar.title ="111"
+        }.start()
     }
 
     override val layoutId: Int = R.layout.activity_base_advanced_layout

@@ -35,6 +35,7 @@ class BaseJavaActivity() : BaseActivity() {
             when (list[it].name) {
                 "集合相关" -> {
                     linkedHashMapMain()
+                    hashSetTest()
                 }
                 "JVM相关" -> {
 
@@ -63,4 +64,14 @@ class BaseJavaActivity() : BaseActivity() {
     }
 
     override val layoutId: Int = R.layout.activity_base_java_layout
+
+    fun  hashSetTest(){
+        val hashTest = HashSet<String>()
+        hashTest.add("Test")
+
+
+        for (test in hashTest){
+
+        }
+    }
 }

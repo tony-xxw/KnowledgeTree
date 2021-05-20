@@ -19,6 +19,9 @@
         <activity
             android:name=".bluetooth.BluetoothActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".window.WindowActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".hot.HotRepairActivity" />
     </application>
 </manifest>

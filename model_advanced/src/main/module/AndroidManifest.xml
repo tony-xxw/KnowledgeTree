@@ -46,6 +46,9 @@
         <activity
             android:name=".progress.BinderActivity"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".window.WindowActivity"
+            android:launchMode="singleTop" />
     </application>
 
     <uses-permission android:name="android.permission.BLUETOOTH" />

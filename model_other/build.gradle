@@ -61,6 +61,8 @@ dependencies {
     api rootProject.ext.dependencies["arouter_api"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
     implementation project(path: ':commonbase')
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
 
 
 //    implementation project(':flutter')
