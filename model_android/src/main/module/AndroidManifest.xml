@@ -35,5 +35,6 @@
         <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".third.rxjava.RxJavaActivity" />
         <activity android:name=".anr.AnrActivity" />
+        <activity android:name=".img.ImageLoaderActivity" />
     </application>
 </manifest>

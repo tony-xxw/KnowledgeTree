@@ -22,19 +22,20 @@ class SingleLinked {
     /**
      * 反转链表
      */
-    fun studyRestNode(node: Node): Node? {
-        var next: Node? = null
-        var pre: Node? = null
-        var temp: Node?
-        temp = node
+    fun studyRestNode(node: Node = head): Node {
+        var cur = Node(null)
+        var temp = node
+        var reverse = Node("reverse")
 
-        while (temp != null) {
-            next = temp.next
-            temp.next = pre
-            pre = temp
-            temp = next
+        while (temp.next != null) {
+            cur = temp.next
+            temp.next = reverse
+            reverse = temp
+            temp = cur
         }
-        return pre
+        temp.next = reverse
+        head = temp
+        return temp
     }
 
     /**
@@ -45,21 +46,18 @@ class SingleLinked {
             Log.d("xxw", "当前不符合")
             return
         }
-        var temp = head
+        var pre = head
+        var cur = head
         var num = 0
-        while (temp.next != null) {
-            if (num == size - reciprocal) {
-                if (temp.next == null) {
-                    temp.next = null
-                } else {
-                    temp.next = temp.next.next
-                }
-            } else {
-                temp = temp.next
-            }
+        while (num < reciprocal) {
+            cur = cur.next
             num++
         }
-
+        while (cur.next != null) {
+            cur = cur.next
+            pre = pre.next
+        }
+        pre.next = pre.next.next
     }
 
 
@@ -88,6 +86,9 @@ class SingleLinked {
         }
     }
 
+    /**
+     * 指定位置删除
+     */
     fun deletByIndex(index: Int) {
         if (index < 1 || index > size + 1) {
             Log.d(SingleLinked::class.java.name, "插入的数据不合法")
@@ -112,7 +113,7 @@ class SingleLinked {
      *
      * 合并有序链表 (递归)
      */
-    fun mergeOrderlyLinkeds(first: Node?, sencond: Node?): Node? {
+    fun mergeOrderlyLinkeds(first: Node = head, sencond: Node?): Node? {
         var linked: Node
         var tempA: Node
         var tempB: Node
@@ -137,31 +138,17 @@ class SingleLinked {
         }
 
 
-        /**
-         */
 
         if (tempA.data.toString().toInt() > tempB.data.toString().toInt()) {
-            Log.d("XXW", "if   tempA ${tempA.data}  tempB ${tempB.data}")
+
             linked = tempB
             linked.next = mergeOrderlyLinkeds(tempA, tempB.next)
         } else {
-            Log.d("XXW", "else   tempA ${tempA.data}  tempB ${tempB.data}")
             linked = tempA
             linked.next = mergeOrderlyLinkeds(tempA.next, tempB)
         }
-        Log.d("XXW", "return  linked ${linked.data}")
 
         return linked
-    }
-
-
-    fun toPrint(node: Node = head) {
-        var temp = node
-        while (temp.next != null) {
-            Log.d("xxw", "content: ${temp.data}")
-            temp = temp.next
-        }
-        Log.d("xxw", "content: ${temp.data}")
     }
 
 
@@ -186,7 +173,9 @@ class SingleLinked {
 
     }
 
-
+    /**
+     * 是否回文
+     */
     fun linkedIsPalindrome(node: Node = head): Boolean {
         var middle = obtainMiddleNode(node)
         //翻转
@@ -210,4 +199,13 @@ class SingleLinked {
         return result
     }
 
+
+    fun toPrint(node: Node = head) {
+        var temp = node
+        while (temp.next != null) {
+            println("content: ${temp.data}")
+            temp = temp.next
+        }
+        println("content: ${temp.data}")
+    }
 }

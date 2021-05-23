@@ -9,6 +9,7 @@ import com.wynne.knowledge.base.adapter.MainAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_THREAD
+import com.wynne.thread.count.CountDownLatchScene
 import kotlinx.android.synthetic.main.activity_thread_android_layout.*
 
 @Route(path = BASE_THREAD)
@@ -28,7 +29,8 @@ class ThreadAndroidActivity : BaseActivity() {
             MainData("AsyncTask", R.drawable.icon_apple),
             MainData("IntentService", R.drawable.icon_watermelon),
             MainData("HandlerThread", R.drawable.icon_peach),
-            MainData("多进程通信Binder,AIDL,多进程", R.drawable.icon_pear))
+            MainData("多进程通信Binder,AIDL,多进程", R.drawable.icon_pear),
+            MainData("CountDownLatchScene", R.drawable.icon_orange))
 
     override fun initView() {
         toolBar.title = "知识体系"
@@ -55,13 +57,15 @@ class ThreadAndroidActivity : BaseActivity() {
                 }
                 "多进程通信Binder,AIDL,多进程" -> {
                 }
+                "CountDownLatchScene" -> {
+                    CountDownLatchScene.start()
+                }
             }
         }
 
 
         Thread {
             Looper.prepare()
-            Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
             Looper.loop()
         }.start()
         obtainHeight()
@@ -107,11 +111,11 @@ class ThreadAndroidActivity : BaseActivity() {
     private fun practiceAsyncTaskTest() {
         task = WynneAckTask()
         task.execute("abc")
-     }
+    }
 
     private fun practiceIntentServiceTest() {
-        val intent = Intent(this,IntentServiceImp::class.java)
-        intent.putExtra("key","Wynne")
+        val intent = Intent(this, IntentServiceImp::class.java)
+        intent.putExtra("key", "Wynne")
         startService(intent)
 
     }
@@ -172,7 +176,7 @@ class ThreadAndroidActivity : BaseActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(task!=null){
+        if (task != null) {
             task.cancel(true)
         }
     }

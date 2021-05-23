@@ -14,11 +14,20 @@
         app:title="图片加载" />
 
     <Button
-        android:id="@+id/btnLruCache"
+        android:id="@+id/btnPutLruCache"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LruCache"
+        android:text="put LruCache"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+    <Button
+        android:id="@+id/btnDeleteLruCache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DELETE LruCache"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPutLruCache" />
 </androidx.constraintlayout.widget.ConstraintLayout>
