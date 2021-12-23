@@ -31,13 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditInput" />
 
-    <Button
-        android:id="@+id/btnGrammar"
-        style="@style/BtnCommon"
-        android:text="kotlin语法"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStatusBar" />
 
     <Button
         android:id="@+id/btnWebView"
@@ -45,25 +38,7 @@
         android:text="webView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGrammar" />
-
-    <Button
-        android:id="@+id/btnKotlinCoroutine"
-        style="@style/BtnCommon"
-        android:text="协程"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWebView" />
-
-
-
-    <Button
-        android:id="@+id/btnCore"
-        style="@style/BtnCommon"
-        android:text="Koltin核心编程"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnKotlinCoroutine" />
+        app:layout_constraintTop_toBottomOf="@+id/btnStatusBar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
