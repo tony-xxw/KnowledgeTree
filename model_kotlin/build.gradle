@@ -58,5 +58,6 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["arouter_api"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     api project(path: ':commonbase')
 }
