@@ -22,8 +22,8 @@ class MainActivity : BaseActivity() {
 
     fun onClick(v: View) {
         when (v.id) {
-            R.id.btnCoroutine -> {
-                start()
+            R.id.btnCoroutineBase -> {
+                coroutineBase2()
             }
         }
     }

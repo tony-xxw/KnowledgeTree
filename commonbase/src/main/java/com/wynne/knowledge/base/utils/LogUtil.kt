@@ -8,7 +8,7 @@ object LogUtil {
 
     fun d(content: String) {
         if (isDebug) {
-            Log.d("XXW", "value: $content")
+            Log.d("XXW", content)
         }
     }
 
