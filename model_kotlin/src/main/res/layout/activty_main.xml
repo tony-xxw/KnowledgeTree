@@ -23,4 +23,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
+    <Button
+        android:id="@+id/btnViewBind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewBinding测试"
+        app:layout_constraintTop_toBottomOf="@+id/btnCoroutine" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
