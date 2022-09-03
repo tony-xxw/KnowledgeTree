@@ -3,6 +3,7 @@ package com.wynne.kotlin
 import android.view.View
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.utils.LogUtil
+import com.wynne.kotlin.coroutine.*
 import com.wynne.kotlin.databinding.ActivtyMainBinding
 
 class MainActivity : BaseActivity() {
@@ -24,6 +25,14 @@ class MainActivity : BaseActivity() {
         when (v.id) {
             R.id.btnCoroutineBase -> {
                 coroutineBase2()
+            }
+            R.id.btnCoroutineWeight -> {
+//                baseCoroutineDispatcher()
+//                baseCoroutineStart()
+//                baseCoroutineScope()
+//                baseCoroutineCoroutineScope()
+//                baseCoroutineSupervisorScope()
+                baseCoroutineWithSupervisorScope()
             }
         }
     }

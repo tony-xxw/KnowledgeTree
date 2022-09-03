@@ -13,6 +13,15 @@
         app:title="Kotlin"
         app:titleTextColor="@color/white" />
 
+
+    <Button
+        android:id="@+id/btnViewBind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewBinding测试"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+
     <Button
         android:id="@+id/btnCoroutineBase"
         android:layout_width="match_parent"
@@ -21,13 +30,16 @@
         android:text="协程基础"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnViewBind" />
 
     <Button
-        android:id="@+id/btnViewBind"
+        android:id="@+id/btnCoroutineWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ViewBinding测试"
+        android:onClick="onClick"
+        android:text="协程核心"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCoroutineBase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
