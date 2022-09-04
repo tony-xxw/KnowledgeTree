@@ -1,13 +1,14 @@
 package com.wynne.kotlin
 
 import android.view.View
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
 import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.utils.LogUtil
 import com.wynne.kotlin.coroutine.*
 import com.wynne.kotlin.databinding.ActivtyMainBinding
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -49,6 +50,12 @@ class MainActivity : BaseActivity() {
             }
             R.id.btnFlowSign -> {
                 flowSign()
+            }
+            R.id.btnFlowState -> {
+                flowStateSample()
+            }
+            R.id.btnFlowShare -> {
+                flowShareSample()
             }
         }
     }
@@ -154,5 +161,82 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    val viewModel by lazy { FlowStateModel() }
 
+
+    private fun flowStateSample() {
+        lifecycleScope.launch {
+            try {
+                viewModel.state.collect {
+                    LogUtil.d("carman", "state : $it")
+                    if (it == 3) {
+                        throw NullPointerException("终止第一个StateFlow的数据收集")
+                    }
+                }
+            } catch (e: Exception) {
+                LogUtil.d("carman", "e : $e")
+            }
+            viewModel.name.collect {
+                LogUtil.d("carman", "name : $it")
+            }
+        }
+        viewModel.download()
+
+    }
+
+    val shareModel by lazy { FlowShareModel() }
+
+    private fun flowShareSample() {
+        lifecycleScope.launch {
+            launch {
+                shareModel.share.collect {
+                    LogUtil.d(
+                        "carman",
+                        "第一个state : $it   replayCache: ${viewModel.state.replayCache}"
+                    )
+                }
+            }
+            launch {
+                delay(2000)
+                shareModel.share.collect {
+                    LogUtil.d("carman", "第二个state : $it")
+                }
+            }
+
+        }
+        shareModel.download()
+    }
+
+
+    class FlowStateModel : ViewModel() {
+        private val _state: MutableStateFlow<Int> = MutableStateFlow(0)
+        val state: StateFlow<Int> get() = _state
+
+        private val _name: MutableStateFlow<String> = MutableStateFlow("第二个StateFlow")
+        val name: StateFlow<String> get() = _name
+        fun download() {
+            for (state in 0..5) {
+                viewModelScope.launch(Dispatchers.IO) {
+                    delay(200L * state)
+                    _state.value = state
+                }
+            }
+        }
+
+    }
+
+    class FlowShareModel : ViewModel() {
+        private val _share: MutableSharedFlow<Int> = MutableSharedFlow(2)
+        val share: SharedFlow<Int> get() = _share
+
+        fun download() {
+            for (state in 0..5) {
+                viewModelScope.launch(Dispatchers.IO) {
+                    delay(200L * state)
+                    _share.emit(state)
+                }
+            }
+        }
+
+    }
 }
