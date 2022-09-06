@@ -8,10 +8,9 @@ import com.wynne.knowledge.base.base.BaseActivity
 import com.wynne.knowledge.base.utils.LogUtil
 import com.wynne.kotlin.coroutine.*
 import com.wynne.kotlin.databinding.ActivtyMainBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
+import kotlinx.android.synthetic.main.activty_main.*
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import java.lang.NullPointerException
 
 class MainActivity : BaseActivity() {
@@ -55,10 +54,34 @@ class MainActivity : BaseActivity() {
                 flowStateSample()
             }
             R.id.btnFlowShare -> {
-                flowShareSample()
+//                flowShareSample()
+            }
+            R.id.btnCoroutineApplication -> {
+                coroutineApplication()
             }
         }
     }
+
+
+    private fun coroutineApplication() {
+        val handler = CoroutineExceptionHandler { coroutineContext, throwable ->
+            LogUtil.d("throwable $throwable")
+        }
+        lifecycleScope.launch(handler) {
+            launch {
+                throw  NullPointerException("空指针")
+            }
+            val result = withContext(Dispatchers.IO) {
+                //网络请求...
+                "请求结果"
+            }
+            launch {
+                //网络请求3...
+            }
+            btnCoroutineApplication.text = result
+        }
+    }
+
 
     /**
      * 禁止在flow代码块中进行线程调度
