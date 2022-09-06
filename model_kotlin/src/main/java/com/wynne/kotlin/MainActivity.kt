@@ -54,7 +54,7 @@ class MainActivity : BaseActivity() {
                 flowStateSample()
             }
             R.id.btnFlowShare -> {
-//                flowShareSample()
+                flowShareSample()
             }
             R.id.btnCoroutineApplication -> {
                 coroutineApplication()
