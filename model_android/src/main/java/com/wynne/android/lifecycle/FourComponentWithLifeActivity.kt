@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import com.wynne.android.BaseAndroidActivity
 import com.wynne.android.R
+import com.wynne.android.databinding.ActiivtyLifeLayoutBinding
 import com.wynne.knowledge.base.base.BaseActivity
-import kotlinx.android.synthetic.main.actiivty_life_layout.*
 
 class FourComponentWithLifeActivity : BaseActivity() {
     lateinit var presenter: IPresenter
@@ -62,12 +62,14 @@ class FourComponentWithLifeActivity : BaseActivity() {
         Log.d("XXW", "onNewIntent: FourComponentWithLifeActivity")
     }
 
+    private val binding by lazy { ActiivtyLifeLayoutBinding.bind(root) }
+
     override fun initView() {
         presenter = LifePresenter()
         lifecycle.addObserver(presenter)
 
 
-        btnActivity.setOnClickListener {
+        binding.btnActivity.setOnClickListener {
             startActivity(Intent(this, BaseAndroidActivity::class.java))
         }
     }

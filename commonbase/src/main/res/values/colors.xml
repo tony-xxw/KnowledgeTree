@@ -12,4 +12,5 @@
     <color name="colorForgiven">#4bbb74</color>
     <color name="colorDirtyWithe">#f6f9f6</color>
     <color name="colorLightBlack">#2B2E2B</color>
+    <color name="colorBlack">#000000</color>
 </resources>

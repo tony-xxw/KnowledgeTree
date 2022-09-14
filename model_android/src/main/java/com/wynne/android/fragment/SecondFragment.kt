@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.wynne.android.R
+import com.wynne.android.databinding.FragmentSecondLayoutBinding
 import com.wynne.knowledge.base.base.view.BaseFragment
-import kotlinx.android.synthetic.main.fragment_second_layout.*
 
 class SecondFragment : BaseFragment() {
     companion object {
@@ -16,15 +16,17 @@ class SecondFragment : BaseFragment() {
     }
 
     override fun getLayoutId(): Int = R.layout.fragment_second_layout
-    lateinit var activity: AndroidFragmentActivity
+
+
+    private val binding by lazy { FragmentSecondLayoutBinding.bind(mContentView) }
+
     override fun initView() {
-        tvSecond.text = activity.text
+        binding.tvSecond.text = (requireActivity() as AndroidFragmentActivity).text
     }
 
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        activity = context as AndroidFragmentActivity
         Log.d(TAG, "onAttach")
     }
 
@@ -33,7 +35,11 @@ class SecondFragment : BaseFragment() {
         Log.d(TAG, "onViewCreated")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         Log.d(TAG, "onCreateView")
         return super.onCreateView(inflater, container, savedInstanceState)
     }

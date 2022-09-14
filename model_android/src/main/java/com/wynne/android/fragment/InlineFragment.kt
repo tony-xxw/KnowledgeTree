@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.wynne.android.R
+import com.wynne.android.databinding.FragmentInlineLayoutBinding
 import com.wynne.knowledge.base.base.view.BaseFragment
-import kotlinx.android.synthetic.main.fragment_inline_layout.*
 
 class InlineFragment : BaseFragment() {
 
@@ -25,8 +25,10 @@ class InlineFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_inline_layout
 
+    private val binding by lazy { FragmentInlineLayoutBinding.bind(mContentView) }
+
     override fun initView() {
-        tvArgument.text = arguments?.getString("Wynne")
+        binding.tvArgument.text = arguments?.getString("Wynne")
     }
 
     override fun onAttach(context: Context) {

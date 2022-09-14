@@ -114,11 +114,11 @@ ext {
 
             "retrofit"              : "com.squareup.retrofit2:retrofit:2.1.0",
 
-            "dagger"                : "com.google.dagger:dagger:2.4",
+            "dagger"                : "com.google.dagger:dagger:2.24",
 
             "dagger-android-support": "com.google.dagger:dagger-android-support:2.4",
 
-            "dagger-compiler"       : "com.google.dagger:dagger-compiler:2.4",
+            "dagger-compiler"       : "com.google.dagger:dagger-compiler:2.24",
 
             "retrofit_converter"    : "com.squareup.retrofit2:converter-gson:2.1.0",
 

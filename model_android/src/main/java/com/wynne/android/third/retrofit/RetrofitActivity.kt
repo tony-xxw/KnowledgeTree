@@ -3,6 +3,7 @@ package com.wynne.android.third.retrofit
 import android.util.Log
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.wynne.android.R
+import com.wynne.android.databinding.ActiivtyRetrofitLayoutBinding
 import com.wynne.knowledge.base.base.BaseActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -12,6 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitActivity : BaseActivity() {
     lateinit var disposable: Disposable
+
+    private val binding by lazy { ActiivtyRetrofitLayoutBinding.bind(root) }
 
     override fun initView() {
 
