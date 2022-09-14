@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">model_android</string>
+    <string name="fragment">内嵌Fragment</string>
 </resources>

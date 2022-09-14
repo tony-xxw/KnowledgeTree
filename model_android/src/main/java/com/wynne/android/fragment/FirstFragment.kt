@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.wynne.android.R
+import com.wynne.android.databinding.ActiivtyFragmentLayoutBinding
+import com.wynne.android.databinding.FragmentFirstLayoutBinding
 import com.wynne.knowledge.base.base.view.BaseFragment
-import kotlinx.android.synthetic.main.fragment_first_layout.*
 
 
 class FirstFragment : BaseFragment() {
@@ -18,16 +19,19 @@ class FirstFragment : BaseFragment() {
         val TAG = FirstFragment.javaClass.canonicalName
     }
 
+    private val binding by lazy { FragmentFirstLayoutBinding.bind(mContentView) }
+
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
     }
+
     var text = "smaple"
 
     lateinit var activity: AndroidFragmentActivity
     override fun getLayoutId(): Int = R.layout.fragment_first_layout
 
     override fun initView() {
-        tvFirst.setOnClickListener {
+        binding.tvFirst.setOnClickListener {
             startActivity(Intent(requireActivity(), InlineFragmentActivity::class.java))
         }
 
@@ -46,7 +50,11 @@ class FirstFragment : BaseFragment() {
         Log.d(TAG, "onViewCreated")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         Log.d(TAG, "onCreateView")
         return super.onCreateView(inflater, container, savedInstanceState)
     }

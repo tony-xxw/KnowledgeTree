@@ -2,8 +2,9 @@ package com.wynne.android.third.dagger
 
 import android.widget.Toast
 import com.wynne.android.R
+import com.wynne.android.databinding.ActiivtyDaggerSecondLayoutBinding
+import com.wynne.android.databinding.ActiivtyRetrofitLayoutBinding
 import com.wynne.knowledge.base.base.BaseActivity
-import kotlinx.android.synthetic.main.actiivty_dagger_second_layout.*
 import javax.inject.Inject
 
 class DaggerSecondActivity : BaseActivity() {
@@ -16,11 +17,13 @@ class DaggerSecondActivity : BaseActivity() {
     @JvmField
     var testSingleton1: TestSingleton? = null
 
+    private val binding by lazy { ActiivtyDaggerSecondLayoutBinding.bind(root) }
+
     override fun initView() {
         DaggerActivityComponent.builder().build().inject(this)
 
 
-        btnSingle.setOnClickListener {
+        binding.btnSingle.setOnClickListener {
             Toast.makeText(this, "single ${testSingleton.toString()} singel1 ${testSingleton1.toString()}", Toast.LENGTH_SHORT).show()
         }
 

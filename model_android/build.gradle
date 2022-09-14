@@ -4,7 +4,6 @@ if (Boolean.valueOf(rootProject.ext.isModule)) {
     apply plugin: 'com.android.library'
 }
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -46,6 +45,16 @@ android {
         }
     }
 
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -56,10 +65,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation rootProject.ext.dependencies["multidex"]
     implementation rootProject.ext.dependencies["material"]
+    implementation rootProject.ext.dependencies["design"]
     api rootProject.ext.dependencies["arouter_api"]
     api rootProject.ext.dependencies["banner1"]
     kapt rootProject.ext.dependencies["arouter_compiler"]
-    api 'com.google.dagger:dagger:2.30.1'
-    kapt 'com.google.dagger:dagger-compiler:2.30.1'
+    api rootProject.ext.dependencies["dagger"]
+    kapt rootProject.ext.dependencies["dagger-compiler"]
     api project(path: ':commonbase')
 }

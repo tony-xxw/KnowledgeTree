@@ -2,16 +2,17 @@ package com.wynne.android.third.rxjava
 
 import android.util.Log
 import com.wynne.android.R
+import com.wynne.android.databinding.ActiivtyRxjavaLayoutBinding
 import com.wynne.knowledge.base.base.BaseActivity
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.actiivty_rxjava_layout.*
 
 class RxJavaActivity : BaseActivity() {
 
+    private val binding by lazy { ActiivtyRxjavaLayoutBinding.bind(root) }
 
     override fun initView() {
         Observable.create<String> {

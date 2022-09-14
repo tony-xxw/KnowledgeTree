@@ -6,12 +6,12 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tlBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        app:title="Fragment "
-        android:layout_height="?actionBarSize"/>
+        app:title="Fragment 懒加载" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlBLayout"
@@ -26,8 +26,23 @@
         android:id="@+id/vpFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlBar" />
+        app:layout_constraintBottom_toTopOf="@+id/bnvNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/tlBLayout" />
 
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnvNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="48dp"
+        app:itemBackground="@null"
+        app:itemIconTint="@color/colorGray"
+        app:itemTextAppearanceActive="@style/bottom_selected"
+        app:itemTextAppearanceInactive="@style/bottom_normal"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
