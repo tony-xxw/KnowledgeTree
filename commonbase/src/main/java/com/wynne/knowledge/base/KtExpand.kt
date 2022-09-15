@@ -1,10 +1,15 @@
-package com.wynne.android
+package com.wynne.knowledge.base
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.wynne.knowledge.base.adapter.DefaultAdapter
+import com.wynne.knowledge.base.adapter.MainData
 
 /**
  * TODO 类描述
@@ -19,11 +24,22 @@ fun ViewPager2.bindFragment(
     lifecycle: Lifecycle,
     fragments: List<Fragment>
 ): ViewPager2 {
-    offscreenPageLimit = fragments.size - 1
 
     adapter = object : FragmentStateAdapter(fm, lifecycle) {
         override fun getItemCount(): Int = fragments.size
         override fun createFragment(position: Int): Fragment = fragments[position]
     }
     return this
+}
+
+fun RecyclerView.bindAdapter(
+    context: Context,
+    list: List<MainData>,
+    block: (position: Int) -> Unit = {}
+) {
+    layoutManager = LinearLayoutManager(context)
+    adapter = DefaultAdapter(context, list).apply {
+        listener = block
+    }
+
 }

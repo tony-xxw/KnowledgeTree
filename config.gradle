@@ -129,7 +129,13 @@ ext {
 
             "navigation"            : "androidx.navigation:navigation-fragment-ktx:${versions["navigationVersion"]}",
 
-            "navigation-ui-ktx"     : "androidx.navigation:navigation-ui-ktx:${versions["navigationVersion"]}"
+            "navigation-ui-ktx"     : "androidx.navigation:navigation-ui-ktx:${versions["navigationVersion"]}",
+
+            "coroutines"            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2",
+
+            "lifecycle-runtime"     : "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1",
+
+            "lifecycle-viewmodel"   : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
 
     ]

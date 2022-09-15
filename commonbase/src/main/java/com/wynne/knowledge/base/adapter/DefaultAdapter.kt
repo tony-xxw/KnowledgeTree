@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wynne.knowledge.base.R
 
-class MainAdapter(val context: Context) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-    var mList = mutableListOf<MainData>()
+class DefaultAdapter(val context: Context, val list: List<MainData> = mutableListOf()) :
+    RecyclerView.Adapter<DefaultAdapter.MainViewHolder>() {
     lateinit var listener: (position: Int) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -18,12 +18,12 @@ class MainAdapter(val context: Context) : RecyclerView.Adapter<MainAdapter.MainV
         return MainViewHolder(view)
     }
 
-    override fun getItemCount(): Int = mList.size
+    override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        if (mList.isNotEmpty()) {
-            holder.tvModelName.text = mList[position].name
-            holder.ivIcon.setImageResource(mList[position].iconPath)
+        if (list.isNotEmpty()) {
+            holder.tvModelName.text = list[position].name
+            holder.ivIcon.setImageResource(list[position].iconPath)
         }
 
         holder.itemView.setOnClickListener {

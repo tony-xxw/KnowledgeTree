@@ -53,6 +53,10 @@ dependencies {
     api rootProject.ext.dependencies["retrofit_converter"]
     api rootProject.ext.dependencies["okhttp"]
     api rootProject.ext.dependencies["retrofit_adpater"]
+    api rootProject.ext.dependencies["coroutines"]
+    api rootProject.ext.dependencies["lifecycle-runtime"]
+    api rootProject.ext.dependencies["lifecycle-viewmodel"]
+
     api "org.jetbrains.kotlin:kotlin-reflect:1.3.71"
     api "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.jakewharton:butterknife:8.4.0'

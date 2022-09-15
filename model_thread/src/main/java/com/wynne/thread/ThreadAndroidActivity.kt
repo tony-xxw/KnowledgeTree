@@ -3,11 +3,11 @@ package com.wynne.thread
 import android.content.Intent
 import android.os.*
 import android.util.Log
-import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.wynne.knowledge.base.adapter.MainAdapter
+import com.wynne.knowledge.base.adapter.DefaultAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.bindAdapter
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_THREAD
 import com.wynne.thread.count.CountDownLatchScene
 import kotlinx.android.synthetic.main.activity_thread_android_layout.*
@@ -22,23 +22,19 @@ class ThreadAndroidActivity : BaseActivity() {
     }
 
 
-    lateinit var adapter: MainAdapter
     var list = mutableListOf(
-            MainData("Thread", R.drawable.icon_pomelo),
-            MainData("线程池", R.drawable.icon_grape),
-            MainData("AsyncTask", R.drawable.icon_apple),
-            MainData("IntentService", R.drawable.icon_watermelon),
-            MainData("HandlerThread", R.drawable.icon_peach),
-            MainData("多进程通信Binder,AIDL,多进程", R.drawable.icon_pear),
-            MainData("CountDownLatchScene", R.drawable.icon_orange))
+        MainData("Thread", R.drawable.icon_pomelo),
+        MainData("线程池", R.drawable.icon_grape),
+        MainData("AsyncTask", R.drawable.icon_apple),
+        MainData("IntentService", R.drawable.icon_watermelon),
+        MainData("HandlerThread", R.drawable.icon_peach),
+        MainData("多进程通信Binder,AIDL,多进程", R.drawable.icon_pear),
+        MainData("CountDownLatchScene", R.drawable.icon_orange)
+    )
 
     override fun initView() {
         toolBar.title = "知识体系"
-        adapter = MainAdapter(this)
-        adapter.mList = list
-        rvThread.adapter = adapter
-
-        adapter.listener = {
+        rvThread.bindAdapter(this, list) {
             when (list[it].name) {
                 "Thread" -> {
                     practiceThreadTest()

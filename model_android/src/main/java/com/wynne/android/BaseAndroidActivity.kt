@@ -1,10 +1,8 @@
 package com.wynne.android
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -16,9 +14,10 @@ import com.wynne.android.handler.HandlerActivity
 import com.wynne.android.img.ImageLoaderActivity
 import com.wynne.android.lifecycle.FourComponentWithLifeActivity
 import com.wynne.android.third.TripartiteActivity
-import com.wynne.knowledge.base.adapter.MainAdapter
+import com.wynne.knowledge.base.adapter.DefaultAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.bindAdapter
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_ANDROID
 import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.adapter.OnPageChangeListenerAdapter
@@ -32,33 +31,31 @@ class BaseAndroidActivity : BaseActivity() {
 
     private val binding by lazy { ActiivtyBaseAndroidLayoutBinding.bind(root) }
 
-    lateinit var adapter: MainAdapter
-    private var list = mutableListOf<MainData>(
-        MainData("四大组件,生命周期启动方式", R.drawable.icon_grape),
-        MainData("Fragment", R.drawable.icon_maize),
-        MainData("自定义View", R.drawable.icon_apple),
-        MainData("Handler的使用和消息队列源码", R.drawable.icon_watermelon),
-        MainData("动画和手势", R.drawable.icon_peach),
-        MainData("图片加载", R.drawable.icon_pear),
-        MainData("文件和数据库", R.drawable.icon_plum),
-        MainData("Resources", R.drawable.icon_tomato),
-        MainData("第三方库", R.drawable.icon_lemon),
-        MainData("Architecture components", R.drawable.icon_pepper),
-        MainData("性能优化", R.drawable.icon_strawberry),
-        MainData("单元测试", R.drawable.icon_orange),
-        MainData("ANR", R.drawable.icon_orange)
-    )
+    lateinit var adapter: DefaultAdapter
 
+    companion object {
+        val list = mutableListOf<MainData>(
+            MainData("四大组件,生命周期启动方式", R.drawable.icon_grape),
+            MainData("Fragment", R.drawable.icon_maize),
+            MainData("自定义View", R.drawable.icon_apple),
+            MainData("Handler的使用和消息队列源码", R.drawable.icon_watermelon),
+            MainData("动画和手势", R.drawable.icon_peach),
+            MainData("图片加载", R.drawable.icon_pear),
+            MainData("文件和数据库", R.drawable.icon_plum),
+            MainData("Resources", R.drawable.icon_tomato),
+            MainData("第三方库", R.drawable.icon_lemon),
+            MainData("Architecture components", R.drawable.icon_pepper),
+            MainData("性能优化", R.drawable.icon_strawberry),
+            MainData("单元测试", R.drawable.icon_orange),
+            MainData("ANR", R.drawable.icon_orange)
+        )
+
+    }
 
     private lateinit var mViewPager: BannerViewPager<Int, AnnounceViewHolder>
 
     override fun initView() {
-        adapter = MainAdapter(this)
-        adapter.mList = list
-
-        binding.rvAndroid.adapter = adapter
-
-        adapter.listener = {
+        binding.rvAndroid.bindAdapter(this, list) {
             when (list[it].name) {
                 "四大组件,生命周期启动方式" -> {
                     startActivity(Intent(this, FourComponentWithLifeActivity::class.java))
@@ -133,60 +130,6 @@ class BaseAndroidActivity : BaseActivity() {
     override val layoutId: Int = R.layout.actiivty_base_android_layout
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("XXW", "onCreate: BaseAndroidActivity")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("XXW", "onStart: BaseAndroidActivity")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("XXW", "onResume: BaseAndroidActivity")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("XXW", "onRestart: BaseAndroidActivity")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("XXW", "onPause: BaseAndroidActivity")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("XXW", "onStop: BaseAndroidActivity")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("XXW", "onDestroy: BaseAndroidActivity")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        Log.d("XXW", "onSaveInstanceState: BaseAndroidActivity")
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        Log.d("XXW", "onRestoreInstanceState: BaseAndroidActivity")
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        Log.d("XXW", "onConfigurationChanged: BaseAndroidActivity")
-    }
-
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-        Log.d("XXW", "onNewIntent: BaseAndroidActivity")
-    }
 }
 
 

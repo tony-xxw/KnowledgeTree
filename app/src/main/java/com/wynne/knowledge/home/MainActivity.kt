@@ -1,10 +1,10 @@
 package com.wynne.knowledge.home
 
-import android.content.Intent
 import com.alibaba.android.arouter.launcher.ARouter
-import com.wynne.knowledge.base.adapter.MainAdapter
+import com.wynne.knowledge.base.adapter.DefaultAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.bindAdapter
 import com.wynne.knowledge.base.constant.ARouterPath.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,24 +15,23 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
 
 
-    lateinit var adapter: MainAdapter
+    lateinit var adapter: DefaultAdapter
     var list = mutableListOf(
-            MainData("Android基础", R.drawable.icon_apple),
-            MainData("Android进阶", R.drawable.icon_watermelon),
-            MainData("Java基础", R.drawable.icon_orange),
-            MainData("并发/异步", R.drawable.icon_grape),
-            MainData("设计模式", R.drawable.icon_peach),
-            MainData("数据结构与算法", R.drawable.icon_pear),
-            MainData("网络基础", R.drawable.icon_plum),
-            MainData("操作系统", R.drawable.icon_tomato),
-            MainData("Other", R.drawable.icon_lemon),
-            MainData("每周一题", R.drawable.icon_apple))
+        MainData("Android基础", R.drawable.icon_apple),
+        MainData("Android进阶", R.drawable.icon_watermelon),
+        MainData("Java基础", R.drawable.icon_orange),
+        MainData("并发/异步", R.drawable.icon_grape),
+        MainData("设计模式", R.drawable.icon_peach),
+        MainData("数据结构与算法", R.drawable.icon_pear),
+        MainData("网络基础", R.drawable.icon_plum),
+        MainData("操作系统", R.drawable.icon_tomato),
+        MainData("Other", R.drawable.icon_lemon),
+        MainData("每周一题", R.drawable.icon_apple)
+    )
 
     override fun initView() {
         toolBar.title = "知识体系"
-        adapter = MainAdapter(this)
-        adapter.mList = list
-        adapter.listener = {
+        rvMain.bindAdapter(this, list) {
             when (it) {
                 0 -> {
                     ARouter.getInstance().build(BASE_ANDROID).navigation()
@@ -66,7 +65,6 @@ class MainActivity : BaseActivity() {
                 }
             }
         }
-        rvMain.adapter = adapter
 
 
     }

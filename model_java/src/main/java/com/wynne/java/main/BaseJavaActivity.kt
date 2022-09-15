@@ -4,33 +4,29 @@ package com.wynne.java.main
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wynne.java.R
-import com.wynne.knowledge.base.adapter.MainAdapter
+import com.wynne.knowledge.base.adapter.DefaultAdapter
 import com.wynne.knowledge.base.adapter.MainData
 import com.wynne.knowledge.base.base.BaseActivity
+import com.wynne.knowledge.base.bindAdapter
 import com.wynne.knowledge.base.constant.ARouterPath.BASE_JAVA
 import kotlinx.android.synthetic.main.activity_base_java_layout.*
 import java.util.*
 import kotlin.collections.HashSet
-import kotlin.collections.iterator
 import kotlin.collections.mutableListOf
 import kotlin.collections.set
 
 
 @Route(path = BASE_JAVA)
 class BaseJavaActivity() : BaseActivity() {
-    lateinit var adapter: MainAdapter
 
     private var list = mutableListOf(
-            MainData("集合相关", R.drawable.icon_apple),
-            MainData("JVM相关", R.drawable.icon_lemon))
+        MainData("集合相关", R.drawable.icon_apple),
+        MainData("JVM相关", R.drawable.icon_lemon)
+    )
 
 
     override fun initView() {
-        adapter = MainAdapter(this)
-        adapter.mList = list
-        rvDesign.adapter = adapter
-
-        adapter.listener = {
+        rvDesign.bindAdapter(this, list) {
             when (list[it].name) {
                 "集合相关" -> {
                     linkedHashMapMain()
